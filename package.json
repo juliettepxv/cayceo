@@ -5,12 +5,16 @@
     "watch-dev": "webpack --watch --config _builders/webpack.dev.js",
     "build-prod": "webpack --config _builders/webpack.prod.js",
     "build-prod-stats": "webpack --config _builders/webpack.prod.js --json > _builders/stats-prod.json",
-    "npm-install": "npm install",
+    "npm-install": "npm install && npm install ./gsap-bonus.tgz",
     "composer-update": "composer update"
   },
   "dependencies": {
+    "event-emitter-es6": "^1.1.5",
+    "@pixi/filter-rgb-split": "^3.0.3",
     "aos": "^2.3.4",
-    "gsap": "^2.1.3"
+    "gsap": "file:gsap-bonus.tgz",
+    "pixi-filters": "^3.0.3",
+    "pixi.js": "^5.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
