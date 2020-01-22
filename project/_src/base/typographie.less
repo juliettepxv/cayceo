@@ -1,10 +1,19 @@
-@import "./fonts/open-sans.less";
-@import "./fonts/libre-baskerville.less";
+@import "./fonts/montserrat.less";
+//@import "./fonts/open-sans.less";
+//@import "./fonts/libre-baskerville.less";
 
-@font-normal:'Open Sans';
-@font-titre:'Libre Baskerville';
 body{
-  font-family: @font-normal;
+  --font-normal:'Montserrat', sans-serif;
+  --font-titre:'Montserrat', sans-serif;
+
+  --fs-h1:50px;
+  --fs-h2:30px;
+  --fs-text:16px;
+  --fs-link:14px;
+
+}
+body{
+  font-family: var(--font-normal);
   font-size: 12px;
   @media(min-width: @screen-sm){
     font-size: 14px;
@@ -14,34 +23,37 @@ body{
   }
 }
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
-  font-family: @font-titre;
-  font-weight: bold;
-  //letter-spacing: -0.05em;
+  font-family: var(--font-titre);
+  font-weight: lighter;
+  text-transform: uppercase;
+  b,&.b{
+    font-weight: bold;
+  }
 }
 h1,.h1{
-  font-size: 2em;
+  font-size: var(--fs-h1);
   @media(min-width: @screen-sm){
-    font-size: 3em;
   }
   @media(min-width: @screen-lg){
-    font-size: 4vw;
   }
 
 }
 h2,.h2{
-  font-size: 1.75em;
+  font-size: var(--fs-h2);
   @media(min-width: @screen-sm){
-    font-size: 2.5em;
   }
   @media(min-width: @screen-lg){
-    font-size: 3vw;
   }
+}
+.text-link{
+  font-family: var(--font-normal);
+  text-transform: uppercase;
+  font-size: var(--fs-link);
+  font-weight: normal;
+  letter-spacing: 0.1em;
 }
 h3,.h3{
   font-size: 1.5em;
-  @media(min-width: @screen-lg){
-    font-size: 2vw;
-  }
 }
 h4,.h4{
   font-size: 1.15em;
@@ -53,7 +65,7 @@ h6,.h6{
   font-size: 0.8em;
 }
 label{
-  font-family: @font-normal;
+  font-family: var(--font-normal);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
@@ -62,6 +74,7 @@ small{
   opacity: 0.8;
   font-size: 0.8em;
 }
+
 
 
 .fsz-1{

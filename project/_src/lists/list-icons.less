@@ -1,0 +1,26 @@
+.list-icons{
+
+  --ico-size:40px;
+
+  display: flex;
+  flex-direction: row;
+  li{
+    display: flex;
+
+  }
+  .item-link{
+    padding: 15px;
+    &:first-child{
+      padding-left: 0;
+    }
+    .ico{
+      >svg{
+        width: var(--ico-size);
+        height:var(--ico-size);
+      }
+    }
+    .text{
+      display: none;
+    }
+  }
+}
