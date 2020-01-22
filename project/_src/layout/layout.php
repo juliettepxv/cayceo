@@ -66,7 +66,7 @@ if(!the()->requestUrl->isAjax){
         </main>
 
 
-        <?=$view->render("layout/nav")?>
+        <?=$view->render("nav/nav")?>
 
 
         <!--svg-collection icons-->

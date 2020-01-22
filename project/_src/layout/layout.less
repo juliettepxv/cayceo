@@ -1,15 +1,9 @@
 
 #root{
-  --nav-menu-width:300px;
-  --nav-bar-height:50px;
+  --nav-bar-height:80px;
   @media(min-width: @screen-md){
-    --nav-menu-width:400px;
-    --nav-bar-height:80px;
   }
-  //à partir de là on est plus en burger
   @media(min-width: @screen-lg){
-    //--menu-width:400px; plus d'intérêt
-    --nav-bar-height:100px;
   }
 }
 
@@ -33,5 +27,5 @@ html{
     }
   }
 }
-@import "nav.less";
+@import "project/_src/nav/nav.less";
 @import "footer.less";

@@ -22,7 +22,7 @@ export default class Site{
 
         let me=this;
 
-        require("./layout/NavMenu");
+        require("./nav/NavMenu");
         NavMenu.__init();
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
