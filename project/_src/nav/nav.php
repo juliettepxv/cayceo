@@ -2,7 +2,7 @@
 
     <div id="nav-bar" >
 
-        <button data-nav-menu-toggle class="ico-text">
+        <button nav-menu-click='toggle' class="ico-text">
             <span class="ico">
                 <?=pov()->svg->use("startup-burger")?>
             </span>
@@ -19,7 +19,7 @@
 
     <div id="nav-content">
         <?=$view->render("main-menu/main-menu")?>
-        <button data-nav-menu-toggle class="ico-text">
+        <button nav-menu-click='toggle' class="ico-text">
             <span class="text">
                 Close
             </span>

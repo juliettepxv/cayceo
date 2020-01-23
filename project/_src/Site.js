@@ -1,4 +1,6 @@
-import Slick from "./organisms/Slick.js";
+import NavMenu from "./nav/NavMenu";
+
+require("./pixi.boot");
 
 export default class Site{
     constructor() {
@@ -9,9 +11,9 @@ export default class Site{
         let me = this;
         me._initListeners();
         //---------------------go------------------------------------------
-        me.resizeStage();
         me.onDomChange();
         Site.navActive();
+        window.navMenu=new NavMenu();
     }
 
     /**
@@ -21,14 +23,10 @@ export default class Site{
     _initListeners() {
 
         let me=this;
-
-        require("./nav/NavMenu");
-        NavMenu.__init();
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
         require("./organisms/data-cards-container.js");
 
-        Slick.initFromDom();
         //require("./blocks/FormContact");
         //FormContact.initFromDom();
 
@@ -59,9 +57,7 @@ export default class Site{
 
         });
 
-        STAGE.on(EVENTS.RESIZE,function(){
-            me.resizeStage();
-        });
+
         $body.on(Pov.events.DOM_CHANGE,function(){
             me.onDomChange();
         });
@@ -81,17 +77,9 @@ export default class Site{
     }
 
     /**
-     * Adapte des élements à l'écran
-     */
-    resizeStage(){
-        //ou pas :)
-    }
-
-    /**
      * Initialisations d'objets dom
      */
     onDomChange(){
-        Slick.initFromDom();
         //ou pas :)
     }
 }

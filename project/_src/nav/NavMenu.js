@@ -1,18 +1,17 @@
-var NavMenu={
-    $nav:$("#nav"),
-    open:function(){
-        $body.addClass("nav-open");
-    },
-    close:function(){
-        $body.removeClass("nav-open");
-    },
-    toggle:function(){
-        $body.toggleClass("nav-open");
-    },
-    __init:function () {
-        $body.on("click","[data-nav-menu-toggle]",function(){
-            NavMenu.toggle()
-        })
+export default class NavMenu{
+    constructor() {
+        let me=this;
+        $body.on("click","[nav-menu-click='toggle']",function(){
+            me.toggle()
+        });
     }
-};
-window.NavMenu=NavMenu;
+    open(){
+        $body.addClass("nav-open");
+    }
+    close(){
+        $body.removeClass("nav-open");
+    }
+    toggle(){
+        $body.toggleClass("nav-open");
+    }
+}
