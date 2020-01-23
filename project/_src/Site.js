@@ -1,11 +1,14 @@
 import NavMenu from "./nav/NavMenu";
 import PixiBackground from "./PixiBackground";
+import SpeedMouse from "./speed/SpeedMouse";
 
 require("./pixi.boot");
 
 window.debug={
-    pixiResize:false
-}
+    pixiResize:false,
+    pixiMouse:true,
+    pixiScroll:true
+};
 
 
 export default class Site{
@@ -20,6 +23,7 @@ export default class Site{
         me.onDomChange();
         Site.navActive();
         window.navMenu=new NavMenu();
+        window.speedMouse=new SpeedMouse();
         window.bg=new PixiBackground("#FFFFFF");
 
     }

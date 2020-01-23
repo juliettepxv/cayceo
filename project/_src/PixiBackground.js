@@ -33,18 +33,34 @@ export default class PixiBackgrounds {
         window.addEventListener("resize", function(event){
             me.resize();
         });
-
         if(debug.pixiResize){
             this.cadre=new PIXI.Graphics();
             app.stage.addChild(this.cadre);
         }
+        if(debug.pixiMouse){
+            this.mouse=new PIXI.Graphics();
+            this.mouse.beginFill(0xEEEEEE);
+            this.mouse.drawCircle(-0,-0,10);
+            this.app.stage.addChild(this.mouse);
 
+            this.mouse2=new PIXI.Graphics();
+            this.mouse2.beginFill(0x000000);
+            this.mouse2.drawCircle(-0,-0,5);
+            this.app.stage.addChild(this.mouse2);
+
+            this.app.ticker.add(function(){
+                me.mouse.x=speedMouse.x;
+                me.mouse.y=speedMouse.y;
+                me.mouse2.x=speedMouse.x + speedMouse.speedX;
+                me.mouse2.y=speedMouse.y + speedMouse.speedY;
+            },null,PIXI.UPDATE_PRIORITY.HIGH);
+        }
         me.resize();
 
     }
 
     /**
-     * Rediemensionne canvas
+     * Redimensionne canvas
      */
     resize(){
         let me=this;
