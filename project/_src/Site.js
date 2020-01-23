@@ -1,6 +1,12 @@
 import NavMenu from "./nav/NavMenu";
+import PixiBackground from "./PixiBackground";
 
 require("./pixi.boot");
+
+window.debug={
+    pixiResize:false
+}
+
 
 export default class Site{
     constructor() {
@@ -14,6 +20,8 @@ export default class Site{
         me.onDomChange();
         Site.navActive();
         window.navMenu=new NavMenu();
+        window.bg=new PixiBackground("#FFFFFF");
+
     }
 
     /**
