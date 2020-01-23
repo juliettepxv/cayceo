@@ -27,6 +27,7 @@ if($img && $img->isImage() && $zoom){
                     ->jpg()
                     ->htmlTag()
                     ->addClass("img-responsive")
+                ->setAttribute("dom-copy","img")
                 ?>
                 <?if($zoom):?>
                     <?=pov()->svg->use("startup-zoom")?>

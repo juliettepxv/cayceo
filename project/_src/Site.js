@@ -4,6 +4,7 @@ import SpeedMouse from "./speed/SpeedMouse";
 import SpeedScroll from "./speed/SpeedScroll";
 import DomSpeedScroll from "./speed/DomSpeedScroll";
 import Utils from "./utils/Utils";
+import DomCopyManager from "./pixi/DomCopy/DomCopyManager";
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -31,10 +32,18 @@ export default class Site{
         window.speedMouse=new SpeedMouse();
         window.speedScroll=new SpeedScroll(50);
         window.bg=new PixiBackground("#FFFFFF");
+
         //dom speed scroll
         window.dss=new DomSpeedScroll();
         window.bg.app.ticker.add(function(){
             dss.updade();
+        },null,PIXI.UPDATE_PRIORITY.HIGH);
+
+        window.domCopyManager=new DomCopyManager();
+        bg.app.stage.addChild(domCopyManager.container);
+        domCopyManager.fromDom();
+        window.bg.app.ticker.add(function(){
+            domCopyManager.container.y=-speedScroll.y;
         },null,PIXI.UPDATE_PRIORITY.HIGH);
 
     }
