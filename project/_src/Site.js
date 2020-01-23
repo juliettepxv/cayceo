@@ -2,8 +2,11 @@ import NavMenu from "./nav/NavMenu";
 import PixiBackground from "./PixiBackground";
 import SpeedMouse from "./speed/SpeedMouse";
 import SpeedScroll from "./speed/SpeedScroll";
+import DomSpeedScroll from "./speed/DomSpeedScroll";
+import Utils from "./utils/Utils";
 
 require("./pixi.boot");
+require("./gsap.boot");
 
 window.debug={
     pixiResize:false,
@@ -23,10 +26,16 @@ export default class Site{
         //---------------------go------------------------------------------
         me.onDomChange();
         Site.navActive();
+        window.utils=new Utils();
         window.navMenu=new NavMenu();
         window.speedMouse=new SpeedMouse();
         window.speedScroll=new SpeedScroll(50);
         window.bg=new PixiBackground("#FFFFFF");
+        //dom speed scroll
+        window.dss=new DomSpeedScroll();
+        window.bg.app.ticker.add(function(){
+            dss.updade();
+        },null,PIXI.UPDATE_PRIORITY.HIGH);
 
     }
 
@@ -44,7 +53,7 @@ export default class Site{
         //require("./blocks/FormContact");
         //FormContact.initFromDom();
 
-        //ferme le menu quand on change d'url
+        //quand on change d'url.............
         $body.on(EVENTS.HISTORY_CHANGE_URL,function(){
             $body.attr("data-page-transition-state","start");
             //stope en attendant que la transition soit finie
@@ -53,7 +62,7 @@ export default class Site{
             setTimeout(function(){
                 PovHistory.readyToinject=true;
             },500);
-            NavMenu.close();
+            navMenu.close();
         });
 
         //changement d'url et HTML injecté

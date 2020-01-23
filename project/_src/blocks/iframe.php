@@ -23,7 +23,7 @@ if($iframe){
 ?>
 <?if(cq()->wysiwyg() || $iframeTag):?>
 
-    <div <?=$vv->wysiwyg()->openConfigOnCreate()->attr()?> class="block block-iframe py-medium">
+    <div <?=$vv->wysiwyg()->openConfigOnCreate()->attr()?> class="block block-iframe py-medium" dss="1.5">
         <div class="container">
             <div class="cadre">
                 <?if(!$iframeTag):?>

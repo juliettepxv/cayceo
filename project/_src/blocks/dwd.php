@@ -15,7 +15,7 @@ if($file){
 
 ?>
 <? if (cq()->wysiwyg() || $url): ?>
-<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-dwd py-medium">
+<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-dwd py-medium" dss="1.2">
 <div class="container">
     <? if ($url): ?>
         <label class="mb-small">

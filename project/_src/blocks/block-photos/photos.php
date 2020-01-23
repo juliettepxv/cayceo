@@ -3,7 +3,7 @@
 
 ?>
 
-<div <?= $vv->wysiwyg()->attr() ?> class="block block-photos">
+<div <?= $vv->wysiwyg()->attr() ?> class="block block-photos" dss="0.9">
     <div class="container">
         <?=$vv->wysiwyg()->field("photos")
             ->listJson("blocks/block-photos/photo-item")

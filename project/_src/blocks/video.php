@@ -10,7 +10,7 @@ if($file){
 ?>
 <? if (cq()->wysiwyg() || $src): ?>
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-video py-medium">
-<div class="container">
+<div class="container" dss="<?=1+rand(50,200)/100?>">
     <? if ($src): ?>
         <div class="cadre">
             <div class="embed-responsive embed-responsive-16by9" data-zoom-img="<?=$src?>" data-zoom-type="video">

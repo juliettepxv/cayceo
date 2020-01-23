@@ -20,6 +20,6 @@ if($img && $img->isImage()){
         ->href();
 }
 ?>
-<div <?=$vv->wysiwyg()->attr()?> data-zoom-img="<?=$imgSrc?>" class="photo-item <?=$sizeCss?>">
+<div <?=$vv->wysiwyg()->attr()?> data-zoom-img="<?=$imgSrc?>" class="photo-item <?=$sizeCss?>" dss="<?=1+rand(50,200)/100?>">
     <div class="img" style="background-image: url('<?=$imgSrc?>')"></div>
 </div>

@@ -15,7 +15,7 @@ if($img && $img->isImage() && $zoom){
     $imgZoom=$img->image()->sizeMax(1600,1600)->jpg()->href();
 }
 ?>
-<div <?=$vv->wysiwyg()->attr()?> class="block block-img py-medium">
+<div <?=$vv->wysiwyg()->attr()?> class="block block-img py-medium" dss="1">
     <div class="container">
         <div class="cadre">
             <div class="img-wrap"  <?if($imgZoom):?>data-zoom-img="<?=$imgZoom?>"<?endif;?>  >
