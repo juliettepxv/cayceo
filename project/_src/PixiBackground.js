@@ -37,6 +37,32 @@ export default class PixiBackgrounds {
             this.cadre=new PIXI.Graphics();
             app.stage.addChild(this.cadre);
         }
+        if(debug.pixiScroll){
+            let trame=PIXI.Texture.from(LayoutVars.fmkHttpRoot+"/project/img/textures/trame2.png");
+            let scroll=new PIXI.TilingSprite(
+                trame,
+                1000,
+                1000
+            );
+            let scroll2=new PIXI.TilingSprite(
+                trame,
+                1000,
+                1000
+            );
+            scroll.alpha=0.1;
+            scroll2.alpha=0.1;
+            this.app.stage.addChild(scroll);
+            this.app.stage.addChild(scroll2);
+            app.ticker.add(
+                (delta) => {
+                    scroll.tilePosition.y=-speedScroll.y;
+                    scroll2.tilePosition.y=-speedScroll.y+speedScroll.speedY;
+                }
+                ,null
+                ,PIXI.UPDATE_PRIORITY.HIGH
+            );
+
+        }
         if(debug.pixiMouse){
             this.mouse=new PIXI.Graphics();
             this.mouse.beginFill(0xEEEEEE);
@@ -55,6 +81,9 @@ export default class PixiBackgrounds {
                 me.mouse2.y=speedMouse.y + speedMouse.speedY;
             },null,PIXI.UPDATE_PRIORITY.HIGH);
         }
+
+
+
         me.resize();
 
     }
