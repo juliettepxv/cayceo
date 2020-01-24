@@ -17,16 +17,41 @@ window.debug={
 };
 
 window.perfs={
+    /**
+     * Active ou pas le smooth scroll sur les éléments dom
+     * @type {boolean}
+     */
     domScroll:true,
+    /**
+     * Active ou pas la copie d'léléments DOM vers le canvas
+     * @type {boolean}
+     */
     domCopy:true,
+    /**
+     * Active ou pas le distort d'images canvas au mouvement de la souris
+     */
     mouseTrailerDistortImages:true,
+    /**
+     * Active ou pas l'effet RGB au scroll
+     */
     scrollRGB:true,
+    /**
+     * Active ou pas l'effet distorsion au scroll
+     */
     scrollDistort:true,
 };
 
 if(PIXI.utils.isMobile.phone){
     perfs.domScroll=false;
     perfs.mouseTrailerDistortImages=false;
+}
+
+if(LayoutVars.wysiwyg){
+    perfs.domCopy=false;
+    perfs.domScroll=false;
+    perfs.mouseTrailerDistortImages=false;
+    perfs.scrollRGB=false;
+    perfs.scrollDistort=false;
 }
 
 

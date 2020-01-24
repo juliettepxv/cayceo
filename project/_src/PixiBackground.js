@@ -3,7 +3,7 @@ require("./pixi-background.less");
  * Une app canvas PIXI qui est en fond de page
  */
 export default class PixiBackgrounds {
-    constructor(backgroundColor) {
+    constructor(backgroundColor="#EEFFEE") {
         let bgColor=PIXI.utils.string2hex(backgroundColor);
         console.log(bgColor)
         let me=this;
@@ -81,17 +81,14 @@ export default class PixiBackgrounds {
                 me.mouse2.y=speedMouse.y + speedMouse.speedY;
             },null,PIXI.UPDATE_PRIORITY.HIGH);
         }
-
-
-
         me.resize();
-
     }
 
     /**
      * Redimensionne canvas
      */
     resize(){
+        console.log("resize canvas");
         let me=this;
         let w=document.body.clientWidth;
         let h=window.innerHeight;

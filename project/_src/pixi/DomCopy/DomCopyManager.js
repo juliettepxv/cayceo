@@ -21,12 +21,6 @@ export default class DomCopyManager {
          * @type {DomCopy[]}
          */
         this.all=[];
-
-        this.test=new PIXI.Graphics()
-        this.test.beginFill(0x00FF00);
-        this.test.drawCircle(0,0,500);
-        this.container.addChild(this.test);
-
         window.addEventListener("resize", function(event){
             me.resize();
         });
@@ -68,6 +62,7 @@ export default class DomCopyManager {
             }
         });
     }
+
 
     resize(){
         for(let el of this.all){
