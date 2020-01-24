@@ -10,7 +10,7 @@ function db(){return PovRedBeanFacade::inst();}
 //sql lite
 db()->setup(
     the()->fileSystem->dbSqlLitePath(
-        "mon-site-db"
+        "mon-site-db",date("Y-m-W") //backup une fois par semaine
     )
 );
 //db()->useWriterCache()
@@ -21,3 +21,5 @@ db()->debug(true,1);
 
 //Exemple pour ordonner différemment les user par exemple
 //\Classiq\Models\User::$DEFAULT_ORDER_BY="role, name";
+
+

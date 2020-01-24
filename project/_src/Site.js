@@ -46,7 +46,7 @@ if(PIXI.utils.isMobile.phone){
     perfs.mouseTrailerDistortImages=false;
 }
 
-if(LayoutVars.wysiwyg){
+if(LayoutVars.wysiwyg===true){
     perfs.domCopy=false;
     perfs.domScroll=false;
     perfs.mouseTrailerDistortImages=false;
