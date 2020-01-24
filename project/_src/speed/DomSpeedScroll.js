@@ -6,7 +6,7 @@ export default class DomSpeedScroll {
     constructor(){
 
     }
-    updade(){
+    updade(delta){
         let $els=$("[dss]");
         $els.each(function(){
             let $el=$(this);

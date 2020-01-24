@@ -6,6 +6,7 @@ import DomCopyBubulle from "./DomCopyBubulle";
 
 export default class DomCopyManager {
     constructor() {
+        let me=this;
         this.container=new PIXI.Container();
         this.bubulles=new PIXI.Container();
         this.images=new PIXI.Container();
@@ -25,6 +26,11 @@ export default class DomCopyManager {
         this.test.beginFill(0x00FF00);
         this.test.drawCircle(0,0,500);
         this.container.addChild(this.test);
+
+        window.addEventListener("resize", function(event){
+            me.resize();
+        });
+
     }
 
     /**
@@ -67,7 +73,8 @@ export default class DomCopyManager {
         for(let el of this.all){
             //if(el.active){
             el.active=true;
-                el.refreshDisplay();
+                el.positionFromDom();
+                el.resizeFromDom();
             //}
         }
     }

@@ -5,15 +5,29 @@ import SpeedScroll from "./speed/SpeedScroll";
 import DomSpeedScroll from "./speed/DomSpeedScroll";
 import Utils from "./utils/Utils";
 import DomCopyManager from "./pixi/DomCopy/DomCopyManager";
+import {RGBSplitFilter} from '@pixi/filter-rgb-split';
 
 require("./pixi.boot");
 require("./gsap.boot");
 
 window.debug={
     pixiResize:false,
-    pixiMouse:true,
-    pixiScroll:true
+    pixiMouse:false,
+    pixiScroll:false
 };
+
+window.perfs={
+    domScroll:true,
+    domCopy:true,
+    mouseTrailerDistortImages:true,
+    scrollRGB:true,
+    scrollDistort:true,
+};
+
+if(PIXI.utils.isMobile.phone){
+    perfs.domScroll=false;
+    perfs.mouseTrailerDistortImages=false;
+}
 
 
 export default class Site{
@@ -33,18 +47,86 @@ export default class Site{
         window.speedScroll=new SpeedScroll(50);
         window.bg=new PixiBackground("#FFFFFF");
 
-        //dom speed scroll
-        window.dss=new DomSpeedScroll();
-        window.bg.app.ticker.add(function(){
-            dss.updade();
-        },null,PIXI.UPDATE_PRIORITY.HIGH);
+        window.bg.app.ticker.minFPS=50;
+        window.bg.app.ticker.maxFPS=50;
 
-        window.domCopyManager=new DomCopyManager();
-        bg.app.stage.addChild(domCopyManager.container);
-        domCopyManager.fromDom();
-        window.bg.app.ticker.add(function(){
-            domCopyManager.container.y=-speedScroll.y;
-        },null,PIXI.UPDATE_PRIORITY.HIGH);
+        //dom speed scroll
+        if(perfs.domScroll){
+            window.dss=new DomSpeedScroll();
+            window.bg.app.ticker.add(function(d){
+                dss.updade(d);
+            },null,PIXI.UPDATE_PRIORITY.HIGH);
+        }
+
+
+        //copie des objets DOM dans le canvas
+        if(perfs.domCopy){
+            window.domCopyManager=new DomCopyManager();
+            bg.app.stage.addChild(domCopyManager.container);
+            domCopyManager.fromDom();
+            window.bg.app.ticker.add(function(){
+                domCopyManager.container.y=-speedScroll.y;
+                domCopyManager.resize();
+            },null,PIXI.UPDATE_PRIORITY.NORMAL);
+            window.domCopyManager.resize();
+        }
+
+
+        //----------filtres------------------
+
+        if(perfs.mouseTrailerDistortImages){
+            //distort mouse move sur les images
+            let mouseTrailer=PIXI.Sprite.from(`${LayoutVars.fmkHttpRoot}/project/_src/pixi/filters/radial-500.png`);
+            mouseTrailer.pivot.set(250,250);
+            bg.app.stage.addChild(mouseTrailer);
+            let distortMouse = new PIXI.filters.DisplacementFilter(mouseTrailer);
+            distortMouse.scale.x=0;
+            distortMouse.scale.y=0;
+            distortMouse.padding=200;
+            domCopyManager.images.filters.push(distortMouse);
+            window.bg.app.ticker.add(function(){
+                mouseTrailer.x=speedMouse.x;
+                mouseTrailer.y=speedMouse.y;
+                distortMouse.scale.x=-speedMouse.speedX * 0.2;
+                distortMouse.scale.y=-speedMouse.speedY * 0.2;
+            },null,PIXI.UPDATE_PRIORITY.NORMAL);
+        }
+
+        if(perfs.scrollRGB){
+            let rgbFilter=new RGBSplitFilter();
+            domCopyManager.images.filters.push(rgbFilter);
+            bg.app.ticker.add(delta =>
+                {
+                    rgbFilter.red=      [-speedScroll.speedY*0.1,  -speedScroll.speedY*0.2     ];
+                    rgbFilter.green=    [speedScroll.speedY*0.1,   speedScroll.speedY*0.3     ];
+                    rgbFilter.blue=     [speedScroll.speedY*0.1,   -speedScroll.speedY*0.1    ];
+                }
+                , null,
+                PIXI.UPDATE_PRIORITY.NORMAL
+            );
+        }
+
+        if(perfs.scrollDistort){
+            //distort mouse move sur les images
+            let scrollDistortImage=PIXI.TilingSprite.from(`${LayoutVars.fmkHttpRoot}/project/_src/pixi/filters/displacement_map_repeat.jpg`);
+            bg.app.stage.addChild(scrollDistortImage);
+
+            let distortScroll = new PIXI.filters.DisplacementFilter(scrollDistortImage);
+            distortScroll.scale.x=0;
+            distortScroll.scale.y=0;
+            distortScroll.padding=200;
+            domCopyManager.container.filters.push(distortScroll);
+            window.bg.app.ticker.add(function(){
+                distortScroll.scale.x=-speedScroll.speedY * 2;
+                distortScroll.scale.Y=-speedScroll.speedY * 4;
+                scrollDistortImage.width=bg.app.stage.width;
+                scrollDistortImage.height=bg.app.stage.height;
+            },null,PIXI.UPDATE_PRIORITY.NORMAL);
+        }
+
+
+
+
 
     }
 

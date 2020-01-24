@@ -17,23 +17,17 @@ if($img && $img->isImage() && $zoom){
 ?>
 <div <?=$vv->wysiwyg()->attr()?> class="block block-img py-medium" dss="1">
     <div class="container">
-        <div class="cadre">
-            <div class="img-wrap"  <?if($imgZoom):?>data-zoom-img="<?=$imgZoom?>"<?endif;?>  >
-                <?=$vv->wysiwyg()
-                    ->field("img")
-                    ->image()
-                    ->format()
-                    ->width(1200)
-                    ->jpg()
-                    ->htmlTag()
-                    ->addClass("img-responsive")
-                ->setAttribute("dom-copy","img")
-                ?>
-                <?if($zoom):?>
-                    <?=pov()->svg->use("startup-zoom")?>
-                <?endif?>
-            </div>
-
+        <div class="img-wrap"  <?if($imgZoom):?>data-zoom-img="<?=$imgZoom?>"<?endif;?>  >
+            <?=$vv->wysiwyg()
+                ->field("img")
+                ->image()
+                ->format()
+                ->width(1200)
+                ->jpg()
+                ->htmlTag()
+                ->addClass("img-responsive")
+            ->setAttribute("dom-copy","img")
+            ?>
         </div>
     </div>
 </div>

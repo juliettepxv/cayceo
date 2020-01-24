@@ -88,11 +88,8 @@ export default class DomCopyBubulle extends DomCopy{
             b.active=value;
         }
     }
-
-    refreshDisplay(){
-        super.refreshDisplay();
-        this.w=this.$dom.width();
-        this.h=this.$dom.height();
+    resizeFromDom() {
+        super.resizeFromDom();
         this.zone.clear();
         this.zone.lineStyle(1,0x0000FF,1);
         this.zone.drawRect(0,0,this.w,this.h);

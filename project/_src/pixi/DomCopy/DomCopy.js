@@ -26,21 +26,23 @@ export default class DomCopy {
         this.h=0;
     }
 
-
-    refreshDisplay(){
-        //console.log("refresh display",this);
-        let rect=this.$dom[0].getBoundingClientRect();
+    /**
+     * Donne une taille en fonction du l'objet DOM
+     */
+    resizeFromDom(){
         // w / h
         this.w=this.$dom.width();
         this.h=this.$dom.height();
-        if(this.applyResize){
-            this.sprite.width=this.w;
-            this.sprite.height=this.h;
-        }
+    }
+
+    /**
+     * Positionne l'objet en fonction du DOM
+     */
+    positionFromDom(){
         // x / y
+        let rect=this.$dom[0].getBoundingClientRect();
         this.sprite.x=rect.left;
         this.sprite.y=rect.top;
-
         if(!this.isFixed){
             this.sprite.x+=window.scrollX;
             this.sprite.y+=window.scrollY;
@@ -49,13 +51,13 @@ export default class DomCopy {
         }
     }
 
-
     get active() {return this._active;}
     set active(value) {
         //console.log("active domcopy",value);
         if(value && value !== this._active){
             //vient d'être activé
-            this.refreshDisplay();
+            this.resizeFromDom();
+            this.positionFromDom();
         }
         this._active = value;
 

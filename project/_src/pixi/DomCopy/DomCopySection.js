@@ -15,10 +15,8 @@ export default class DomCopySection extends DomCopy{
         this.sprite.addChild(this.zone);
     }
 
-    refreshDisplay(){
-        super.refreshDisplay();
-        this.w=this.$dom.width();
-        this.h=this.$dom.height();
+    resizeFromDom() {
+        super.resizeFromDom();
         this.zone.clear();
         this.zone.lineStyle(1,0x00FF00,1);
         this.zone.drawRect(0,0,this.w,this.h);
