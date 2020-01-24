@@ -12,12 +12,8 @@ if($file){
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-video py-medium">
 <div class="container" dss="<?=1+rand(50,200)/100?>">
     <? if ($src): ?>
-        <div class="cadre">
-            <div class="embed-responsive embed-responsive-16by9" data-zoom-img="<?=$src?>" data-zoom-type="video">
-                <video controls src="<?=$src?>"></video>
-                <?=pov()->svg->use("startup-zoom")?>
-            </div>
-
+        <div class="embed-responsive embed-responsive-16by9" data-zoom-img="<?=$src?>" data-zoom-type="video">
+            <video controls src="<?=$src?>"></video>
         </div>
     <? else: ?>
         <div id="cq-style">

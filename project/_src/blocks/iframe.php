@@ -25,19 +25,17 @@ if($iframe){
 
     <div <?=$vv->wysiwyg()->openConfigOnCreate()->attr()?> class="block block-iframe py-medium" dss="1.5">
         <div class="container">
-            <div class="cadre">
-                <?if(!$iframeTag):?>
-                    <div id="cq-style" class="gr">
-                        <div text-center class="cq-box cq-th-danger">
-                            Il faudrait configurer cette iframe
-                        </div>
+            <?if(!$iframeTag):?>
+                <div id="cq-style" class="gr">
+                    <div text-center class="cq-box cq-th-danger">
+                        Il faudrait configurer cette iframe
                     </div>
-                <?else:?>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <?=$iframeTag?>
-                    </div>
-                <?endif?>
-            </div>
+                </div>
+            <?else:?>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <?=$iframeTag?>
+                </div>
+            <?endif?>
         </div>
     </div>
 <?endif?>
