@@ -6,6 +6,7 @@ import DomSpeedScroll from "./speed/DomSpeedScroll";
 import Utils from "./utils/Utils";
 import DomCopyManager from "./pixi/DomCopy/DomCopyManager";
 import {RGBSplitFilter} from '@pixi/filter-rgb-split';
+import DataSocialShareClick from "data-social-share-click" ;
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -165,6 +166,9 @@ export default class Site{
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
         require("./organisms/data-cards-container.js");
+
+        let socialShares=new DataSocialShareClick();
+        socialShares.listenClicks();
 
         //require("./blocks/FormContact");
         //FormContact.initFromDom();

@@ -9,9 +9,10 @@
     "composer-update": "composer update"
   },
   "dependencies": {
-    "event-emitter-es6": "^1.1.5",
     "@pixi/filter-rgb-split": "^3.0.3",
     "aos": "^2.3.4",
+    "data-social-share-click": "0.0.5",
+    "event-emitter-es6": "^1.1.5",
     "gsap": "file:gsap-bonus.tgz",
     "pixi-filters": "^3.0.3",
     "pixi.js": "^5.2.0"
