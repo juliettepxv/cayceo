@@ -188,11 +188,13 @@ export default class Site{
         //changement d'url et HTML injecté
         $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED_INJECTED,function(){
             $body.attr("data-page-transition-state","end");
+            setTimeout(function(){
+                $body.removeAttr("data-page-transition-state");
+            },1000)
             me.onDomChange();
             //scroll top
             $(window).scrollTop(0);
             Site.navActive();
-
             if(typeof gtag !== 'undefined' && LayoutVars.googleAnalyticsId){
                 //hit google analytics
                 gtag('config', LayoutVars.googleAnalyticsId, {'page_path': location.pathname});
