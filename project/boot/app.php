@@ -22,7 +22,7 @@ if(User::connected()){
 }
 if(the()->human->isAdmin){
     //conf backoffice
-    \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanBrowse=["Page","Project"];
+    \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanBrowse=["Page","Project","Nav"];
     \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanCreate=["Page","Project"];
     \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanSelect=["Page","Project"];
 }

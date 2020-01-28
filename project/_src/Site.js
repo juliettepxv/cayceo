@@ -7,6 +7,7 @@ import Utils from "./utils/Utils";
 import DomCopyManager from "./pixi/DomCopy/DomCopyManager";
 import {RGBSplitFilter} from '@pixi/filter-rgb-split';
 import DataSocialShareClick from "data-social-share-click" ;
+import BricksManager from "./bricks/BricksManager";
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -69,6 +70,7 @@ export default class Site{
         Site.navActive();
         window.utils=new Utils();
         window.navMenu=new NavMenu();
+        window.bricksManager=new BricksManager();
         window.speedMouse=new SpeedMouse();
         window.speedScroll=new SpeedScroll(50);
         window.bg=new PixiBackground("#FFFFFF");
@@ -226,5 +228,7 @@ export default class Site{
      */
     onDomChange(){
         //ou pas :)
+
+
     }
 }

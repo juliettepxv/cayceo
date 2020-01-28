@@ -31,7 +31,8 @@ class Site extends AbstractSingleton
         "blocks/block-logos/block-logos",
         "blocks/iframe",
         "blocks/video",
-        "blocks/dwd"
+        "blocks/dwd",
+        "blocks/block-projets/projets"
     ];
 
     /**

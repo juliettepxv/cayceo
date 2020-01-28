@@ -1,6 +1,6 @@
 <?php
 /**
- * @var Page $vv
+ * @var \Classiq\Models\Project $vv
  */
 
 use Classiq\Models\Classiqmodel;
@@ -17,7 +17,10 @@ use Classiq\Models\Page;
         <?=$view->render("./tip-errors")?>
         <div>
             <div class="title" title="<?=$vv->name?>"><?=$vv->name?></div>
-            <div class="type"><?=$vv->name_lang?></div>
+            <div class="type"
+                 style="color: #<?=utils()->color->randHex(0.5,0.5,$vv->kind)?>">
+                <?=$vv->kind?>
+            </div>
             <a target="_blank" href="<?=$vv->href()?>" class="type"><?=$vv->modelType()?>@<?=$vv->id?></a>
         </div>
 

@@ -3,16 +3,14 @@
 use Classiq\Models\Page;
 $view->inside("layout/layout",$vv);
 ?>
-<div class="py-big project-page">
-
+<div class="pt-big project-page">
         <div class="container text-center">
-
             <?//titres---------------------------------------?>
             <?=$vv->wysiwyg()
                 ->field("titre_lang")
                 ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
                 ->setMediumButtons(["bold","removeFormat"])
-                ->setPlaceholder("Titre ici")
+                ->setPlaceholder("Titre ici ($vv->name)")
                 //->setDefaultValue($vv->name)
                 ->htmlTag("h1")
             ?>
@@ -35,7 +33,7 @@ $view->inside("layout/layout",$vv);
                     ->format()
                     ->bgColor("88ffff")
                     ->displayIfEmpty(true)
-                    ->sizeMax(400,400)
+                    ->sizeMax(400,200)
                     ->png()
                     ->htmlTag("logoclient", $vv->name,false )?>
                 <?=$vv->wysiwyg()
@@ -46,7 +44,7 @@ $view->inside("layout/layout",$vv);
                     ->format()
                     ->bgColor("eeeeee")
                     ->displayIfEmpty(true)
-                    ->sizeMax(1280,800)
+                    ->sizeMax(1280,600)
                     ->jpg()
                     ->htmlTag("poster", $vv->name,false )?>
             </div>
@@ -95,7 +93,27 @@ $view->inside("layout/layout",$vv);
         ?>
 
 
+        <div class="next-one">
+            <a href="<?=$vv->next()->href()?>">
+                <?=trad("projet suivant")?>
+                <?=$vv->next()->name?>
+            </a>
+        </div>
 
+
+
+    <?/*
+    //debug news
+    <?
+    $liste=\Classiq\Models\Project::getList(\Classiq\Models\Project::LIST_NAME_PROJETS);
+    $records=\Classiq\Models\Project::getList(\Classiq\Models\Project::LIST_NAME_PROJETS,true);
+    ?>
+    <div>
+      <?foreach ($records as $r):?>
+      <div><?=$r->uid()?></div>
+        <?endforeach;?>
+    </div>
+    */?>
 
 
 </div>
