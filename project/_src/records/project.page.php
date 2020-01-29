@@ -91,14 +91,9 @@ $view->inside("layout/layout",$vv);
             ->htmlTag()
             ->addClass("blocks mt-big");
         ?>
+        <?=$view->render("components/next",$vv)?>
 
 
-        <div class="next-one">
-            <a href="<?=$vv->next()->href()?>">
-                <?=trad("projet suivant")?>
-                <?=$vv->next()->name?>
-            </a>
-        </div>
 
 
 
