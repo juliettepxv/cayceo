@@ -102,7 +102,7 @@ class Project extends Page
      * @return string
      */
     private function getDefaultListName(){
-        return self::LIST_NAME_PROJETS; //todo gérer les news aussi (une fois qu'on aura du contenu dans la liste news en fait)
+        //return self::LIST_NAME_PROJETS; //todo gérer les news aussi (une fois qu'on aura du contenu dans la liste news en fait)
         switch (true) {
             case $this->isNews():
                 return self::LIST_NAME_NEWS;
