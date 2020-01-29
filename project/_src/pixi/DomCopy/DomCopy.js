@@ -3,6 +3,8 @@
 export default class DomCopy {
 
     constructor($dom){
+        console.log("build dom copy");
+        let me=this;
         /**
          *
          * @type {PIXI.Container}
@@ -24,6 +26,16 @@ export default class DomCopy {
         this.applyResize=true;
         this.w=0;
         this.h=0;
+
+        let $scrollActiveSelector=$dom.add($dom.closest("[scroll-active]"));
+
+
+        $scrollActiveSelector.on("SCROLL_ACTIVE",function(){
+            me.active=true;
+        });
+        $scrollActiveSelector.on("SCROLL_INACTIVE",function(){
+            me.active=false;
+        });
     }
 
     /**
@@ -66,11 +78,7 @@ export default class DomCopy {
         }else{
             this.container.removeChild(this.sprite);
         }
-        //this.sprite.visible=value;
-    }
-
-    checkDomActive(){
-        this.active=this.$dom.is(".is-active");
+        this.sprite.visible=value;
     }
 
 }

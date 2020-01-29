@@ -66,11 +66,10 @@ export default class DomCopyManager {
 
     resize(){
         for(let el of this.all){
-            //if(el.active){
-            el.active=true;
+            if(el.active){
                 el.positionFromDom();
                 el.resizeFromDom();
-            //}
+            }
         }
     }
 }

@@ -91,7 +91,6 @@ export default class Site{
             },null,PIXI.UPDATE_PRIORITY.HIGH);
         }
 
-
         //copie des objets DOM dans le canvas
         if(perfs.domCopy){
             window.domCopyManager=new DomCopyManager();

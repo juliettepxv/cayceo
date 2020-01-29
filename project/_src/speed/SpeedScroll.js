@@ -2,6 +2,7 @@ export default class SpeedScroll{
 
     constructor(smoothFactor=20,magnifyFactor=10) {
         let me=this;
+        this.active=false;
         /**
          * Position y du scroll
          * @type {number}
@@ -12,6 +13,12 @@ export default class SpeedScroll{
          * @type {number}
          */
         this.speedY=0;
+        /**
+         *
+         * @type {number}
+         * @private
+         */
+        this._oldSpeedY=0;
 
         this._yy=0;
 
@@ -25,6 +32,8 @@ export default class SpeedScroll{
             if(Math.abs(me.speedY)<0.01){
                 me.speedY=0;
             }
+            me.active = !(me.speedY === 0 && me._oldSpeedY === 0);
+            me._oldSpeedY=me.speedY;
             me._yy=me.y;
         },10);
     }

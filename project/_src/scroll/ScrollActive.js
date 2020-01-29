@@ -27,28 +27,11 @@ export default class ScrollActive {
             let $el=$(entry.target);
             if(active){
                 $el.attr("scroll-active","1");
+                $el.trigger("SCROLL_ACTIVE");
             }else{
                 $el.attr("scroll-active","");
+                $el.trigger("SCROLL_INACTIVE")
             }
-            /**
-             *
-             * @type {DomCopy}
-             */
-            let domCopy=$el.data("domCopy");
-            //console.log("active dom",$el);
-            if(domCopy){
-                domCopy.active=active;
-            }
-            //console.log("obj",entry.isIntersecting,entry.target);
-            // chaque élément de entries correspond à une variation
-            // d'intersection pour un des éléments cible:
-            //   entry.boundingClientRect
-            //   entry.intersectionRatio
-            //   entry.intersectionRect
-            //   entry.isIntersecting
-            //   entry.rootBounds
-            //   entry.target
-            //   entry.time
         });
     }
 }

@@ -4,17 +4,20 @@
 export default class DomSpeedScroll {
 
     constructor(){
-        this._oldSpeed=speedScroll.speedY;
     }
+
+    /**
+     * Fait bouger tous les dom speed scroll actifs
+     * @param delta
+     */
     updade(delta){
-        if(this._oldSpeed===0 && speedScroll.speedY===0){
+        if(!speedScroll.active){
             return;
         }
-        this._oldSpeed=speedScroll.speedY;
         let $els=$("[dss]");
         $els=$els.not("[scroll-active=''][dss]");
         $els=$els.not("[scroll-active=''] [dss]");
-        console.log("dom speed scroll",$els.length);
+        //console.log("bouge "+$els.length+" dom-speed-scroll éléments",);
         $els.each(function(){
             let $el=$(this);
             let f=Number($(this).attr("dss"));
