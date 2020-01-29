@@ -28,8 +28,8 @@ if($fichier){
 
 ?>
 <?if($href):?>
-    <a dss="<?=1+rand(50,200)/100?>" class="item" <?=$vv->wysiwyg()->attr()?> href="<?=$href?>" target="_blank"> <?=$imgTag?> </a>
+    <a dss="<?=1+rand(10,100)/100?>" class="item" <?=$vv->wysiwyg()->attr()?> href="<?=$href?>" target="_blank"> <?=$imgTag?> </a>
 <?else:?>
-    <span dss="<?=1+rand(50,200)/100?>" class="item" <?=$vv->wysiwyg()->attr()?>> <?=$imgTag?> </span>
+    <span dss="<?=1+rand(10,100)/100?>" class="item" <?=$vv->wysiwyg()->attr()?>> <?=$imgTag?> </span>
 <?endif?>
 

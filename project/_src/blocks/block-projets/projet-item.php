@@ -14,7 +14,7 @@ if($projet){
 ?>
 <?if($projet):?>
 
-    <div class="projet-item" scroll-active="" <?=$vv->wysiwyg()->attr()?>>
+    <div class="projet-item" scroll-active="" dss="<?=rand(10,100)/100?>" <?=$vv->wysiwyg()->attr()?>>
 
         <?if($img):?>
             <img src="<?=$img->httpPath()?>" width="<?=$img->image_width?>" height="<?=$img->image_height?>">

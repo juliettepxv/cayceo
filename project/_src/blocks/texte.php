@@ -6,7 +6,7 @@
  */
 ?>
 <div <?=$vv->wysiwyg()->attr()?> scroll-active="" class="block block-texte py-medium">
-    <div class="container" dss="<?=1+rand(50,200)/100?>">
+    <div class="container" dss="1">
             <?=$vv->wysiwyg()
                 ->field("texte_lang")
                 ->string(\Pov\Utils\StringUtils::FORMAT_HTML)

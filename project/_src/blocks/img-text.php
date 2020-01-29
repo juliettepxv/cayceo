@@ -10,10 +10,10 @@ $img = $vv->targetUid(true);
 $invert=$vv->getData("invert")?"invert":"";
 ?>
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> scroll-active="" class="block block-img-text <?=$invert?>">
-    <div class="container" dss="1">
+    <div class="container">
     <div class="row">
 
-        <div class="col-6" dss="<?=1+rand(50,200)/100?>">
+        <div class="col-6" dss="1.1">
             <? if ($img && $img->isImage()): ?>
             <div class="block-img py-medium" >
                 <div class="img-wrap" data-zoom-img="<?= $img->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
@@ -35,7 +35,7 @@ $invert=$vv->getData("invert")?"invert":"";
             <? endif ?>
         </div>
 
-        <div class="col-6" dss="<?=1+rand(50,200)/100?>">
+        <div class="col-6" dss="1.1">
             <div class="block-texte py-medium">
                 <?= $vv->wysiwyg()
                     ->field("texte_lang")

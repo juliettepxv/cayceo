@@ -23,6 +23,6 @@ if($img && $img->isImage()){
 <div <?=$vv->wysiwyg()->attr()?>
         scroll-active=""
         data-zoom-img="<?=$imgSrc?>"
-        class="photo-item <?=$sizeCss?>" dss="<?=1+rand(50,200)/100?>" >
+        class="photo-item <?=$sizeCss?>" dss="<?=rand(10,100)/100?>" >
     <div class="img" style="background-image: url('<?=$imgSrc?>')" dom-copy="img" src="<?=$imgSrc?>"></div>
 </div>
