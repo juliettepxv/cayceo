@@ -7,8 +7,8 @@ export default class UtilsMath{
      * @returns {number}
      */
     range(input,min=0,max=100){
-        input=Math.min(input,max);
         input=Math.max(input,min);
+        input=Math.min(input,max);
         return input;
     }
 

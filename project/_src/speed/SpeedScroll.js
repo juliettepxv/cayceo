@@ -21,6 +21,10 @@ export default class SpeedScroll{
         setInterval(function(){
             let sy=(me._yy-me.y)*magnifyFactor;
             me.speedY=(me.speedY*smoothFactor+sy)/(smoothFactor+1);
+            me.speedY=utils.math.range(me.speedY,-20,20);
+            if(Math.abs(me.speedY)<0.01){
+                me.speedY=0;
+            }
             me._yy=me.y;
         },10);
     }

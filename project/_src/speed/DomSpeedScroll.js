@@ -4,10 +4,15 @@
 export default class DomSpeedScroll {
 
     constructor(){
-
+        this._oldSpeed=speedScroll.speedY;
     }
     updade(delta){
+        if(this._oldSpeed===0 && speedScroll.speedY===0){
+            return;
+        }
+        this._oldSpeed=speedScroll.speedY;
         let $els=$("[dss]");
+        console.log("dom speed scroll",$els.length);
         $els.each(function(){
             let $el=$(this);
             let f=Number($(this).attr("dss"));
