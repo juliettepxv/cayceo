@@ -9,7 +9,7 @@
 $img = $vv->targetUid(true);
 $invert=$vv->getData("invert")?"invert":"";
 ?>
-<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-img-text <?=$invert?>">
+<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> scroll-active="" class="block block-img-text <?=$invert?>">
     <div class="container" dss="1">
     <div class="row">
 
@@ -22,6 +22,7 @@ $invert=$vv->getData("invert")?"invert":"";
                         ->jpg()
                         ->htmlTag()
                         ->addClass("img-responsive")
+                        ->setAttribute("dom-copy",'img')
                     ?>
                 </div>
             </div>

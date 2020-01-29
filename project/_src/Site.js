@@ -3,6 +3,7 @@ import PixiBackground from "./PixiBackground";
 import SpeedMouse from "./speed/SpeedMouse";
 import SpeedScroll from "./speed/SpeedScroll";
 import DomSpeedScroll from "./speed/DomSpeedScroll";
+import ScrollActive from "./scroll/ScrollActive";
 import Utils from "./utils/Utils";
 import DomCopyManager from "./pixi/DomCopy/DomCopyManager";
 import {RGBSplitFilter} from '@pixi/filter-rgb-split';
@@ -64,11 +65,15 @@ export default class Site{
          * @type {Site}
          */
         let me = this;
+
+        window.utils=new Utils();
+        window.scrollActive=new ScrollActive();
+
         me._initListeners();
         //---------------------go------------------------------------------
         me.onDomChange();
         Site.navActive();
-        window.utils=new Utils();
+
         window.navMenu=new NavMenu();
         window.bricksManager=new BricksManager();
         window.speedMouse=new SpeedMouse();
@@ -227,8 +232,6 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
-        //ou pas :)
-
-
+        scrollActive.observe();
     }
 }

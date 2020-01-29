@@ -20,6 +20,9 @@ if($img && $img->isImage()){
         ->href();
 }
 ?>
-<div <?=$vv->wysiwyg()->attr()?> data-zoom-img="<?=$imgSrc?>" class="photo-item <?=$sizeCss?>" dss="<?=1+rand(50,200)/100?>" >
+<div <?=$vv->wysiwyg()->attr()?>
+        scroll-active=""
+        data-zoom-img="<?=$imgSrc?>"
+        class="photo-item <?=$sizeCss?>" dss="<?=1+rand(50,200)/100?>" >
     <div class="img" style="background-image: url('<?=$imgSrc?>')" dom-copy="img" src="<?=$imgSrc?>"></div>
 </div>

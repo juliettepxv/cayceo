@@ -6,7 +6,7 @@
  */
 $style=$vv->getData("style","h2")
 ?>
-<div <?=$vv->wysiwyg()->attr()?> class="block block-titre py-medium">
+<div <?=$vv->wysiwyg()->attr()?>scroll-active="" class="block block-titre py-medium">
     <div class="container" dss="1">
             <?=$vv->wysiwyg()
                 ->field("texte_lang")

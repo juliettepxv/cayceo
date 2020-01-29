@@ -12,6 +12,8 @@ export default class DomSpeedScroll {
         }
         this._oldSpeed=speedScroll.speedY;
         let $els=$("[dss]");
+        $els=$els.not("[scroll-active=''][dss]");
+        $els=$els.not("[scroll-active=''] [dss]");
         console.log("dom speed scroll",$els.length);
         $els.each(function(){
             let $el=$(this);
