@@ -1,6 +1,7 @@
 require("./scroll-active.less");
 /**
  * Permet de gérer les éléments actifs à l'écran ou non et ainsi améliorer les performances
+ * ATTENTION ce module a un impact important sur pas mal d'autres modules
  */
 export default class ScrollActive {
     constructor() {

@@ -61,6 +61,28 @@ export default class DomCopyManager {
                 me.all.push(copy);
             }
         });
+        this.garbage();
+    }
+
+    /**
+     * Supprime les DOM copy qui ne sont plus dans le DOM
+     */
+    garbage(){
+        let me=this;
+        let newAll=[];
+        for(let el of me.all){
+            if(!document.body.contains(el.$dom[0])){
+                el.sprite.destroy({
+                    children:true,
+                    //texture:true,
+                    //baseTexture:true
+                });
+                console.log("delete dom copy");
+            }else{
+                newAll.push(el);
+            }
+        }
+        me.all=newAll.concat([]);
     }
 
 
