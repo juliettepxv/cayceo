@@ -23,9 +23,9 @@ export default class BricksManager {
         let sizes = [
             { columns: 1, gutter: 15 },                   // assumed to be mobile, because of the missing mq property
             { mq: '576px', columns: 1, gutter: 15 },
-            { mq: '768px', columns: 2, gutter: 30 },
-            { mq: '992px', columns: 2, gutter: 30 },
-            { mq: '1200px', columns: 3, gutter: 30 },
+            { mq: '768px', columns: 2, gutter: 60 },
+            { mq: '992px', columns: 3, gutter: 10 },
+            { mq: '1200px', columns: 3, gutter: 90 },
         ];
 
         let $containers=$("[bricks='']");
