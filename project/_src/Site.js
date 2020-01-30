@@ -211,7 +211,10 @@ export default class Site{
 
         $body.on(Pov.events.DOM_CHANGE,function(){
             me.onDomChange();
-            domCopyManager.fromDom();
+            if(perfs.domCopy){
+                domCopyManager.fromDom();
+            }
+
         });
 
 
