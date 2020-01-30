@@ -4,29 +4,36 @@ use Classiq\Models\JsonModels\ListItem;
 
 /** @var \Classiq\Models\Project $projet */
 $projet=$vv->targetUid(true);
-$sizeCss=$vv->getData("size","col-6 col-md-3");
 $img=null;
 if($projet){
     $img=$projet->thumbnail(true);
-
 }
+$css=$img?"has-img":"";
 
 ?>
-<?if($projet):?>
+<?if($projet || cq()->wysiwyg()):?>
 
-    <div class="projet-item" scroll-active="" dss="<?=rand(10,100)/100?>" <?=$vv->wysiwyg()->attr()?>>
+    <div class="projet-item <?=$css?>"
+         scroll-active="" dss="<?=rand(10,100)/100?>" <?=$vv->wysiwyg()->attr()?>>
 
         <?if($img):?>
             <img src="<?=$img->httpPath()?>" width="<?=$img->image_width?>" height="<?=$img->image_height?>">
         <?endif;?>
 
-        <div>
+        <?if($projet):?>
+        <div class="texts">
             <h2><?=$projet->name?></h2>
             <a class="button naked sz-normal px-none" href="<?=$projet->href()?>">
-                <?=pov()->svg->use("startup-caret-right")?>
                 Découvrir
+                <?=pov()->svg->use("startup-caret-right")?>
             </a>
         </div>
+        <?endif;?>
+
+        <?if($vv->getData("decoAfter")):?>
+        <div class="deco"></div>
+        <?endif?>
+
     </div>
 
 <?endif?>

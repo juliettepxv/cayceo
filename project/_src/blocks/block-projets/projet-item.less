@@ -1,0 +1,43 @@
+.projet-item{
+
+  position: relative;
+  user-select: none;
+
+
+
+  //couleurs
+  color:var(--color-1);
+
+
+
+  &.has-img{
+
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    .texts{
+      text-align: left;
+      background-color: var(--color-bleu-lighter);
+    }
+  }
+
+
+  h2{
+    font-weight: bold;
+    line-height: 1;
+    .mb-medium;
+  }
+  .button{
+    text-transform: uppercase;
+    >svg{
+      margin-left: var(--spacing-small) !important;
+    }
+  }
+  .texts{
+    text-align: center;
+    .py-medium;
+    .px-small;
+  }
+
+}

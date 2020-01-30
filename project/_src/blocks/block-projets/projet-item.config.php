@@ -9,24 +9,18 @@
 
 ?>
 
-<label>Image</label>
+<label>Projet ou news</label>
 <?=$vv->wysiwyg()->field("targetUid")
-    ->file()
+    ->recordPicker("project",false)
     ->onSavedRefreshListItem($vv)
-    ->button()
+    ->buttonRecord()
     ->render()
 ?>
-<label>Format</label>
-<?=$vv->wysiwyg()->field("size")
-    ->string()
+<label>Placer des décorations?</label>
+<?=$vv->wysiwyg()->field("decoAfter")
+    ->bool()
     ->onSavedRefreshListItem($vv)
-    ->setDefaultValue("col-6 col-md-3")
-    ->select([
-            "petit"=>"col-6 col-md-3",
-            "moyen"=>"col-6 col-md-6",
-            "grand"=>"col-6 col-md-9",
-    ])
-
+    ->checkbox("Après")
 ?>
 
 

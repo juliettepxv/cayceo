@@ -20,6 +20,29 @@ body{
   --color-orange:#FF5722;
   --color-bleu:#0091E7;
   --color-bleu-lighter:#EEF0FF;
+
+  [color-theme='orange']{
+     --color-1:var(--color-orange);
+     --color-2:var(--color-orange);
+  }
+  [color-theme='blue']{
+    --color-1:var(--color-bleu);
+    --color-2:var(--color-bleu);
+  }
+  [color-theme='sunrise']{
+    --color-1:var(--color-violet);
+    --color-2:var(--color-magenta);
+  }
+
+  [color-theme]{
+    --color-primary: var(--color-1);
+  }
+
+
+
+
+
+
   --color-white:#ffffff;
   --color-black:#000000;
 
