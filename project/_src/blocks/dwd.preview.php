@@ -1,3 +1,3 @@
 <label>Téléchargement</label>
-<?=cq()->icoWysiwyg("cloud-download")?>
+<?=pov()->svg->use("cq-cloud-download")?>
 

@@ -1,4 +1,4 @@
 <label>logo</label>
-<?=cq()->icoWysiwyg("art-texture")?>
+<?=pov()->svg->use("cq-art-texture")?>
 <input type="file" multiple="multiple" accept="image/*">
 

@@ -1,3 +1,3 @@
 <label>iFrame</label>
-<?=cq()->icoWysiwyg("code")?>
+<?=pov()->svg->use("cq-code")?>
 

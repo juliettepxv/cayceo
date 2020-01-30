@@ -1,3 +1,3 @@
 <label>Titre</label>
-<?=cq()->icoWysiwyg("art-typo")?>
+<?=pov()->svg->use("cq-art-typo")?>
 

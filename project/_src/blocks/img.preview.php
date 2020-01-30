@@ -1,3 +1,3 @@
 <label>Image</label>
-<?=cq()->icoWysiwyg("images-image")?>
+<?=pov()->svg->use("cq-images-image")?>
 

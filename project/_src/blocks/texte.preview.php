@@ -1,3 +1,3 @@
 <label>Texte</label>
-<?=cq()->icoWysiwyg("text-align-center")?>
+<?=pov()->svg->use("cq-text-align-center")?>
 
