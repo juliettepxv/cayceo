@@ -20,7 +20,7 @@ export default class UtilsMath{
      * @returns {number}
      */
     rand(min,max,step=1.0){
-        return window.round(Math.random() * (max - min ) + min,step)
+        return this.round(Math.random() * (max - min ) + min,step)
     };
     /**
      * Arrondit un nombre
