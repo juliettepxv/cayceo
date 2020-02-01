@@ -87,6 +87,7 @@ export default class DomCopyManager {
 
 
     resize(){
+        console.log("resize")
         for(let el of this.all){
             if(el.active){
                 el.positionFromDom();

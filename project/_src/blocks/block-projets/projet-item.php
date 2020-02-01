@@ -31,7 +31,7 @@ $css=$img?"has-img":"";
         <?endif;?>
 
         <?if($vv->getData("decoAfter")):?>
-        <div class="deco">bubulles ici</div>
+        <div class="deco" dom-copy="bubulle">bubulles ici</div>
         <?endif?>
 
     </div>

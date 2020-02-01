@@ -42,6 +42,16 @@ window.perfs={
      * Active ou pas l'effet distorsion au scroll
      */
     scrollDistort:true,
+    /**
+     * Active ou pas le mouvement des bubulles
+     */
+    bubullesMotion:true,
+    /**
+     * Active ou pas le mouvement des textures
+     */
+    bubullesTexture:true,
+    bubullesZone:false
+
 };
 
 if(PIXI.utils.isMobile.phone){
@@ -98,7 +108,7 @@ export default class Site{
             domCopyManager.fromDom();
             window.bg.app.ticker.add(function(){
                 domCopyManager.container.y=-speedScroll.y;
-                domCopyManager.resize();
+                //domCopyManager.resize();
             },null,PIXI.UPDATE_PRIORITY.NORMAL);
             window.domCopyManager.resize();
         }

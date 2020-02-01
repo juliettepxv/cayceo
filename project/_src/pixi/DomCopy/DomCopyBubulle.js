@@ -1,33 +1,64 @@
 import DomCopy from "./DomCopy";
 import * as PIXI from "pixi.js";
-/*
-import BubulleGFX from "../../bubulles/BubulleGFX";
-import BubulleMask from "../../bubulles/BubulleMask";
-import BubulleSimple from "../../bubulles/BubulleSimple";
-*/
+
+import BubulleGFX from "../bubulles/BubulleGFX";
+import BubulleMask from "../bubulles/BubulleMask";
+import BubulleSimple from "../bubulles/BubulleSimple";
+
 export default class DomCopyBubulle extends DomCopy{
+
+
+    _getColor(){
+        let r={
+            color1:"FF0000",
+            color2:"0000FF",
+        };
+        let color=this.$dom.closest("[color-theme]").attr("color-theme");
+        switch (color) {
+            case "blue":
+                r.color1="558CDF";
+                r.color2="252F84";
+                break;
+            case "orange":
+
+                r.color1="DF6331";
+                r.color2="DC3A45";
+                break;
+            case "sunrise":
+                r.color1="AF3050";
+                r.color2="2C2172";
+                break;
+        }
+
+        return r;
+    }
+
     constructor($dom){
         super($dom);
+        console.log("new bubulle");
         /**
          *
          * @type {Page}
          */
         this.page=$dom.closest(".preview").data("page");
-        this.color1=this.page.colors.a;
-        this.color2=this.page.colors.b;
+
+        this.color1=this._getColor().color1;
+        this.color2=this._getColor().color2;
 
         let me=this;
         this.sprite=new PIXI.Container();
         this.applyResize=false;
 
+        if(perfs.bubullesZone){
+            this.zone=new PIXI.Graphics();
+            this.zone.lineStyle(1,0x0000FF,1);
+            this.zone.drawRect(0,0,100,100);
+            this.sprite.addChild(this.zone);
+        }
 
-        this.zone=new PIXI.Graphics();
-        this.zone.lineStyle(1,0x0000FF,1);
-        this.zone.drawRect(0,0,100,100);
-        //this.sprite.addChild(this.zone);
 
         this.bubulles=[];
-        for(let i=0;i<rand(2,4);i++){
+        for(let i=0;i<utils.math.rand(2,3);i++){
             let b=this._randomBubulle();
             b.container=this;
             this.bubulles.push(b);
@@ -41,39 +72,73 @@ export default class DomCopyBubulle extends DomCopy{
      * @private
      */
     _randomBubulle(){
+
+        let src=LayoutVars.fmkHttpRoot+"/project/_src/pixi/bubulles";
+        let trames=[
+            `${src}/trames/trame1.png`,
+            `${src}/trames/trame2.png`
+        ];
+        let pleins=[
+            `${src}/plein/fill1.png`,
+            `${src}/plein/fill2.png`,
+            `${src}/plein/fill3.png`,
+            `${src}/plein/fill4.png`,
+        ];
+        let lignes=[
+            `${src}/lignes/line1.png`,
+            `${src}/lignes/line2.png`,
+            `${src}/lignes/line3.png`,
+            `${src}/lignes/line4.png`,
+        ];
+        let geoms=[
+            `${src}/geom/disk1.png`,
+            `${src}/geom/disk2.png`,
+            `${src}/geom/trait1.png`,
+            `${src}/geom/circle1.png`,
+            `${src}/geom/circle2.png`,
+        ];
+
+
         /**
          *
          * @type {Bubulle}
          */
         let b=null;
-        let r=rand(1,7);
+        let r=utils.math.rand(1,9);
         switch (r) {
+
             case 1:
-                b=new BubulleSimple("./src/bubulles/a.png",this.color1,this.color2);
-                break;
-
             case 2:
-                b=new BubulleSimple("./src/bubulles/b.png",this.color1,this.color2);
-                break;
-
             case 3:
-                b=new BubulleSimple("./src/bubulles/contour.png",this.color1,this.color2);
-                break;
-
             case 4:
-                b=new BubulleGFX("./src/bubulles/trait.png",this.color1,this.color2);
+                b=new BubulleSimple(
+                    utils.array.randomEntry(pleins),
+                    this.color1,this.color2
+                );
                 break;
 
             case 5:
-                b=new BubulleGFX("./src/bubulles/cercle.png",this.color1,this.color2);
+                b=new BubulleSimple(
+                    utils.array.randomEntry(lignes),
+                    this.color1,this.color2
+                );
                 break;
 
             case 6:
-                b=new BubulleMask("./src/bubulles/a.png","./src/bubulles/trame-traits.png",this.color1,this.color2);
+            case 7:
+                b=new BubulleGFX(
+                    utils.array.randomEntry(geoms),
+                    this.color1,this.color2
+                );
                 break;
 
-            case 7:
-                b=new BubulleMask("./src/bubulles/masque1.png","./src/bubulles/trame-points.png",this.color1,this.color2);
+            case 8:
+            case 9:
+                b=new BubulleMask(
+                    utils.array.randomEntry(pleins),
+                    utils.array.randomEntry(trames),
+                    this.color1,this.color2
+                );
                 break;
 
         }
@@ -90,9 +155,13 @@ export default class DomCopyBubulle extends DomCopy{
     }
     resizeFromDom() {
         super.resizeFromDom();
-        this.zone.clear();
-        this.zone.lineStyle(1,0x0000FF,1);
-        this.zone.drawRect(0,0,this.w,this.h);
+        console.log("resize bubulle")
+        if(perfs.bubullesZone){
+            this.zone.clear();
+            this.zone.lineStyle(1,0x0000FF,1);
+            this.zone.drawRect(0,0,this.w,this.h);
+        }
+
         for(let b of this.bubulles){
             b.limits.right=this.w;
             b.limits.bottom=this.h;
