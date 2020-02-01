@@ -77,9 +77,9 @@ export default class Site{
         window.navMenu=new NavMenu();
         window.bricksManager=new BricksManager();
         window.speedMouse=new SpeedMouse();
-        window.speedScroll=new SpeedScroll(50);
-        window.bg=new PixiBackground("#FFFFFF");
 
+        window.bg=new PixiBackground("#FFFFFF");
+        window.speedScroll=new SpeedScroll(30,10);
         window.bg.app.ticker.minFPS=50;
         window.bg.app.ticker.maxFPS=50;
 
