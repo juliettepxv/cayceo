@@ -2,14 +2,26 @@
   .py-big;
   //background-color: #1ab7ea;
   .container{
-    //outline: 1px dashed yellow;
+    outline: 1px dashed #ffe968;
 
     [bricks]{
       //pour centrer...
-      //margin-left: auto;
-      //margin-right: auto;
+      margin-left: auto;
+      margin-right: auto;
       >*{
         width: 300px;
+        @media(min-width: 576px){
+          width: 480px;
+        }
+        @media(min-width: 768px){
+          width: 320px;
+        }
+        @media(min-width: 992px){
+          width: 280px;
+        }
+        @media(min-width: @screen-xl){
+          width: 340px;
+        }
       }
 
       .deco{
