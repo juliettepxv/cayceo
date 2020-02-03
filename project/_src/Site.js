@@ -24,7 +24,7 @@ window.perfs={
      * Active ou pas le smooth scroll sur les éléments dom
      * @type {boolean}
      */
-    domScroll:true,
+    domScroll:false,
     /**
      * Active ou pas la copie d'léléments DOM vers le canvas
      * @type {boolean}
