@@ -6,9 +6,10 @@
  */
 $style=$vv->getData("style","h2");
 $color=$vv->getData("color","orange");
+$align=$vv->getData("align","left");
 ?>
 <div <?=$vv->wysiwyg()->attr()?>scroll-active="" class="block block-titre py-medium" color-theme="<?=$color?>">
-    <div class="container" dss="1">
+    <div class="container <?=$align?>" dss="1">
             <?=$vv->wysiwyg()
                 ->field("texte_lang")
                 ->string(\Pov\Utils\StringUtils::FORMAT_HTML)

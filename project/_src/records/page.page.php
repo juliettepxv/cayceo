@@ -5,6 +5,7 @@ $view->inside("layout/layout",$vv);
 ?>
 <div class="py-big">
 
+        <?/*
         <div class="container">
             <?=$vv->wysiwyg()
                 ->field("name_lang")
@@ -14,7 +15,7 @@ $view->inside("layout/layout",$vv);
                 ->addClass("mb-big")
             ?>
         </div>
-
+        */?>
         <?=$vv->wysiwyg()->field("blocks")
             ->listJson(site()->blocksList)
             ->htmlTag()
