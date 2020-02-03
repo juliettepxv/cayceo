@@ -75,7 +75,7 @@ use Classiq\Models\Project;
                 //->setDefaultValue($vv->name)
                 ->setPlaceholder("Descriptif du projet")
                 ->htmlTag("div")
-                ->addClass("rich-text")
+                ->addClass("rich-text fg-grey")
             ?>
         </div>
     </div>
