@@ -50,6 +50,9 @@ window.perfs={
      * Active ou pas le mouvement des textures
      */
     bubullesTexture:true,
+    /**
+     * Affiche la zone des bubulles ou pas
+     */
     bubullesZone:false
 
 };
@@ -150,7 +153,9 @@ export default class Site{
 
         if(perfs.scrollDistort){
             //distort mouse move sur les images
-            let scrollDistortImage=PIXI.TilingSprite.from(`${LayoutVars.fmkHttpRoot}/project/_src/pixi/filters/displacement_map_repeat.jpg`);
+            let scrollDistortImage=PIXI.TilingSprite.from(
+                `${LayoutVars.fmkHttpRoot}/project/_src/pixi/filters/gradient-1.jpg`
+            );
             bg.app.stage.addChild(scrollDistortImage);
 
             let distortScroll = new PIXI.filters.DisplacementFilter(scrollDistortImage);
@@ -159,8 +164,8 @@ export default class Site{
             distortScroll.padding=200;
             domCopyManager.container.filters.push(distortScroll);
             window.bg.app.ticker.add(function(){
-                distortScroll.scale.x=-speedScroll.speedY * 2;
-                distortScroll.scale.Y=-speedScroll.speedY * 4;
+                distortScroll.scale.x=-speedScroll.speedY * 0.5;
+                distortScroll.scale.Y=-speedScroll.speedY * 0.5;
                 scrollDistortImage.width=bg.app.stage.width;
                 scrollDistortImage.height=bg.app.stage.height;
             },null,PIXI.UPDATE_PRIORITY.NORMAL);
