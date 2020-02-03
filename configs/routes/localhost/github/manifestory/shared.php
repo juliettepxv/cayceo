@@ -9,7 +9,7 @@ the()->configProjectUrl->forceHttps=false;
 // Traductions ui.
 // trads manifestory only
 the()->project->config_translations_csv_url="https://docs.google.com/spreadsheets/d/1RHoObPPW-YId5Az-VuAsEllszPMh5n_NB170BaUkIfg/export?gid=0&format=csv";
-the()->project->config_translations_debug=true; //quand true recharge à chaque fois le CSV
+the()->project->config_translations_debug=false; //quand true recharge à chaque fois le CSV
 
 //config options
 
