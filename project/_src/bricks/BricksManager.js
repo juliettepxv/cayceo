@@ -26,6 +26,7 @@ export default class BricksManager {
             { mq: '768px', columns: 2, gutter: 20 },
             { mq: '992px', columns: 3, gutter: 30 },
             { mq: '1200px', columns: 3, gutter: 30 },
+            { mq: '1600px', columns: 3, gutter: 30 },
         ];
 
         let $containers=$("[bricks='']");

@@ -24,6 +24,18 @@ $css=$img?"has-img":"";
              dss="<?=rand(50,100)/100?>"
              <?if($projet):?>href="<?=$projet->href()?>"<?endif;?>
         >
+
+            <?=$projet->wysiwyg()
+                ->field("logoclient")
+                ->image()
+                ->contextMenuSize(SIZE_SMALL)
+                ->contextMenuPosition(POSITION_CENTER)
+                ->format()
+                ->displayIfEmpty(true)
+                ->sizeMax(200,200)
+                ->png()
+                ->htmlTag("logoclient", $projet->name,false )?>
+
             <?if($img):?>
                 <img class="thumb" alt=""
                      src="<?=$img->httpPath()?>"
