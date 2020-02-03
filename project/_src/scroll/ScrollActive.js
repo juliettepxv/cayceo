@@ -12,12 +12,13 @@ export default class ScrollActive {
         let me=this;
         let options = {
             root: null,
-            rootMargin: '200px'
+            rootMargin: '8000px'
         };
         $("[scroll-active]").not("[scroll-active-init]").each(function(){
-            $(this).attr("scroll-active-init","");
+            let $el=$(this);
+            $el.attr("scroll-active-init","");
             let observer = new IntersectionObserver(me.onChange, options);
-            observer.observe($(this)[0]);
+            observer.observe($el[0]);
         });
 
     }

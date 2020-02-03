@@ -19,7 +19,7 @@ export default class BubulleMask extends BubulleSimple{
         this.cont.addChild(this.trameMask);
         this.trameMask.blendMode=PIXI.BLEND_MODES.DST_IN;
         this.sprite.addChild(this.mask);
-        this.sprite.pivot.set(100,100);
+        //this.sprite.pivot.set(100,100);
         this.cont.mask=this.mask;
 
 
@@ -34,7 +34,7 @@ export default class BubulleMask extends BubulleSimple{
                     return;
                 }
                 if(me.active){
-                    me.trameMask.tilePosition.y+=0.5 * delta;
+                    me.trameMask.tilePosition.y+=0.05 * delta;
                 }
             };
             bg.app.ticker.add(loop,null,PIXI.UPDATE_PRIORITY.LOW);

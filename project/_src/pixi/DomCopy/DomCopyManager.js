@@ -87,11 +87,26 @@ export default class DomCopyManager {
 
 
     resize(){
-        console.log("resize")
+        //console.log("resize");
         for(let el of this.all){
             if(el.active){
                 el.positionFromDom();
                 el.resizeFromDom();
+            }
+        }
+    }
+
+    setScroll(){
+        this.container.y=-speedScroll.y;
+
+    }
+
+
+    positionne(){
+        //console.log("positionne");
+        for(let el of this.all){
+            if(el.active){
+                el.positionFromDom();
             }
         }
     }

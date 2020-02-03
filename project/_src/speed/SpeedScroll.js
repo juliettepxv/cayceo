@@ -23,15 +23,29 @@ export default class SpeedScroll{
          */
         this._oldSpeedY=0;
 
-
+        if(perfs.scrollWheel){
+            window.addEventListener("wheel",function(e){
+                let delta=e.deltaY;
+                e.preventDefault();
+                //delta=utils.math.range(delta,-200,200);
+                window.scrollTo(0, Math.round(window.scrollY+delta));
+            },{ passive: false });
+        }
 
         addEventListener("scroll", function(e) {
             me.y=window.scrollY;
+            if(perfs.domCopy){
+                domCopyManager.setScroll();
+            }
+
+            //bg.app.render();
+            //domCopyManager.positionne();
         });
 
 
 
         bg.app.ticker.add(function(){
+            //domCopyManager.setScroll();
             me.update()
         },PIXI.UPDATE_PRIORITY.HIGH);
 

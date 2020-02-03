@@ -3,7 +3,7 @@
 export default class DomCopy {
 
     constructor($dom){
-        console.log("build dom copy");
+        //console.log("build dom copy");
         let me=this;
         /**
          *
@@ -42,6 +42,7 @@ export default class DomCopy {
      * Donne une taille en fonction du l'objet DOM
      */
     resizeFromDom(){
+        //console.log("resize from dom")
         // w / h
         this.w=this.$dom.width();
         this.h=this.$dom.height();
@@ -51,6 +52,7 @@ export default class DomCopy {
      * Positionne l'objet en fonction du DOM
      */
     positionFromDom(){
+        //console.log("position from dom")
         // x / y
         let rect=this.$dom[0].getBoundingClientRect();
         this.sprite.x=rect.left;
@@ -72,13 +74,13 @@ export default class DomCopy {
             this.positionFromDom();
         }
         this._active = value;
-
         if(this._active){
             this.container.addChild(this.sprite);
         }else{
             this.container.removeChild(this.sprite);
         }
-        this.sprite.visible=value;
+
+        //this.sprite.visible=value;
     }
 
 }

@@ -6,7 +6,7 @@ export default class BubulleSimple extends Bubulle{
         super(color1,color2);
         let me=this;
         this.sprite=new PIXI.Sprite;
-        this.sprite.anchor.set(0.5);
+        //this.sprite.anchor.set(0.5);
         this.mask=PIXI.Sprite.from(mask);
         const degrade = this.gradient("#"+this.color1,"#"+this.color2);
         this.fill=PIXI.Sprite.from(degrade);
@@ -17,8 +17,8 @@ export default class BubulleSimple extends Bubulle{
             me.fill.width=me.mask.width;
             me.fill.height=me.mask.height;
             //centre l'image
-            me.sprite.pivot.set(me.mask.width/2,me.mask.height/2);
-            //me.sprite.cacheAsBitmap=true;
+            //me.sprite.pivot.set(me.mask.width/2,me.mask.height/2);
+
         });
 
     }

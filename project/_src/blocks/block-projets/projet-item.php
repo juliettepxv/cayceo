@@ -14,7 +14,9 @@ $css=$img?"has-img":"";
 <?if($projet || cq()->wysiwyg()):?>
 
     <div class="projet-item <?=$css?>"
-         scroll-active="" dss="<?=rand(50,100)/100?>" <?=$vv->wysiwyg()->attr()?>>
+        scroll-active=""
+        dss="<?=rand(50,100)/100?>"
+        <?=$vv->wysiwyg()->attr()?>>
 
         <?if($img):?>
             <img src="<?=$img->httpPath()?>" width="<?=$img->image_width?>" height="<?=$img->image_height?>">

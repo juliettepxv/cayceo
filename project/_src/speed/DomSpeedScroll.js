@@ -30,5 +30,9 @@ export default class DomSpeedScroll {
                 }
             );
         });
+        if(perfs.domCopy){
+            domCopyManager.positionne();
+        }
+
     }
 }

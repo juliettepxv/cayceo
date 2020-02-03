@@ -16,10 +16,10 @@ require("./gsap.boot");
 window.debug={
     pixiResize:false,
     pixiMouse:false,
-    pixiScroll:false
 };
 
 window.perfs={
+    scrollWheel:true,
     /**
      * Active ou pas le smooth scroll sur les éléments dom
      * @type {boolean}
@@ -29,27 +29,27 @@ window.perfs={
      * Active ou pas la copie d'léléments DOM vers le canvas
      * @type {boolean}
      */
-    domCopy:true,
+    domCopy:false,
     /**
      * Active ou pas le distort d'images canvas au mouvement de la souris
      */
-    mouseTrailerDistortImages:true,
+    mouseTrailerDistortImages:false,
     /**
      * Active ou pas l'effet RGB au scroll
      */
-    scrollRGB:true,
+    scrollRGB:false,
     /**
      * Active ou pas l'effet distorsion au scroll
      */
-    scrollDistort:true,
+    scrollDistort:false,
     /**
      * Active ou pas le mouvement des bubulles
      */
-    bubullesMotion:true,
+    bubullesMotion:false,
     /**
      * Active ou pas le mouvement des textures
      */
-    bubullesTexture:true,
+    bubullesTexture:false,
     /**
      * Affiche la zone des bubulles ou pas
      */
@@ -110,9 +110,9 @@ export default class Site{
             bg.app.stage.addChild(domCopyManager.container);
             domCopyManager.fromDom();
             window.bg.app.ticker.add(function(){
-                domCopyManager.container.y=-speedScroll.y;
+                domCopyManager.setScroll();
                 //domCopyManager.resize();
-            },null,PIXI.UPDATE_PRIORITY.NORMAL);
+            },null,PIXI.UPDATE_PRIORITY.HIGH);
             window.domCopyManager.resize();
         }
 
@@ -164,10 +164,12 @@ export default class Site{
             distortScroll.padding=200;
             domCopyManager.container.filters.push(distortScroll);
             window.bg.app.ticker.add(function(){
-                distortScroll.scale.x=-speedScroll.speedY * 0.5;
-                distortScroll.scale.Y=-speedScroll.speedY * 0.5;
-                scrollDistortImage.width=bg.app.stage.width;
-                scrollDistortImage.height=bg.app.stage.height;
+                let factorX=-speedScroll.speedY * 0.5;
+                factorX=utils.math.range(factorX,-50,50);
+                distortScroll.scale.x=factorX;
+                distortScroll.scale.Y=factorX;
+                //scrollDistortImage.width=bg.app.stage.width;
+                //scrollDistortImage.height=bg.app.stage.height;
             },null,PIXI.UPDATE_PRIORITY.NORMAL);
         }
 
