@@ -1,23 +1,28 @@
-.project-page{
+.project-page {
 
-  color: var(--color-1,#FFFC00);
+  color: var(--color-1, #FFFC00);
 
-  .images{
+  .images {
     position: relative;
-    >img{
+
+    > img {
       position: relative;
     }
-    .logoclient{
-      height: 100px;
-      margin-bottom: -50px;
+
+    .logoclient {
+      width: 300px;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: -150px;
       z-index: 2;
-      padding: 20px;
       //transform: translateY(50%);
-      background-color: #fff;
+      //background-color: #fff;
       object-fit: contain;
     }
-    .poster{
-      z-index:1;
+
+    .poster {
+      z-index: 1;
       width: 100%;
       height: auto;
       max-height: 70vh;
@@ -26,34 +31,52 @@
     }
   }
 
-  .tags{
-    >*{
+  .tags {
+    > * {
       .mb-small;
     }
   }
 
-  .social-shares{
+  .social-shares {
     margin-left: -5px; //juste histoire de caler les icones sur les tags
   }
 
   //bubulles à la fin
-  .bubulles{
+  .bubulles-end {
     display: flex;
     align-items: center;
     justify-content: center;
     .my-big;
-    >[bubulles-html]{
+
+    > [bubulles-html] {
       width: 400px;
       height: 400px;
     }
   }
 
+  .project-header {
+    //bubulles à la fin
+
+    .images{
+      position: relative;
+      .bubulles-header {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        left: -200px;
+
+        .my-big;
+
+        > [bubulles-html] {
+          width: 400px;
+          height: 400px;
+        }
+      }
+    }
 
 
 
-
-
-
+  }
 
 
 }

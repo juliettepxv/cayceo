@@ -12,13 +12,14 @@ $view->inside("layout/layout",$vv);
         <?endif;?>
 
 
+
         <?=$vv->wysiwyg()->field("blocks")
             ->listJson(site()->blocksList)
             ->htmlTag()
             ->addClass("blocks mt-big");
         ?>
 
-        <div class="bubulles">
+        <div class="bubulles-end">
             <?=$view->render("bubulles/normal",$vv)?>
         </div>
 

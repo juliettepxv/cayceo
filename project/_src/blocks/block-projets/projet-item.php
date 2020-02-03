@@ -18,11 +18,10 @@ $css=$img?"has-img":"";
 
 ?>
 <?if($projet || cq()->wysiwyg()):?>
-    <div>
+    <div <?=$vv->wysiwyg()->attr()?>>
         <div class="projet-item <?=$css?>"
              scroll-active=""
              dss="<?=rand(50,100)/100?>"
-            <?=$vv->wysiwyg()->attr()?>
              <?if($projet):?>href="<?=$projet->href()?>"<?endif;?>
         >
             <?if($img):?>

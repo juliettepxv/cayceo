@@ -4,7 +4,7 @@ use Classiq\Models\Project;
 
 ?>
 
-<div class="container text-center">
+<div class="container text-center project-header">
     <?//titres---------------------------------------?>
     <?=$vv->wysiwyg()
         ->field("titre_lang")
@@ -33,7 +33,7 @@ use Classiq\Models\Project;
             ->format()
             ->bgColor("88ffff")
             ->displayIfEmpty(true)
-            ->sizeMax(400,200)
+            ->sizeMax(400,400)
             ->png()
             ->htmlTag("logoclient", $vv->name,false )?>
         <?=$vv->wysiwyg()
@@ -47,7 +47,13 @@ use Classiq\Models\Project;
             ->sizeMax(1280,600)
             ->jpg()
             ->htmlTag("poster", $vv->name,false )?>
+
+        <div class="bubulles-header">
+            <?=$view->render("bubulles/normal",$vv)?>
+        </div>
     </div>
+
+
 
 
     <div class="row text-left mt-big">
