@@ -27,7 +27,9 @@ $css=$img?"has-img":"";
     >
 
         <?if($img):?>
-            <img src="<?=$img->httpPath()?>" width="<?=$img->image_width?>" height="<?=$img->image_height?>">
+            <img class="thumb" alt=""
+                 src="<?=$img->httpPath()?>"
+                 width="<?=$img->image_width?>" height="<?=$img->image_height?>">
         <?endif;?>
 
         <?if($projet):?>
@@ -41,7 +43,7 @@ $css=$img?"has-img":"";
         <?endif;?>
 
         <?if($vv->getData("decoAfter")):?>
-        <div class="deco" dom-copy="bubulle">bubulles ici</div>
+        <?=$view->render("bubulles/normal")?>
         <?endif?>
 
     </div>
