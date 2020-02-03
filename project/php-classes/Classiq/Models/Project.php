@@ -15,6 +15,8 @@ use Pov\Image\ImgUrl;
  *
  * @property String $logoclient
  * @property String $kind
+ * @property String $newsdate
+ *
  *
  *
  */
@@ -154,6 +156,30 @@ class Project extends Page
         }else{
             return $nav;
         }
+    }
+
+    /**
+     * Renvoie la date de la news
+     * @return \String
+     */
+    public function newsDate($format="d F Y"){
+        if($this->newsdate){
+            $d= \DateTime::createFromFormat("Y-m-d",$this->newsdate);
+        }else{
+            return "";
+        }
+        return utils()->date->translate($d->format($format));
+    }
+
+    /**
+     * Renvoie la couleur associée à la page
+     * @return string
+     */
+    public function colorTheme(){
+        if($this->isNews()){
+            return "blue";
+        }
+        return "orange";
     }
 
 

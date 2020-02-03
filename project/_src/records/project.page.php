@@ -3,7 +3,7 @@
 use Classiq\Models\Project;
 $view->inside("layout/layout",$vv);
 ?>
-<div class="pt-big project-page">
+<div class="pt-big project-page" color-theme="<?=$vv->colorTheme()?>">
 
         <?if($vv->isNews()):?>
             <?=$view->render("./project.news.header")?>
@@ -17,6 +17,12 @@ $view->inside("layout/layout",$vv);
             ->htmlTag()
             ->addClass("blocks mt-big");
         ?>
+
+        <div class="bubulles">
+            <?=$view->render("bubulles/normal",$vv)?>
+        </div>
+
+
         <?=$view->render("components/next",$vv)?>
 
 

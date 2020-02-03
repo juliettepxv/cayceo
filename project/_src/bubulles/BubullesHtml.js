@@ -23,6 +23,9 @@ export default class BubullesHtml{
             let $el=$(this);
             $el.attr("bubulles-html-init","1");
             let color=$el.closest("[color-theme]").attr("color-theme");
+            if(!color){
+                color="orange";
+            }
             $el.text(color);
             let svgUrl=null;
             let file=null;

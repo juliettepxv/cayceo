@@ -41,7 +41,13 @@
             ?>
         </fieldset>
     <?else:?>
-
+        <fieldset>
+            <label><?=cq()->tradWysiwyg("Date de la news")?></label>
+            <?=$vv->wysiwyg()->field("newsdate")
+                ->string()
+                ->input("date")
+            ?>
+        </fieldset>
     <?endif?>
 
 </div>
