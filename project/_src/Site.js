@@ -9,6 +9,7 @@ import DomCopyManager from "./pixi/DomCopy/DomCopyManager";
 import {RGBSplitFilter} from '@pixi/filter-rgb-split';
 import DataSocialShareClick from "data-social-share-click" ;
 import BricksManager from "./bricks/BricksManager";
+import BubullesHtml from "./bubulles/BubullesHtml";
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -81,6 +82,7 @@ export default class Site{
 
         window.utils=new Utils();
         window.scrollActive=new ScrollActive();
+        window.bubullesHtml=new BubullesHtml();
 
         me._initListeners();
         //---------------------go------------------------------------------
@@ -95,6 +97,8 @@ export default class Site{
         window.speedScroll=new SpeedScroll(30,10);
         window.bg.app.ticker.minFPS=50;
         window.bg.app.ticker.maxFPS=50;
+
+
 
         //dom speed scroll
         if(perfs.domScroll){
@@ -232,6 +236,8 @@ export default class Site{
                 domCopyManager.fromDom();
             }
 
+
+
         });
 
 
@@ -252,6 +258,7 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
+        bubullesHtml.fromDom();
         scrollActive.observe();
     }
 }
