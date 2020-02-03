@@ -5,12 +5,28 @@ use Classiq\Models\JsonModels\ListItem;
 /** @var \Classiq\Models\Project $projet */
 $projet=$vv->targetUid(true);
 $img=null;
-$text="...";
+$video=null;
+/** @var \Classiq\Models\Filerecord $media */
+$media=$vv->getDataAsRecord("media");
+if($media){
+    if($media->isVideo()){
+        $video=$media;
+    }
+    if($media->isImage()){
+        $img=$media;
+    }
+}
+
+$defaultText="...";
 if($projet){
-    $img=$projet->thumbnail(true);
-    $text=$projet->name;
+    if(!$img && $video){
+        $img=$projet->thumbnail(true);
+    }
+
+    $logo=$projet->logoClient(true);
+    $defaultText=$projet->name;
     if($projet->titre_lang){
-        $text=$projet->titre_lang;
+        $defaultText=$projet->titre_lang;
     }
 }
 $css=$img?"has-img":"";
@@ -22,29 +38,34 @@ $css=$img?"has-img":"";
         <div class="projet-item <?=$css?>"
              scroll-active=""
              dss="<?=rand(50,100)/100?>"
-             <?if($projet):?>href="<?=$projet->href()?>"<?endif;?>
+             <?if($projet && !cq()->wysiwyg()):?>href="<?=$projet->href()?>"<?endif;?>
         >
+            <?if($img || $video):?>
+                <?if($logo):?>
+                    <img class="logoclient" alt=""
+                         src="<?=$logo->httpPath()?>"
+                         width="<?=$logo->image_width?>" height="<?=$logo->image_height?>">
+                <?endif?>
 
-            <?=$projet->wysiwyg()
-                ->field("logoclient")
-                ->image()
-                ->contextMenuSize(SIZE_SMALL)
-                ->contextMenuPosition(POSITION_CENTER)
-                ->format()
-                ->displayIfEmpty(true)
-                ->sizeMax(200,200)
-                ->png()
-                ->htmlTag("logoclient", $projet->name,false )?>
+                <?if($img):?>
+                    <img class="thumb" alt=""
+                         src="<?=$img->httpPath()?>"
+                         width="<?=$img->image_width?>" height="<?=$img->image_height?>">
+                <?endif;?>
+                <?if($video):?>
+                    <video class="thumb video" src="<?=$video->httpPath()?>" muted="muted"></video>
+                <?endif;?>
 
-            <?if($img):?>
-                <img class="thumb" alt=""
-                     src="<?=$img->httpPath()?>"
-                     width="<?=$img->image_width?>" height="<?=$img->image_height?>">
             <?endif;?>
 
             <?if($projet):?>
                 <div class="texts">
-                    <h2><?=$text?></h2>
+                    <?=$vv->wysiwyg()
+                        ->field("text_lang")
+                        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                        ->setDefaultValue($defaultText)
+                        ->htmlTag("h2")
+                    ?>
                     <a class="button naked sz-normal px-none" href="<?=$projet->href()?>">
                         Découvrir
                         <?=pov()->svg->use("startup-caret-right")?>
