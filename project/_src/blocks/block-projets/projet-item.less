@@ -17,8 +17,11 @@
       height: auto;
     }
     .texts{
+      min-height: 300px;
       text-align: left;
+      align-items: flex-start;
       background-color: var(--color-bleu-lighter);
+      justify-content: space-between;
     }
   }
 
@@ -35,9 +38,13 @@
     }
   }
   .texts{
+    display: flex;
+    justify-content: center;
     text-align: center;
+    flex-direction: column;
     .py-medium;
-    .px-small;
+    .px-medium;
+    min-height: 400px;
   }
 
 }
