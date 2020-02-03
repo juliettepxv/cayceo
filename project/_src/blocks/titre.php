@@ -5,19 +5,24 @@
  *
  */
 $style=$vv->getData("style","h2");
-$color=$vv->getData("color","orange");
 $align=$vv->getData("align","left");
+$color=$vv->getData("color","orange");
+$colorInvert=$vv->getData("colorInvert");
 ?>
-<div <?=$vv->wysiwyg()->attr()?>scroll-active="" class="block block-titre py-medium" color-theme="<?=$color?>">
+<div <?=$vv->wysiwyg()->attr()?>scroll-active=""
+     class="block block-titre py-medium"
+     color-theme="<?=$color?>" color-invert="<?=$colorInvert?>">
+
     <div class="container <?=$align?>" dss="1">
-            <?=$vv->wysiwyg()
-                ->field("texte_lang")
-                ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-                ->setPlaceholder("Saisissez votre titre")
-                ->setMediumButtons(["bold","removeFormat"])
-                ->htmlTag("h2")
-                ->addClass("tt-sous-titre $style")
-            ?>
+        <?=$vv->wysiwyg()
+            ->field("texte_lang")
+            ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+            ->setPlaceholder("Saisissez votre titre")
+            ->setMediumButtons(["bold","removeFormat"])
+            ->htmlTag("h2")
+            ->addClass("tt-sous-titre $style")
+        ?>
     </div>
+
 </div>
 

@@ -1,11 +1,11 @@
 <?php
 /** @var Classiq\Models\JsonModels\ListItem $vv */
-$color="sunrise";
-
+$color=$vv->getData("color","orange");
+$colorInvert=$vv->getData("colorInvert");
 ?>
 
-<div <?= $vv->wysiwyg()->attr() ?> class="block block-team">
-    <div class="container" color-theme="<?=$color?>">
+<div <?= $vv->wysiwyg()->attr() ?> class="block block-team" color-theme="<?=$color?>" color-invert="<?=$colorInvert?>">
+    <div class="container" >
         <?=$vv->wysiwyg()
             ->field("items")
             ->listJson("blocks/block-team/team-item")

@@ -6,15 +6,16 @@ use Classiq\Models\JsonModels\ListItem;
  */
 ?>
 
-<label>Quelle liste ?</label>
-<?=$vv->wysiwyg()->field("listName")
+<label>Couleur</label>
+<?= $vv->wysiwyg()->field("color")
     ->string()
     ->onSavedRefreshListItem($vv)
-    ->setDefaultValue(\Classiq\Models\Project::LIST_NAME_PROJETS)
-    ->select([
-        \Classiq\Models\Project::LIST_NAME_PROJETS,
-        \Classiq\Models\Project::LIST_NAME_NEWS,
-    ]);
+    ->select(["orange","blue","sunrise"])
+?>
+<?=$vv->wysiwyg()->field("colorInvert")
+    ->bool()
+    ->onSavedRefreshListItem($vv)
+    ->checkbox("Couleurs inversées")
 ?>
 
 
