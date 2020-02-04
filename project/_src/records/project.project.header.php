@@ -1,7 +1,7 @@
 <?php
 /** @var Project $vv */
 use Classiq\Models\Project;
-
+$img=$vv->thumbnail(true);
 ?>
 
 <div class="container text-center project-header">
@@ -25,17 +25,19 @@ use Classiq\Models\Project;
 
     <?//images---------------------------------------?>
     <div class="images mt-big">
+        <?if($img || cq()->isAdmin()): //logo uniquement si image aussi ou bien admin?>
         <?=$vv->wysiwyg()
             ->field("logoclient")
             ->image()
             ->contextMenuSize(SIZE_SMALL)
             ->contextMenuPosition(POSITION_CENTER)
             ->format()
-            ->bgColor("88ffff")
-            ->displayIfEmpty(true)
+            ->bgColor("cccccc")
+            ->displayIfEmpty(cq()->wysiwyg()) //afficher vide que si admin
             ->sizeMax(400,400)
             ->png()
             ->htmlTag("logoclient", $vv->name,false )?>
+        <?endif?>
         <?=$vv->wysiwyg()
             ->field("thumbnail")
             ->image()
@@ -43,14 +45,16 @@ use Classiq\Models\Project;
             ->contextMenuPosition(POSITION_CENTER)
             ->format()
             ->bgColor("eeeeee")
-            ->displayIfEmpty(true)
+            ->displayIfEmpty(cq()->wysiwyg())  //afficher vide que si admin
             ->sizeMax(1280,600)
             ->jpg()
-            ->htmlTag("poster", $vv->name,false )?>
+            ->htmlTag("poster", $vv->name,true )?>
+        <?if($img):?>
+            <div class="bubulles-header">
+                <?=$view->render("bubulles/normal",$vv)?>
+            </div>
+        <?endif?>
 
-        <div class="bubulles-header">
-            <?=$view->render("bubulles/normal",$vv)?>
-        </div>
     </div>
 
 
