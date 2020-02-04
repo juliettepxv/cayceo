@@ -29,11 +29,24 @@
       height: 300px;
       object-fit: cover;
     }
-    img.thumb{
-      max-width: 100%;
-      height: auto;
-      display: block;
-      filter: brightness(0.9);
+    .thumb{
+      width: 100%;
+      position: relative;
+      >img{
+        filter: brightness(0.9);
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      >video{
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //object-fit: contain;
+      }
     }
     .texts{
       min-height: 300px;

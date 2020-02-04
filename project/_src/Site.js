@@ -10,6 +10,7 @@ import {RGBSplitFilter} from '@pixi/filter-rgb-split';
 import DataSocialShareClick from "data-social-share-click" ;
 import BricksManager from "./bricks/BricksManager";
 import BubullesHtml from "./bubulles/BubullesHtml";
+import VideoThumbnail from "./components/VideoThumbnail";
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -98,6 +99,7 @@ export default class Site{
         window.utils=new Utils();
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
+        window.videoThumbnail=new VideoThumbnail();
 
         me._initListeners();
         //---------------------go------------------------------------------
@@ -107,6 +109,7 @@ export default class Site{
         window.navMenu=new NavMenu();
         window.bricksManager=new BricksManager();
         window.speedMouse=new SpeedMouse();
+
 
         window.bg=new PixiBackground("#FFFFFF");
         window.speedScroll=new SpeedScroll(5,1);
@@ -276,6 +279,7 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
+        videoThumbnail.fromDom();
         bubullesHtml.fromDom();
         scrollActive.observe();
     }

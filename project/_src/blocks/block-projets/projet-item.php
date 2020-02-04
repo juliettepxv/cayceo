@@ -4,58 +4,57 @@ use Classiq\Models\JsonModels\ListItem;
 
 /** @var \Classiq\Models\Project $projet */
 $projet=$vv->targetUid(true);
-$img=null;
-$video=null;
 
-/** @var \Classiq\Models\Filerecord $media */
-/*
-$media=$vv->getDataAsRecord("media");
-if($media){
-    if($media->isVideo()){
-        $video=$media;
-    }
-    if($media->isImage()){
-        $img=$media;
-    }
-}
-*/
+/** @var \Classiq\Models\Filerecord $logo */
+$logo=null;
+
+/** @var \Classiq\Models\Filerecord $img */
+$img=$vv->getDataAsRecord("image");
+
+/** @var \Classiq\Models\Filerecord $video */
+$video=$vv->getDataAsRecord("video");
+
+/** @var String $defaultText */
 $defaultText="...";
-if($projet){
-    //if(!$img && $video){
-        $img=$projet->thumbnail(true);
-    //}
 
+if($projet){
+    if(!$img){
+        $img=$projet->thumbnail(true);
+    }
     $logo=$projet->logoClient(true);
-    $defaultText=$projet->name;
+    //texte par défaut
+    $defaultText=$projet->name; //name
     if($projet->titre_lang){
-        $defaultText=$projet->titre_lang;
+        $defaultText=$projet->titre_lang; //
     }
 }
 $css=$img?"has-img":"";
+$attr=$video?"video-thumbnail":"";
 
 
 ?>
 <?if($projet || cq()->wysiwyg()):?>
-    <div <?=$vv->wysiwyg()->attr()?> scroll-active="">
+    <div <?=$vv->wysiwyg()->attr()?> scroll-active="" <?=$attr?> >
         <div class="projet-item <?=$css?>"
              dss="<?=rand(50,100)/100?>"
              <?if($projet && !cq()->wysiwyg()):?>href="<?=$projet->href()?>"<?endif;?>
         >
-            <?if($img || $video):?>
+            <?if($img):?>
+
                 <?if($logo):?>
                     <img class="logoclient" alt=""
                          src="<?=$logo->httpPath()?>"
                          width="<?=$logo->image_width?>" height="<?=$logo->image_height?>">
                 <?endif?>
 
-                <?if($img):?>
-                    <img class="thumb" alt=""
+                <div class="thumb">
+                    <img alt=""
                          src="<?=$img->httpPath()?>"
                          width="<?=$img->image_width?>" height="<?=$img->image_height?>">
-                <?endif;?>
-                <?if($video):?>
-                    <video class="thumb video" src="<?=$video->httpPath()?>" muted="muted"></video>
-                <?endif;?>
+                    <?if($video):?>
+                        <video class="thumb video" src="<?=$video->httpPath()?>" muted="muted" loop="loop" preload="none"></video>
+                    <?endif;?>
+                </div>
 
             <?endif;?>
 

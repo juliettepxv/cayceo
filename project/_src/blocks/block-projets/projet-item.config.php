@@ -16,18 +16,29 @@
     ->buttonRecord()
     ->render()
 ?>
-
-<label>Media?</label>
-<?=$vv->wysiwyg()->field("media")
+<label>Image</label>
+<?=$vv->wysiwyg()->field("image")
     ->recordPicker("filerecord",false)
     ->onlyFiles()
+    ->setMimeAcceptImagesOnly()
+    ->onSavedRefreshListItem($vv)
+    ->buttonRecord()
+    ->render()
+
+?>
+<label>video</label>
+<?=$vv->wysiwyg()->field("video")
+    ->recordPicker("filerecord",false)
+    ->onlyFiles()
+    ->setMimeAcceptVideoOnly()
+    ->onSavedRefreshListItem($vv)
     ->buttonRecord()
     ->render()
 
 ?>
 
 <h4>Esthétique</h4>
-<label>Placer des décorations?</label>
+<label>Placer des bubulle?</label>
 <?=$vv->wysiwyg()->field("decoAfter")
     ->bool()
     ->onSavedRefreshListItem($vv)
