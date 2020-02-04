@@ -12,7 +12,7 @@ export default class ScrollActive {
         let me=this;
         let options = {
             root: null,
-            rootMargin: '8000px'
+            rootMargin: '200px'
         };
         $("[scroll-active]").not("[scroll-active-init]").each(function(){
             let $el=$(this);
