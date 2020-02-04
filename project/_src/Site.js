@@ -16,12 +16,12 @@ require("./gsap.boot");
 
 window.debug={
     pixiResize:false,
-    pixiMouse:true,
-    pixiScroll:true
+    pixiMouse:false,
+    pixiScroll:false
 };
 
 window.perfs={
-    scrollWheel:true,
+    scrollWheel:false,
     /**
      * Active ou pas le smooth scroll sur les éléments dom
      * @type {boolean}
@@ -31,7 +31,7 @@ window.perfs={
      * Active ou pas la copie d'léléments DOM vers le canvas
      * @type {boolean}
      */
-    domCopy:true,
+    domCopy:false,
     /**
      * Active ou pas le distort d'images canvas au mouvement de la souris
      */
@@ -47,11 +47,11 @@ window.perfs={
     /**
      * Active ou pas le mouvement des bubulles
      */
-    bubullesMotion:true,
+    bubullesMotion:false,
     /**
      * Active ou pas le mouvement des textures
      */
-    bubullesTexture:true,
+    bubullesTexture:false,
     /**
      * Affiche la zone des bubulles ou pas
      */
