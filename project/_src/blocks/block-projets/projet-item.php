@@ -6,7 +6,9 @@ use Classiq\Models\JsonModels\ListItem;
 $projet=$vv->targetUid(true);
 $img=null;
 $video=null;
+
 /** @var \Classiq\Models\Filerecord $media */
+/*
 $media=$vv->getDataAsRecord("media");
 if($media){
     if($media->isVideo()){
@@ -16,12 +18,12 @@ if($media){
         $img=$media;
     }
 }
-
+*/
 $defaultText="...";
 if($projet){
-    if(!$img && $video){
+    //if(!$img && $video){
         $img=$projet->thumbnail(true);
-    }
+    //}
 
     $logo=$projet->logoClient(true);
     $defaultText=$projet->name;
@@ -34,9 +36,8 @@ $css=$img?"has-img":"";
 
 ?>
 <?if($projet || cq()->wysiwyg()):?>
-    <div <?=$vv->wysiwyg()->attr()?>>
+    <div <?=$vv->wysiwyg()->attr()?> scroll-active="">
         <div class="projet-item <?=$css?>"
-             scroll-active=""
              dss="<?=rand(50,100)/100?>"
              <?if($projet && !cq()->wysiwyg()):?>href="<?=$projet->href()?>"<?endif;?>
         >

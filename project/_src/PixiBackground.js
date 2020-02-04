@@ -46,6 +46,10 @@ export default class PixiBackgrounds {
             this.mouse2=new PIXI.Graphics();
             this.mouse2.beginFill(0x000000);
             this.mouse2.drawCircle(-0,-0,5);
+
+            this.mouse.cacheAsBitmap=true;
+            this.mouse2.cacheAsBitmap=true;
+
             this.app.stage.addChild(this.mouse2);
 
             this.app.ticker.add(function(){
@@ -53,6 +57,25 @@ export default class PixiBackgrounds {
                 me.mouse.y=speedMouse.y;
                 me.mouse2.x=speedMouse.x + speedMouse.speedX;
                 me.mouse2.y=speedMouse.y + speedMouse.speedY;
+            },null,PIXI.UPDATE_PRIORITY.HIGH);
+        }
+        if(debug.pixiScroll){
+            this.scroll=new PIXI.Graphics();
+            this.scroll.lineStyle(1,0xBBBBBB);
+            this.scroll.drawRect(1,0,10,1);
+            this.scroll.y=300;
+            this.app.stage.addChild(this.scroll);
+
+            this.scroll2=new PIXI.Graphics();
+            this.scroll2.lineStyle(1,0x000000);
+            this.scroll2.drawRect(10,0,10,1);
+            this.app.stage.addChild(this.scroll2);
+
+            this.scroll.cacheAsBitmap=true;
+            this.scroll2.cacheAsBitmap=true;
+
+            this.app.ticker.add(function(){
+                me.scroll2.y=300-speedScroll.speedY;
             },null,PIXI.UPDATE_PRIORITY.HIGH);
         }
         me.resize();

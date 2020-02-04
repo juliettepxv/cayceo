@@ -172,8 +172,8 @@ export default class Bubulle {
     randomXY(){
         let me=this;
         me.sprite.rotation=0;
-        me.sprite.x=utils.math.rand(0,this.container.zone.width - this.sprite.getLocalBounds().right);
-        me.sprite.y=utils.math.rand(0,this.container.zone.height - this.sprite.getLocalBounds().bottom);
+        me.sprite.x=utils.math.rand(0,this.container.zone.width - this.sprite.getLocalBounds().width);
+        me.sprite.y=utils.math.rand(0,this.container.zone.height - this.sprite.getLocalBounds().height);
     }
 
     /**
@@ -222,6 +222,7 @@ export default class Bubulle {
     set active(value) {
         this._active = value;
         if(this._active){
+            this.randomXY();
             this._startLoop();
         }else{
             this._stopLoop();

@@ -42,6 +42,14 @@ export default class BubulleMask extends BubulleSimple{
 
     }
 
+    maskTextureLoaded(){
+        super.maskTextureLoaded();
+        if(perfs.bubullesTexture){
+            this.sprite.cacheAsBitmap=false;
+        }
+
+    }
+
 
 
 

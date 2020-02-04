@@ -16,7 +16,8 @@ require("./gsap.boot");
 
 window.debug={
     pixiResize:false,
-    pixiMouse:false,
+    pixiMouse:true,
+    pixiScroll:true
 };
 
 window.perfs={
@@ -30,7 +31,7 @@ window.perfs={
      * Active ou pas la copie d'léléments DOM vers le canvas
      * @type {boolean}
      */
-    domCopy:false,
+    domCopy:true,
     /**
      * Active ou pas le distort d'images canvas au mouvement de la souris
      */
@@ -46,15 +47,27 @@ window.perfs={
     /**
      * Active ou pas le mouvement des bubulles
      */
-    bubullesMotion:false,
+    bubullesMotion:true,
     /**
      * Active ou pas le mouvement des textures
      */
-    bubullesTexture:false,
+    bubullesTexture:true,
     /**
      * Affiche la zone des bubulles ou pas
      */
-    bubullesZone:false
+    bubullesZone:false,
+
+    todo_domCanvas:{
+        active:false,
+
+        bubulles:{
+            motion:false,
+            motionTexture:false,
+            debug:{
+                zone:false
+            }
+        }
+    }
 
 };
 
@@ -94,7 +107,7 @@ export default class Site{
         window.speedMouse=new SpeedMouse();
 
         window.bg=new PixiBackground("#FFFFFF");
-        window.speedScroll=new SpeedScroll(30,10);
+        window.speedScroll=new SpeedScroll(5,1);
         window.bg.app.ticker.minFPS=50;
         window.bg.app.ticker.maxFPS=50;
 

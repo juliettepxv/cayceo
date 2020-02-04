@@ -13,15 +13,23 @@ export default class BubulleSimple extends Bubulle{
         this.sprite.addChild(this.fill,this.mask);
         this.fill.mask=this.mask;
 
-        this.mask.texture.baseTexture.on('loaded', function(){
-            me.fill.width=me.mask.width;
-            me.fill.height=me.mask.height;
-            //centre l'image
-            //me.sprite.pivot.set(me.mask.width/2,me.mask.height/2);
 
+        this.mask.texture.baseTexture.on('update', function(){
+            //attention cet event n'est pas déclenché apparement
+            me.maskTextureLoaded();
         });
+        me.maskTextureLoaded();
 
     }
+
+    maskTextureLoaded(){
+        let me=this;
+        me.fill.width=me.mask.width;
+        me.fill.height=me.mask.height;
+        me.sprite.cacheAsBitmap=true;
+    }
+
+
 
 
 
