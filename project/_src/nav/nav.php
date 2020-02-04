@@ -6,12 +6,14 @@
             <span class="ico">
                 <?=pov()->svg->use("startup-burger")?>
             </span>
-            <span class="text">
+            <span class="text d-none d-md-flex">
                 Menu
             </span>
         </button>
 
-        <a class="logo" href="<?=cq()->homePage()->href()?>">logo</a>
+        <a class="logo" href="<?=cq()->homePage()->href()?>">
+            <video muted="1" loop="loop" autoplay="autoplay" src="<?=the()->fileSystem->filesystemToHttp("project/img/logo.webm")?>"></video>
+        </a>
 
         <?=$view->render("./menu-languages")?>
 
