@@ -93,6 +93,8 @@ export default class Site{
          */
         let me = this;
 
+
+
         window.utils=new Utils();
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
@@ -206,9 +208,12 @@ export default class Site{
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
         require("./organisms/data-cards-container.js");
+        require("./nav/nav-scroll-up-down");
 
         let socialShares=new DataSocialShareClick();
         socialShares.listenClicks();
+
+
 
         //require("./blocks/FormContact");
         //FormContact.initFromDom();

@@ -1,0 +1,11 @@
+#nav-bar{
+  //navbar qui monte et descend avec le scroll
+  transition:transform 0.25s;
+  [scroll-dir='up'] & {
+    transform: translateY(0);
+    transition-duration: 0.25s;
+  }
+  [scroll-dir='down'] & {
+    transform: translateY( calc( -1 * var(--nav-bar-height) ) );
+  }
+}
