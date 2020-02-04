@@ -1,11 +1,11 @@
 <?php
 the()->project->languages=["fr","en"];
 the()->project->languagesUrls=[
-    "fr"=>"http://manifestory.pixelvinaigrette.com/fr",
-    "en"=>"http://manifestory.pixelvinaigrette.com/en"
+    "fr"=>"https://manifestory.pixelvinaigrette.com/fr",
+    "en"=>"https://manifestory.pixelvinaigrette.com/en"
 ];
 //force https?
-the()->configProjectUrl->forceHttps=false;
+the()->configProjectUrl->forceHttps=true;
 // Traductions ui.
 // trads manifestory only
 the()->project->config_translations_csv_url="https://docs.google.com/spreadsheets/d/1RHoObPPW-YId5Az-VuAsEllszPMh5n_NB170BaUkIfg/export?gid=0&format=csv";
