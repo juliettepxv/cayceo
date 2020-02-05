@@ -1,5 +1,5 @@
 import Bricks from "bricks.js";
-require("./bricks.less");
+//require("./bricks.less");
 
 export default class BricksManager {
     constructor() {
