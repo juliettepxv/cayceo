@@ -11,9 +11,14 @@
 
     .logoclient {
       width: 300px;
-      max-height: 100px;
+      max-height: 70px;
+      top: var(--spacing-small);
+      @media(min-width: @screen-xl){
+        max-height: 100px;
+      }
+
       position: absolute;
-      top: 40px;
+
       left: 50%;
       margin-left: -150px;
       z-index: 2;

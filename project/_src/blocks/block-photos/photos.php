@@ -13,7 +13,7 @@
             ->contextMenuSize(SIZE_SMALL)
             ->onlyImages()
             ->htmlTag("div")
-            ->addClass("row")
+            ->addClass("list")
         ?>
     </div>
 </div>

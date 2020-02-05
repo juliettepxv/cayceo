@@ -25,8 +25,8 @@ class Site extends AbstractSingleton
     public $blocksList=[
         "blocks/texte",
         "blocks/titre",
-        "blocks/img",
-        "blocks/img-text",
+        //"blocks/img",
+       // "blocks/img-text",
         "blocks/block-photos/photos",
         "blocks/block-logos/block-logos",
         "blocks/iframe",

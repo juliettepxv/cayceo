@@ -19,9 +19,10 @@ $view->inside("layout/layout",$vv);
             ->addClass("blocks mt-big");
         ?>
 
+        <?/*
         <div class="bubulles-end" scroll-active="">
             <?=$view->render("bubulles/normal",$vv)?>
-        </div>
+        </div>*/?>
 
 
         <?=$view->render("components/next",$vv)?>
