@@ -39,17 +39,18 @@
         <?endforeach;?>
     </fieldset>
 
-    <?if(!$vv->isNews()):?>
-        <fieldset>
-            <label><?=cq()->tradWysiwyg("Logo client")?></label>
-            <?=$vv->wysiwyg()->field("logoclient")
-                ->file()
-                ->setMimeAcceptImagesOnly()
-                //->onSavedRefresh("$(this).closest('[data-pov-v-path]')")
-                ->button()->render()
-            ?>
-        </fieldset>
-    <?else:?>
+
+    <fieldset>
+        <label><?=cq()->tradWysiwyg("Logo client")?></label>
+        <?=$vv->wysiwyg()->field("logoclient")
+            ->file()
+            ->setMimeAcceptImagesOnly()
+            //->onSavedRefresh("$(this).closest('[data-pov-v-path]')")
+            ->button()->render()
+        ?>
+    </fieldset>
+
+    <?if($vv->isNews()):?>
         <fieldset>
             <label><?=cq()->tradWysiwyg("Date de la news")?></label>
             <?=$vv->wysiwyg()->field("newsdate")
