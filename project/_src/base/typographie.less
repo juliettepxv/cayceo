@@ -11,10 +11,23 @@ body{
   --font-normal:'Montserrat', sans-serif;
   --font-titre:'Montserrat', sans-serif;
 
-  --fs-h1:50px;
-  --fs-h2:30px;
+  --fs-h1:38px;
+  --fs-h2:32px;
   --fs-text:16px;
   --fs-link:14px;
+
+  @media(min-width: @screen-sm){
+    --fs-h1:56px;
+
+  }
+  @media(min-width: @screen-lg){
+    --fs-h1:64px;
+
+  }
+  @media(min-width: @screen-xxl){
+    --fs-h1:72px;
+
+  }
 
 }
 body{
@@ -38,18 +51,9 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 }
 h1,.h1{
   font-size: var(--fs-h1);
-  @media(min-width: @screen-sm){
-  }
-  @media(min-width: @screen-lg){
-  }
-
 }
 h2,.h2{
   font-size: var(--fs-h2);
-  @media(min-width: @screen-sm){
-  }
-  @media(min-width: @screen-lg){
-  }
 }
 .text-link{
   font-family: var(--font-normal);

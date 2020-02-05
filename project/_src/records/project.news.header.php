@@ -27,7 +27,7 @@ use Classiq\Models\Project;
                 //->setDefaultValue($vv->name)
                 ->setPlaceholder("Sous titre là")
                 ->htmlTag("h2")
-                ->addClass("mt-big text-link")
+                ->addClass("mt-medium text-link")
             ?>
         </div>
         <div class="col-md-2">

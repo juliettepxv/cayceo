@@ -20,7 +20,7 @@ $img=$vv->thumbnail(true);
         //->setDefaultValue($vv->name)
         ->setPlaceholder("Sous titre là")
         ->htmlTag("h2")
-        ->addClass("mt-big text-link")
+        ->addClass("my-medium text-link")
     ?>
 
     <?//images---------------------------------------?>
