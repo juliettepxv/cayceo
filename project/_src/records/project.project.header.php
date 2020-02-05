@@ -62,16 +62,7 @@ $img=$vv->thumbnail(true);
 
     <div class="row text-left mt-big">
         <div class="col-md-3 text-link">
-
-            <div class="tags">
-                <div>Affichage</div>
-                <div>Road show</div>
-                <div>Tournée</div>
-                <div>dispositif 360</div>
-                <div>Affichage</div>
-                <div>Affichage</div>
-            </div>
-
+            <?=$view->render("components/tags")?>
             <div class="mt-medium social-shares">
                 <?=$view->render("components/social-shares")?>
             </div>

@@ -10,7 +10,16 @@
             "news"
         ])?>
     </fieldset>
-
+    <fieldset>
+        <label>hashtags</label>
+        <?=$vv->wysiwyg()
+            ->field("sharedHashtagList")
+            ->recordPicker("Hashtag",true)
+            ->onSavedRefresh('$("[data-pov-v-path=\'components/tags\']")')
+            ->buttonRecord()
+            ->render()
+        ?>
+    </fieldset>
     <fieldset>
         <label>Titre</label>
         <?foreach (the()->project->languages as $lang):?>
