@@ -15,6 +15,15 @@ export default class BubullesHtml{
             "orange-4",
             "orange-5",
         ];
+        //todo bubulles sunrise svg
+        this.sunrise=[
+            "orange",
+            "orange-1",
+            "orange-2",
+            "orange-3",
+            "orange-4",
+            "orange-5",
+        ];
     }
 
     fromDom(){
@@ -35,6 +44,9 @@ export default class BubullesHtml{
                     break;
                 case "blue":
                     file=utils.array.randomEntry(me.blue);
+                    break;
+                case "sunrise":
+                    file=utils.array.randomEntry(me.sunrise);
                     break;
             }
             if(file){
