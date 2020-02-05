@@ -6,7 +6,7 @@
  *
  *
  */
-
+$project=$vv->targetUid(true);
 ?>
 
 <label>Projet</label>
@@ -16,26 +16,11 @@
     ->buttonRecord()
     ->render()
 ?>
-<label>Image</label>
-<?=$vv->wysiwyg()->field("image")
-    ->recordPicker("filerecord",false)
-    ->onlyFiles()
-    ->setMimeAcceptImagesOnly()
-    ->onSavedRefreshListItem($vv)
-    ->buttonRecord()
-    ->render()
 
-?>
-<label>video</label>
-<?=$vv->wysiwyg()->field("video")
-    ->recordPicker("filerecord",false)
-    ->onlyFiles()
-    ->setMimeAcceptVideoOnly()
-    ->onSavedRefreshListItem($vv)
-    ->buttonRecord()
-    ->render()
+<?if($project):?>
+<?=$view->render("records/project.card.config",$project)?>
+<?endif?>
 
-?>
 
 <h4>Esthétique</h4>
 <label>Placer des bubulle?</label>
