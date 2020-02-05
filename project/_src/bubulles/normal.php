@@ -1,3 +1,1 @@
-<div class="deco" bubulles-html dom-copy="bubulle">
-    bubulles
-</div>
+<div class="deco" bubulles-html dom-copy="bubulle"></div>
