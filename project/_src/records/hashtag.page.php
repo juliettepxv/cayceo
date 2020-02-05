@@ -16,7 +16,7 @@ $view->inside("layout/layout",$vv);
             ->htmlTag("h1")
         ?>
         <div class="my-big" bricks>
-            <?foreach($vv->sharedProjectList as $project):?>
+            <?foreach($vv->unbox()->with("ORDER BY order_project")->sharedProjectList as $project):?>
             <div>
                 <?=$view->render("records/project.card",$project)?>
                 <?=$view->render("bubulles/normal")?>

@@ -60,4 +60,12 @@
         </fieldset>
     <?endif?>
 
+
+
+</div>
+
+<h4>Preview</h4>
+
+<div class="cq-box">
+    <?=$view->render("records/project.card.config")?>
 </div>

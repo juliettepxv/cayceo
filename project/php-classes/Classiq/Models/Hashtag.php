@@ -7,6 +7,8 @@ namespace Classiq\Models;
 /**
  * Class Tag
  * @package Classiq\Models
+ * @property Project[] $sharedProjectList
+ * @property Page[] $sharedPageList
  *
  */
 class Hashtag extends Page
