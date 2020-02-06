@@ -3,7 +3,7 @@
 use Classiq\Models\Project;
 
 /** @var \Classiq\Models\Filerecord $logo */
-$logo=null;
+$logo=$vv->getValueAsRecord("logopreview");
 /** @var \Classiq\Models\Filerecord $img */
 $img=$vv->getValueAsRecord("imagepreview");
 /** @var \Classiq\Models\Filerecord $video */
@@ -14,7 +14,7 @@ $defaultText="...";
 if(!$img){
     $img=$vv->thumbnail(true);
 }
-$logo=$vv->logoClient(true);
+//$logo=$vv->logoClient(true);
 if($vv->isNews()){
     $logo=null;
 }
