@@ -2,6 +2,11 @@ require("./bubulles.less");
 
 export default class BubullesHtml{
     constructor() {
+
+        this.lottie=[
+            "data"
+        ];
+
         this.blue=[
             "blue",
             "blue-2",
@@ -33,13 +38,29 @@ export default class BubullesHtml{
             $el.attr("bubulles-html-init","1");
 
 
-            lottie.loadAnimation({
+            let anim=lottie.loadAnimation({
                 container: $(this).get(0), // the dom element that will contain the animation
                 renderer: 'svg',
                 loop: true,
-                autoplay: true,
-                path: LayoutVars.fmkHttpRoot+"/project/_src/bubulles/lottie/data.json" // the path to the animation json
+                autoplay: false,
+                path: `${LayoutVars.fmkHttpRoot}/project/_src/bubulles/lottie/${utils.array.randomEntry(me.lottie)}.json` // the path to the animation json
             });
+
+
+
+            let onChange=function(entries, observer){
+                entries.forEach(entry => {
+                    let active=entry.isIntersecting;
+                    if(active){
+                        anim.play();
+                    }else{
+                        anim.pause();
+                    }
+                });
+            };
+            let observer = new IntersectionObserver(onChange, {});
+            observer.observe($el[0]);
+
             return;
 
             let color=$el.closest("[color-theme]").attr("color-theme");
