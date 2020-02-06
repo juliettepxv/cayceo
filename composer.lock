@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidmars/Classiq.git",
-                "reference": "68eeb983b42a6605563651868d331806d642b8e1"
+                "reference": "ae85a405793b6284d50c7c936dc90b0b1a39af43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidmars/Classiq/zipball/68eeb983b42a6605563651868d331806d642b8e1",
-                "reference": "68eeb983b42a6605563651868d331806d642b8e1",
+                "url": "https://api.github.com/repos/davidmars/Classiq/zipball/ae85a405793b6284d50c7c936dc90b0b1a39af43",
+                "reference": "ae85a405793b6284d50c7c936dc90b0b1a39af43",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 "source": "https://github.com/davidmars/Classiq/tree/master",
                 "issues": "https://github.com/davidmars/Classiq/issues"
             },
-            "time": "2020-01-05T10:09:22+00:00"
+            "time": "2020-02-05T07:47:51+00:00"
         },
         {
             "name": "davidmars/localization",
@@ -338,16 +338,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.2.90",
+            "version": "v1.2.91",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "35f963386e6a189697fe4b14dc91fb42b17fda4b"
+                "reference": "2af9b6429302fb25ea602f25a98151640ee77b47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/35f963386e6a189697fe4b14dc91fb42b17fda4b",
-                "reference": "35f963386e6a189697fe4b14dc91fb42b17fda4b",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/2af9b6429302fb25ea602f25a98151640ee77b47",
+                "reference": "2af9b6429302fb25ea602f25a98151640ee77b47",
                 "shasum": ""
             },
             "require": {
@@ -383,7 +383,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2019-12-08T20:03:27+00:00"
+            "time": "2020-02-01T22:39:59+00:00"
         },
         {
             "name": "jenssegers/agent",

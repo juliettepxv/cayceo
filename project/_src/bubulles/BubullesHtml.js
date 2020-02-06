@@ -1,33 +1,36 @@
 require("./bubulles.less");
-require("./lottie/lottieColors");
 
 export default class BubullesHtml{
     constructor() {
 
-    }
+        this.lottie=[
+            "data",
+            "bubulle-stroke",
+            "bubulle-mask"
+        ];
 
-    /**
-     * Renvoie une couleur en fonction d'un pbjet dom
-     * @param $el
-     * @returns {string} orange ou blue ou sunrise
-     * @private
-     */
-    _getColor($el){
-        let color=$el.closest("[color-theme]").attr("color-theme");
-        if(!color){
-            color="orange";
-        }
-        return color;
-    }
-
-    /**
-     * Renvoie l'url d'un fichier json aléatoire en fonction de la couleur donnée
-     * @param color
-     * @returns {string}
-     * @private
-     */
-    _getLottieColorFile(color){
-        return `${LayoutVars.fmkHttpRoot}/project/_src/bubulles/lottie/${utils.array.randomEntry(lottieColors[color])}.json`;
+        this.blue=[
+            "blue",
+            "blue-2",
+            "blue-3"
+        ];
+        this.orange=[
+            "orange",
+            "orange-1",
+            "orange-2",
+            "orange-3",
+            "orange-4",
+            "orange-5",
+        ];
+        //todo bubulles sunrise svg
+        this.sunrise=[
+            "orange",
+            "orange-1",
+            "orange-2",
+            "orange-3",
+            "orange-4",
+            "orange-5",
+        ];
     }
 
     fromDom(){
@@ -36,13 +39,17 @@ export default class BubullesHtml{
             let $el=$(this);
             $el.attr("bubulles-html-init","1");
 
+
             let anim=lottie.loadAnimation({
                 container: $(this).get(0), // the dom element that will contain the animation
                 renderer: 'svg',
                 loop: true,
                 autoplay: false,
-                path: me._getLottieColorFile(me._getColor($el)) // the path to the animation json
+                path: `${LayoutVars.fmkHttpRoot}/project/_src/bubulles/lottie/${utils.array.randomEntry(me.lottie)}.json` // the path to the animation json
             });
+
+
+
             let onChange=function(entries, observer){
                 entries.forEach(entry => {
                     let active=entry.isIntersecting;
@@ -55,6 +62,35 @@ export default class BubullesHtml{
             };
             let observer = new IntersectionObserver(onChange, {});
             observer.observe($el[0]);
+
+            return;
+
+            let color=$el.closest("[color-theme]").attr("color-theme");
+            if(!color){
+                color="orange";
+            }
+            $el.text(color);
+            let svgUrl=null;
+            let file=null;
+            switch (color) {
+                case "orange":
+                    file=utils.array.randomEntry(me.orange);
+                    break;
+                case "blue":
+                    file=utils.array.randomEntry(me.blue);
+                    break;
+                case "sunrise":
+                    file=utils.array.randomEntry(me.sunrise);
+                    break;
+            }
+            if(file){
+                svgUrl=`${LayoutVars.fmkHttpRoot}/project/_src/bubulles/svg/${file}.svg`
+            }
+            if(svgUrl){
+                let $img=$("<img src='' alt=''/>");
+                $img.attr("src",svgUrl);
+                $el.empty().append($img);
+            }
         });
     }
 }

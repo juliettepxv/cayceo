@@ -1,11 +1,11 @@
 window.lottieColors={
     orange:[
-        "data"
+        "bubulle-orange"
     ],
     blue:[
-        "data"
+        "bubulle-orange"
     ],
     sunrise:[
-        "data"
+        "bubulle-orange"
     ]
 };
