@@ -4,7 +4,9 @@ export default class BubullesHtml{
     constructor() {
 
         this.lottie=[
-            "data"
+            "data",
+            "bubulle-stroke",
+            "bubulle-mask"
         ];
 
         this.blue=[
