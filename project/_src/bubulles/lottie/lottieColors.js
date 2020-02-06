@@ -1,0 +1,11 @@
+window.lottieColors={
+    orange:[
+        "data"
+    ],
+    blue:[
+        "data"
+    ],
+    sunrise:[
+        "data"
+    ]
+};
