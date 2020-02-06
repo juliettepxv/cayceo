@@ -12,6 +12,7 @@ import BricksManager from "./bricks/BricksManager";
 import BubullesHtml from "./bubulles/BubullesHtml";
 import VideoThumbnail from "./components/VideoThumbnail";
 import LottieLoader from "./lottie/LottieLoader";
+import SmoothScrollManager from "./scroll/SmoothScrollManager";
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -95,7 +96,7 @@ export default class Site{
          */
         let me = this;
 
-
+        window.ssm=new SmoothScrollManager();
 
         window.utils=new Utils();
         window.scrollActive=new ScrollActive();
