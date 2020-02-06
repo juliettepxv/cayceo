@@ -1,0 +1,11 @@
+window.lottieColors={
+    orange:[
+        "bubulle-orange"
+    ],
+    blue:[
+        "bubulle-orange"
+    ],
+    sunrise:[
+        "bubulle-orange"
+    ]
+};
