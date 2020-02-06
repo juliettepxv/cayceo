@@ -15,6 +15,7 @@ use Pov\Image\ImgUrl;
  *
  * @property String $logoclient
  * @property String $kind
+ * @property String $colortheme Thème couleur associé au projet
  * @property String $newsdate
  * @property Hashtag[] $sharedHashtagList Liste des tags
  *
@@ -186,10 +187,7 @@ class Project extends Page
      * @return string
      */
     public function colorTheme(){
-        if($this->isNews()){
-            return "blue";
-        }
-        return "orange";
+        return $this->colortheme ?? site()->COLOR_THEME_ORANGE;
     }
 
 
