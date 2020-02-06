@@ -31,6 +31,17 @@ export default class BubullesHtml{
         $("[bubulles-html]").not("[bubulles-html-init]").each(function(){
             let $el=$(this);
             $el.attr("bubulles-html-init","1");
+
+
+            lottie.loadAnimation({
+                container: $(this).get(0), // the dom element that will contain the animation
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: LayoutVars.fmkHttpRoot+"/project/_src/bubulles/lottie/data.json" // the path to the animation json
+            });
+            return;
+
             let color=$el.closest("[color-theme]").attr("color-theme");
             if(!color){
                 color="orange";

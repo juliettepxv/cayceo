@@ -11,6 +11,7 @@ import DataSocialShareClick from "data-social-share-click" ;
 import BricksManager from "./bricks/BricksManager";
 import BubullesHtml from "./bubulles/BubullesHtml";
 import VideoThumbnail from "./components/VideoThumbnail";
+import LottieLoader from "./lottie/LottieLoader";
 
 require("./pixi.boot");
 require("./gsap.boot");
@@ -282,5 +283,6 @@ export default class Site{
         videoThumbnail.fromDom();
         bubullesHtml.fromDom();
         scrollActive.observe();
+        LottieLoader.initFromDom();
     }
 }
