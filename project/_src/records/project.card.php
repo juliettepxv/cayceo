@@ -15,6 +15,9 @@ if(!$img){
     $img=$vv->thumbnail(true);
 }
 $logo=$vv->logoClient(true);
+if($vv->isNews()){
+    $logo=null;
+}
 
 //texte par défaut
 $defaultText=$vv->name; //name
