@@ -16,13 +16,13 @@ if(!$label){
 ?>
 <? if(cq()->wysiwyg() || $url ):?>
 <li class="item-link" <?=$vv->wysiwyg()->openConfigOnCreate()->attr()?>>
-    <a class="" href="<?=$url?>" target="<?=$targetWindow?>">
+    <a class="hvr" href="<?=$url?>" target="<?=$targetWindow?>">
         <span class="ico">
             <?if($icone):?>
-            <?=pov()->svg->use($icone)?>
+            <?=pov()->svg->use($icone)->setAttribute("ss","0.1")?>
             <?endif?>
         </span>
-        <span class="text"><?=$label?></span>
+        <span class="text underline-hvr"><?=$label?></span>
     </a>
 </li>
 <? endif?>

@@ -44,4 +44,18 @@ class Site extends AbstractSingleton
     public function homePage(){
         return cq()->homePage();
     }
+
+
+    public $COLOR_THEME_BLUE="blue";
+    public $COLOR_THEME_ORANGE="orange";
+    public $COLOR_THEME_SUNRISE="sunrise";
+
+    public function COLOR_ALL(){
+        return[
+            $this->COLOR_THEME_BLUE,
+            $this->COLOR_THEME_ORANGE,
+            $this->COLOR_THEME_SUNRISE,
+        ];
+    }
+
 }

@@ -14,7 +14,15 @@
     ->onSavedRefreshRecord($vv)
     ->buttonRecord()
     ->render()
-
+?>
+<label>Logo de preview</label>
+<?=$vv->wysiwyg()->field("logopreview")
+    ->recordPicker("filerecord",false)
+    ->onlyFiles()
+    ->setMimeAcceptImagesOnly()
+    ->onSavedRefreshRecord($vv)
+    ->buttonRecord()
+    ->render()
 ?>
 <label>Video de preview</label>
 <?=$vv->wysiwyg()->field("videopreview")
