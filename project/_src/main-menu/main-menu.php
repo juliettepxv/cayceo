@@ -30,8 +30,8 @@
                     ->field("vars.navPages")
                     ->listJson(["lists/item-page"])
                     ->contextMenuSize(SIZE_SMALL)
-                    //->contextMenuPosition(POSITION_TOP_RIGHT)
-                    ->onlyRecords("page")
+                    ->contextMenuPosition(POSITION_TOP)
+                    ->onlyRecords("page,hashtag")
                     ->htmlTag("ul")
                     ->addClass("pages list-text")
                 ?>
