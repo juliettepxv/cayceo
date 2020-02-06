@@ -1,6 +1,11 @@
 window.lottieColors={
     orange:[
-        "bubulle-orange"
+        "bubulle-orange-1",
+        "bubulle-orange-2",
+        "bubulle-orange-3",
+        "bubulle-orange-4",
+        "bubulle-orange-5",
+        "bubulle-orange-6"
     ],
     blue:[
         "bubulle-orange"
