@@ -4,7 +4,7 @@ use Classiq\Models\Project;
 $img=$vv->thumbnail(true);
 ?>
 
-<div class="container text-center project-header">
+<div scroll-active="" class="container text-center project-header">
     <?//titres---------------------------------------?>
     <?=$vv->wysiwyg()
         ->field("titre_lang")

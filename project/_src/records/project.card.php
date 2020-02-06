@@ -30,6 +30,7 @@ if(!cq()->wysiwyg()){
 if($video){
     $attrs["video-thumbnail"]=true;
 }
+$attrs["ss"]=round(rand(10,50)/100,1);
 ?>
 <div class="project-card <?=$css?>" scroll-active="" <?=$attrs?> <?=$view->attrRefresh($vv->uid())?>>
     <?if($img):?>

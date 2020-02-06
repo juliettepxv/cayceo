@@ -1,8 +1,10 @@
-
+var EventEmitter = require('event-emitter-es6');
 // 10/31/2017
 var SmoothScroll = /** @class */ (function () {
     function SmoothScroll(options) {
         let me=this;
+        this.emitter = new EventEmitter();
+        this.speed=0;
         var _this = this;
         this.endThreshold = 0.05;
         this.requestId = null;
@@ -59,10 +61,15 @@ var SmoothScroll = /** @class */ (function () {
                 _this.currentScroll = scrollY;
                 _this.scrollRequest = 0;
             }
-            //console.log("update "+currentTime,dt);
+
             // const scrollOrigin = scrollY + this.halfViewHeight;
             var scrollOrigin = _this.currentScroll + _this.halfViewHeight;
             _this.target.style.transform = "translate3d(0px,-" + _this.currentScroll + "px,0px)";
+            //console.log("update "+currentTime,_this.currentScroll-scrollY);
+            me.speed=_this.currentScroll-scrollY;
+            me.emitter.emit("SCROLL");
+
+
             for (var i = 0; i < _this.scrollItems.length; i++) {
                 var item = _this.scrollItems[i];
                 var distance = scrollOrigin - item.top;
@@ -91,6 +98,14 @@ var SmoothScroll = /** @class */ (function () {
         });
         this._update();
     }
+
+
+
+
+
+
+
+
     SmoothScroll.prototype.addItems = function () {
         this.scrollItems = [];
         var elements = document.querySelectorAll("*[data-depth]");
