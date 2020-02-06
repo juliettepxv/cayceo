@@ -16,7 +16,8 @@
     "event-emitter-es6": "^1.1.5",
     "gsap": "file:gsap-bonus.tgz",
     "pixi-filters": "^3.0.3",
-    "pixi.js": "^5.2.0"
+    "pixi.js": "^5.2.0",
+    "lottie-web": "^5.5.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
