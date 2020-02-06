@@ -7,7 +7,8 @@ use Classiq\Models\JsonModels\ListItem;
 /** @var \Classiq\Models\Filerecord $img */
 $img = $vv->targetUid(true);
 
-
+$w=1200;
+$h=1200;
 $imgSrc = pov()
     ->img("")
     ->bgColor("EEEEEE")
@@ -20,14 +21,16 @@ if ($img && $img->isImage()) {
         ->sizeMax(1200, 1200)
         ->jpg()
         ->href();
+    $w=$img->image_width;
+    $h=$img->image_height;
 }
 ?>
 <div <?= $vv->wysiwyg()->attr() ?>
         scroll-active=""
-        data-zoom-img="<?= $imgSrc ?>"
+       <?/*data-zoom-img="<?= $imgSrc ?>"*/?>
         class="photo-item">
 
-    <img src="<?= $imgSrc ?>">
+    <img src="<?= $imgSrc ?>" width="<?=$w?>px" height="<?=$h?>px">
     <?= $view->render("bubulles/normal") ?>
 
 </div>
