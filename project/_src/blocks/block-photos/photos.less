@@ -5,17 +5,16 @@
     margin-left: auto;
     margin-right: auto;
     >.photo-item{
-
-
-
-      // outline: 1px solid red;
+      --marge:50px;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
       >*{
-        //outline: 1px solid yellow;
+        //outline: 1px solid green;
         width: calc( 50% - var(--marge)/2 );
       }
-      position: relative;
-
-      display: flex;
+      //superposition des lignes
       margin-top: -50px;
       &:first-child{
         margin-top: 0;
@@ -23,66 +22,54 @@
       &:last-child{
         margin-bottom: 50px;
       }
-      align-items: flex-start;
-      justify-content: space-between;
-      //margin-bottom: 30px;
 
+      //alterne image et déco
+      @media(min-width: @screen-md) {
+        >.deco{
+          transform: translateX(-100px);
+        }
+        &:nth-child(even) {
+          >img{
+            order:2;
+          }
+          >.deco{
+            order:1;
+            transform: translateX(100px);
+          }
+        }
+      }
 
-      --marge:50px;
       >img{
         max-width: 100%;
         height: auto;
         display: block;
-        order:1;
         object-fit: contain;
-        //background-color: rgba(0, 0, 0, 0.4);
       }
       .deco{
         z-index: 1;
         position: relative;
-        height: 1px;
-        >img{
-          position: absolute;
-          height: 400px;
-          width: 400px;
-          left:-100px
-        }
-        order:2;
-
       }
 
       @media(min-width: @screen-md){
         &:nth-child(even){
           //outline: 1px solid pink;
           .deco{
-            //margin-left: 50px;
-            //margin-right: -50px;
-
-            order:1;
-            >img{
+            >svg{
               left: auto;
-              right:0px
+              right:0
             }
-          }
-          >img{
-            order:2;
           }
         }
       }
 
-
       &:only-child{
         .deco{
-          >img{
+          >svg{
             left: -50%;
             width: 200%;
           }
         }
       }
-
-
-
-
 
     }
 
