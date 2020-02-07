@@ -5,12 +5,25 @@ window.lottieColors={
         "bubulle-orange-3",
         "bubulle-orange-4",
         "bubulle-orange-5",
-        "bubulle-orange-6"
+        "bubulle-orange-6",
+        "bubulle-orange-7"
     ],
     blue:[
-        "bubulle-orange"
+        "bubulle-blue-1",
+        "bubulle-blue-2",
+        "bubulle-blue-3",
+        "bubulle-blue-4",
+        "bubulle-blue-5",
+        "bubulle-blue-6",
+        "bubulle-blue-7"
     ],
     sunrise:[
-        "bubulle-orange"
+        "bubulle-sunrise-1",
+        "bubulle-sunrise-2",
+        "bubulle-sunrise-3",
+        "bubulle-sunrise-4",
+        "bubulle-sunrise-5",
+        "bubulle-sunrise-6",
+        "bubulle-sunrise-7"
     ]
 };
