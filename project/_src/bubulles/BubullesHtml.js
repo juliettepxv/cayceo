@@ -3,9 +3,24 @@ require("./lottie/lottieColors");
 
 export default class BubullesHtml{
     constructor() {
-        
+        /**
+         * Permet de charger les bubulles par cycles et non pas en random total
+         * @private
+         * @type {{orange: number, sunrise: number, blue: number}}
+         */
+        this.counters={
+            "blue":utils.math.rand(0,lottieColors["blue"].length),
+            "orange":utils.math.rand(0,lottieColors["orange"].length),
+            "sunrise":utils.math.rand(0,lottieColors["sunrise"].length),
+        }
     }
 
+    /**
+     * Obtenir l'identifiant couleur de l'objet dom
+     * @param $el
+     * @returns {Object|Undefined|*|null|string|undefined}
+     * @private
+     */
     _getColor($el){
         let color=$el.closest("[color-theme]").attr("color-theme");
         if(!color){
@@ -21,7 +36,12 @@ export default class BubullesHtml{
      * @private
      */
     _getLottieColorFile(color){
-        return `${LayoutVars.fmkHttpRoot}/project/_src/bubulles/lottie/${utils.array.randomEntry(lottieColors[color])}.json`;
+        this.counters[color]++;
+        if(this.counters[color]>=lottieColors[color].length){
+            this.counters[color]=0;
+        }
+        let f=lottieColors[color][this.counters[color]];
+        return `${LayoutVars.fmkHttpRoot}/project/_src/bubulles/lottie/${f}.json`;
     }
 
     fromDom(){
@@ -37,6 +57,8 @@ export default class BubullesHtml{
                 autoplay: false,
                 path: me._getLottieColorFile(me._getColor($el)) // the path to the animation json
             });
+            gsap.set($el,{rotate:utils.math.rand(0,360,90)})
+
             let onChange=function(entries, observer){
                 entries.forEach(entry => {
                     let active=entry.isIntersecting;
