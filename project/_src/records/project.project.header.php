@@ -4,7 +4,7 @@ use Classiq\Models\Project;
 $img=$vv->thumbnail(true);
 ?>
 
-<div scroll-active="" class="container text-center project-header">
+<div scroll-active="" class="container text-center project-header" <?=$view->attrRefresh($vv->uid())?>>
     <?//titres---------------------------------------?>
     <?=$vv->wysiwyg()
         ->field("titre_lang")
@@ -38,19 +38,30 @@ $img=$vv->thumbnail(true);
             ->png()
             ->htmlTag("logoclient", $vv->name,false )?>
         <?endif?>
-        <?=$vv->wysiwyg()
-            ->field("thumbnail")
-            ->image()
-            ->contextMenuSize(SIZE_SMALL)
-            ->contextMenuPosition(POSITION_CENTER)
-            ->format()
-            ->bgColor("eeeeee")
-            ->displayIfEmpty(cq()->wysiwyg())  //afficher vide que si admin
-            ->sizeMax(1280,600)
-            ->jpg()
-            ->htmlTag("poster", $vv->name,true )?>
+
+        <div class="poster-wrap" pllx-container>
+            <?=$vv->wysiwyg()
+                ->field("thumbnail")
+                ->image()
+                ->contextMenuSize(SIZE_SMALL)
+                ->contextMenuPosition(POSITION_CENTER)
+                ->format()
+                ->bgColor("eeeeee")
+                ->displayIfEmpty(cq()->wysiwyg())  //afficher vide que si admin
+                ->sizeMax(1800,1800)
+                ->jpg()
+                ->htmlTag("poster", $vv->name,true )
+            ?>
+            <?if($vv->video()):?>
+                <video src="<?=$vv->video()->httpPath()?>" controls="controls"></video>
+            <?endif;?>
+
+        </div>
+
+
+
         <?if($img):?>
-            <div class="bubulles-header">
+            <div class="bubulles-header d-none d-lg-block">
                 <?=$view->render("bubulles/normal",$vv)?>
             </div>
         <?endif?>

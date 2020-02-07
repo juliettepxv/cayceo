@@ -14,6 +14,7 @@ use Pov\Image\ImgUrl;
  * @property String $sstitre_lang
  *
  * @property String $logoclient
+ * @property String $video
  * @property String $kind
  * @property String $colortheme Thème couleur associé au projet
  * @property String $newsdate
@@ -54,6 +55,15 @@ class Project extends Page
             $url=$file->localPath();
         }
         return pov()->img($url);
+    }
+
+    /**
+     * @return Filerecord
+     * @throws \Pov\PovException
+     */
+    public function video(){
+        return Filerecord::getByUid($this->video);
+
     }
 
     /**

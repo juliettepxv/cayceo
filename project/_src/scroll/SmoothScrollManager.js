@@ -32,6 +32,31 @@ export default class SmoothScrollManager {
 
     initFromDom(){
         this.$ss=$("[ss]");
+
+        let observerOptions = {
+            root: null,
+            rootMargin: "-200px 0px -00px 0px",
+            threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+        };
+
+        let $pllxContainers=$("[pllx-container='']");
+        let $img=$pllxContainers.find(">img");
+        $pllxContainers.each(function(){
+            let $el=$(this);
+            $el.attr("pllx-container","1");
+            let onChange=function(entries){
+                entries.forEach(function(entry) {
+                    let box = entry.target;
+                    console.log(entry.intersectionRatio);
+                    let y=utils.math.ratio(entry.intersectionRatio,1,0,0,$pllxContainers.height()-$img.height());
+                    gsap.to($img,{duration:0.1,y:y})
+                });
+            };
+            let observer = new IntersectionObserver(onChange, observerOptions);
+            observer.observe($el[0]);
+        });
+
+
     }
 
 }

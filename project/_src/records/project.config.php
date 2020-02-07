@@ -66,6 +66,17 @@
         </fieldset>
     <?endif?>
 
+    <fieldset>
+        <label><?=cq()->tradWysiwyg("Video principale")?></label>
+        <?=$vv->wysiwyg()->field("video")
+            ->recordPicker("filerecord",false)
+            ->onlyFiles()
+            ->setMimeAcceptVideoOnly()
+            ->onSavedRefreshRecord($vv)
+            ->buttonRecord()
+            ->render()
+        ?>
+    </fieldset>
 
 
 </div>
