@@ -39,7 +39,7 @@ $img=$vv->thumbnail(true);
             ->htmlTag("logoclient", $vv->name,false )?>
         <?endif?>
 
-        <div class="poster-wrap" pllx-container>
+        <div class="poster-wrap" zzzpllx-container>
             <?=$vv->wysiwyg()
                 ->field("thumbnail")
                 ->image()
@@ -71,7 +71,7 @@ $img=$vv->thumbnail(true);
 
 
 
-    <div class="row text-left mt-big">
+    <div class="row text-left mt-medium">
         <div class="col-md-3 text-link">
             <?=$view->render("components/tags")?>
             <div class="mt-medium social-shares">
