@@ -18,16 +18,18 @@ if($img && $img->isImage()){
         ->png()->htmlTag();
 }
 
-?>
-<div class="team-item" <?=$vv->wysiwyg()->attr()?> >
 
+$invert=$vv->getData("invert")?"invert":"";
+
+?>
+<div class="team-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?> >
 
     <?=$imgTag?>
-
     <?=$vv->wysiwyg()->field("text")
     ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
     ->setMediumButtons(["bold","removeFormat"])
-    ->htmlTag("div");
+    ->htmlTag("div")
+    ->addClass("wrap-text")
     ?>
 
 </div>

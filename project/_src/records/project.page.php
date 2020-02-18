@@ -11,12 +11,10 @@ $view->inside("layout/layout",$vv);
             <?=$view->render("./project.project.header")?>
         <?endif;?>
 
-
-
         <?=$vv->wysiwyg()->field("blocks")
             ->listJson(site()->blocksList)
             ->htmlTag()
-            ->addClass("blocks mt-big");
+            ->addClass("blocks");
         ?>
 
         <?/*
@@ -24,12 +22,7 @@ $view->inside("layout/layout",$vv);
             <?=$view->render("bubulles/normal",$vv)?>
         </div>*/?>
 
-
         <?=$view->render("components/next",$vv)?>
-
-
-
-
 
     <?/*
     //debug news

@@ -57,7 +57,7 @@ $attrs["ss"]=round(rand(10,50)/100,1);
     <div class="texts">
         <?=$vv->wysiwyg()
             ->field("textpreview_lang")
-            ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+            ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_MULTI_LINE)
             ->setDefaultValue($defaultText)
             ->htmlTag("h2")
         ?>
@@ -65,6 +65,7 @@ $attrs["ss"]=round(rand(10,50)/100,1);
             Découvrir
             <?=pov()->svg->use("startup-caret-right")?>
         </a>
+        <?=$view->render("components/tags")?>
     </div>
 
 

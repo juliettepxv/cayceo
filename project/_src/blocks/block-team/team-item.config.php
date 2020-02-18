@@ -17,6 +17,14 @@
     ->render()
 ?>
 
+<label>Disposition</label>
+<?= $vv->wysiwyg()->field("invert")
+    ->bool()
+    ->onSavedRefreshListItem($vv)
+    ->checkbox("Image à droite")
+?>
+
+
 
 
 

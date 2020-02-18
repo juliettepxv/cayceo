@@ -3,7 +3,7 @@
 use Classiq\Models\Hashtag;
 $view->inside("layout/layout",$vv);
 ?>
-<div class="pt-big project-page" color-theme="sunrise">
+<div class="pt-big hashtag-page" color-theme="sunrise">
 
     <div class="container text-center">
         <?//titre---------------------------------------?>

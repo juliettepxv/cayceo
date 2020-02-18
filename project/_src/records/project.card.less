@@ -28,7 +28,7 @@
       width: 100%;
       position: relative;
       >img{
-        filter: brightness(0.9);
+       // filter: brightness(0.9);
         max-width: 100%;
         height: auto;
         display: block;
@@ -44,20 +44,38 @@
       }
     }
     .texts{
-      min-height: 300px;
+      //min-height: 300px;
       text-align: left;
       align-items: flex-start;
       background-color: var(--color-bleu-lighter);
       justify-content: space-between;
+
+      .tags {
+
+        a{
+          display: inline-block;
+          &:first-child{
+            .mt-small;
+          }
+
+          color:var(--color-grey);
+          line-height: 1.5em;
+          text-transform: lowercase;
+          &:before{
+            content: ".";
+          }
+        }
+      }
+
     }
   }
 
 
-  h2{
+  h2, h2 b{
     font-weight: bold !important;
-    line-height: 1 !important;
+    line-height: 1.1 !important;
     font-size: var(--fs-h2) !important;
-    .mb-medium;
+    .mb-small;
   }
   .button{
     text-transform: uppercase;
@@ -73,7 +91,7 @@
     flex-direction: column;
     .py-medium;
     .px-medium;
-    min-height: 400px;
+    //min-height: 250px;
   }
 
 }

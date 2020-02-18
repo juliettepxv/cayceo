@@ -20,11 +20,11 @@ $img=$vv->thumbnail(true);
         //->setDefaultValue($vv->name)
         ->setPlaceholder("Sous titre là")
         ->htmlTag("h2")
-        ->addClass("my-medium text-link")
+        ->addClass("text-link")
     ?>
 
     <?//images---------------------------------------?>
-    <div class="images mt-big">
+    <div class="images mt-medium">
         <?if($img || cq()->isAdmin()): //logo uniquement si image aussi ou bien admin?>
         <?=$vv->wysiwyg()
             ->field("logoclient")
