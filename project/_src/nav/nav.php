@@ -20,6 +20,7 @@
     </div>
 
     <div id="nav-content">
+        <div class="background"></div>
         <?=$view->render("main-menu/main-menu")?>
         <button nav-menu-click='toggle' class="ico-text">
             <span class="text">
