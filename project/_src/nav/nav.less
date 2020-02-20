@@ -140,16 +140,18 @@
   }
 
   .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    video{
-      //outline: 1px solid red;
-      max-height: calc( var(--nav-bar-height) - 20px );
-      max-width: 140px;
-      @media(min-width: @screen-md){
-        max-width: 300px;
+    //outline: 1px solid yellow;
+    display: block;
+    flex-grow: 1;
+    position: relative;
+    .w{
+      position: absolute;
+      display: block;
+      //outline: 1px solid pink;
+      height: 100%;
+      width: 100%;
+      >svg{
+        //outline: 1px solid red;
       }
     }
   }
@@ -165,6 +167,35 @@
       .text-link;
       &.active{
         font-weight: bold;
+      }
+    }
+  }
+}
+
+
+
+body{
+  --big-logo-height:30vh;
+}
+
+.big-logo-placeholder{
+  height: 1px;
+  margin-bottom: calc( var(--big-logo-height) - var(--nav-bar-height) );
+}
+#nav-bar{
+  .logo{
+    .w{
+      transition: height 0.5s;
+    }
+
+    &.big{
+      .w{
+        height: var(--big-logo-height);
+      }
+    }
+    [scroll-dir='down'] & {
+      .w{
+        height: 100%;
       }
     }
   }

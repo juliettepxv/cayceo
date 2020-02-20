@@ -12,7 +12,7 @@
         </button>
 
         <a class="logo" href="<?=cq()->homePage()->href()?>">
-            <video muted="1" loop="loop" autoplay="autoplay" src="<?=the()->fileSystem->filesystemToHttp("project/img/logo.webm")?>"></video>
+            <span class="w"></span>
         </a>
 
         <?=$view->render("./menu-languages")?>

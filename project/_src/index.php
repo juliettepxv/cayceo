@@ -3,8 +3,10 @@
 use Classiq\Models\Page;
 $view->inside("layout/layout", $vv);
 ?>
+<div class="big-logo-placeholder">
 
-<div class="container py-big">
+</div>
+<div class="container pb-big">
     <?=$vv->wysiwyg()->field("blocks")
         ->listJson(site()->blocksList)
         ->htmlTag()

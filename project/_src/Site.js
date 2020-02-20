@@ -92,97 +92,11 @@ export default class Site{
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
         window.videoThumbnail=new VideoThumbnail();
-
+        window.navMenu=new NavMenu();
         me._initListeners();
         //---------------------go------------------------------------------
         me.onDomChange();
-        Site.navActive();
-
-
-        window.navMenu=new NavMenu();
         window.bricksManager=new BricksManager();
-        /*
-                window.speedMouse=new SpeedMouse();
-                window.bg=new PixiBackground("#FFFFFF");
-                window.speedScroll=new SpeedScroll(5,1);
-                window.bg.app.ticker.minFPS=50;
-                window.bg.app.ticker.maxFPS=50;
-
-                //dom speed scroll
-                if(perfs.domScroll){
-                    window.dss=new DomSpeedScroll();
-                    window.bg.app.ticker.add(function(d){
-                        dss.updade(d);
-                    },null,PIXI.UPDATE_PRIORITY.HIGH);
-                }
-                //copie des objets DOM dans le canvas
-                if(perfs.domCopy){
-                    window.domCopyManager=new DomCopyManager();
-                    bg.app.stage.addChild(domCopyManager.container);
-                    domCopyManager.fromDom();
-                    window.bg.app.ticker.add(function(){
-                        domCopyManager.setScroll();
-                        //domCopyManager.resize();
-                    },null,PIXI.UPDATE_PRIORITY.HIGH);
-                    window.domCopyManager.resize();
-                }
-                //----------filtres------------------
-
-                if(perfs.mouseTrailerDistortImages){
-                    //distort mouse move sur les images
-                    let mouseTrailer=PIXI.Sprite.from(`${LayoutVars.fmkHttpRoot}/project/_src/pixi/filters/radial-500.png`);
-                    mouseTrailer.pivot.set(250,250);
-                    bg.app.stage.addChild(mouseTrailer);
-                    let distortMouse = new PIXI.filters.DisplacementFilter(mouseTrailer);
-                    distortMouse.scale.x=0;
-                    distortMouse.scale.y=0;
-                    distortMouse.padding=200;
-                    domCopyManager.images.filters.push(distortMouse);
-                    window.bg.app.ticker.add(function(){
-                        mouseTrailer.x=speedMouse.x;
-                        mouseTrailer.y=speedMouse.y;
-                        distortMouse.scale.x=-speedMouse.speedX * 0.2;
-                        distortMouse.scale.y=-speedMouse.speedY * 0.2;
-                    },null,PIXI.UPDATE_PRIORITY.NORMAL);
-                }
-                if(perfs.scrollRGB){
-                    let rgbFilter=new RGBSplitFilter();
-                    domCopyManager.images.filters.push(rgbFilter);
-                    bg.app.ticker.add(delta =>
-                        {
-                            rgbFilter.red=      [-speedScroll.speedY*0.1,  -speedScroll.speedY*0.2     ];
-                            rgbFilter.green=    [speedScroll.speedY*0.1,   speedScroll.speedY*0.3     ];
-                            rgbFilter.blue=     [speedScroll.speedY*0.1,   -speedScroll.speedY*0.1    ];
-                        }
-                        , null,
-                        PIXI.UPDATE_PRIORITY.NORMAL
-                    );
-                }
-                if(perfs.scrollDistort){
-                    //distort mouse move sur les images
-                    let scrollDistortImage=PIXI.TilingSprite.from(
-                        `${LayoutVars.fmkHttpRoot}/project/_src/pixi/filters/gradient-1.jpg`
-                    );
-                    bg.app.stage.addChild(scrollDistortImage);
-
-                    let distortScroll = new PIXI.filters.DisplacementFilter(scrollDistortImage);
-                    distortScroll.scale.x=0;
-                    distortScroll.scale.y=0;
-                    distortScroll.padding=200;
-                    domCopyManager.container.filters.push(distortScroll);
-                    window.bg.app.ticker.add(function(){
-                        let factorX=-speedScroll.speedY * 0.5;
-                        factorX=utils.math.range(factorX,-50,50);
-                        distortScroll.scale.x=factorX;
-                        distortScroll.scale.Y=factorX;
-                        //scrollDistortImage.width=bg.app.stage.width;
-                        //scrollDistortImage.height=bg.app.stage.height;
-                    },null,PIXI.UPDATE_PRIORITY.NORMAL);
-                }
-                */
-
-
-
 
     }
 
@@ -227,7 +141,6 @@ export default class Site{
             me.onDomChange();
             //scroll top
             $(window).scrollTop(0);
-            Site.navActive();
             if(typeof gtag !== 'undefined' && LayoutVars.googleAnalyticsId){
                 //hit google analytics
                 gtag('config', LayoutVars.googleAnalyticsId, {'page_path': location.pathname});
@@ -238,28 +151,12 @@ export default class Site{
 
         $body.on(Pov.events.DOM_CHANGE,function(){
             me.onDomChange();
-            /*
-            if(perfs.domCopy){
-                domCopyManager.fromDom();
-            }
-            */
-
-
-
         });
 
 
 
 
 
-    }
-
-    /**
-     * Selectionne / déselectionne l'item de nav de la page en cours
-     */
-    static navActive(){
-        $("[data-href-uid]").removeClass("active");
-        $("[data-href-uid='"+PovHistory.currentPageInfo.uid+"']").addClass("active");
     }
 
     /**
@@ -270,5 +167,6 @@ export default class Site{
         bubullesHtml.fromDom();
         scrollActive.observe();
         ssm.initFromDom();
+        navMenu.initFromDom();
     }
 }
