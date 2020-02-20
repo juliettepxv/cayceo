@@ -30,7 +30,8 @@ if ($img && $img->isImage()) {
        <?/*data-zoom-img="<?= $imgSrc ?>"*/?>
         class="photo-item">
 
-    <img src="<?= $imgSrc ?>" width="<?=$w?>px" height="<?=$h?>px">
+    <img ss="<?=round(rand(10,50)/100,1)?>"
+         src="<?= $imgSrc ?>" width="<?=$w?>px" height="<?=$h?>px">
     <?= $view->render("bubulles/normal") ?>
 
 </div>

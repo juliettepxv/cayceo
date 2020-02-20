@@ -26,17 +26,22 @@ $img=$vv->thumbnail(true);
     <?//images---------------------------------------?>
     <div class="images mt-medium">
         <?if($img || cq()->isAdmin()): //logo uniquement si image aussi ou bien admin?>
-        <?=$vv->wysiwyg()
-            ->field("logoclient")
-            ->image()
-            ->contextMenuSize(SIZE_SMALL)
-            ->contextMenuPosition(POSITION_CENTER)
-            ->format()
-            ->bgColor("cccccc")
-            ->displayIfEmpty(cq()->wysiwyg()) //afficher vide que si admin
-            ->sizeMax(400,400)
-            ->png()
-            ->htmlTag("logoclient", $vv->name,false )?>
+
+            <div class="logoclient" ss="0.1">
+            <?=$vv->wysiwyg()
+                ->field("logoclient")
+                ->image()
+                ->contextMenuSize(SIZE_SMALL)
+                ->contextMenuPosition(POSITION_CENTER)
+                ->format()
+                ->bgColor("cccccc")
+                ->displayIfEmpty(cq()->wysiwyg()) //afficher vide que si admin
+                ->sizeMax(400,400)
+                ->png()
+                ->htmlTag("", $vv->name,false )
+                ?>
+            </div>
+
         <?endif?>
 
         <div class="poster-wrap" zzzpllx-container>
@@ -53,7 +58,9 @@ $img=$vv->thumbnail(true);
                 ->htmlTag("poster", $vv->name,true )
             ?>
             <?if($vv->video()):?>
-                <video src="<?=$vv->video()->httpPath()?>" controls="controls" autoplay="autoplay"></video>
+                <video src="<?=$vv->video()->httpPath()?>"
+                       poster="<?=$vv->thumbnail()->bgColor("eeeeee")->sizeMax(1800,1800)->jpg()->href()?>"
+                       controls="controls" autoplay="autoplay"></video>
             <?endif;?>
 
         </div>
