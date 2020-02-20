@@ -12,9 +12,6 @@
     display: flex;
     justify-content: space-between;
 
-
-
-
   }
 
   #nav-content{
@@ -80,8 +77,6 @@
       transform: scale(0.8) skewY(-5deg);;
     }
 
-
-
     .nav-open & {
       display: block;
       pointer-events: auto;
@@ -91,6 +86,26 @@
         transform:  scale(1) skewY(0deg);
       }
     }
+
+    >button{
+      &.ico-text{
+        background-color: transparent;
+        @media(hover:hover){
+          .ico{
+            transition: transform 0.2s;
+            transform: rotate(0deg);
+          }
+          &:hover{
+            .ico{
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+      }
+    }
+
+
   }
 
   .ico-text{
