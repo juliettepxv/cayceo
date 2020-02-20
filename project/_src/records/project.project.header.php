@@ -53,7 +53,7 @@ $img=$vv->thumbnail(true);
                 ->htmlTag("poster", $vv->name,true )
             ?>
             <?if($vv->video()):?>
-                <video src="<?=$vv->video()->httpPath()?>" controls="controls"></video>
+                <video src="<?=$vv->video()->httpPath()?>" controls="controls" autoplay="autoplay"></video>
             <?endif;?>
 
         </div>
