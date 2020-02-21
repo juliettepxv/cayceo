@@ -108,17 +108,15 @@ export default class Site{
 
 
         $body.on("SCROLL_INACTIVE",function(e){
-            console.log("SCROLL_INACTIVE",e);
             if($(e.target).is("video")){
                 $(e.target)[0].pause();
             }
-        })
+        });
         $body.on("SCROLL_ACTIVE",function(e){
-            console.log("SCROLL_ACTIVE",e);
             if($(e.target).is("video[autoplay='autoplay']")){
                 $(e.target)[0].play();
             }
-        })
+        });
 
 
 
