@@ -179,13 +179,27 @@ body{
 }
 
 .big-logo-placeholder{
-  height: 1px;
+  height: 10px;
   margin-bottom: calc( var(--big-logo-height) - var(--nav-bar-height) );
 }
 #nav-bar{
+
+  .bubulles{
+    transition: top 2s;
+    --w:300px;
+    position: absolute;
+    left: calc( 50% - var(--w) / 2 );
+    top: calc( -1 * var(--w) / 2 );
+    width: var(--w);
+    height: var(--w);
+    [scroll-dir='down'] & {
+      top: calc( -1 * var(--w) );
+    }
+  }
+
   .logo{
     .w{
-      transition: height 0.5s;
+      transition: height 0.5s ease-in-out;
     }
 
     &.big{

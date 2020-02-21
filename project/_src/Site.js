@@ -7,6 +7,7 @@ import BubullesHtml from "./bubulles/BubullesHtml";
 import VideoThumbnail from "./components/VideoThumbnail";
 import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
+import LottieLoader from "./lottie/LottieLoader";
 window.lottie=require("lottie-web");
 
 //require("./pixi.boot");
@@ -152,6 +153,7 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
+        LottieLoader.initFromDom();
         videoThumbnail.fromDom();
         bubullesHtml.fromDom();
         scrollActive.observe();
