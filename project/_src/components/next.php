@@ -4,7 +4,8 @@ use Classiq\Models\Project;
 
 ?>
 
-<div scroll-active="" ajax-on-scroll="<?=$vv->next()->href()?>?povHistory=true">
+<div ajax-on-scroll="<?=$vv->next()->href()?>"
+     ajax-on-scroll-delay="1500">
     <div class="next-one">
         <a href="<?=$vv->next()->href()?>">
             <?if($vv->isNews()):?>
@@ -15,3 +16,4 @@ use Classiq\Models\Project;
         </a>
     </div>
 </div>
+

@@ -1,35 +1,51 @@
 export default class AjaxOnScroll {
     constructor($main) {
+        if(LayoutVars.wysiwyg){return;}
+
         let me=this;
         this.$main=$main;
         this.url=$main.attr("ajax-on-scroll");
+        this.delay=$main.attr("ajax-on-scroll-delay");
         $main.removeAttr("ajax-on-scroll");
-        $main.on("SCROLL_ACTIVE",function(){
-            console.log("charge",me.url);
-            me.load();
-        })
-
-
-        //PovApi.getView(url,$main)
+        $main.removeAttr("ajax-on-scroll-delay");
+        me.$main.attr("ajax-on-scroll-state","wait");
+        //initialise le scroll
+        let onChange=function(entries, observer){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    me.load();
+                }
+            });
+        };
+        let observer = new IntersectionObserver(onChange, {});
+        observer.observe($main[0]);
     }
     load(){
         let me=this;
-        $.ajax({
-            dataType: "json",
-            url: me.url,
-            data: {},
-            success: function(e){
-                console.log("loaded",e);
-                me.$main.replaceWith(e.html)
-                Pov.events.dispatchDom($body,Pov.events.DOM_CHANGE);
-            }
-        });
+        me.$main.attr("ajax-on-scroll-state","wait-loading");
+        setTimeout(function(){
+            me.$main.attr("ajax-on-scroll-state","loading");
+            $.ajax({
+                dataType: "json",
+                url: `${me.url}?povHistory=true"`,
+                data: {},
+                success: function(e){
+                    console.log("loaded",e);
+                    me.$main.replaceWith(e.html);
+                    me.$main.attr("is-url",me.url);
+                    Pov.events.dispatchDom($body,Pov.events.DOM_CHANGE);
+                    PovHistory.setMeta(e.json.meta);
+                    history.replaceState({},e.json.meta.title,me.url);
+
+                }
+            });
+        },me.delay)
+
     }
-
-
     static initFromDom(){
         $("[ajax-on-scroll]").each(function(){
-            new AjaxOnScroll($(this));
+            let $el=$(this);
+            new AjaxOnScroll($el);
         });
     }
 }

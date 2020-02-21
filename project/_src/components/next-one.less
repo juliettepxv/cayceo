@@ -1,13 +1,60 @@
 .next-one{
-  background-color: var(--color-violet);
-  color: var(--color-magenta);
+  .mt-big;
+  position: relative;
   display: flex;
   justify-content: center;
-
   .pxy-big;
   text-align: center;
-
   .h1;
-  //font-weight: normal;
   text-decoration: none;
+
+  transition: all 0.5s;
+  background-color: var(--color-violet);
+  color: var(--color-magenta);
+
+  &:before{
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-magenta);
+    transition: all 1.2s linear;
+  }
+  >a{
+    position: relative;
+    z-index: 2;
+  }
+
+
+  [ajax-on-scroll-state*='loading'] & {
+    color: var(--color-white);
+    &:before{
+      width: 100%;
+    }
+
+  }
+  [ajax-on-scroll-state='loading'] & {
+    animation-name: keys-blink;
+    animation-duration: 0.2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+
+
+  @keyframes keys-blink{
+    from{
+      opacity:1;
+    }
+    to{
+      opacity:0;
+    }
+  }
+
+}
+
+[ajax-on-scroll-state]{
+  visibility: visible !important;
 }

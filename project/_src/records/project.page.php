@@ -22,7 +22,7 @@ $view->inside("layout/layout",$vv);
             <?=$view->render("bubulles/normal",$vv)?>
         </div>*/?>
 
-        <?=$view->render("components/next",$vv)?>
+
 
     <?/*
     //debug news
@@ -36,6 +36,5 @@ $view->inside("layout/layout",$vv);
         <?endforeach;?>
     </div>
     */?>
-
-
 </div>
+<?=$view->render("components/next",$vv)?>

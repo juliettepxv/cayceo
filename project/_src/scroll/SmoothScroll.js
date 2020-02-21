@@ -46,7 +46,7 @@ var SmoothScroll = /** @class */ (function () {
             var resized = _this.resizeRequest > 0;
             var scrollY = window.pageYOffset;
             if (resized) {
-                var height = _this.target.clientHeight;
+                var height = _this.target.clientHeight + $("#nav-bar").height();
                 document.body.style.height = height + "px";
                 _this.scrollHeight = height;
                 _this.viewHeight = window.innerHeight;
@@ -95,6 +95,11 @@ var SmoothScroll = /** @class */ (function () {
         window.addEventListener("scroll", this._onScroll);
         $body.on(Pov.events.DOM_CHANGE,function(){
             me._onResize();
+            me._update();
+            setTimeout(function(){
+                me._onResize();
+                me._update();
+            },1000)
         });
         this._update();
     }

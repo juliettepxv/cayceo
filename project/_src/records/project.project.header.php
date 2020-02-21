@@ -58,9 +58,10 @@ $img=$vv->thumbnail(true);
                 ->htmlTag("poster", $vv->name,true )
             ?>
             <?if($vv->video()):?>
-                <video src="<?=$vv->video()->httpPath()?>"
+                <video scroll-active=""
+                       src="<?=$vv->video()->httpPath()?>"
                        poster="<?=$vv->thumbnail()->bgColor("eeeeee")->sizeMax(1800,1800)->jpg()->href()?>"
-                       controls="controls" autoplay="autoplay"></video>
+                       controls="controls" autoplay="autoplay" preload="none"></video>
             <?endif;?>
 
         </div>

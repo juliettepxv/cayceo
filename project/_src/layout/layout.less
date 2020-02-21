@@ -25,8 +25,14 @@ html{
     >footer{
       width: 100%;
       min-height: 100px;
+      [page-type='project'] & {
+        display: none;
+      }
     }
   }
+
+
+
 }
 @import "project/_src/nav/nav.less";
 @import "footer.less";

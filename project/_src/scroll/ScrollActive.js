@@ -8,32 +8,46 @@ export default class ScrollActive {
         let me=this;
     }
 
-    observe(){
+    /**
+     * initialise un seul element
+     * @param $el
+     */
+    observeOne($el){
         let me=this;
+        if($el.is("[scroll-active-init]")){
+            return;
+        }
+        $el.attr("scroll-active-init","");
         let options = {
             root: null,
             rootMargin: '200px'
         };
+
+        let onChange=function(entries, observer){
+            entries.forEach(entry => {
+                let active=entry.isIntersecting;
+                let $el=$(entry.target);
+                if(active){
+                    $el.attr("scroll-active","1");
+                    $el.trigger("SCROLL_ACTIVE");
+                }else{
+                    $el.attr("scroll-active","");
+                    $el.trigger("SCROLL_INACTIVE")
+                }
+            });
+        };
+        let observer = new IntersectionObserver(onChange, options);
+        observer.observe($el[0]);
+    }
+    /**
+     * initialise tous les éléments non initialisés
+     */
+    observe(){
+        let me=this;
         $("[scroll-active]").not("[scroll-active-init]").each(function(){
-            let $el=$(this);
-            $el.attr("scroll-active-init","");
-            let observer = new IntersectionObserver(me.onChange, options);
-            observer.observe($el[0]);
-        });
-
-    }
-
-    onChange(entries, observer){
-        entries.forEach(entry => {
-            let active=entry.isIntersecting;
-            let $el=$(entry.target);
-            if(active){
-                $el.attr("scroll-active","1");
-                $el.trigger("SCROLL_ACTIVE");
-            }else{
-                $el.attr("scroll-active","");
-                $el.trigger("SCROLL_INACTIVE")
-            }
+            me.observeOne($(this));
         });
     }
+
+
 }

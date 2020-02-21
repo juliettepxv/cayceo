@@ -107,6 +107,20 @@ export default class Site{
         socialShares.listenClicks();
 
 
+        $body.on("SCROLL_INACTIVE",function(e){
+            console.log("SCROLL_INACTIVE",e);
+            if($(e.target).is("video")){
+                $(e.target)[0].pause();
+            }
+        })
+        $body.on("SCROLL_ACTIVE",function(e){
+            console.log("SCROLL_ACTIVE",e);
+            if($(e.target).is("video[autoplay='autoplay']")){
+                $(e.target)[0].play();
+            }
+        })
+
+
 
         //require("./blocks/FormContact");
         //FormContact.initFromDom();
@@ -125,7 +139,6 @@ export default class Site{
 
         //changement d'url et HTML injecté
         $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED_INJECTED,function(){
-
             me.onDomChange();
 
             //scroll top
@@ -148,12 +161,15 @@ export default class Site{
             me.onDomChange();
         });
 
+
+
     }
 
     /**
      * Initialisations d'objets dom
      */
     onDomChange(){
+        $body.attr("page-type",PovHistory.currentPageInfo.recordType);
         LottieLoader.initFromDom();
         videoThumbnail.fromDom();
         bubullesHtml.fromDom();
@@ -161,5 +177,6 @@ export default class Site{
         ssm.initFromDom();
         navMenu.initFromDom();
         AjaxOnScroll.initFromDom();
+
     }
 }
