@@ -67,7 +67,8 @@ if(!the()->requestUrl->isAjax){
 
 
         <?=$view->render("nav/nav")?>
-
+        
+        <div id="page-transition"></div>
 
         <!--svg-collection icons-->
         <div style="display: none;">
