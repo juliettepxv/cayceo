@@ -78,7 +78,7 @@ export default class Site{
         let me = this;
 
         window.ssm=new SmoothScrollManager();
-        window.utils=new Utils();
+
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
         window.videoThumbnail=new VideoThumbnail();

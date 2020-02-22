@@ -1,8 +1,9 @@
 //on inclue classiq
+import Utils from "./utils/Utils";
 require("../../vendor/davidmars/classiq/dist/classiq.boot");
 require("../../vendor/davidmars/classiq/Classiq/_src/cq-debug/WebpackVersion");
-
 require("./app.less");
+window.utils=new Utils();
 
 import Site from "./Site.js";
 
@@ -25,17 +26,8 @@ Pov.onBodyReady(function(){
      * @type {JQuery}
      */
     window.$main=$("#main");
-
-    //touch or not
-    function isTouchDevice() {
-        return !!('ontouchstart' in window) || !!('msmaxtouchpoints' in window.navigator);
-    }
-    if(isTouchDevice()){
-        window.$body.addClass("is-touch");
-    }else{
-        window.$body.addClass("is-not-touch");
-    }
-    if(isTouchDevice()){
+    window.$body.addClass(utils.device.isTouchDevice()?"is-touch":"is-not-touch");
+    if(utils.device.isTouchDevice()){
         //add a css class when virtual keyboard is open
         let selector="input[type='text'],input[type='number'],input[type='url'],input[type='email'],textarea"
         $(document)
@@ -46,35 +38,13 @@ Pov.onBodyReady(function(){
                 window.$body.removeClass("virtual-keyboard-open");
         });
     }
-    
-    //ios?
-    let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    if(iOS){
+    if(utils.device.isIos){
         window.$body.addClass("is-ios");
     }
-    
-    //edge / ie or not
-    if(navigator.userAgent.indexOf("Edge") !== -1){
+    if(utils.device.isEdge){
         window.$body.addClass("is-edge");
     }
-    function msie() {
-
-        var ua = window.navigator.userAgent;
-        var msie = ua.indexOf("MSIE ");
-
-        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
-        {
-            //alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
-            return true;
-        }
-        else  // If another browser, return 0
-        {
-            //alert('otherbrowser');
-            return false;
-        }
-
-    }
-    if(msie()){
+    if(utils.device.isMsie){
         window.$body.addClass("is-ie");
     }
 
