@@ -62,7 +62,7 @@ export default class BubullesHtml{
             let onChange=function(entries, observer){
                 entries.forEach(entry => {
                     let active=entry.isIntersecting;
-                    if(active){
+                    if(active && !utils.device.isEdge){
                         anim.play();
                     }else{
                         anim.pause();
