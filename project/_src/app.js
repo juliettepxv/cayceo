@@ -4,10 +4,7 @@ require("../../vendor/davidmars/classiq/dist/classiq.boot");
 require("../../vendor/davidmars/classiq/Classiq/_src/cq-debug/WebpackVersion");
 require("./app.less");
 window.utils=new Utils();
-
 import Site from "./Site.js";
-
-
 Pov.onBodyReady(function(){
     console.log("ready (app)");
     /**

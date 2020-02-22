@@ -1,54 +1,25 @@
+
 body{
-  overflow-x: hidden;
-  overflow-y: hidden;
-  >#root{ //viewport
-    //background-color:yellow;
-    //outline:1px solid red;
-    overflow: hidden;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    >#main{ //scroll-container
-      position: absolute;
+  &.smooth-scroll{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    >#root{ //viewport
       overflow: hidden;
-      z-index: 10;
-      backface-visibility: hidden;
-      transform-style: preserve-3d;
+      position: fixed;
+      height: 100%;
       width: 100%;
-      //transition: transform 1s ease-in-out;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      >#main{ //scroll-container
+        position: absolute;
+        overflow: hidden;
+        z-index: 10;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        width: 100%;
+      }
     }
   }
 }
-
-/*
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.viewport {
-  background-color:yellow;
-  outline:1px solid red;
-  overflow: hidden;
-  position: fixed;
-  height: 100%;
-  width: 98%;
-  top: 0;
-  left: 0;
-  right: 2%;
-  bottom: 0;
-}
-
-.scroll-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 10;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  width: 100%;
-}
- */

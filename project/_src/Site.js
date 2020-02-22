@@ -10,7 +10,7 @@ import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
 import AjaxOnScroll from "./components/AjaxOnScroll";
 window.lottie=require("lottie-web");
-
+window.utils=new Utils();
 //require("./pixi.boot");
 require("./gsap.boot");
 
@@ -77,8 +77,7 @@ export default class Site{
          */
         let me = this;
 
-        window.ssm=new SmoothScrollManager();
-
+        window.ssm=new SmoothScrollManager(!utils.device.isEdge);
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
         window.videoThumbnail=new VideoThumbnail();

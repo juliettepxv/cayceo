@@ -1,14 +1,24 @@
 require("./SmoothScroll");
 
 export default class SmoothScrollManager {
-    constructor() {
+    constructor(enabled=true) {
         let me=this;
+
+        this.options={
+            enabled:enabled,
+            parrallaxElements:true,
+        };
+
         /**
          * liste des objets dom qui prennent du paralax
          * @type {null}
          */
         this.$ss=null;
 
+        if(!this.options.enabled){
+            return;
+        }
+        $body.addClass("smooth-scroll")
         this.scroller = new SmoothScroll({
             target: document.getElementById("main"), // element container to scroll
             scrollEase: 0.05,
@@ -17,6 +27,9 @@ export default class SmoothScrollManager {
 
         this.scroller.emitter.on("SCROLL",function(){
             //console.log("spreed",scroller.currentScroll,scroller.speed);
+            if(!me.options.parrallaxElements){
+                return;
+            }
             if(me.$ss){
                 me.$ss.filter("[scroll-active='1'] [ss],[scroll-active='1'][ss]").each(function(){
                     let $el=$(this);
