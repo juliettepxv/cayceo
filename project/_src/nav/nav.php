@@ -10,13 +10,15 @@
                 Menu
             </span>
         </button>
-        <div class="bubulles" lottie-loader
-             lottie-url="<?=the()->fileSystem->filesystemToHttp("project/_src/bubulles/lottie/bubulle-sunrise-4.json")?>"
-             lottie-loop="true" lottie-autoplay="true"
-        ></div>
-        <a class="logo" href="<?=cq()->homePage()->href()?>">
-            <span class="w"></span>
-        </a>
+
+            <div class="bubulles" lottie-loader
+                 lottie-url="<?=the()->fileSystem->filesystemToHttp("project/_src/bubulles/lottie/bubulle-sunrise-4.json")?>"
+                 lottie-loop="true" lottie-autoplay="true"
+            ></div>
+            <a class="logo" href="<?=cq()->homePage()->href()?>">
+                <span class="w"></span>
+            </a>
+
 
         <?=$view->render("./menu-languages")?>
 

@@ -16,6 +16,7 @@
     ->button()
     ->render()
 ?>
+<?/*
 <label>Format</label>
 <?=$vv->wysiwyg()->field("size")
     ->string()
@@ -27,7 +28,22 @@
             "grand"=>"col-6 col-md-9",
     ])
 
+?>*/?>
+
+<h4>Esthétique</h4>
+<label>Placer des bubulle?</label>
+<?=$vv->wysiwyg()->field("decoAfter")
+    ->bool()
+    ->onSavedRefreshListItem($vv)
+    ->checkbox("Après")
 ?>
+
+
+
+
+
+
+
 
 
 
