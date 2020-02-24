@@ -9,6 +9,7 @@ import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
 import AjaxOnScroll from "./components/AjaxOnScroll";
+import Form from "./blocks/form/Form";
 window.lottie=require("lottie-web");
 window.utils=new Utils();
 //require("./pixi.boot");
@@ -173,6 +174,7 @@ export default class Site{
         scrollActive.observe();
         ssm.initFromDom();
         navMenu.initFromDom();
+        Form.fromDom();
         AjaxOnScroll.initFromDom();
 
     }

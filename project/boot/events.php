@@ -17,9 +17,18 @@ pov()->events->listen("EVENT_ERROR_MISSING_HOME_PAGE",function(){
 
 pov()->events->listen(C_povApi::EVENT_ACTION,
     /**
-     *
+     * @param ApiResponse $vv
+     * @param string $actionName
      */
     function(ApiResponse $vv,string $actionName){
+
+        $actionFile="project/api/$actionName.php";
+        if(!is_file($actionFile)){
+            $vv->addError("action invalide");
+        }else{
+            include $actionFile;
+        }
+
         /*
         $vv->addMessage("Hello action $actionName");
         switch ($actionName){

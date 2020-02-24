@@ -1,0 +1,119 @@
+.block-contact{
+  background-color: var(--color-violet);
+  color: var(--color-magenta);
+
+}
+
+form.form-text{
+  text-align: center;
+  textarea{
+    text-align: center;
+  }
+
+  @media(min-width: @screen-lg){
+    width: 900px;
+    margin:0 auto;
+  }
+  .h2;
+  font-size: 18px;
+  @media(min-width: @screen-md){
+    font-size: 24px;
+  }
+  @media(min-width: @screen-lg){
+    //font-size: 30px;
+  }
+  font-weight: bold;
+  text-transform: none;
+  line-height: 2;
+
+  button,select,input,textarea{
+    font: inherit;
+    background:  var(--color-violet);
+    background-color: var(--color-violet);
+    color: var(--color-white);
+    border: none;
+    outline: none;
+    &::placeholder{
+      color: inherit;
+      opacity: 0.2;
+    }
+    vertical-align: baseline;
+  }
+  input,select{
+    //border-bottom: 1px solid var(--color-magenta);
+    min-width: 50px;
+    line-height: 1;
+  }
+  .error{
+    background-color: var(--color-magenta);
+    color: var(--color-white);
+    //border-radius: 8px;
+  }
+
+
+
+  textarea{
+    display: block;
+    width: 100%;
+    //min-height: 200px;
+    resize: none;
+    //overflow: hidden;
+    //background-color: var(--color-white);
+    //border-radius: 8px;
+    //padding: 0.5em 1em;
+    //color: var(--color-violet);
+    //border: 1px solid var(--color-white);
+  }
+  button{
+    display: block;
+    margin: 1em auto;
+    cursor: pointer;
+    border:1px solid;
+    color: var(--color-magenta) !important;
+    border-radius: 8px;
+    padding: 1em 1em;
+    line-height: 1;
+    &:hover{
+      background-color: var(--color-magenta) !important;
+      color: var(--color-white) !important;
+    }
+  }
+
+
+  //hack chrom color autofill
+  @-webkit-keyframes autofill {
+    0%,100% {
+      color: var(--color-white);
+      background: transparent;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+
+
+  [type="submit"],.error-message,.success-message{
+    display: none;
+  }
+  &[state='valid']{
+    [type="submit"]{
+      display: block;
+    }
+  }
+  &[state='sending']{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  &[state='error']{
+    .error-message{
+      display: block;
+    }
+  }
+  &[state='sent']{
+    .success-message{
+      display: block;
+    }
+  }
+}
