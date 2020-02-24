@@ -33,14 +33,19 @@ export default class NavMenu{
 
     initFromDom(){
         let $logo=$("#nav .logo");
+        let $bubulles=$("#nav .bubulles");
         let $logoPlaceHolder=$(".big-logo-placeholder").not(".init");
         let onChange=function(entries, observer){
             entries.forEach(entry => {
                 let active=entry.isIntersecting;
                 if(active){
-                    $logo.addClass("big");
+                    //$logo.addClass("big");
+                    $bubulles.addClass("big");
+                    gsap.to($logo.find(".w"),0.5,{height:$("#nav-bar").height()*4,y:100,duration:0.5})
                 }else{
-                    $logo.removeClass("big");
+                   //$logo.removeClass("big");
+                    gsap.to($logo.find(".w"),0.5,{height:$("#nav-bar").height(),y:0,duration:0.5})
+                    $bubulles.removeClass("big");
                 }
             });
         };
@@ -48,7 +53,7 @@ export default class NavMenu{
             $logoPlaceHolder.addClass("init");
             let observer = new IntersectionObserver(onChange, {
                 root: null,
-                rootMargin: '0px'
+                rootMargin: '100px'
             });
             observer.observe($logoPlaceHolder[0]);
         }

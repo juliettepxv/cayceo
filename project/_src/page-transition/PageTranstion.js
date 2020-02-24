@@ -12,10 +12,10 @@ export default class PageTransition {
         });
 
         this.randsColor=[
-            "hue-rotate(100deg) brightness(1.5)",
-            "hue-rotate(35deg)  brightness(1.5)",
-            "hue-rotate(86deg)  brightness(1.5)",
-            "hue-rotate(133deg) brightness(2.5)"
+            "invert(10%) sepia(75%) saturate(3791%) hue-rotate(234deg) brightness(91%) contrast(99%)",
+            "invert(20%) sepia(63%) saturate(6797%) hue-rotate(342deg) brightness(103%) contrast(98%)",
+            "invert(50%) sepia(41%) saturate(5845%) hue-rotate(345deg) brightness(100%) contrast(103%)",
+            "invert(68%) sepia(98%) saturate(5386%) hue-rotate(178deg) brightness(95%) contrast(101%)"
         ]
 
     }

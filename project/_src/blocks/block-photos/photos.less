@@ -1,77 +1,29 @@
-.block.block-photos{
-  .py-big;
-  .list{
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    >.photo-item{
-      --marge:50px;
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      >*{
-        //outline: 1px solid green;
-        width: calc( 50% - var(--marge)/2 );
-      }
-      //superposition des lignes
-      margin-top: -50px;
-      &:first-child{
-        margin-top: 0;
-      }
-      &:last-child{
-        margin-bottom: 50px;
-      }
+.block.block-photos {
+  .py-medium;
 
-      //alterne image et déco
-      @media(min-width: @screen-md) {
-        >.deco{
-          transform: translateX(-100px);
-        }
-        &:nth-child(even) {
-          >img{
-            order:2;
-          }
-          >.deco{
-            order:1;
-            transform: translateX(100px);
-          }
-        }
-      }
+  .list {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
 
-      >img{
+    > .photo-item {
+      width: 48%;
+      margin: 1%;
+
+      > img {
         max-width: 100%;
         height: auto;
         display: block;
         object-fit: contain;
       }
-      .deco{
-        z-index: 1;
+
+      > .deco{
         position: relative;
+        top:-100px;
+        height: 400px;
       }
-
-      @media(min-width: @screen-md){
-        &:nth-child(even){
-          //outline: 1px solid pink;
-          .deco{
-            >svg{
-              left: auto;
-              right:0
-            }
-          }
-        }
-      }
-
-      &:only-child{
-        .deco{
-          >svg{
-            left: -50%;
-            width: 200%;
-          }
-        }
-      }
-
     }
-
   }
 }

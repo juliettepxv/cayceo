@@ -32,6 +32,10 @@ if ($img && $img->isImage()) {
 
     <img ss="<?=round(rand(10,50)/100,1)?>"
          src="<?= $imgSrc ?>" width="<?=$w?>px" height="<?=$h?>px">
-    <?= $view->render("bubulles/normal") ?>
+    <?/*= $view->render("bubulles/normal") */?>
+
+    <?if($vv->getData("decoAfter")):?>
+        <?=$view->render("bubulles/normal")?>
+    <?endif?>
 
 </div>
