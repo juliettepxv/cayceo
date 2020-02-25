@@ -7,7 +7,7 @@
 ?>
 <div <?=$vv->wysiwyg()->attr()?> scroll-active="" class="block block-contact py-medium">
     <div class="container" dss="1">
-            <?=$view->render("blocks/form/form-contact")?>
+         <?=$view->render("blocks/form/form-contact")?>
     </div>
 </div>
 

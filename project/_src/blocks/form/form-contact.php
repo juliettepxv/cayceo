@@ -1,47 +1,79 @@
+<?php
+//récupère les sujets et placehollers
+$subjects=[];
+$hellos=[];
+$ciaos=[];
+foreach (the()->project->translations() as $k=>$v){
+    if(preg_match("/^form subject (.*) label/",$k,$m)){
+        $subject=$m[1];
+        $subjects[$subject]=[
+                "label"=>trad("form subject $subject label"),
+                "placeholder"=>trad("form subject $subject placeholder"),
+        ];
+    }
+    if(preg_match("/^form hello (.*)/",$k,$m)){
+        $subject=$m[1];
+        $hellos[$subject]=[
+            "label"=>trad("form hello $subject")
+        ];
+    }
+    if(preg_match("/^form ciao (.*)/",$k,$m)){
+        $subject=$m[1];
+        $ciaos[$subject]=[
+            "label"=>trad("form ciao $subject")
+        ];
+    }
+}
+
+?>
 <form data-form class="form-text">
     <select m class="resizeinput" name="hello">
-        <option>Salut</option>
-        <option selected>Bonjour</option>
-        <option>Hello</option>
-        <option>Hola</option>
+        <?foreach ($hellos as $k=>$v):?>
+            <option value="<?=$v["label"]?>"><?=$v["label"]?></option>
+        <?endforeach;?>
     </select>
-    <span m>, je m'appelle</span>
+    <span m>, <?=trad("form je m'appelle")?>&nbsp;</span>
     <input m class="resizeinput" type="text" placeholder="Prénom" name="firstname">
+    <span m>&nbsp;</span>
     <input m class="resizeinput" type="text" placeholder="Nom" name="lastname">
-    <span m>.<br></span>
+    <span m>.</span>
+    <span m>&nbsp;</span>
 
-    <span m>Je vous contacte</span>
+    <span m><?=trad("form je vous contacte")?></span>
+    <span m>&nbsp;</span>
+
     <select m message-placeholder class="resizeinput" name="object">
-        <option placeholder="Voici le descriptif du projet..." selected value="projet">pour vous soumettre un projet</option>
-        <option placeholder="En effet, je souhaiterai savoir..." value="infos">pour avoir des informations</option>
-        <option placeholder="Je vous propose..." value="partenariat">pour vous proposer un partenariat</option>
-        <option placeholder="Pourriez-vous me deviser..." value="devis">car je souhaiterai avoir un devis</option>
-        <option placeholder="En 28ème année de communication, je souhaiterai bla bla bla..." value="stage">car j'aimerai faire un stage chez vous</option>
-        <option placeholder="Diplômé de l'ENA, HEC et des Beaux art de Paris, je souhaite travailler bénévolement pour Manifestory etc..." value="candidature">car je souhaite rejoindre l'équipe</option>
-        <option placeholder="Je vous écris donc ce poême dans l'espoir que vous le lirez..." value="divers">car je m'ennuie</option>
+        <?foreach ($subjects as $k=>$v):?>
+            <option placeholder="<?=$v["placeholder"]?>" value="<?=$k?>"><?=$v["label"]?></option>
+        <?endforeach;?>
     </select>
-    <span>.</span>
+    <span m>&nbsp;</span>
 
     <textarea m rows="2" class="resizeinput" name="message" placeholder="..."></textarea>
 
-    <span m >Vous pouvez m'écrire à</span>
-    <span style="white-space: nowrap">
-    <input m class="resizeinput" type="text" placeholder="email" name="mail1">
-    <span m>@</span>
-    <input m class="resizeinput" type="text" placeholder="mail.com" name="mail2">
-    <span m>.</span>
+    <hr m>
+    <span m ><?=trad("form Vous pouvez m'écrire à")?></span>
+    <span m>&nbsp;</span>
+    <span class="oneline">
+        <input m class="resizeinput" type="text" placeholder="email" name="email1">
+        <span m>@</span>
+        <input m class="resizeinput" type="text" placeholder="mail.com" name="email2">
+        <span m>.</span>
     </span>
-    <br>
-    <select m class="resizeinput" name="ciao">
-        <option>Salut</option>
-        <option>Cordialement</option>
-        <option>À bientôt</option>
-        <option>Adieu</option>
-    </select>
-    <div>
 
-    </div>
+    <hr m>
+
+    <select m class="resizeinput" name="ciao">
+        <?foreach ($ciaos as $k=>$v):?>
+            <option value="<?=$v["label"]?>"><?=$v["label"]?></option>
+        <?endforeach;?>
+    </select>
+
+    <hr m>
+
     <button type="submit">Envoyer</button>
+
+    <hr>
     <div class="error-message">err</div>
     <div class="success-message">success</div>
 </form>

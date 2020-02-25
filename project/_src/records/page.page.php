@@ -3,7 +3,7 @@
 use Classiq\Models\Page;
 $view->inside("layout/layout",$vv);
 ?>
-<div class="py-big">
+<div class="">
 
         <?/*
         <div class="container">

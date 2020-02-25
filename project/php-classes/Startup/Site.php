@@ -36,6 +36,8 @@ class Site extends AbstractSingleton
         "blocks/block-team/team",
         "blocks/form/contact"
     ];
+    public $projectName="Manifestory";
+    public $formsMailTo="d.marsalone@gmail.com";
 
     /**
      * Renvoie la home page
