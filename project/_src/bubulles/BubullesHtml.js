@@ -52,7 +52,7 @@ export default class BubullesHtml{
 
             let anim=lottie.loadAnimation({
                 container: $(this).get(0), // the dom element that will contain the animation
-                renderer: 'svg',
+                renderer: utils.device.isEdge?"canvas":"svg",
                 loop: true,
                 autoplay: false,
                 path: me._getLottieColorFile(me._getColor($el)) // the path to the animation json
@@ -62,8 +62,11 @@ export default class BubullesHtml{
             let onChange=function(entries, observer){
                 entries.forEach(entry => {
                     let active=entry.isIntersecting;
-                    if(active && !utils.device.isEdge){
-                        anim.play();
+                    if(active){
+                        //if(!utils.device.isEdge){
+                            anim.play();
+                        //}
+
                     }else{
                         anim.pause();
                     }
