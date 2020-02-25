@@ -55,9 +55,9 @@ foreach (the()->project->translations() as $k=>$v){
     <span m ><?=trad("form Vous pouvez m'écrire à")?></span>
     <span m>&nbsp;</span>
     <span class="oneline">
-        <input m class="resizeinput" type="text" placeholder="email" name="email1">
+        <input m class="resizeinput" type="text" autocomplete="<?=utils()->string->random(5)?>" placeholder="email" name="email1">
         <span m>@</span>
-        <input m class="resizeinput" type="text" placeholder="mail.com" name="email2">
+        <input m class="resizeinput" type="text" autocomplete="<?=utils()->string->random(5)?>" placeholder="mail.com" name="email2">
         <span m>.</span>
     </span>
 

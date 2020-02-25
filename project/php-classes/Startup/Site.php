@@ -36,7 +36,13 @@ class Site extends AbstractSingleton
         "blocks/block-team/team",
         "blocks/form/contact"
     ];
+    /**
+     * @var string Nom du projet utilisé dans les envois de mail par exemple
+     */
     public $projectName="Manifestory";
+    /**
+     * @var string Email qui reçoit les formulaires
+     */
     public $formsMailTo="d.marsalone@gmail.com";
 
     /**
