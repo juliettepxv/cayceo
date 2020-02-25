@@ -168,6 +168,9 @@ export default class Site{
      */
     onDomChange(){
         $body.attr("page-type",PovHistory.currentPageInfo.recordType);
+        if(PovHistory.currentPageInfo.recordType==="project"){
+            $body.attr("show-footer","0");
+        }
         LottieLoader.initFromDom();
         videoThumbnail.fromDom();
         bubullesHtml.fromDom();

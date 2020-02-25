@@ -3,7 +3,7 @@
 use Classiq\Models\Project;
 $view->inside("layout/layout",$vv);
 ?>
-<div class="pt-big project-page" color-theme="<?=$vv->colorTheme()?>">
+<div class="pt-big project-page" is-url="<?=$vv->href()?>" color-theme="<?=$vv->colorTheme()?>">
 
         <?if($vv->isNews()):?>
             <?=$view->render("./project.news.header")?>

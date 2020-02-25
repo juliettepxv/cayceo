@@ -5,6 +5,13 @@ export default class AjaxOnScroll {
         let me=this;
         this.$main=$main;
         this.url=$main.attr("ajax-on-scroll");
+        let yetLoaded=$(`[is-url='${this.url}']`).length;
+        if(yetLoaded){
+            console.warn("all loaded");
+            $main.remove();
+            $body.attr("show-footer","1");
+            return;
+        }
         this.delay=$main.attr("ajax-on-scroll-delay");
         $main.removeAttr("ajax-on-scroll");
         $main.removeAttr("ajax-on-scroll-delay");
