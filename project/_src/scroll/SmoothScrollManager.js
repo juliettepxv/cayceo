@@ -47,8 +47,10 @@ export default class SmoothScrollManager {
      * Recalcule le smooth scroll
      */
     refresh(){
-        this.scroller._onResize();
-        this.scroller._update();
+        if(this.scroller){
+            this.scroller._onResize();
+            this.scroller._update();
+        }
     }
 
     initFromDom(){
