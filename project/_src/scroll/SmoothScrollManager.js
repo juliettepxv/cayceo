@@ -43,6 +43,14 @@ export default class SmoothScrollManager {
         });
     }
 
+    /**
+     * Recalcule le smooth scroll
+     */
+    refresh(){
+        this.scroller._onResize();
+        this.scroller._update();
+    }
+
     initFromDom(){
         this.$ss=$("[ss]");
 
@@ -68,7 +76,7 @@ export default class SmoothScrollManager {
             let observer = new IntersectionObserver(onChange, observerOptions);
             observer.observe($el[0]);
         });
-
+        this.refresh();
 
     }
 

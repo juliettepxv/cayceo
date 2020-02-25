@@ -9,6 +9,7 @@ import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
 import AjaxOnScroll from "./components/AjaxOnScroll";
+import Form from "./blocks/form/Form";
 window.lottie=require("lottie-web");
 window.utils=new Utils();
 //require("./pixi.boot");
@@ -77,7 +78,7 @@ export default class Site{
          */
         let me = this;
 
-        window.ssm=new SmoothScrollManager(!utils.device.isEdge);
+        window.smoothScrollManager=new SmoothScrollManager(!utils.device.isEdge);
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
         window.videoThumbnail=new VideoThumbnail();
@@ -171,8 +172,9 @@ export default class Site{
         videoThumbnail.fromDom();
         bubullesHtml.fromDom();
         scrollActive.observe();
-        ssm.initFromDom();
+        smoothScrollManager.initFromDom();
         navMenu.initFromDom();
+        Form.fromDom();
         AjaxOnScroll.initFromDom();
 
     }

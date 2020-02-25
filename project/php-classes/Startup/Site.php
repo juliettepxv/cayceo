@@ -33,7 +33,8 @@ class Site extends AbstractSingleton
         "blocks/video",
         "blocks/dwd",
         "blocks/block-projets/projets",
-        "blocks/block-team/team"
+        "blocks/block-team/team",
+        "blocks/form/contact"
     ];
 
     /**
