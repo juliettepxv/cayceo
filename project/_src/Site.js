@@ -78,7 +78,7 @@ export default class Site{
          */
         let me = this;
 
-        window.ssm=new SmoothScrollManager(!utils.device.isEdge);
+        window.smoothScrollManager=new SmoothScrollManager(!utils.device.isEdge);
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
         window.videoThumbnail=new VideoThumbnail();
@@ -172,7 +172,7 @@ export default class Site{
         videoThumbnail.fromDom();
         bubullesHtml.fromDom();
         scrollActive.observe();
-        ssm.initFromDom();
+        smoothScrollManager.initFromDom();
         navMenu.initFromDom();
         Form.fromDom();
         AjaxOnScroll.initFromDom();
