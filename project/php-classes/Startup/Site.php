@@ -44,6 +44,10 @@ class Site extends AbstractSingleton
      * @var string Email qui reçoit les formulaires
      */
     public $formsMailTo="d.marsalone@gmail.com";
+    /**
+     * @var string couleur hexa du navigateur sur mobile
+     */
+    public $themeColor="#18237B";
 
     /**
      * Renvoie la home page
