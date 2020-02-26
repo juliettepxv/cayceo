@@ -124,6 +124,11 @@ export default class Site{
                             vdo.play();
                         });
                     }
+                    if($vdo.is("[onlyoneplaying]")){
+                        $("video[onlyoneplaying]").not($vdo).each(function(){
+                            $(this)[0].pause();
+                        })
+                    }
                 }
             }
         });

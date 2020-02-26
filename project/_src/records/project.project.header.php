@@ -61,7 +61,7 @@ $img=$vv->thumbnail(true);
                 <video scroll-active=""
                        src="<?=$vv->video()->httpPath()?>"
                        poster="<?=$vv->thumbnail()->bgColor("eeeeee")->sizeMax(1800,1800)->jpg()->href()?>"
-                       controls="controls" autoplay="autoplay" preload="none"></video>
+                       controls="controls" autoplay="autoplay" onlyoneplaying preload="none"></video>
             <?endif;?>
 
         </div>
