@@ -4,7 +4,7 @@ use Classiq\Models\Project;
 $view->inside("layout/layout",$vv);
 ?>
 <div scroll-active="" is-url="<?=$vv->href()?>"
-     title="<?=$vv->urlpage->getValue("meta_title_lang")?>"
+     title="<?=utils()->string->forAttributes($vv->urlpage->getValue("meta_title_lang"))?>"
      class="pt-big project-page"  color-theme="<?=$vv->colorTheme()?>">
 
         <?if($vv->isNews()):?>
