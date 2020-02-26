@@ -47,7 +47,10 @@ $attrs["ss"]=round(rand(10,50)/100,1);
                  src="<?=$img->httpPath()?>"
                  width="<?=$img->image_width?>" height="<?=$img->image_height?>">
             <?if($video):?>
-                <video class="thumb video" src="<?=$video->httpPath()?>" muted="muted" loop="loop" preload="none"></video>
+                <video src="<?=$video->httpPath()?>" class="thumb video"
+                       scroll-active="" autoplay="autoplay" muted="muted"
+                       loop="loop" preload="none"
+                       ></video>
             <?endif;?>
         </div>
 

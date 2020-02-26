@@ -4,7 +4,6 @@ import Utils from "./utils/Utils";
 import DataSocialShareClick from "data-social-share-click" ;
 import BricksManager from "./bricks/BricksManager";
 import BubullesHtml from "./bubulles/BubullesHtml";
-import VideoThumbnail from "./components/VideoThumbnail";
 import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
@@ -81,7 +80,6 @@ export default class Site{
         window.smoothScrollManager=new SmoothScrollManager(!utils.device.isEdge);
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
-        window.videoThumbnail=new VideoThumbnail();
         window.navMenu=new NavMenu();
         window.pageTransition=new PageTransition();
         me._initListeners();
@@ -106,17 +104,30 @@ export default class Site{
         let socialShares=new DataSocialShareClick();
         socialShares.listenClicks();
 
-
-        $body.on("SCROLL_INACTIVE",function(e){
+        //gestion de ce qui se passe quand un element est visible ou non
+        $body.on("SCROLL_INACTIVE SCROLL_ACTIVE",function(e){
             if($(e.target).is("video")){
-                $(e.target)[0].pause();
+                let $vdo=$(e.target);
+                let vdo=$vdo[0];
+                if(e.type==="SCROLL_INACTIVE"){
+                    vdo.pause();
+                }else{
+                    let playPromise = vdo.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                            vdo.play();
+                        })
+                        .catch(error => {
+                            if(!$vdo.attr("muted")){
+                                vdo.muted=true;
+                            }
+                            vdo.play();
+                        });
+                    }
+                }
             }
         });
-        $body.on("SCROLL_ACTIVE",function(e){
-            if($(e.target).is("video[autoplay='autoplay']")){
-                $(e.target)[0].play();
-            }
-        });
+
 
 
 
@@ -172,7 +183,6 @@ export default class Site{
             $body.attr("show-footer","0");
         }
         LottieLoader.initFromDom();
-        videoThumbnail.fromDom();
         bubullesHtml.fromDom();
         scrollActive.observe();
         smoothScrollManager.initFromDom();
