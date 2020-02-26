@@ -20,11 +20,13 @@ export default class AjaxOnScroll {
         let onChange=function(entries, observer){
             entries.forEach(entry => {
                 if(entry.isIntersecting){
-                    me.load();
+                    if(entry.intersectionRatio>=0.8) {
+                        me.load();
+                    }
                 }
             });
         };
-        let observer = new IntersectionObserver(onChange, {});
+        let observer = new IntersectionObserver(onChange, {threshold:[0,0.9]});
         observer.observe($main[0]);
     }
     load(){
