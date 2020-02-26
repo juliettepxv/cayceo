@@ -41,10 +41,10 @@ export default class AjaxOnScroll {
                 success: function(e){
                     console.log("loaded",e);
                     me.$main.replaceWith(e.html);
-                    me.$main.attr("is-url",me.url);
+                    //me.$main.attr("is-url",me.url);
                     Pov.events.dispatchDom($body,Pov.events.DOM_CHANGE);
-                    PovHistory.setMeta(e.json.meta);
-                    history.replaceState({},e.json.meta.title,me.url);
+                    //PovHistory.setMeta(e.json.meta);
+                    //history.replaceState({},e.json.meta.title,me.url);
 
                 }
             });

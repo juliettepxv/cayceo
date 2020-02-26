@@ -106,7 +106,8 @@ export default class Site{
 
         //gestion de ce qui se passe quand un element est visible ou non
         $body.on("SCROLL_INACTIVE SCROLL_ACTIVE",function(e){
-            if($(e.target).is("video")){
+            let $target=$(e.target)
+            if($target.is("video")){
                 let $vdo=$(e.target);
                 let vdo=$vdo[0];
                 if(e.type==="SCROLL_INACTIVE"){
@@ -129,6 +130,14 @@ export default class Site{
                             $(this)[0].pause();
                         })
                     }
+                }
+            }
+
+            //changement d'url au scroll
+            if($target.is("[is-url]")){
+                if(e.type==="SCROLL_ACTIVE") {
+                    document.title=$target.attr("title");
+                    history.replaceState({}, $target.attr("title"), $target.attr("is-url"));
                 }
             }
         });
