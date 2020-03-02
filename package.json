@@ -6,7 +6,7 @@
     "build-prod": "webpack --config _builders/webpack.prod.js",
     "build-prod-stats": "webpack --config _builders/webpack.prod.js --json > _builders/stats-prod.json",
     "npm-install": "npm install && npm install ./gsap-bonus.tgz",
-    "composer-update": "composer update",
+    "composer-update": "composer update"
   },
   "dependencies": {
     "@pixi/filter-rgb-split": "^3.0.3",
