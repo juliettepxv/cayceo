@@ -8,7 +8,12 @@
   "autoload": {
     "psr-4": {
       "Startup\\":      ["project/php-classes/Startup/"],
-      "Classiq\\":      ["project/php-classes/Classiq/"]
+      "Shop\\":      ["options/shop/Shop/"],
+      "Classiq\\":      [
+        "project/php-classes/Classiq/",
+        "options/shop/Classiq/",
+        "options/profile/Classiq/"
+      ]
     }
   },
 

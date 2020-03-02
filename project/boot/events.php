@@ -21,11 +21,12 @@ pov()->events->listen(C_povApi::EVENT_ACTION,
      * @param string $actionName
      */
     function(ApiResponse $vv,string $actionName){
-
-        $actionFile="project/api/$actionName.php";
+        $actionName=str_replace(".","/",$actionName);
+        $actionFile="project/_src/api/$actionName.php";
         if(!is_file($actionFile)){
-            $vv->addError("action invalide");
+            $vv->addError("action invalide ($actionName)");
         }else{
+            $api=$vv;
             include $actionFile;
         }
 

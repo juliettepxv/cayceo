@@ -16,14 +16,17 @@
   padding-right: var(--padding-x);
 
   //shape par défaut
-  .make-shp-pill();
+  .make-shp-rect();
 
   &:not(:disabled){
     cursor: pointer;
   }
-  transition: all 0.2s;
+  transition: all 0.1s;
   //typography
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
   font-size: var(--font-size);
   line-height: 1;
   //font-weight: bold;
@@ -80,9 +83,12 @@
   }
 
   //colors
-  &:hover{
-    filter:brightness(0.9) contrast(1.2) hue-rotate(10deg);
+  @media(hover: hover){
+    &:hover{
+      //filter:brightness(0.9) contrast(1.2) hue-rotate(10deg);
+    }
   }
+
 
   .make-colors-positive();
 

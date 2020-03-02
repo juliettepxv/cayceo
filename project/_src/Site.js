@@ -9,16 +9,17 @@ import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
 import AjaxOnScroll from "./components/AjaxOnScroll";
 import Form from "./blocks/form/Form";
+import PanelManager from "./nav/panel/PanelManager";
+import ProfilForms from "./profil/ProfilForms";
+import Api from "./api/Api";
+import ApiMe from "./api/ApiMe";
+import ApiShop from "./api/ApiShop";
 window.lottie=require("lottie-web");
 window.utils=new Utils();
 //require("./pixi.boot");
 require("./gsap.boot");
 
-window.debug={
-    pixiResize:false,
-    pixiMouse:false,
-    pixiScroll:false
-};
+
 
 window.perfs={
     scrollWheel:false,
@@ -68,7 +69,6 @@ if(LayoutVars.wysiwyg===true){
     perfs.scrollDistort=false;
 }
 
-
 export default class Site{
     constructor() {
         /**
@@ -77,11 +77,20 @@ export default class Site{
          */
         let me = this;
 
+
+        require("./api/api-click.js");
+        window.api=new Api();
+        window.api.me=new ApiMe();
+        window.api.shop=new ApiShop();
+
+
         window.smoothScrollManager=new SmoothScrollManager(!utils.device.isEdge);
         window.scrollActive=new ScrollActive();
         window.bubullesHtml=new BubullesHtml();
         window.navMenu=new NavMenu();
         window.pageTransition=new PageTransition();
+        window.panels=new PanelManager();
+        panels.initFromDom();
         me._initListeners();
         //---------------------go------------------------------------------
         me.onDomChange();
@@ -192,6 +201,7 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
+        ProfilForms.initFromDom();
         $body.attr("page-type",PovHistory.currentPageInfo.recordType);
         if(PovHistory.currentPageInfo.recordType==="project"){
             $body.attr("show-footer","0");
@@ -200,7 +210,6 @@ export default class Site{
         bubullesHtml.fromDom();
         scrollActive.observe();
         smoothScrollManager.initFromDom();
-        navMenu.initFromDom();
         Form.fromDom();
         AjaxOnScroll.initFromDom();
 

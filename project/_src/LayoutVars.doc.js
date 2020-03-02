@@ -8,5 +8,6 @@ window.LayoutVars={
     },
     isModeDev: false,
     isExportStatic: false,
-    wysiwyg: false
+    wysiwyg: false,
+    isLogged:false
 };

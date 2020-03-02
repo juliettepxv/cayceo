@@ -3,6 +3,8 @@
 namespace Startup;
 
 
+use Classiq\C_classiq;
+use Pov\MVC\View;
 use Pov\System\AbstractSingleton;
 
 /**
@@ -25,8 +27,8 @@ class Site extends AbstractSingleton
     public $blocksList=[
         "blocks/texte",
         "blocks/titre",
-        //"blocks/img",
-       // "blocks/img-text",
+        "blocks/img",
+        "blocks/img-text",
         "blocks/block-photos/photos",
         "blocks/block-logos/block-logos",
         "blocks/iframe",
@@ -39,7 +41,7 @@ class Site extends AbstractSingleton
     /**
      * @var string Nom du projet utilisé dans les envois de mail par exemple
      */
-    public $projectName="Manifestory";
+    public $projectName="Armada Handplanes";
     /**
      * @var string Email qui reçoit les formulaires
      */
@@ -47,7 +49,7 @@ class Site extends AbstractSingleton
     /**
      * @var string couleur hexa du navigateur sur mobile
      */
-    public $themeColor="#18237B";
+    public $themeColor="#000000";
 
     /**
      * Renvoie la home page
@@ -58,6 +60,8 @@ class Site extends AbstractSingleton
         return cq()->homePage();
     }
 
+
+    //todo remove les couleurs
 
     public $COLOR_THEME_BLUE="blue";
     public $COLOR_THEME_ORANGE="orange";
@@ -70,5 +74,109 @@ class Site extends AbstractSingleton
             $this->COLOR_THEME_SUNRISE,
         ];
     }
+
+    //todo déplacer...ou pas ?
+
+    /**
+     * @var bool|string Quand false envoie les mails normalement sinon le envoies à l'adresse spécifiée
+     */
+    public $debugMail="d.marsalone@gmail.com";
+
+    /**
+     * Envoie un joli mail formaté
+     * @param $emailTo
+     * @param $subject
+     * @param $view
+     * @param $viewVariables
+     * @return bool
+     * @throws \Pov\PovException
+     */
+    public function sendMail($emailTo,$subject,$view,$viewVariables){
+        if($this->debugMail){
+            $subject="[debug][$emailTo] $subject";
+            $emailTo=$this->debugMail;
+        }
+        $html=View::get($view,$viewVariables)->render();
+        return cq()->sendMail($emailTo,$subject,$html);
+    }
+
+
+
+    //todo déplacer dans shop package
+
+
+
+    /**
+     * L'url du profil (le compte client en fait)
+     * Si l'utilisateur n'est pas loggé, lui proposera tout ce qu'il faut à cet effet
+     * @return \Pov\MVC\ControllerUrl
+     */
+    public function profilUrl(){
+        return C_classiq::quickView_url("user/home");
+    }
+
+    /**
+     * L'url absolue (envoyée via mail) pour définir ou changer de mot de passe
+     * @param string $token
+     * @return string
+     */
+    public function changePasswordUrl($token){
+        return C_classiq::quickView_url("user/change-password?t=$token")->absolute();
+    }
+
+    /**
+     * L'url du panier
+     * @return \Pov\MVC\ControllerUrl
+     */
+    public function buyBasketUrl(){
+        return C_classiq::quickView_url("buy-process/1-basket");
+    }
+    /**
+     * L'url du des infos perso lors du precess d'inscription
+     * @return \Pov\MVC\ControllerUrl
+     */
+    public function buyPersonalInfoUrl(){
+        return C_classiq::quickView_url("buy-process/2-personal-info");
+    }
+    /**
+     * L'url du paiement
+     * @return \Pov\MVC\ControllerUrl
+     */
+    public function buyPaymentUrl(){
+        return C_classiq::quickView_url("buy-process/3-payment");
+    }
+    /**
+     * L'url de confirmation du paiement
+     * @return \Pov\MVC\ControllerUrl
+     */
+    public function buyPaymentConfirmUrl(){
+        return C_classiq::quickView_url("buy-process/4-payment-confirm");
+    }
+
+    public function paymentUrlOK(){
+        return C_classiq::quickView_url("buy-process/order-ok")->absolute();
+    }
+    public function paymentUrlKO(){
+        return C_classiq::quickView_url("buy-process/order-not-ok")->absolute();
+    }
+
+    /**
+     * @return string url qui reçoit les résultats des opérations de paiement
+     */
+    public function paymentBankMessageUrl(){
+        return C_classiq::quickView_url("buy-process/bank-message")->absolute();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

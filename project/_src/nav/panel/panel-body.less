@@ -1,0 +1,23 @@
+.panel-body{
+  width: 100%;
+  height: 100%;
+}
+
+.panel-body{
+  display: flex;
+  flex-direction: column;
+
+  >nav{
+    margin-top: 0;
+    height: var(--nav-bar-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  >footer{
+    margin-top: auto;
+  }
+  overflow: auto;
+}

@@ -1,8 +1,6 @@
 <?if(count(cq()->langActives(false))>1):?>
-<div class="languages">
-    <?foreach (cq()->langActives(false) as $langCode):?>
-            <a class="<?=the()->project->langCode==$langCode?"active":""?>"
-               data-is-lang="<?=$langCode?>" href="#"><?=$langCode?></a>
-    <?endforeach;?>
-</div>
+<?foreach (cq()->langActives(false) as $langCode):?>
+        <a class="text <?=the()->project->langCode==$langCode?"active":""?>"
+           data-is-lang="<?=$langCode?>" href="#"><?=$langCode?></a>
+<?endforeach;?>
 <?endif;?>

@@ -27,6 +27,7 @@ if(the()->human->isAdmin){
     \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanSelect=["Page","Project","Hashtag"];
 }
 
+include_once    "options/shop/boot.shop.php";
 //seo
 //\Classiq\Seo\C_sitemap_xml::$modelTypesToIndex=["page","modeleetc"];
 
