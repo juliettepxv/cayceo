@@ -25,7 +25,7 @@ export default class PageTransition {
      * @private
      */
     _color(){
-        gsap.set($("#page-transition"),{filter:utils.array.randomEntry(this.randsColor)});
+        //gsap.set($("#page-transition"),{filter:utils.array.randomEntry(this.randsColor)});
     }
 
     /**
@@ -36,7 +36,6 @@ export default class PageTransition {
           gsap.set($("#page-transition"),{rotation:utils.math.rand(0,360,180)});
           gsap.set($("#page-transition"),{rotateX:utils.math.rand(0,360,180)});
           gsap.set($("#page-transition"),{rotateY:utils.math.rand(0,360,180)});
-
     }
 
     /**

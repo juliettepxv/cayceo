@@ -52,6 +52,13 @@
             Texte par défaut<br>
             <?=utils()->string->loremIspum(40,40)?>
         </div>
+        <div class="col-md-3">
+            <label>.text-details</label>
+        </div>
+        <div class="col-md-9 mb-big text-details">
+            .text-details<br>
+            <?=utils()->string->loremIspum(40,40)?>
+        </div>
 
     </div>
 </div>

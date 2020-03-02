@@ -11,12 +11,6 @@
         ])?>
     </fieldset>
     <fieldset>
-        <label>Couleur</label>
-        <?=$vv->wysiwyg()->field("colortheme")->string()
-            ->setDefaultValue(site()->COLOR_THEME_ORANGE)
-            ->select(site()->COLOR_ALL())?>
-    </fieldset>
-    <fieldset>
         <label>hashtags</label>
         <?=$vv->wysiwyg()
             ->field("sharedHashtagList")

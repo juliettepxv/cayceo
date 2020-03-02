@@ -6,12 +6,9 @@
  */
 $style=$vv->getData("style","h2");
 $align=$vv->getData("align","left");
-$color=$vv->getData("color","orange");
-$colorInvert=$vv->getData("colorInvert");
 ?>
-<div <?=$vv->wysiwyg()->attr()?>scroll-active=""
-     class="block block-titre py-small"
-     color-theme="<?=$color?>" color-invert="<?=$colorInvert?>">
+<div <?=$vv->wysiwyg()->attr()?> scroll-active=""
+     class="block block-titre py-small">
 
     <div class="container <?=$align?>" dss="1">
         <?=$vv->wysiwyg()

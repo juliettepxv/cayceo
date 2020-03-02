@@ -3,12 +3,10 @@
 
 $lisName=$vv->getData("listName",\Classiq\Models\Project::LIST_NAME_PROJETS);
 $liste=\Classiq\Models\Project::getList($lisName);
-$color=$lisName===\Classiq\Models\Project::LIST_NAME_PROJETS?"orange":"blue";
-
 ?>
 
 <div <?= $vv->wysiwyg()->attr() ?> class="block block-projets">
-    <div class="container" color-theme="<?=$color?>">
+    <div class="container">
         <?=$liste->wysiwyg()
             ->field("items")
             ->listJson(

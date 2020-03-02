@@ -66,14 +66,6 @@ $img=$vv->thumbnail(true);
 
         </div>
 
-
-
-        <?if($img):?>
-            <div class="bubulles-header d-none d-lg-block">
-                <?=$view->render("bubulles/normal",$vv)?>
-            </div>
-        <?endif?>
-
     </div>
 
 
