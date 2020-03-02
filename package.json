@@ -7,7 +7,6 @@
     "build-prod-stats": "webpack --config _builders/webpack.prod.js --json > _builders/stats-prod.json",
     "npm-install": "npm install && npm install ./gsap-bonus.tgz",
     "composer-update": "composer update",
-    "uikit build": "cd node_modules/uikit && yarn compile"
   },
   "dependencies": {
     "@pixi/filter-rgb-split": "^3.0.3",
@@ -19,8 +18,7 @@
     "gsap": "file:gsap-bonus.tgz",
     "lottie-web": "^5.5.9",
     "pixi-filters": "^3.0.3",
-    "pixi.js": "^5.2.0",
-    "uikit": "^3.3.3"
+    "pixi.js": "^5.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
