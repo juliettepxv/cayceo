@@ -15,19 +15,28 @@ export default class LottieLoader {
             autoplay=false;
         }
         let loop=$main.attr("lottie-loop") === "true";
+        let preserveAspectRatio=$main.attr("lottie-preserve-aspect-ratio");
 
         //clean attributes
         $main.removeAttr("lottie-url")
             .removeAttr("lottie-autoplay")
-            .removeAttr("lottie-loop");
-        let anim=lottie.loadAnimation({
+            .removeAttr("lottie-loop")
+            .removeAttr("lottie-preserve-aspect-ratio");
+        let opt={
             container: $main.get(0), // the dom element that will contain the animation
             renderer: 'svg',
             loop: loop,
             autoplay: autoplay,
             path: url // the path to the animation json
-        });
+        };
+        if(preserveAspectRatio){
+            opt.rendererSettings={
+                preserveAspectRatio:preserveAspectRatio
+            }
+        }
+        let anim=lottie.loadAnimation(opt);
 
+        $main.data("lottie",anim);
     }
     static initFromDom(){
         $body.find("[lottie-loader='']").each(function () {
