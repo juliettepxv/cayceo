@@ -25,7 +25,7 @@
 
         <a href="#" panel-on="click" panel-action="open" panel-target="profileCreate"
            class="mb-tiny button color-black negative-hvr">
-            <?=trad("btn inscription")?>
+            <?=trad("btn inscription")?> ....
         </a>
 
         <a href="#" panel-on="click" panel-action="open" panel-target="profileLogin"

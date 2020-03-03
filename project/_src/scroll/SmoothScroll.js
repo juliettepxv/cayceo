@@ -46,7 +46,7 @@ var SmoothScroll = /** @class */ (function () {
             var resized = _this.resizeRequest > 0;
             var scrollY = window.pageYOffset;
             if (resized) {
-                var height = _this.target.clientHeight + $("#nav-bar").height();
+                var height = _this.target.clientHeight + $("#main-navbar").height();
                 document.body.style.height = height + "px";
                 _this.scrollHeight = height;
                 _this.viewHeight = window.innerHeight;

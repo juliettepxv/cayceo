@@ -1,0 +1,44 @@
+#main-navbar{
+  position: fixed;
+  z-index: var(--z-nav);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-bar-height,80px);
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+#main-navbar{
+
+  .text,.ico,.ico-text{
+    .unstyled;
+    cursor: pointer;
+    white-space: nowrap;
+    background: none;
+    display: flex;
+    height: var(--nav-bar-height);
+    align-items: center;
+    .px-tiny;
+    border: none;
+    .text-link;
+    //outline: 2px solid yellow;
+    &.active{
+      font-weight: bold;
+    }
+  }
+  .ico,.ico-text{
+    .icon{
+      width: calc( var(--nav-bar-height) / 2);
+      height: calc( var(--nav-bar-height) / 2);
+      &.icon-text{
+        width: calc( var(--fs-link) * 1.5);
+        height: calc(var(--fs-link)* 1.5);
+      }
+      position: relative;
+      >svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,9 +1,8 @@
-import NavMenu from "./nav/NavMenu";
+import PanelMainNav from "./nav/PanelMainNav";
 import ScrollActive from "./scroll/ScrollActive";
 import Utils from "./utils/Utils";
 import DataSocialShareClick from "data-social-share-click" ;
 import BricksManager from "./bricks/BricksManager";
-import BubullesHtml from "./bubulles/BubullesHtml";
 import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
@@ -16,57 +15,11 @@ import ApiMe from "./api/ApiMe";
 import ApiShop from "./api/ApiShop";
 window.lottie=require("lottie-web");
 window.utils=new Utils();
-//require("./pixi.boot");
 require("./gsap.boot");
 
 
-
-window.perfs={
-    scrollWheel:false,
-    /**
-     * Active ou pas le smooth scroll sur les éléments dom
-     * @type {boolean}
-     */
-    domScroll:false,
-    /**
-     * Active ou pas la copie d'léléments DOM vers le canvas
-     * @type {boolean}
-     */
-    domCopy:false,
-    /**
-     * Active ou pas le distort d'images canvas au mouvement de la souris
-     */
-    mouseTrailerDistortImages:false,
-    /**
-     * Active ou pas l'effet RGB au scroll
-     */
-    scrollRGB:false,
-    /**
-     * Active ou pas l'effet distorsion au scroll
-     */
-    scrollDistort:false,
-    /**
-     * Active ou pas le mouvement des bubulles
-     */
-    bubullesMotion:false,
-    /**
-     * Active ou pas le mouvement des textures
-     */
-    bubullesTexture:false,
-    /**
-     * Affiche la zone des bubulles ou pas
-     */
-    bubullesZone:false,
-
-
-};
-
 if(LayoutVars.wysiwyg===true){
-    perfs.domCopy=false;
-    perfs.domScroll=false;
-    perfs.mouseTrailerDistortImages=false;
-    perfs.scrollRGB=false;
-    perfs.scrollDistort=false;
+
 }
 
 export default class Site{
@@ -77,20 +30,18 @@ export default class Site{
          */
         let me = this;
 
-
+        //api stuff
         require("./api/api-click.js");
         window.api=new Api();
         window.api.me=new ApiMe();
         window.api.shop=new ApiShop();
 
-
         window.smoothScrollManager=new SmoothScrollManager(!utils.device.isEdge);
         window.scrollActive=new ScrollActive();
-        window.bubullesHtml=new BubullesHtml();
-        window.navMenu=new NavMenu();
+        window.navMenu=new PanelMainNav();
         window.pageTransition=new PageTransition();
         window.panels=new PanelManager();
-        panels.initFromDom();
+
         me._initListeners();
         //---------------------go------------------------------------------
         me.onDomChange();
@@ -115,9 +66,6 @@ export default class Site{
         require("./scroll/scroll-is-top");
         //masque la nav quand on scrolle et lé réafiche quand on remonte
         require("./nav/nav-scroll-up-down.less");
-
-
-
 
         let socialShares=new DataSocialShareClick();
         socialShares.listenClicks();
@@ -216,9 +164,9 @@ export default class Site{
             $body.attr("show-footer","0");
         }
         LottieLoader.initFromDom();
-        bubullesHtml.fromDom();
         scrollActive.observe();
         smoothScrollManager.initFromDom();
+        panels.initFromDom();
         Form.fromDom();
         AjaxOnScroll.initFromDom();
 

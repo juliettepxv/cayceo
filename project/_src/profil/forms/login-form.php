@@ -31,11 +31,6 @@
             <?=trad("btn inscription")?>
         </a>
 
-        <a href="#" panel-on="click" panel-action="open" panel-target="profileLogin"
-           class="mb-tiny button color-black negative-hvr">
-            <?=trad("btn connexion")?>
-        </a>
-
         <a href="#" panel-on="click" panel-action="open" panel-target="profileLostpassword"
            class="mb-tiny button color-black negative-hvr">
             <?=trad("btn lost password")?>

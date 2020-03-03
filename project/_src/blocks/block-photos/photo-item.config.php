@@ -30,13 +30,6 @@
 
 ?>*/?>
 
-<h4>Esthétique</h4>
-<label>Placer des bubulle?</label>
-<?=$vv->wysiwyg()->field("decoAfter")
-    ->bool()
-    ->onSavedRefreshListItem($vv)
-    ->checkbox("Après")
-?>
 
 
 
