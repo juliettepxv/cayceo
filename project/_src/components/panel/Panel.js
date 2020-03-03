@@ -27,14 +27,15 @@ export default class Panel{
         return this.manager.currentlyOpen===this;
     }
     open(){
+        this.manager.closeAll();
         this.manager.currentlyOpen=this;
         this.$main.addClass("panel-open");
-        this.$main.trigger("panel-open");
+        this.$main.trigger(Panel.EVENT_PANEL_OPEN);
     }
     close(){
         this.manager.currentlyOpen=null;
         this.$main.removeClass("panel-open");
-        this.$main.trigger("panel-close");
+        this.$main.trigger(Panel.EVENT_PANEL_CLOSE);
     }
     toggle(){
         if(this.isOpen()){
@@ -45,3 +46,6 @@ export default class Panel{
     }
 
 }
+
+Panel.EVENT_PANEL_OPEN="EVENT_PANEL_OPEN";
+Panel.EVENT_PANEL_CLOSE="EVENT_PANEL_CLOSE";

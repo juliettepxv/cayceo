@@ -5,7 +5,8 @@
 ?>
 
 <div panel="profile" class="right">
-    <div class="panel-body bg-white px-small">
+    <div class="panel-body bg-white px-small" px-medium="lg">
+
         <nav>
             <h4><?=trad("btn mon compte")?></h4>
             <button class="button sz-normal color-black naked color-grey-hvr square" panel-on="click" panel-action="close" panel-target="*">
@@ -35,13 +36,11 @@
             </a>
         </footer>
 
-
-
     </div>
 </div>
 
 <div panel="login" class="right">
-    <div class="panel-body bg-white px-small">
+    <div class="panel-body bg-white px-small" px-medium="lg">
 
             <nav>
                 <h4><?=trad("btn mon compte")?></h4>
@@ -71,7 +70,7 @@
 </div>
 
 <div panel="profileCreate" class="right">
-    <div class="panel-body bg-white px-small">
+    <div class="panel-body bg-white px-small" px-medium="lg">
         <nav>
             <h4><?=trad("btn inscription")?></h4>
             <button class="button sz-normal color-black naked color-grey-hvr square" panel-on="click" panel-action="close" panel-target="*">
@@ -83,7 +82,7 @@
 </div>
 
 <div panel="profileLogin" class="right">
-    <div class="panel-body bg-white px-small">
+    <div class="panel-body bg-white px-small" px-medium="lg">
         <nav>
             <h4><?=trad("btn connexion")?></h4>
             <button class="button sz-normal color-black naked color-grey-hvr square" panel-on="click" panel-action="close" panel-target="*">
@@ -95,7 +94,7 @@
 </div>
 
 <div panel="profileLostpassword" class="right">
-    <div class="panel-body bg-white px-small">
+    <div class="panel-body bg-white px-small" px-medium="lg">
         <nav>
             <h4><?=trad("btn lost password")?></h4>
             <button class="button sz-normal color-black naked color-grey-hvr square" panel-on="click" panel-action="close" panel-target="*">
@@ -108,7 +107,7 @@
 
 
 <div panel="basket" class="right">
-    <div class="panel-body bg-black fg-white px-small">
+    <div class="panel-body bg-black fg-white px-small" px-medium="lg">
 
         <nav class="text-right">
             <h4><?=trad("btn panier")?></h4>

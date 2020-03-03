@@ -7,12 +7,7 @@ export default class PanelManager {
     }
 
     set currentlyOpen(value) {
-        let old=this._currentlyOpen;
         this._currentlyOpen = value;
-        if(old && value !== old){
-            old.close();
-        }
-
     }
 
     constructor() {
@@ -60,6 +55,12 @@ export default class PanelManager {
         return p;
     }
 
+    closeAll(){
+        for(let p of this.getPanels("*")){
+            p.close();
+        }
+    }
+
     /**
      *
      * @param {string} name Soite le nom d'un tableau, soit * pour tous
@@ -75,6 +76,7 @@ export default class PanelManager {
         }
         return [];
     }
+
 
     /**
      * Renvoie la liste des tab sous forme de tableau (et non d'objet indexé par noms)
