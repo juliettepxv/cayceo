@@ -9,7 +9,7 @@ import PageTransition from "./page-transition/PageTranstion";
 import LottieLoader from "./lottie/LottieLoader";
 import AjaxOnScroll from "./components/AjaxOnScroll";
 import Form from "./blocks/form/Form";
-import PanelManager from "./nav/panel/PanelManager";
+import PanelManager from "./components/panel/PanelManager";
 import ProfilForms from "./profil/ProfilForms";
 import Api from "./api/Api";
 import ApiMe from "./api/ApiMe";
@@ -108,7 +108,16 @@ export default class Site{
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
         //require("./organisms/data-cards-container.js");
-        require("./nav/nav-scroll-up-down");
+
+        //ajoute scroll-dir= up ou down sur body
+        require("./scroll/scroll-dir");
+        //ajoute scroll-is-top=true sur body quand on est en haut de page
+        require("./scroll/scroll-is-top");
+        //masque la nav quand on scrolle et lé réafiche quand on remonte
+        require("./nav/nav-scroll-up-down.less");
+
+
+
 
         let socialShares=new DataSocialShareClick();
         socialShares.listenClicks();
