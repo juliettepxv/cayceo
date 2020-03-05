@@ -8,6 +8,30 @@
   }
 
 
+  @media(hover: hover){
+
+    &.has-img{
+      .texts {
+        transition: background-color 0.5s;
+      }
+      .thumb {
+        transition: filter 0.5s;
+      }
+    }
+
+
+    &:hover{
+      &.has-img{
+        .texts{
+          background-color: var(--color-grey-light);
+        }
+        .thumb{
+          filter: saturate(1);
+        }
+      }
+    }
+  }
+
 
   //couleurs
   color:var(--color-1);
@@ -27,6 +51,7 @@
     .thumb{
       width: 100%;
       position: relative;
+      filter: saturate(0.5);
       >img{
        // filter: brightness(0.9);
         max-width: 100%;
