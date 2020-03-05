@@ -50,10 +50,6 @@ export default class ApiMe extends Api{
                 }
                 return;//on recharge la page et ciao
             }
-            if(json.isLogged){
-                //todo update basket
-                //notifications.setArticlesBadge(json.drafts,json.offlines);
-            }
 
             //appel récusif
             if(me._pingTimeout){
@@ -85,7 +81,7 @@ export default class ApiMe extends Api{
      */
     logOut(){
         let cb=function(){
-            goHome();
+            document.location=LayoutVars.rootUrl;
         };
         this._call("me","log-out",{},cb,cb);
     }

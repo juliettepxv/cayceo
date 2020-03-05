@@ -25,5 +25,5 @@
 </div>
 
 <?=$view->render("nav/panels-shop")?>
-<?=$view->render("nav/panels-connected")?>
-<?=$view->render("nav/panels-not-connected")?>
+<?=$view->render("profile/panels/panels-connected")?>
+<?=$view->render("profile/panels/panels-not-connected")?>

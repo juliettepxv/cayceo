@@ -147,7 +147,7 @@ class Profil extends Classiqmodel
         db()->store($this);
         //mail
         $toMail=$this->email;
-        $url=site()->changePasswordUrl($token);
+        $url=self::changePasswordUrl($token);
         if($isLostPassword){
             $subject="Mot de passe oublié? Pas de stress...";
             $message="Bonjour ".ucfirst($this->name)." !<br>";
@@ -166,6 +166,8 @@ class Profil extends Classiqmodel
         $vv["text"]=$message;
         site()->sendMail($toMail,$subject,"emails/text",$vv);
     }
+
+
 
     /**
      * Va fusionner le panier en cookie avec le panier utilisateur loggé
@@ -311,6 +313,18 @@ class Profil extends Classiqmodel
             db()->store($a);
         }
         return $a;
+    }
+
+
+    //---------------------statics------------------------------
+
+    /**
+     * L'url absolue (envoyée via mail) pour définir ou changer de mot de passe
+     * @param string $token
+     * @return string
+     */
+    private static function changePasswordUrl($token){
+        return C_classiq::quickView_url("change-password?t=$token")->absolute();
     }
 
 }

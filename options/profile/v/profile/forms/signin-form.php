@@ -1,4 +1,5 @@
-<form data-model-sign-in class="form-signin d-flex flex-column">
+<form data-model-sign-in
+      class="form-signin d-flex flex-column">
 
     <input type="text" data-is-mandatory
            class="mb-tiny field shp-rect color-grey-light negative"
@@ -22,7 +23,6 @@
        class="mb-tiny button color-white bg-fluo-hvr fg-black-hvr">
         <?=trad("btn inscription")?>
     </button>
-
 
     <div message class="alert mt-medium pb-medium">
         message ici

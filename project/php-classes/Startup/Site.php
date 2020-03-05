@@ -116,15 +116,6 @@ class Site extends AbstractSingleton
     }
 
     /**
-     * L'url absolue (envoyée via mail) pour définir ou changer de mot de passe
-     * @param string $token
-     * @return string
-     */
-    public function changePasswordUrl($token){
-        return C_classiq::quickView_url("user/change-password?t=$token")->absolute();
-    }
-
-    /**
      * L'url du panier
      * @return \Pov\MVC\ControllerUrl
      */

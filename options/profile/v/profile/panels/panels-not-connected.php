@@ -36,7 +36,7 @@
                 <?=pov()->svg->use("startup-close")?>
             </button>
         </nav>
-        <?=$view->render("profil/forms/signin-form")?>
+        <?=$view->render("profile/forms/signin-form")?>
     </div>
 </div>
 <div panel="profileLogin" class="right">
@@ -47,7 +47,7 @@
                 <?=pov()->svg->use("startup-close")?>
             </button>
         </nav>
-        <?=$view->render("profil/forms/login-form")?>
+        <?=$view->render("profile/forms/login-form")?>
     </div>
 </div>
 <div panel="profileLostpassword" class="right">
@@ -58,7 +58,7 @@
                 <?=pov()->svg->use("startup-close")?>
             </button>
         </nav>
-        <?=$view->render("profil/forms/lost-password-form")?>
+        <?=$view->render("profile/forms/lost-password-form")?>
     </div>
 </div>
 <?endif?>
