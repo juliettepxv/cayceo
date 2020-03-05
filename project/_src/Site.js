@@ -17,9 +17,19 @@ window.lottie=require("lottie-web");
 window.utils=new Utils();
 require("./gsap.boot");
 
-
+window.perfConf={
+    smoothScroll:{
+        active:true
+    }
+}
 if(LayoutVars.wysiwyg===true){
-
+    perfConf.smoothScroll.active=false;
+}
+if(utils.device.isEdge){
+    perfConf.smoothScroll.active=false;
+}
+if(utils.device.isTouchDevice()){
+    perfConf.smoothScroll.active=false;
 }
 
 export default class Site{
@@ -36,7 +46,9 @@ export default class Site{
         window.api.me=new ApiMe();
         window.api.shop=new ApiShop();
 
-        window.smoothScrollManager=new SmoothScrollManager(!utils.device.isEdge);
+
+
+        window.smoothScrollManager=new SmoothScrollManager(perfConf.smoothScroll.active);
         window.scrollActive=new ScrollActive();
         window.navMenu=new PanelMainNav();
         window.pageTransition=new PageTransition();
