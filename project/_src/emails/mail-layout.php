@@ -1,3 +1,10 @@
+<?php
+$bgLayoutColor=site()->themeColor;
+$fgLayoutColor=site()->themeColorNegative;
+$bgBodyColor="#FFFFFF";
+$fgBodyColor="#222222";
+
+?>
 <head>
     <style>
         /* Some resets and issue fixes */
@@ -12,7 +19,7 @@
     </style>
 </head>
 <body style="padding:0; margin:0">
-<table style="background-color: #EBFDF2; border-radius: 20px; padding:5px; width: 100%; font-family: 'Muli', 'Helvetica', 'Arial', sans-serif;">
+<table style="background-color: <?=$bgLayoutColor?>; border-radius: 4px; padding:5px; width: 100%; font-family: 'Muli', 'Helvetica', 'Arial', sans-serif;">
     <?//-------header--------------------?>
     <tr>
         <td style="text-align: center;padding-bottom: 10px;padding-top: 15px;">
@@ -23,9 +30,9 @@
     </tr>
     <tr style="">
         <td style="padding: 5px;" align="center">
-            <table style="min-height: 200px; max-width: 600px !important;background-color: #ffffff;border-radius: 20px;">
+            <table style="min-height: 200px; max-width: 600px !important;background-color: <?=$bgBodyColor?>;border-radius: 8px;">
                 <tr>
-                    <td style="padding: 30px;">
+                    <td style="padding: 30px;color: <?=$fgBodyColor?>;">
                         <?=$view->insideContent?>
                     </td>
                 </tr>
@@ -34,9 +41,10 @@
     </tr>
     <?//-------footer--------------------?>
     <tr>
-        <td style="color: #594F65; text-align: center; font-size: 10px; padding: 30px;">
-            <a style="color: #594F65;" href="<?=site()->homePage()->href()->absolute()?>">Umamiz</a>,
-            lorem ipsum footer
+        <td style="color: <?=$fgLayoutColor?>; text-align: center; font-size: 10px; padding: 30px;">
+            <a style="color: <?=$fgLayoutColor?>;" href="<?=site()->homePage()->href()->absolute()?>">
+                <?=site()->projectName?>
+            </a>
         </td>
     </tr>
 </table>
