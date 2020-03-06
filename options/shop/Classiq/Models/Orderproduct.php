@@ -34,6 +34,7 @@ class Orderproduct extends Classiqbean
             $this->shipservice=$this->product->shipservice;
             $this->productname=$this->product->name;
             $this->price_unit=$this->product->price;
+            $this->tva_rate=$this->product->tva_rate;
             $this->weight_unit=$this->product->weight;
         }
         $this->price=$this->price_unit * $this->quantity;
