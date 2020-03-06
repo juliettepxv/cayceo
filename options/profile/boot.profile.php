@@ -9,6 +9,4 @@ use Pov\MVC\View;
 function me(){
     return \Classiq\Models\Profil::current();
 }
-//vues propres au profil
-View::$possiblesPath[]=__DIR__."/v";
 the()->htmlLayout()->layoutVars->isLogged=me()?true:false;

@@ -1,0 +1,28 @@
+[api-form]{
+  &[state="sending"]{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  //bouton envoi caché
+  &[state='sending'],&[state='success']{
+    [type='submit']{
+      visibility: hidden;
+    }
+  }
+
+  //affiche ou pas message
+  [message]{
+    display: none;
+  }
+  &[state='error'],&[state='success'],&[state='sending']{
+    [message]{
+      display: block;
+    }
+  }
+  &[state='error']{
+    [message]{
+      color: red;
+    }
+  }
+}

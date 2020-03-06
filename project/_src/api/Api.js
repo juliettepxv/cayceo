@@ -13,7 +13,6 @@ export default class Api {
      * @param {function} cbSuccess
      * @param {function} cbError
      * @returns {JQuery.jqXHR}
-     * @private
      */
     _call(entry,action,params,cbSuccess,cbError){
         //let url=`${LayoutVars.rootUrl}/api/${entry}/${action}`;

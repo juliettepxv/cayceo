@@ -2,7 +2,7 @@
 * @var \Classiq\Models\Address $vv
  */
 ?>
-<form data-model-address  class="">
+<form api-form="profile.saveAddress"  class="">
 
     <input type="hidden" name="uid" value="<?=$vv->uid()?>">
 

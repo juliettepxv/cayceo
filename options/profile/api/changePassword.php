@@ -15,6 +15,16 @@ if($api->success){
         "Merci de saisir un mot de passe");
 }
 if($api->success){
+    $newPasswordConfirm=$api->testAndGetRequest(
+        "newPasswordConfirm",
+        "Merci de saisir un mot de passe");
+}
+if($api->success){
+    if($newPassword != $newPasswordConfirm){
+        $vv->addError("Les mots de passe sont différent");
+    }
+}
+if($api->success){
     if(strlen($newPassword)<5){
         $vv->addError("S'il vous plaît choisissez un mot de passe d'au moins 5 caractères");
     }

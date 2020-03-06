@@ -1,21 +1,30 @@
-import PanelMainNav from "./nav/PanelMainNav";
-import ScrollActive from "./scroll/ScrollActive";
+//core
 import Utils from "./utils/Utils";
-import DataSocialShareClick from "data-social-share-click" ;
-import BricksManager from "./bricks/BricksManager";
-import SmoothScrollManager from "./scroll/SmoothScrollManager";
-import PageTransition from "./page-transition/PageTranstion";
+window.utils=new Utils();
+import Api from "./api/Api";
+require("./gsap.boot");
 import LottieLoader from "./lottie/LottieLoader";
-import AjaxOnScroll from "./components/AjaxOnScroll";
+window.lottie=require("lottie-web");
+//ui
 import Form from "./blocks/form/Form";
 import PanelManager from "./components/panel/PanelManager";
-import ProfilForms from "./profil/ProfilForms";
-import Api from "./api/Api";
-import ApiMe from "./api/ApiMe";
-import ApiShop from "./api/ApiShop";
-window.lottie=require("lottie-web");
-window.utils=new Utils();
-require("./gsap.boot");
+import PanelMainNav from "./nav/PanelMainNav";
+import BricksManager from "./bricks/BricksManager";
+import ScrollActive from "./scroll/ScrollActive";
+import DataSocialShareClick from "data-social-share-click" ;
+import SmoothScrollManager from "./scroll/SmoothScrollManager";
+import PageTransition from "./page-transition/PageTranstion";
+import AjaxOnScroll from "./components/AjaxOnScroll";
+//profil
+import ApiProfile from "../../options/profile/api/ApiProfile";
+
+
+//shop
+import ApiShop from "../../options/shop/api/ApiShop";
+import ApiForm from "./api/ApiForm";
+
+
+
 
 window.perfConf={
     smoothScroll:{
@@ -43,10 +52,8 @@ export default class Site{
         //api stuff
         require("./api/api-click.js");
         window.api=new Api();
-        window.api.me=new ApiMe();
+        window.api.me=new ApiProfile();
         window.api.shop=new ApiShop();
-
-
 
         window.smoothScrollManager=new SmoothScrollManager(perfConf.smoothScroll.active);
         window.scrollActive=new ScrollActive();
@@ -68,6 +75,10 @@ export default class Site{
     _initListeners() {
 
         let me=this;
+
+        //profil
+        require("../../options/profile/listen-forms");
+
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
         //require("./organisms/data-cards-container.js");
@@ -170,7 +181,7 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
-        ProfilForms.initFromDom();
+        ApiForm.initFromDom();
         $body.attr("page-type",PovHistory.currentPageInfo.recordType);
         if(PovHistory.currentPageInfo.recordType==="project"){
             $body.attr("show-footer","0");

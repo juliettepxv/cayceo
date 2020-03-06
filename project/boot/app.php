@@ -4,6 +4,7 @@ use Classiq\Models\User;
 use Classiq\Wysiwyg\Wysiwyg;
 use Classiq\Wysiwyg\WysiwygConfig;
 use Localization\Lang;
+use Pov\MVC\View;
 
 //----------bdd-------------------
 include_once __DIR__ . "/db.php";
@@ -26,7 +27,8 @@ if(the()->human->isAdmin){
     \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanCreate=["Page","Project","Hashtag"];
     \Classiq\Wysiwyg\WysiwygConfig::inst()->recordsWeCanSelect=["Page","Project","Hashtag"];
 }
-
+//vues propres au profil
+View::$possiblesPath[]="options";
 include_once    "options/shop/boot.shop.php";
 //seo
 //\Classiq\Seo\C_sitemap_xml::$modelTypesToIndex=["page","modeleetc"];

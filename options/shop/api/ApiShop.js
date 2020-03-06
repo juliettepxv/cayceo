@@ -1,4 +1,4 @@
-import Api from "./Api";
+import Api from "../../../project/_src/api/Api";
 
 export default class ApiShop extends Api{
 

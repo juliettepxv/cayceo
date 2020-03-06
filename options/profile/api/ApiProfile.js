@@ -1,6 +1,6 @@
-import Api from "./Api";
+import Api from "../../../project/_src/api/Api";
 
-export default class ApiMe extends Api{
+export default class ApiProfile extends Api{
 
     constructor(){
         super();
@@ -70,7 +70,7 @@ export default class ApiMe extends Api{
      * @private
      */
     _ping(cbSuccess){
-        this._call("me","ping",{
+        this._call("profile","ping",{
             },
             function(messages,html,json){
                 cbSuccess(json)
@@ -83,7 +83,7 @@ export default class ApiMe extends Api{
         let cb=function(){
             document.location=LayoutVars.rootUrl;
         };
-        this._call("me","log-out",{},cb,cb);
+        this._call("profile","log-out",{},cb,cb);
     }
     /**
      * Pour recevoir un mail de modif de mot de passe
@@ -93,7 +93,7 @@ export default class ApiMe extends Api{
      */
     lostPassword(email, cbSuccess, cbError){
         this._call(
-            "me","lost-password",
+            "profile","lost-password",
             {
                 email:email
             },
@@ -111,7 +111,7 @@ export default class ApiMe extends Api{
      */
     signIn(email,pwd,pwdConfirm,cbSuccess,cbError){
         this._call(
-            "me","sign-in",
+            "profile","signIn",
             {
                 email:email,
                 pwd:pwd,
@@ -130,7 +130,7 @@ export default class ApiMe extends Api{
      */
     logIn(email,pwd,cbSuccess,cbError){
         this._call(
-            "me","log-in",
+            "profile","login",
             {
                 email:email,
                 pwd:pwd
@@ -147,7 +147,7 @@ export default class ApiMe extends Api{
      */
     changePassword(newPassword, cbSuccess, cbError){
         this._call(
-            "me","change-password",
+            "profile","change-password",
             {
                 newPassword:newPassword
             },
@@ -157,10 +157,13 @@ export default class ApiMe extends Api{
     }
     saveAddress(formData,cbSuccess, cbError){
         this._call(
-            "me","save-address",
+            "profile","save-address",
             formData,
             cbSuccess,
             cbError
         );
     }
+
+
+
 }

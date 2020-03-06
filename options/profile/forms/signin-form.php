@@ -1,5 +1,5 @@
-<form data-model-sign-in
-      class="form-signin d-flex flex-column">
+<form api-form="profile.signIn"
+      class=" d-flex flex-column">
 
     <input type="text" data-is-mandatory
            class="mb-tiny field shp-rect color-grey-light negative"
@@ -15,7 +15,7 @@
 
     <input type="password" data-is-mandatory
            class="mb-tiny field shp-rect color-grey-light negative"
-           name="pwd-confirm"
+           name="pwdConfirm"
            autocomplete="new-password"
            placeholder="<?=trad("Password Confirm")?> *" >
 

@@ -1,5 +1,5 @@
-<form data-model-change-password
-      class="form-signin d-flex flex-column">
+<form api-form="profile.changePassword"
+      class="d-flex flex-column">
 
 
     <input style="display: none;"
@@ -8,13 +8,13 @@
 
     <input type="password" data-is-mandatory
            class="mb-tiny field shp-rect color-grey-light negative"
-           name="password"
+           name="newPassword"
            autocomplete="new-password"
            placeholder="<?=trad("New Password")?> *" >
 
     <input type="password" data-is-mandatory
            class="mb-tiny field shp-rect color-grey-light negative"
-           name="confirm"
+           name="newPasswordConfirm"
            autocomplete="new-password"
            placeholder="<?=trad("Password Confirm")?> *" >
 

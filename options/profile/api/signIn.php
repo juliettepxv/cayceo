@@ -24,18 +24,18 @@ $pwdConfirm=$api->testAndGetRequest(
     "Merci de confirmer votre mot de passe",
     true
 );
-
+if($api->success){
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $api->addError("L'email ne semble pas correct");
+    }
+}
 if($api->success){
     if($pwdConfirm != $pwd){
         $api->addError("Les mots de passe sont différents");
     }
 }
 
-if($api->success){
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $api->addError("L'email ne semble pas correct");
-    }
-}
+
 if($api->success){
     $profil=Profil::getByEmail($email);
     if($profil){

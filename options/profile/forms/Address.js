@@ -1,4 +1,4 @@
-import AbstractForm from "../AbstractForm";
+import AbstractForm from "../../../project/_src/profil/AbstractForm";
 
 export default class Address extends AbstractForm{
     /**

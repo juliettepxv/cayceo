@@ -1,4 +1,8 @@
-<form data-model-log-in  class="form-signin d-flex flex-column">
+<form  api-form="profile.lostPassword" class="d-flex flex-column">
+
+    <p class="text-details mb-small">
+        <?=trad("lost password explications")?>
+    </p>
 
     <input type="email"
            class="mb-tiny field shp-rect color-grey-light negative"
@@ -6,16 +10,9 @@
            autocomplete="username"
            placeholder="<?=trad("Email")?> *" data-is-mandatory>
 
-    <input type="password"
-           autocomplete="current-password"
-           class="mb-tiny field shp-rect color-grey-light negative"
-           name="pwd" placeholder="<?=trad("Password")?> *" data-is-mandatory>
-
-
-
     <button type="submit"
             class="mb-tiny button color-white bg-fluo-hvr fg-black-hvr">
-        <?=trad("btn connexion")?>
+        <?=trad("btn reset password")?>
     </button>
 
     <div message class="fg-danger mt-medium pb-medium">
@@ -28,12 +25,13 @@
 
         <a href="#" panel-on="click" panel-action="open" panel-target="profileCreate"
            class="mb-tiny button color-black negative-hvr">
-            <?=trad("btn inscription")?>
+            <?=trad("btn inscription")?> ....
         </a>
 
-        <a href="#" panel-on="click" panel-action="open" panel-target="profileLostpassword"
+        <a href="#" panel-on="click" panel-action="open" panel-target="profileLogin"
            class="mb-tiny button color-black negative-hvr">
-            <?=trad("btn lost password")?>
+            <?=trad("btn connexion")?>
         </a>
     </div>
+
 </form>

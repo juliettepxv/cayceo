@@ -1,6 +1,7 @@
 <?php
 //GET ACTION
 use Pov\Defaults\C_povApi;
+use Pov\MVC\View;
 use Pov\System\ApiResponse;
 
 //créée la home page si elle existe pas
@@ -21,50 +22,20 @@ pov()->events->listen(C_povApi::EVENT_ACTION,
      * @param string $actionName
      */
     function(ApiResponse $vv,string $actionName){
-        $actionName=str_replace(".","/",$actionName);
-        $actionFile="project/_src/api/$actionName.php";
-        if(!is_file($actionFile)){
-            $vv->addError("action invalide ($actionName)");
+        $split=explode(".",$actionName);
+        if(count($split) !==2){
+            $vv->addError("action malformée ($actionName)");
         }else{
-            $api=$vv;
-            include $actionFile;
+            $entry=$split[0];
+            $action=$split[1];
+            $actionFile="$entry/api/$action";
+            if(View::isValid($actionFile)){
+                $api=$vv;
+                include(View::getRealPath($actionFile));
+            }else{
+                $vv->addError("action invalide ($actionName -> $actionFile.php)");
+            }
         }
 
-        /*
-        $vv->addMessage("Hello action $actionName");
-        switch ($actionName){
-            case "formContact":
-                $formDbRecord=db()->dispense("formulairecontact");
-                $formDbRecord->date_envoi=pov()->utils->date->nowMysql();
-                $formDbRecord->nom=$nom=the()->request("nom");
-                $formDbRecord->email=$emailFrom=the()->request("email");
-                $formDbRecord->message=$message=the()->request("message");
-                db()->store($formDbRecord);
-                $mailBody="";
-                $mailBody.="<b>Nom</b><br>";
-                $mailBody.="$nom<br><br>";
-                $mailBody.="<b>Email</b><br>";
-                $mailBody.="$emailFrom<br><br>";
-                $mailBody.="<b>Message</b><br>";
-                $mailBody.="$message<br><br>";
-                $mailTo=the()->request("mailto");
-                if($mailTo){
-                    try {
-                        cq()->sendMail(
-                            $mailTo,
-                            '[FORMULAIRE CONTACT SITE FK ' . fk()->name . '] ' . $nom,
-                            $mailBody
-                        );
-                    }catch (Exception $e) {
-                        $vv->addToJson("mailResult","nok ".$e->getMessage());
-                    }
-                }else{
-                    $vv->addError("Personne ne recevra de mail pour ce formulaire");
-                }
-                break;
-            default:
-                $vv->addError("Action $actionName pas prise en charge par ".C_povApi::EVENT_ACTION);
-        }
-        */
     }
 );
