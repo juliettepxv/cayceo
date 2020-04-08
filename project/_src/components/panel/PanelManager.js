@@ -49,7 +49,6 @@ export default class PanelManager {
 
     }
     addPanel($el,name){
-        console.log("new panel")
         let p=new Panel($el,name,this);
         this.list[name]=p;
         return p;
@@ -95,7 +94,6 @@ export default class PanelManager {
 
     initFromDom(){
         let me=this;
-        console.log("hop1")
         $("[panel]").not("[panel-init]").each(function(){
             console.log("hop2")
             let $el=$(this);
