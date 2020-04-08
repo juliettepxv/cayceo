@@ -19,5 +19,11 @@
     ->bool()
     ->onSavedRefreshListItem($vv)
     ->checkbox("Image à droite")
+?>
 
+<label>Monogramme</label>
+<?= $vv->wysiwyg()->field("monogramme")
+    ->bool()
+    ->onSavedRefreshListItem($vv)
+    ->checkbox("Monogramme")
 ?>

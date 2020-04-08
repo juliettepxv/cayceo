@@ -2,7 +2,7 @@
 /** @var Classiq\Models\JsonModels\ListItem $vv */
 
 //le style de composition
-$styleType=$vv->getData("styleType","icon-inline");
+$styleType=$vv->getData("styleType","icon-circle-item");
 
 ?>
 

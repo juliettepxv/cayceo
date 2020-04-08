@@ -10,10 +10,11 @@ use Classiq\Models\JsonModels\ListItem;
 <?=$vv->wysiwyg()->field("styleType")
     ->string()
     ->onSavedRefreshListItem($vv)
-    ->setDefaultValue("icon-inline")
+    ->setDefaultValue("icon-circle-item")
     ->select([
-        "une ligne"=>"icon-inline",
-        "liste"=>"icon-list"
+        "Cercle"=>"icon-circle-item",
+        "Liste"=>"icon-list-item",
+        "Bouton"=>"icon-button-item"
     ]);
 ?>
 

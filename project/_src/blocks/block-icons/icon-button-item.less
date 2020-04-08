@@ -1,16 +1,15 @@
-.icon-item {
+.icon-button-item .icon-item{
   text-align: center;
   position: relative;
   user-select: none;
   //couleurs
-  color: var(--color-1);
+  color: var(--color-white);
   text-transform: uppercase;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  --width-item: 150px;
+  --width-item: 70px;
 
   min-width: 360px;
   @media (min-width: @screen-xl) {
@@ -20,13 +19,19 @@
     max-width: 440px;
   }
 
+  background-color: var(--color-orange);
+  border-radius: calc(var(--width-item)*2);
+
+  .mx-small;
+
   .img {
 
-    .pxy-small;
-    border-radius: calc(var(--width-item)*2);
-    border: 3px solid var(--color-orange);
+    background-color: var(--color-white);
+    padding: 15px;
+    margin: 10px;
     height:var(--width-item);
     width: var(--width-item);
+    border-radius: 100%;
 
     img {
       object-fit: contain;
@@ -36,17 +41,15 @@
   }
 
   .text {
-    height: var(--width-item);
-    width: 300px;
-    .py-small;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: calc(var(--width-item)/2);
   }
 
   &.invert {
-    @media (min-width: @screen-xl) {
-      margin-top: 150px;
-    }
-
-    img {
+    .img {
       order: 2;
     }
 

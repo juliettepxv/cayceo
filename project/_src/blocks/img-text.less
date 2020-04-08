@@ -1,8 +1,21 @@
-.block.block-img-text{
-  &.invert{
-    .row{
-      div{
-        &:first-child{
+.block.block-img-text {
+
+  .img-text {
+    --gutter: 10px;
+    --padding: var(--spacing-medium);
+    --radius: 0px;
+
+    padding: var(--padding);
+    border-radius: var(--radius);
+
+    .shadow-big;
+  }
+
+
+  &.invert {
+    .row {
+      div {
+        &:first-child {
           order: 2;
         }
       }
