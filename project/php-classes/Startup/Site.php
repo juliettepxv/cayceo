@@ -32,16 +32,26 @@ class Site extends AbstractSingleton
         "blocks/block-photos/photos",
         "blocks/block-logos/block-logos",
         "blocks/iframe",
-        "blocks/video",
+        //"blocks/video",
+        "blocks/block-cards/cards",
         "blocks/dwd",
         "blocks/block-projets/projets",
         "blocks/block-team/team",
-        "blocks/form/contact"
+        "blocks/form/contact",
+
     ];
+
+    public $cardsTypes=[
+        "icône titre texte"=>"ico-title-text",
+        "titre texte lien"=>"title-text-link",
+        "titre texte lien image"=>"title-text-link-img",
+    ];
+    public $cardsTypeDefault="ico-title-text";
+
     /**
      * @var string Nom du projet utilisé dans les envois de mail par exemple
      */
-    public $projectName="Armada Handplanes";
+    public $projectName="Mon super projet";
     /**
      * @var string Email qui reçoit les formulaires
      */

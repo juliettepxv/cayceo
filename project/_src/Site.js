@@ -1,7 +1,6 @@
 //core
 import Utils from "./utils/Utils";
 window.utils=new Utils();
-import Api from "./api/Api";
 require("./gsap.boot");
 import LottieLoader from "./lottie/LottieLoader";
 window.lottie=require("lottie-web");
@@ -15,30 +14,17 @@ import DataSocialShareClick from "data-social-share-click" ;
 import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
 import AjaxOnScroll from "./components/AjaxOnScroll";
-//profil
-import ApiProfile from "../../options/profile/api/ApiProfile";
-
-
-//shop
-import ApiShop from "../../options/shop/api/ApiShop";
-import ApiForm from "./api/ApiForm";
-
-
-
 
 window.perfConf={
     smoothScroll:{
         active:true
     }
-}
-if(LayoutVars.wysiwyg===true){
-    perfConf.smoothScroll.active=false;
-}
-if(utils.device.isEdge){
-    perfConf.smoothScroll.active=false;
-}
-if(utils.device.isTouchDevice()){
-    perfConf.smoothScroll.active=false;
+};
+switch (true) {
+    case LayoutVars.wysiwyg===true:
+    case utils.device.isEdge:
+    case utils.device.isTouchDevice():
+        perfConf.smoothScroll.active=false;
 }
 
 export default class Site{
@@ -49,12 +35,6 @@ export default class Site{
          */
         let me = this;
 
-        //api stuff
-        require("./api/api-click.js");
-        window.api=new Api();
-        window.api.me=new ApiProfile();
-        window.api.shop=new ApiShop();
-
         window.smoothScrollManager=new SmoothScrollManager(perfConf.smoothScroll.active);
         window.scrollActive=new ScrollActive();
         window.navMenu=new PanelMainNav();
@@ -64,7 +44,7 @@ export default class Site{
         me._initListeners();
         //---------------------go------------------------------------------
         me.onDomChange();
-        window.bricksManager=new BricksManager();
+        //window.bricksManager=new BricksManager();
 
     }
 
@@ -181,7 +161,6 @@ export default class Site{
      * Initialisations d'objets dom
      */
     onDomChange(){
-        ApiForm.initFromDom();
         $body.attr("page-type",PovHistory.currentPageInfo.recordType);
         if(PovHistory.currentPageInfo.recordType==="project"){
             $body.attr("show-footer","0");

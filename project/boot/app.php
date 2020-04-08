@@ -29,7 +29,7 @@ if(the()->human->isAdmin){
 }
 //vues propres au profil
 View::$possiblesPath[]="options";
-include_once    "options/shop/boot.shop.php";
+//include_once    "options/shop/boot.shop.php";
 //seo
 //\Classiq\Seo\C_sitemap_xml::$modelTypesToIndex=["page","modeleetc"];
 
