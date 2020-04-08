@@ -21,7 +21,7 @@
 <?= $vv->wysiwyg()->field("invert")
     ->bool()
     ->onSavedRefreshListItem($vv)
-    ->checkbox("Image à droite")
+    ->checkbox("Inverser le sens")
 ?>
 
 

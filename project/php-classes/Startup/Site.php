@@ -36,7 +36,7 @@ class Site extends AbstractSingleton
         "blocks/block-cards/cards",
         "blocks/dwd",
         "blocks/block-projets/projets",
-        "blocks/block-team/team",
+        "blocks/block-icons/icons",
         "blocks/form/contact",
 
     ];

@@ -1,17 +1,23 @@
-.block-team{
+@import "./icon-item";
+
+.block-icon{
   background-color: var(--color-bg);
-  .pb-big;
+  .py-medium;
   .container{
     .list{
       display: flex;
       justify-content: center;
       flex-direction: row;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      &.icon-list{
+        flex-wrap: wrap;
+      }
+
       >*{
-       // margin: var(--spacing-medium);
+
       }
     }
 
   }
 }
-@import "./team-item";
+

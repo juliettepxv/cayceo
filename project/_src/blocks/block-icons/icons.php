@@ -1,23 +1,25 @@
 <?php
 /** @var Classiq\Models\JsonModels\ListItem $vv */
 
+//le style de composition
+$styleType=$vv->getData("styleType","icon-inline");
 
 ?>
 
 
 
-<div <?= $vv->wysiwyg()->attr() ?> class="block block-team ">
+<div <?= $vv->wysiwyg()->attr() ?> class="block block-icon">
     <div class="container" >
         <?=$vv->wysiwyg()
             ->field("items")
-            ->listJson("blocks/block-team/team-item")
+            ->listJson("blocks/block-icons/icon-item")
             ->blockPickerEmptyMessage("ajouter")
             ->horizontal()
             ->contextMenuPosition(POSITION_TOP)
             ->contextMenuSize(SIZE_SMALL)
             ->onlyImages()
             ->htmlTag("div")
-        ->addClass("list")
+        ->addClass("list ".$styleType)
         ?>
     </div>
 </div>

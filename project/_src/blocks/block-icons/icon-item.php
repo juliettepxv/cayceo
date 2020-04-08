@@ -22,14 +22,17 @@ if($img && $img->isImage()){
 $invert=$vv->getData("invert")?"invert":"";
 
 ?>
-<div class="team-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?> >
+<div class="icon-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?> >
 
-    <?=$imgTag?>
+    <div class="img">
+        <?=$imgTag?>
+    </div>
+
     <?=$vv->wysiwyg()->field("text")
     ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
     ->setMediumButtons(["bold","removeFormat"])
     ->htmlTag("div")
-    ->addClass("wrap-text")
+    ->addClass("text")
     ?>
 
 </div>
