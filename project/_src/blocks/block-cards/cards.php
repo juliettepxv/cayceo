@@ -5,7 +5,6 @@ $cardsType=$vv->getData("cardsType",site()->cardsTypeDefault);
 
 <div <?= $vv->wysiwyg()->attr() ?> class="block block-cards <?=$cardsType?>">
     <div class="container">
-        <pre><?=$cardsType?></pre>
         <?=$vv->wysiwyg()
             ->field("items")
             ->listJson(

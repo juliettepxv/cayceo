@@ -11,10 +11,14 @@ $parent=$vv->record->getValue($fieldNameParent);
 
 //le type de carte qui sera chargé
 $cardType=$parent->getData("cardsType",site()->cardsTypeDefault);
+
+
+
 ?>
 <div class="col-md-6 card-item-col"  <?=$vv->wysiwyg()->attr()?> >
-    <pre>cardType: <?=$cardType?></pre>
+
     <div class="card-item">
         <?=$view->render("blocks/block-cards/cardsType/$cardType")?>
     </div>
+
 </div>

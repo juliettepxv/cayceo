@@ -1,17 +1,18 @@
 .icon-button-item .icon-item{
-  text-align: center;
+  
   position: relative;
   user-select: none;
-  //couleurs
-  color: var(--color-white);
-  text-transform: uppercase;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  --width-item: 70px;
-
+  justify-content: flex-start;
+  
+  //couleurs
+  color: var(--color-white);
+  
+  --width-img: 70px;
   min-width: 360px;
+
   @media (min-width: @screen-xl) {
     max-width: 400px;
   }
@@ -20,18 +21,19 @@
   }
 
   background-color: var(--color-orange);
-  border-radius: calc(var(--width-item)*2);
+  border-radius: calc(var(--width-img)*2);
 
-  .mx-small;
+  .mxy-small;
 
   .img {
 
     background-color: var(--color-white);
     padding: 15px;
     margin: 10px;
-    height:var(--width-item);
-    width: var(--width-item);
+    height:var(--width-img);
+    width: var(--width-img);
     border-radius: 100%;
+    flex-shrink: 0;
 
     img {
       object-fit: contain;
@@ -45,7 +47,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: calc(var(--width-item)/2);
+    text-align: center;
+    padding-right: calc(var(--width-img)/2);
   }
 
   &.invert {

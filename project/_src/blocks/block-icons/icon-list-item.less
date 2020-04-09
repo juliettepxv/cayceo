@@ -1,17 +1,18 @@
 .icon-list-item .icon-item{
-  text-align: center;
+
   position: relative;
   user-select: none;
-  //couleurs
-  color: var(--color-1);
-  text-transform: uppercase;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  --width-item: 250px;
+  //couleurs
+  color: var(--color-1);
 
+  --width-img: 250px;
   min-width: 360px;
+
   @media(min-width: @screen-xl){
     max-width: 400px;
   }
@@ -23,8 +24,8 @@
   .img {
 
     .pxy-small;
-    height:var(--width-item);
-    width: var(--width-item);
+    height:var(--width-img);
+    width: var(--width-img);
 
     img {
       object-fit: contain;

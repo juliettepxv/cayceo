@@ -6,20 +6,37 @@
  *
  *
  */
-$project=$vv->targetUid(true);
+
+//retrouver le block parent (cards)
+$fieldNameParent=explode(".",$vv->fieldName);
+array_pop($fieldNameParent);
+$fieldNameParent=implode(".",$fieldNameParent);
+$parent=$vv->record->getValue($fieldNameParent);
+
+//le type de carte qui sera chargé
+$cardType=$parent->getData("cardsType",site()->cardsTypeDefault);
+
+
+
 ?>
 
+
 <label>Projet</label>
-<?=$vv->wysiwyg()->field("targetUid")
-    ->recordPicker("project",false)
+<?=$vv->wysiwyg()->field("page")
+    ->recordPicker("page",false)
     ->onSavedRefreshListItem($vv)
     ->buttonRecord()
     ->render()
 ?>
-
-<?if($project):?>
-<?=$view->render("records/project.card.config",$project)?>
-<?endif?>
+<?if(in_array($cardType, ["title-text-link-img", "ico-text"])):?>
+<label>Image</label>
+<?=$vv->wysiwyg()->field("img")
+    ->file()
+    ->onSavedRefreshListItem($vv)
+    ->button()
+    ->render()
+?>
+<?endif;?>
 
 
 

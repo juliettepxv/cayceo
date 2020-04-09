@@ -1,18 +1,19 @@
 .icon-circle-item .icon-item{
-  text-align: center;
+
   position: relative;
   user-select: none;
-  //couleurs
-  color: var(--color-1);
-  text-transform: uppercase;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  --width-item: 150px;
+  //couleurs
+  color: var(--color-1);
 
+  --width-img: 150px;
   min-width: 360px;
+
   @media (min-width: @screen-xl) {
     max-width: 400px;
   }
@@ -25,8 +26,8 @@
     .pxy-small;
     border-radius: 100%;
     border: 3px solid var(--color-orange);
-    height:var(--width-item);
-    width: var(--width-item);
+    height:var(--width-img);
+    width: var(--width-img);
 
     img {
       object-fit: contain;
@@ -36,7 +37,8 @@
   }
 
   .text {
-    height: var(--width-item);
+    text-align: center;
+    height: var(--width-img);
     width: 300px;
     .py-small;
   }

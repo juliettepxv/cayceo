@@ -42,11 +42,11 @@ class Site extends AbstractSingleton
     ];
 
     public $cardsTypes=[
-        "icône titre texte"=>"ico-title-text",
+        "icône texte"=>"ico-text",
         "titre texte lien"=>"title-text-link",
         "titre texte lien image"=>"title-text-link-img",
     ];
-    public $cardsTypeDefault="ico-title-text";
+    public $cardsTypeDefault="ico-text";
 
     /**
      * @var string Nom du projet utilisé dans les envois de mail par exemple

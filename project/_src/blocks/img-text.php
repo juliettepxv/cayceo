@@ -47,7 +47,7 @@ $monogramme=$vv->getData("monogramme")?"monogramme":"";
                             ->field("texte_lang")
                             ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
                             ->setPlaceholder("Saisissez votre texte")
-                            //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
+                            ->setMediumButtons(["h2","bold","quote","anchor"])
                             ->htmlTag("div")
                             ->addClass("txt")
                         ?>
