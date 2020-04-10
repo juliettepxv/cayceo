@@ -86,7 +86,7 @@
 
             <div class="col-md-9 mb-big">
                 <h1 class="<?=$fs?> fg-black">Sur un h1, <?=utils()->string->loremIspum(30,30)?></h1>
-                <h3 class="<?=$fs?> fg-fluo-2">Sur un h3, <?=utils()->string->loremIspum(30,30)?></h3>
+                <h3 class="<?=$fs?> fg-primary-2">Sur un h3, <?=utils()->string->loremIspum(30,30)?></h3>
                 <div class="<?=$fs?> fg-grey-dark">Sur un div, <?=utils()->string->loremIspum(30,30)?></div>
             </div>
 

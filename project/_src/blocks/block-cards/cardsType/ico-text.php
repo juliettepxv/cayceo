@@ -1,19 +1,21 @@
 <?php
+
 use Classiq\Models\JsonModels\ListItem;
+
 /** @var ListItem $vv ici */
 
 
 /** @var \Classiq\Models\Filerecord $img */
-$img=$vv->getDataAsRecord("img");
-if($img){
-    $img=$img->image();
-}else{
-    $img=pov()->img("");
+$img = $vv->getDataAsRecord("img");
+if ($img) {
+    $img = $img->image();
+} else {
+    $img = pov()->img("");
 }
-$imgTag=$img
+$imgTag = $img
     ->bgColor("EEEEEE")
     ->displayIfEmpty(true)
-    ->sizeMax(400,400)
+    ->sizeMax(400, 400)
     ->jpg()->htmlTag();
 
 
@@ -21,15 +23,15 @@ $imgTag=$img
 <div class="ico-text">
 
     <div class="img">
-        <?= $imgTag?>
+        <?= $imgTag ?>
     </div>
 
-    <?=$vv->wysiwyg()
+    <?= $vv->wysiwyg()
         ->field("texte_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
         ->setPlaceholder("Texte")
-        ->setMediumButtons(["h2","bold","quote","anchor"])
+        ->setMediumButtons(["h2", "bold", "quote", "anchor"])
         ->htmlTag("div")
-    ->addClass("txt")
+        ->addClass("rich-text")
     ?>
 </div>

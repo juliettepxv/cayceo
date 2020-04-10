@@ -65,7 +65,7 @@ if(!the()->requestUrl->isAjax){
             <?=$view->render("layout/footer")?>
         </main>
 
-        <?=$view->render("nav/nav")?>
+       <?/* <?=$view->render("nav/nav")?>*/?>
         
         <div id="page-transition"></div>
 

@@ -19,7 +19,7 @@
                     "removeFormat"]
                 )
                 ->htmlTag("div")
-                ->addClass("txt rich-text")
+                ->addClass("text rich-text")
             ?>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div id="main-navbar" >
+<div id="main-navbar">
 <div class="navbar container">
 
     <div class="a">

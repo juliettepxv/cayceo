@@ -26,7 +26,7 @@
         <div class="col-md-3">
             <label>colors</label>
         </div>
-        <?foreach (["color-fluo","color-fluo-2","color-grey"] as $color):?>
+        <?foreach (["color-primary","color-primary-2","color-grey"] as $color):?>
             <div class="col-md-3">
                 <code>.<?=$color?></code>
                 <hr class="invisible">
@@ -47,7 +47,7 @@
         <div class="col-md-3">
             <label>colors negative</label>
         </div>
-        <?foreach (["color-fluo","color-fluo-2","color-grey"] as $color):?>
+        <?foreach (["color-primary","color-primary-2","color-grey"] as $color):?>
             <div class="col-md-3">
                 <code>.<?=$color?>.negative</code>
                 <hr class="invisible">

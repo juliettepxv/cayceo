@@ -11,13 +11,13 @@
 
             <div class="col-md-9 mb-medium d-flex ">
 
-                <span class="ico-label mx-medium sz-<?=$sz?> color-fluo">
+                <span class="ico-label mx-medium sz-<?=$sz?> color-primary">
                      <?=pov()->svg->use("startup-social-youtube")->addClass("fg-youtube")?>
                     <label>Youtube</label>
                 </span>
 
-                <div class="ico-label mx-medium sz-<?=$sz?> color-fluo">
-                     <div class="ico bg-fluo fg-white shp-circle">99%</div>
+                <div class="ico-label mx-medium sz-<?=$sz?> color-primary">
+                     <div class="ico bg-primary fg-white shp-circle">99%</div>
                     <div class="label">Text stuff</div>
                 </div>
             </div>

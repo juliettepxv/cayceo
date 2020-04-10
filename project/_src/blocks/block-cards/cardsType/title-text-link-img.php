@@ -29,6 +29,7 @@ $imgTag=$img
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
         ->setPlaceholder("Texte")
         ->htmlTag("div")
+        ->addClass("text")
     ?>
     <hr>
     <div>

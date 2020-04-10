@@ -14,6 +14,7 @@ use Classiq\Models\JsonModels\ListItem;
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
         ->setPlaceholder("Texte")
         ->htmlTag("div")
+        ->addClass("text")
     ?>
     <div>
         <a href="#" class="button">todo bouton à configurer</a>

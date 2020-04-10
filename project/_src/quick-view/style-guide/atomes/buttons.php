@@ -7,8 +7,8 @@
         </div>
         <div class="col-md-9">
             <button class="button">default</button>
-            <a class="button color-fluo">fluo</a>
-            <button class="button color-fluo-2">fluo 2</button>
+            <a class="button color-primary">primary</a>
+            <button class="button color-primary-2">primary 2</button>
         </div>
     </div>
 
@@ -18,8 +18,8 @@
         </div>
         <div class="col-md-9">
             <button class="button negative">default</button>
-            <button class="button negative color-fluo"><span>fluo</span></button>
-            <a      class="button negative color-fluo-2"><span>fluo 2</span></a>
+            <button class="button negative color-primary"><span>primary</span></button>
+            <a      class="button negative color-primary-2"><span>primary 2</span></a>
         </div>
     </div>
 
@@ -29,8 +29,8 @@
         </div>
         <div class="col-md-9">
             <button class="button transparent">default</button>
-            <button class="button transparent color-fluo">fluo</button>
-            <a      class="button transparent color-fluo-2">fluo 2</a>
+            <button class="button transparent color-primary">primary</button>
+            <a      class="button transparent color-primary-2">primary 2</a>
         </div>
     </div>
 
@@ -40,8 +40,8 @@
         </div>
         <div class="col-md-9">
             <button class="button naked">default</button>
-            <button class="button naked color-fluo">fluo</button>
-            <a      class="button naked color-fluo-2">fluo 2</a>
+            <button class="button naked color-primary">primary</button>
+            <a      class="button naked color-primary-2">primary 2</a>
         </div>
     </div>
 
@@ -53,8 +53,8 @@
         </div>
         <div class="col-md-9">
             <button class="button">default</button>
-            <button class="button color-fluo shp-rounded">shape rounded</button>
-            <a      class="button color-fluo-2 shp-rect">shape squared</a>
+            <button class="button color-primary shp-rounded">shape rounded</button>
+            <a      class="button color-primary-2 shp-rect">shape squared</a>
         </div>
     </div>
 
@@ -67,17 +67,17 @@
                 <?=pov()->svg->use("startup-close")?>
                 <span>icône avant</span>
             </a>
-            <a class="button color-fluo shp-rounded">
+            <a class="button color-primary shp-rounded">
                 <span>icône après</span>
                 <?=pov()->svg->use("startup-close")?>
             </a>
-            <a  class="button color-fluo-2 shp-rect square">
+            <a  class="button color-primary-2 shp-rect square">
                 <?=pov()->svg->use("startup-close")?>
             </a>
-            <a  class="button color-fluo-2 negative square shadow-medium">
+            <a  class="button color-primary-2 negative square shadow-medium">
                 <?=pov()->svg->use("startup-close")?>
             </a>
-            <a  class="button color-fluo transparent shp-rounded square">
+            <a  class="button color-primary transparent shp-rounded square">
                 <?=pov()->svg->use("startup-close")?>
             </a>
         </div>
@@ -91,32 +91,32 @@
             <?foreach (["small","normal","big","huge"] as $size):?>
                 <div class="mb-medium row text-center">
                     <div class="col-sm-4 mb-medium ">
-                        <button class="button sz-<?=$size?> bdr-fluo-hvr" ><?=$size?></button>
+                        <button class="button sz-<?=$size?> bdr-primary-hvr" ><?=$size?></button>
                     </div>
                     <div class="col-sm-4 mb-medium">
-                        <button class="button sz-<?=$size?> color-fluo color-fluo-2-hvr negative-hvr">
+                        <button class="button sz-<?=$size?> color-primary color-primary-2-hvr negative-hvr">
                             <?=pov()->svg->use("startup-close")?>
                             <span><?=$size?></span>
                         </button>
                     </div>
                     <div class="col-sm-4 mb-medium">
-                        <button class="button sz-<?=$size?> color-fluo negative shp-rounded positive-hvr fg-fluo-2-hvr">
+                        <button class="button sz-<?=$size?> color-primary negative shp-rounded positive-hvr fg-primary-2-hvr">
                             <span><?=$size?></span>
                             <?=pov()->svg->use("startup-close")?>
                         </button>
                     </div>
                     <div class="col-sm-4 mb-medium">
-                        <a class="button sz-<?=$size?> color-fluo-2 naked negative-hvr square">
+                        <a class="button sz-<?=$size?> color-primary-2 naked negative-hvr square">
                             <?=pov()->svg->use("startup-close")?>
                         </a>
                     </div>
                     <div class="col-sm-4 mb-medium">
-                        <button class="button sz-<?=$size?> color-fluo-2 negative square shp-rect-hvr shadow-medium">
+                        <button class="button sz-<?=$size?> color-primary-2 negative square shp-rect-hvr shadow-medium">
                             <?=pov()->svg->use("startup-close")?>
                         </button>
                     </div>
                     <div class="col-sm-4 mb-medium">
-                        <a class="button sz-<?=$size?> color-fluo color-fluo-2-hvr transparent shp-rounded square">
+                        <a class="button sz-<?=$size?> color-primary color-primary-2-hvr transparent shp-rounded square">
                             <?=pov()->svg->use("startup-close")?>
                         </a>
                     </div>

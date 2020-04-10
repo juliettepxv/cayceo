@@ -1,5 +1,7 @@
 <?php
-$view->inside("layout/layout", $vv);
+/** @var Page $vv */
+use Classiq\Models\Page;
+$view->inside("layout/layout",$vv);
 ?>
 <section class="py-big" style="<?=utils()->css->backgroundImageUrl(
         the()->fileSystem->filesystemToHttp("project/img/damier.png"))?>" >

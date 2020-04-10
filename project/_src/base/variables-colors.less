@@ -1,37 +1,36 @@
 @color-black:#000;
 @color-white:#fff;
 
-@color-grey-dark:#333;
+@color-text : #93939E;
+@color-background :@color-grey-light;
+
+@color-grey-dark: #484851;
 @color-grey:#888;
-@color-grey-light: #eee;
+@color-grey-light:#F7F7F9;
 
-@color-fluo: #ffff00;
-@color-fluo-dark: #cece00;
+@color-primary: #ED7203;
+@color-primary-variant: #ED7203;
 
-@color-fluo-2: #5C4675;
-@color-fluo-2-dark: #5C4675;
+@color-secondary: #ffff00;
+@color-secondary-variant: #cece00;
 
-@color-fluo-complementaire: #fff;
+@color-magenta: #ff0043;
 
 body{
-
-  --color-violet:#18237B;
-  --color-magenta:#FD173E;
-  --color-orange:#FF5722;
-  --color-bleu:#0091E7;
-  --color-bleu-lighter: #f4f4fa;
-  --color-white-sand: #fcfaef;
-
 
   --color-white:#ffffff;
   --color-black:#000000;
 
-  --color-grey:@color-grey;
+  --color-text:@color-text;
+  --color-background:@color-background;
+
   --color-grey-dark:@color-grey-dark;
+  --color-grey:@color-grey;
   --color-grey-light:@color-grey-light;
 
-  --color-fluo:@color-fluo;
-  --color-fluo-2:@color-fluo-2;
+  --color-primary:@color-primary;
+
+  --color-secondary:@color-secondary;
 
   --color-facebook:#3b5999;
   --color-twitter:#55acee;
@@ -44,113 +43,11 @@ body{
 }
 
 body, .color-default, .color-default-hvr:hover{
-  --color-primary:var(--color-grey-dark);
-  --color-secondary:var(--color-white) !important;
+  --color-primary:@color-primary;
+  --color-secondary:@color-secondary;
 }
 
-.color-white, .color-white-hvr:hover{
-  --color-primary:var(--color-white);
-  --color-secondary:var(--color-black);
-}
-.fg-white,.fg-white-hvr:hover,.fg-white-active.active{
-  color: var(--color-white) !important;
-}
-.bg-white,.bg-white,.bg-white{
-  background-color: var(--color-white) !important;
-}
-.bdr-white,.bdr-white-hvr:hover,.bdr-white-active.active{
-  border-color: var(--color-white) !important;
-}
 
-.color-black, .color-black-hvr:hover{
-  --color-primary:var(--color-black);
-  --color-secondary:var(--color-white);
-}
-.fg-black,.fg-black-hvr:hover,.fg-black-active.active{
-  color: var(--color-black) !important;
-}
-.bg-black,.bg-black-hvr:hover,.bg-black-active.active{
-  background-color: var(--color-black) !important;
-}
-.bdr-black,.bdr-black-hvr:hover,.bdr-black-active.active{
-  border-color: var(--color-black) !important;
-}
-
-.color-grey, .color-grey-hvr:hover{
-  --color-primary:var(--color-grey);
-  --color-secondary:var(--color-white);
-}
-.fg-grey,.fg-grey-hvr:hover,.fg-grey-active.active{
-  color: var(--color-grey) !important;
-}
-.bg-grey,.bg-grey-hvr:hover,.bg-grey-active.active{
-  background-color: var(--color-grey) !important;
-}
-.bdr-grey,.bdr-grey-hvr:hover,.bdr-grey-active.active{
-  border-color: var(--color-grey) !important;
-}
-
-.color-grey-dark, .color-grey-dark-hvr:hover{
-  --color-primary:var(--color-grey-dark);
-  --color-secondary:var(--color-white) !important;
-}
-.fg-grey-dark,.fg-grey-dark-hvr:hover,.fg-grey-dark-active.active{
-  color: var(--color-grey-dark) !important;
-}
-.bg-grey-dark,.bg-grey-dark-hvr:hover,.bg-grey-dark-active.active{
-  background-color: var(--color-grey-dark) !important;
-}
-.bdr-grey-dark,.bdr-grey-dark-hvr:hover,.bdr-grey-dark-active.active{
-  border-color: var(--color-grey-dark) !important;
-}
-
-.color-grey-light, .color-grey-light-hvr:hover{
-  --color-primary:var(--color-grey-light);
-  --color-secondary:var(--color-black);
-}
-.fg-grey-light,.fg-grey-light-hvr:hover,.fg-grey-light-active.active{
-  color: var(--color-grey-light) !important;
-}
-.bg-grey-light,.bg-grey-light-hvr:hover,.bg-grey-light-active.active{
-  background-color: var(--color-grey-light) !important;
-}
-.bdr-grey-light,.bdr-grey-light-hvr:hover,.bdr-grey-light-active.active{
-  border-color: var(--color-grey-light) !important;
-}
-
-.color-fluo,
-.color-fluo-hvr:hover,
-.hvr:hover .color-fluo-hvr
-{
-  --color-primary:var(--color-fluo);
-  --color-secondary:var(--color-white);
-}
-.fg-fluo,
-.fg-fluo-hvr:hover,
-.hvr:hover .fg-fluo-hvr,
-.fg-fluo-active.active{
-  color: var(--color-fluo) !important;
-}
-.bg-fluo,.bg-fluo-hvr:hover,.bg-fluo-active.active{
-  background-color: var(--color-fluo) !important;
-}
-.bdr-fluo,.bdr-fluo-hvr:hover,.bdr-fluo-active.active{
-  border-color: var(--color-fluo)!important;
-}
-
-.color-fluo-2, .color-fluo-2-hvr:hover{
-  --color-primary:var(--color-fluo-2);
-  --color-secondary:var(--color-white);
-}
-.fg-fluo-2,.fg-fluo-2-hvr:hover,.fg-fluo-2-active.active{
-  color: var(--color-fluo-2) !important;
-}
-.bg-fluo-2,.bg-fluo-2-hvr:hover,.bg-fluo-2-active.active{
-  background-color: var(--color-fluo-2) !important;
-}
-.bdr-fluo-2,.bdr-fluo-2-hvr:hover,.bdr-fluo-2-active.active{
-  border-color: var(--color-fluo-2) !important;
-}
 
 .color-facebook, .color-facebook-hvr:hover{
   --color-primary:var(--color-facebook);

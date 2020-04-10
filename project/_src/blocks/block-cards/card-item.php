@@ -15,7 +15,7 @@ $cardType=$parent->getData("cardsType",site()->cardsTypeDefault);
 
 
 ?>
-<div class="col-md-6 card-item-col"  <?=$vv->wysiwyg()->attr()?> >
+<div class="col-lg-6 card-item-col"  <?=$vv->wysiwyg()->attr()?> >
 
     <div class="card-item">
         <?=$view->render("blocks/block-cards/cardsType/$cardType")?>

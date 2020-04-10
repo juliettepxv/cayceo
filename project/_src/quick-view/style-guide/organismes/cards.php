@@ -16,7 +16,7 @@
                             </div>
                             <div class="fg fg-white">
                                 <h3><?=$ratio?></h3>
-                                <a href="#" class="button color-fluo negative">world</a>
+                                <a href="#" class="button color-primary negative">world</a>
                             </div>
                         </div>
                     </div>
@@ -54,12 +54,12 @@
                         [
                                 "fx-darken fx-level-75 fx-level-25-hvr",
                                 "fx-grayscale fx-level-100 fx-level-0-hvr",
-                                "fx-gradient-bottom color-fluo color-fluo-2-hvr fx-level-75-hvr",
-                                "fx-gradient-radial color-fluo-2 fx-level-25-hvr",
-                                "fx-gradient-hue color-fluo-2 fx-level-100 fx-level-0-hvr",
-                                "fx-gradient-hue color-fluo fx-level-100 fx-level-0-hvr",
-                                "fx-gradient-colorize color-fluo-2 fx-level-100 fx-level-0-hvr",
-                                "fx-gradient-colorize color-fluo fx-level-100 fx-level-0-hvr",
+                                "fx-gradient-bottom color-primary color-primary-2-hvr fx-level-75-hvr",
+                                "fx-gradient-radial color-primary-2 fx-level-25-hvr",
+                                "fx-gradient-hue color-primary-2 fx-level-100 fx-level-0-hvr",
+                                "fx-gradient-hue color-primary fx-level-100 fx-level-0-hvr",
+                                "fx-gradient-colorize color-primary-2 fx-level-100 fx-level-0-hvr",
+                                "fx-gradient-colorize color-primary fx-level-100 fx-level-0-hvr",
 
                         ] as $fx):?>
                 <div class="col-md-6 mb-medium">
@@ -70,7 +70,7 @@
                             </video>
                         </div>
                         <div class="fg fg-white ">
-                            <h3 class="fg-fluo-hvr text-shadow-flat">FX & Hover</h3>
+                            <h3 class="fg-primary-hvr text-shadow-flat">FX & Hover</h3>
                             <code class="text-center"><?=$fx?></code>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                         <div class="bg"></div>
                         <div class="fg fg-black ">
 
-                            <h3 class="fg-fluo-hvr text-shadow-flat">Default content</h3>
+                            <h3 class="fg-primary-hvr text-shadow-flat">Default content</h3>
 
 
                             <div class="top left">
@@ -114,7 +114,7 @@
                     <div class="card hvr shadow-big ratio-1x1 shp-rounded">
                         <div class="bg"></div>
                         <div class="fg fg-black ">
-                            <h3 class="fg-fluo-hvr text-shadow-flat text-left">Default content</h3>
+                            <h3 class="fg-primary-hvr text-shadow-flat text-left">Default content</h3>
                             <div class="bottom left">
                                 <button class="button shp-rect square sz-small naked negative-hvr color-twitter-hvr"><?=pov()->svg->use("startup-social-twitter")?></button>
                             </div>

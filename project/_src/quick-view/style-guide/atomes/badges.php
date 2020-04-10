@@ -10,8 +10,8 @@
             </div>
 
             <div class="col-md-9 mb-medium">
-                <span class="badge sz-<?=$sz?> color-fluo"><?=$sz?></span>
-                <span class="badge sz-<?=$sz?> color-fluo-2">0</span>
+                <span class="badge sz-<?=$sz?> color-primary"><?=$sz?></span>
+                <span class="badge sz-<?=$sz?> color-primary-2">0</span>
                 <span class="badge sz-<?=$sz?> color-instagram">1</span>
                 <span class="badge sz-<?=$sz?> color-instagram positive">1</span>
                 <span class="badge sz-<?=$sz?> color-black">2</span>

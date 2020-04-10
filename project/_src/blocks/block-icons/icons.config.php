@@ -18,5 +18,12 @@ use Classiq\Models\JsonModels\ListItem;
     ]);
 ?>
 
+<label>Fond</label>
+<?= $vv->wysiwyg()->field("bgColor")
+    ->bool()
+    ->onSavedRefreshListItem($vv)
+    ->checkbox("Fond en couleur")
+?>
+
 
 

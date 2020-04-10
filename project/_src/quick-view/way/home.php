@@ -15,22 +15,22 @@ $view->inside("layout/layout", $vv);
 
 <div class="container text-center py-big">
     <div>
-        <h2 class="h1 fg-fluo-2 mb-big">Le premier réseau social d'orientation.</h2>
-        <p class="fg-fluo-2 mb-big"><?=utils()->string->loremIspum(50,50)?></p>
+        <h2 class="h1 fg-primary-2 mb-big">Le premier réseau social d'orientation.</h2>
+        <p class="fg-primary-2 mb-big"><?=utils()->string->loremIspum(50,50)?></p>
 
         <div class="d-flex flex-column justify-content-center align-items-center">
-            <a class="button color-fluo-2 negative shadow-big mb-medium">Se connecter</a>
-            <a class="button color-fluo-2">S'inscrire</a>
+            <a class="button color-primary-2 negative shadow-big mb-medium">Se connecter</a>
+            <a class="button color-primary-2">S'inscrire</a>
         </div>
 
     </div>
 </div>
 
-<div class="bg-fluo-2 shp-rounded py-big text-center">
+<div class="bg-primary-2 shp-rounded py-big text-center">
     <div class="container">
         <h2 class="fg-white mb-big">Toi aussi, donne ton avis !</h2>
         <div class="mb-medium" data-cards-container>
-            <div class="color-fluo cards-container-wrapper shp-rounded-list shadow-medium-list" data-slick='{"autoplay": false}'>
+            <div class="color-primary cards-container-wrapper shp-rounded-list shadow-medium-list" data-slick='{"autoplay": false}'>
             <?for ($i=0;$i<20;$i++):?>
                 <div class="my-medium">
                     <div class="card ratio-4x3 shp shadow">
@@ -41,7 +41,7 @@ $view->inside("layout/layout", $vv);
                             <a class="button color-white transparent mb-small">
                                 #sciences <?=$i;?>
                             </a>
-                            <a class="button color-fluo negative">
+                            <a class="button color-primary negative">
                                 Je donne mon avis
                             </a>
                         </div>
@@ -53,20 +53,20 @@ $view->inside("layout/layout", $vv);
     </div>
 </div>
 
-<div class="bg-fluo shp-rounded py-big text-center">
+<div class="bg-primary shp-rounded py-big text-center">
     <div class="container">
-        <h2 class="fg-fluo-2 mb-big">A la une ...</h2>
+        <h2 class="fg-primary-2 mb-big">A la une ...</h2>
         <div class="cards-list shadow-big-list shp-rounded-list">
         <?for ($i=0;$i<4;$i++):?>
 
                 <div>
                     <div href="#" class="card hvr ratio-4x3 shp shadow">
-                        <div class="bg fx-gradient-bottom color-fluo-2 fx-level-75 fx-level-100-hvr">
+                        <div class="bg fx-gradient-bottom color-primary-2 fx-level-75 fx-level-100-hvr">
                             <img alt="test" src="https://le-drone.com/__cache/robert/img/__db/localhost/glspxueq_drone/dev/uids/57474/LIGHTNING_BOLT_PIX_1-1.jpg/380-214-nb/ffffff-80.jpg">
                         </div>
                         <div class="fg">
                             <div class="top right">
-                                <a href="#tag-redaction" class="button square color-fluo-2 negative shp-rounded">
+                                <a href="#tag-redaction" class="button square color-primary-2 negative shp-rounded">
                                     <?=pov()->svg->use("startup-social-instagram")?>
                                 </a>
                             </div>
@@ -83,12 +83,12 @@ $view->inside("layout/layout", $vv);
                 </div>
                 <div>
                     <div href="#" class="card hvr ratio-4x3">
-                        <div class="bg fx-gradient-bottom color-fluo-2 fx-level-75  fx-level-100-hvr">
+                        <div class="bg fx-gradient-bottom color-primary-2 fx-level-75  fx-level-100-hvr">
                             <img alt="test" src="https://le-drone.com/__cache/robert/img/__db/localhost/glspxueq_dev/theDrone/uids/20265/helenah.jpg/0-500-nb/FFFFFF-80.jpg">
                         </div>
                         <div class="fg">
                             <div class="top right">
-                                <a href="#tag-redaction" class="button square color-fluo-2 negative shp-rounded">
+                                <a href="#tag-redaction" class="button square color-primary-2 negative shp-rounded">
                                     <?=pov()->svg->use("startup-social-instagram")?>
                                 </a>
                             </div>
@@ -102,12 +102,12 @@ $view->inside("layout/layout", $vv);
                 </div>
                 <div>
                     <div href="#" class="hvr card ratio-4x3">
-                        <div class="bg fx-gradient-bottom color-fluo-2 fx-level-75 fx-level-100-hvr">
+                        <div class="bg fx-gradient-bottom color-primary-2 fx-level-75 fx-level-100-hvr">
                             <img alt="test" src="https://le-drone.com/__cache/robert/img/__db/localhost/ledrgnpu_drone/pp/uids/92907/peacock_1.jpg/0-500-nb/FFFFFF-80.jpg">
                         </div>
                         <div class="fg">
                             <div class="top right">
-                                <a href="#tag-redaction" class="button square color-fluo-2 negative shp-rounded">
+                                <a href="#tag-redaction" class="button square color-primary-2 negative shp-rounded">
                                     <?=pov()->svg->use("startup-social-instagram")?>
                                 </a>
                             </div>
@@ -119,12 +119,12 @@ $view->inside("layout/layout", $vv);
                 </div>
                 <div>
                     <div href="#" class="hvr card ratio-4x3">
-                        <div class="bg fx-gradient-bottom color-fluo-2 fx-level-75 fx-level-100-hvr">
+                        <div class="bg fx-gradient-bottom color-primary-2 fx-level-75 fx-level-100-hvr">
                             <img alt="test" src="https://le-drone.com/__cache/robert/img/__db/localhost/ledrgnpu_drone/pp/uids/92907/peacock_1.jpg/0-500-nb/FFFFFF-80.jpg">
                         </div>
                         <div class="fg">
                             <div class="top right">
-                                <a href="#tag-redaction" class="button square color-fluo-2 negative shp-rounded">
+                                <a href="#tag-redaction" class="button square color-primary-2 negative shp-rounded">
                                     <?=pov()->svg->use("startup-social-instagram")?>
                                 </a>
                             </div>

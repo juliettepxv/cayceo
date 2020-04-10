@@ -1,53 +1,72 @@
-.icon-circle-item .icon-item{
+.icon-circle-item {
+  .icon-item {
 
-  position: relative;
-  user-select: none;
+    position: relative;
+    user-select: none;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  //couleurs
-  color: var(--color-1);
+    //couleurs
+    color: var(--color-1);
 
-  --width-img: 150px;
-  min-width: 360px;
+    --width-img: 120px;
+    --width-text:200px;
+    --padding-ico: 24px;
 
-  @media (min-width: @screen-xl) {
-    max-width: 400px;
-  }
-  @media (min-width: @screen-xxl) {
-    max-width: 440px;
-  }
-
-  .img {
-
-    .pxy-small;
-    border-radius: 100%;
-    border: 3px solid var(--color-orange);
-    height:var(--width-img);
-    width: var(--width-img);
-
-    img {
-      object-fit: contain;
-      width: 100%;
-      height: 100%;
+    @media (min-width: @screen-sm) {
+      --width-text:220px;
     }
-  }
+    @media (min-width: @screen-md) {
+      --width-text: 240px;
+    }
+    @media (min-width: @screen-lg) {
+      --padding-ico: 32px;
+      --width-img: 150px;
+      --width-text: 280px;
+    }
+    @media (min-width: @screen-xl) {
+      --width-text: 300px;
+    }
+    @media (min-width: @screen-xxl) {
+      --width-text: 440px;
+    }
+    min-width: var(--width-text);
 
-  .text {
-    text-align: center;
-    height: var(--width-img);
-    width: 300px;
-    .py-small;
-  }
+    .my-small;
 
-  &.invert {
     .img {
-      order: 2;
+
+      padding:var(--padding-ico);
+      border-radius: 100%;
+      border: 3px solid var(--color-primary);
+      height: var(--width-img);
+      width: var(--width-img);
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
     }
 
-  }
+    .text {
+      text-align: center;
+      height: var(--width-img);
+      width: var(--width-text);
+      max-width: 300px;
+      .py-small;
+    }
 
+    &.invert {
+      .img {
+        order: 2;
+      }
+
+    }
+
+
+  }
 }

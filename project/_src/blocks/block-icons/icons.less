@@ -3,7 +3,7 @@
 @import "./icon-button-item";
 
 .block-icon{
-  background-color: var(--color-bg);
+
   .py-medium;
   .container{
     .list{
@@ -17,6 +17,16 @@
       }
     }
 
+  }
+
+  &.bgColor{
+    background-color: @color-primary;
+    .text{
+      color: @color-white;
+    }
+    .img {
+      border-color: white;
+    }
   }
 }
 

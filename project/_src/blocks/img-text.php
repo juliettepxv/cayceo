@@ -14,7 +14,7 @@ $monogramme=$vv->getData("monogramme")?"monogramme":"";
     <div class="container">
         <div class="img-text">
             <div class="row">
-                <div class="col-6" dss="1.1">
+                <div class="col-lg-6" dss="1.1">
                     <? if ($img && $img->isImage()): ?>
                         <div class="block-img" >
                             <div class="img-wrap" data-zoom-img="<?= $img->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
@@ -36,10 +36,10 @@ $monogramme=$vv->getData("monogramme")?"monogramme":"";
                     <? endif ?>
                 </div>
 
-                <div class="col-6" dss="1.1">
-                    <div class="block-texte">
+                <div class="col-lg-6" dss="1.1">
+                    <div class="rich-text">
                         <? if ($monogramme): ?>
-                            <div class="monogramme pb-medium">
+                            <div class="monogramme py-medium">
                                 <?=pov()->svg->use("startup-monogramme")?>
                             </div>
                         <? endif ?>
@@ -49,7 +49,6 @@ $monogramme=$vv->getData("monogramme")?"monogramme":"";
                             ->setPlaceholder("Saisissez votre texte")
                             ->setMediumButtons(["h2","bold","quote","anchor"])
                             ->htmlTag("div")
-                            ->addClass("txt")
                         ?>
                     </div>
                 </div>

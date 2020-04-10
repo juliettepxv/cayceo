@@ -10,10 +10,10 @@
             <hr>
         </div>
         <div class="col-md-3">
-            <hr class="color-fluo">
+            <hr class="color-primary">
         </div>
         <div class="col-md-3">
-            <hr class="color-fluo-2">
+            <hr class="color-primary-2">
         </div>
 
         <div class="col-md-3">
@@ -23,10 +23,10 @@
             <hr class="fat">
         </div>
         <div class="col-md-3">
-            <hr class="fat color-fluo">
+            <hr class="fat color-primary">
         </div>
         <div class="col-md-3">
-            <hr class="fat color-fluo-2">
+            <hr class="fat color-primary-2">
         </div>
 
         <div class="col-md-3">
@@ -36,10 +36,10 @@
             <hr class="ghost">
         </div>
         <div class="col-md-3">
-            <hr class="ghost color-fluo">
+            <hr class="ghost color-primary">
         </div>
         <div class="col-md-3">
-            <hr class="ghost fat color-fluo">
+            <hr class="ghost fat color-primary">
         </div>
 
         <div class="col-md-3">
@@ -52,7 +52,7 @@
             <hr class="vertical h-big">
         </div>
         <div class="col-md-3">
-            <hr class="vertical h-medium fat color-fluo">
+            <hr class="vertical h-medium fat color-primary">
         </div>
 
     </div>

@@ -21,20 +21,25 @@ if($img && $img->isImage()){
 
 $invert=$vv->getData("invert")?"invert":"";
 
-?>
-<div class="icon-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?> >
+$url=$vv->getData("url");
+$targetWindow=$vv->getData("targetWindow");
+$targetWindow=$targetWindow?"_blank":"_self";
 
-    <div class="img">
+?>
+
+<a class="icon-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?>  href="<?=$url?>" target="<?=$targetWindow?>" >
+
+    <span class="img">
         <?=$imgTag?>
-    </div>
+    </span>
 
     <?=$vv->wysiwyg()->field("text")
     ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
     ->setMediumButtons(["bold","removeFormat"])
-    ->htmlTag("div")
+    ->htmlTag("span")
     ->addClass("text")
     ?>
 
-</div>
+</a>
 
 

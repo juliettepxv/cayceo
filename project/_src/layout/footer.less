@@ -1,5 +1,42 @@
 #footer{
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: @color-primary;
+  color: @color-white;
   z-index: var(--z-content-2);
+  .pt-medium;
+  .pb-small;
+
+.container{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3{
+    .mt-medium;
+  }
+
+  .social{
+
+    --width-img: 70px;
+
+    @media (min-width: @screen-lg) {
+      --width-img: 90px;
+    }
+
+    a{
+      border: 3px solid;
+      height: var(--width-img);
+      width: var(--width-img);
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .ico{
+        height: 32px;
+      }
+    }
+  }
+}
+
+
 }
