@@ -11,21 +11,9 @@ import PanelMainNav from "./nav/PanelMainNav";
 import BricksManager from "./bricks/BricksManager";
 import ScrollActive from "./scroll/ScrollActive";
 import DataSocialShareClick from "data-social-share-click" ;
-import SmoothScrollManager from "./scroll/SmoothScrollManager";
 import PageTransition from "./page-transition/PageTranstion";
 import AjaxOnScroll from "./components/AjaxOnScroll";
 
-window.perfConf={
-    smoothScroll:{
-        active:true
-    }
-};
-switch (true) {
-    case LayoutVars.wysiwyg===true:
-    case utils.device.isEdge:
-    case utils.device.isTouchDevice():
-        perfConf.smoothScroll.active=false;
-}
 
 export default class Site{
     constructor() {
@@ -35,7 +23,7 @@ export default class Site{
          */
         let me = this;
 
-        window.smoothScrollManager=new SmoothScrollManager(perfConf.smoothScroll.active);
+        //window.smoothScrollManager=new SmoothScrollManager(perfConf.smoothScroll.active);
         window.scrollActive=new ScrollActive();
         window.navMenu=new PanelMainNav();
         window.pageTransition=new PageTransition();
@@ -167,7 +155,6 @@ export default class Site{
         }
         LottieLoader.initFromDom();
         scrollActive.observe();
-        smoothScrollManager.initFromDom();
         panels.initFromDom();
         Form.fromDom();
         AjaxOnScroll.initFromDom();
