@@ -15,15 +15,6 @@
     ->render();
 ?>
 
-<label>Choisir un logo</label>
-<?= $vv->wysiwyg()->field("logo")
-    ->file()
-    ->setMimeAcceptImagesOnly()
-    ->onSavedRefreshListItem($vv)
-    ->button()
-    ->render();
-?>
-
 <label>Disposition</label>
 <?= $vv->wysiwyg()->field("invert")
     ->bool()

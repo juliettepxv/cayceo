@@ -58,16 +58,19 @@ h1,.h1{
   font-size: var(--fs-h1);
   line-height: 1.1;
   font-weight: bold;
+  color: @color-grey-dark;
 }
 h2,.h2{
   font-size: var(--fs-h2);
   line-height: 1.1;
   font-weight: bold;
-  color : @color-primary;
+  color: @color-grey-dark;
 }
 
 h3,.h3{
   font-size: 1.15em;
+  color : @color-primary;
+  text-transform: uppercase;
 }
 h4,.h4{
   font-size: 0.9em;
@@ -83,8 +86,6 @@ h6,.h6{
 
 .rich-text{
 
-  text-align: left;
-
   b{
     font-weight: bold;
     color: var(--color-primary);
@@ -93,6 +94,21 @@ h6,.h6{
   a{
     text-decoration: underline !important;
   }
+
+  h2{
+    &:before{
+      content: "";
+      display: block;
+      height: 70px;
+      width: auto;
+      background-position: center;
+      background-image: url("../../logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-bottom: 5px;
+    }
+  }
+
 
   blockquote{
 

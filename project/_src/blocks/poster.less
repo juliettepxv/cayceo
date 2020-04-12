@@ -2,74 +2,13 @@
 
   .poster {
 
-    position: relative;
-    background-color: #cdc8c4;
 
-    .layer {
-      position: absolute;
-      width: 100vw;
-      height: 1400px;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
-      @media (min-width: @screen-lg) {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
-      }
-    }
-
-    .block-img {
-
-      .img-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-
-        img {
-          position: absolute;
-          width: 180vw;
-          @media (min-width: @screen-sm) {
-            width: 160vw;
-          }
-          @media (min-width: @screen-md) {
-            width: 120vw
-          }
-          @media (min-width: @screen-xl) {
-            width: auto;
-          }
-
-        }
-      }
-
-    }
 
 
     .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      min-height: 120vw;
-      padding-top: 80px;
-
-      @media (min-width: @screen-sm) {
-        .pt-big;
-
-        min-height: 60vw;
-      }
-      @media (min-width: @screen-md) {
-        min-height: 50vw
-      }
-      @media (min-width: @screen-xl) {
-        min-height: 20vw;
-        height: 600px;
-      }
-      @media (min-width: @screen-xxl) {
-        min-height: 10vw;
-        height: 600px;
-      }
 
       .text-wrap {
-        position: absolute;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -80,17 +19,6 @@
           width:inherit;
         }
 
-        .logo {
-
-          width: 300px;
-          @media (min-width: @screen-sm) {
-            width: 320px;
-          }
-          @media (min-width: @screen-md) {
-            width: 380px;
-          }
-          height: auto;
-        }
 
         .rich-text {
           display: flex;
@@ -101,36 +29,6 @@
           h1 {
             .pt-medium;
             .pb-small;
-            color: @color-white;
-          }
-
-          h2 {
-            display: flex;
-            justify-content: center;
-
-            &:before, &:after {
-              content: "";
-              display: flex;
-              width: 30px;
-              height: 30px;
-              background-position: right;
-              background-image: url("./tick.svg");
-              background-size: contain;
-              background-repeat: no-repeat;
-              flex-shrink: 0;
-            }
-
-            &:before {
-              .mr-small;
-            }
-
-            &:after {
-              align-self: flex-end;
-              .mr-small;
-              @media (min-width: @screen-sm) {
-                .ml-small;
-              }
-            }
           }
 
         }

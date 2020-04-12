@@ -7,13 +7,13 @@
   align-items: center;
   justify-content: flex-start;
 
-  transition: all 0.15s ease-in-out;
+  transition: all 0.50s ease-in-out;
 
 
-  border: 3px solid transparent;
+  border: 3px solid @color-primary;
 
   //couleurs
-  color: var(--color-white);
+
   --width-img: 70px;
   min-width: 320px;
 
@@ -24,7 +24,9 @@
     width: 380px;
   }
 
-  background-color: var(--color-primary);
+  background: linear-gradient(90deg, rgba(62,173,165,1) 0%, rgba(62,173,165,1)50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  background-size: 1000px;
+  background-position-x: -10px;
   border-radius: calc(var(--width-img) * 2);
 
   .mxy-small;
@@ -50,12 +52,13 @@
   @media (hover: hover) {
     &:hover {
       color: var(--color-primary);
-      background-color: var(--color-white);
+     // background: linear-gradient(90deg, rgba(62,173,165,1) 0%, rgba(62,173,165,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+      background-position-x: 500px;
       border: 3px solid var(--color-primary);
-      .shadow-big;
+      //.shadow-big;
 
       .text {
-        .btn-hover-fx-to-up;
+        color: var(--color-primary);
       }
       .img {
         .btn-hover-fx-bounce-left;
@@ -77,7 +80,8 @@
       padding-right: 0;
     }
 
-    .h3;
+    .h2;
+    color: var(--color-white);
   }
 
   &.invert {
