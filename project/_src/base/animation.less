@@ -1,0 +1,60 @@
+@keyframes kf-top {
+  49% {
+    transform: translateY(-50%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  51% {
+    opacity: 0;
+  }
+}
+
+@keyframes kf-down {
+  49% {
+    transform: translateY(50%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  51% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes bounce-left {
+  50% {
+    transform: translateX(15%);
+  }
+}
+
+
+.btn-hover-fx-to-up{
+  animation-name: kf-top;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+
+.btn-hover-fx-to-down{
+  animation-name: kf-down;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+
+.btn-hover-fx-bounce-left{
+  animation-name: bounce-left;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
