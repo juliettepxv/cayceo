@@ -27,7 +27,7 @@ $targetWindow=$targetWindow?"_blank":"_self";
 
 ?>
 
-<a class="icon-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?>  href="<?=$url?>" target="<?=$targetWindow?>" >
+<a scroll-active class="icon-item <?=$invert?>" <?=$vv->wysiwyg()->attr()?>  href="<?=$url?>" target="<?=$targetWindow?>" >
 
     <span class="img">
         <?=$imgTag?>

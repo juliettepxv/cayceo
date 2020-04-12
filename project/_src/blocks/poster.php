@@ -17,7 +17,6 @@ $monogramme = $vv->getData("monogramme") ? "monogramme" : "";
         <div class="container">
 
 
-
             <div class="text-wrap">
 
                 <div class="rich-text">
@@ -35,27 +34,14 @@ $monogramme = $vv->getData("monogramme") ? "monogramme" : "";
                     ?>
                 </div>
             </div>
+            <div <?= $vv->wysiwyg()->attr() ?> scroll-active="">
 
+                <div class="nuage" lottie-loader
+                     lottie-url="<?= the()->fileSystem->filesystemToHttp("project/_src/lottie/nuage.json") ?>"
+                     lottie-loop="true" lottie-autoplay="true"
+                ></div>
 
-            <? if ($img && $img->isImage()): ?>
-                <div class="block-img">
-                    <div class="img-wrap">
-                        <?= $img->image()
-                            ->width(1200)
-                            ->jpg()
-                            ->htmlTag()
-                            ->addClass("img-responsive")
-                            ->setAttribute("dom-copy", 'img')
-                        ?>
-                    </div>
-                </div>
-            <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
-                <div id="cq-style">
-                    <div text-center class="cq-box cq-th-danger">
-                        Il faut choisir une image
-                    </div>
-                </div>
-            <? endif ?>
+            </div>
 
         </div>
     </div>
