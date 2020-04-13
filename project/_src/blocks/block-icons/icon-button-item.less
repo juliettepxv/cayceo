@@ -51,13 +51,13 @@
 
   @media (hover: hover) {
     &:hover {
-      color: var(--color-primary);
      // background: linear-gradient(90deg, rgba(62,173,165,1) 0%, rgba(62,173,165,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
       background-position-x: 500px;
       border: 3px solid var(--color-primary);
-      //.shadow-big;
+      .shadow-medium;
 
       .text {
+
         color: var(--color-primary);
       }
       .img {
@@ -79,6 +79,7 @@
     @media (min-width: @screen-xl) {
       padding-right: 0;
     }
+    transition: color 0.50s ease-in-out;
 
     .h2;
     color: var(--color-white);
