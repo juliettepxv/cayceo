@@ -7,6 +7,11 @@
  */
 /** @var \Classiq\Models\Filerecord $img */
 $img = $vv->targetUid(true);
+if($img){
+    $image=$img->image()->sizeMax(500,500)->jpg()->href();
+}else{
+    $image=pov()->img("")->sizeMax(500,500)->jpg()->href();
+}
 $invert = $vv->getData("invert") ? "invert" : "";
 $monogramme = $vv->getData("monogramme") ? "monogramme" : "";
 ?>
@@ -37,7 +42,8 @@ $monogramme = $vv->getData("monogramme") ? "monogramme" : "";
             <div <?= $vv->wysiwyg()->attr() ?> scroll-active="">
 
                 <div class="nuage" lottie-loader
-                     lottie-url="<?= the()->fileSystem->filesystemToHttp("project/_src/lottie/nuage.json") ?>"
+                     lottie-url="<?=the()->fileSystem->filesystemToHttp("project/_src/lottie/nuage.json") ?>"
+                     lottie-img="<?=$image?>"
                      lottie-loop="true" lottie-autoplay="true"
                 ></div>
 
