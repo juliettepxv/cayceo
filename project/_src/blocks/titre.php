@@ -8,7 +8,7 @@ $style=$vv->getData("style","h2");
 $align=$vv->getData("align","left");
 ?>
 <div <?=$vv->wysiwyg()->attr()?> scroll-active=""
-     class="block block-titre py-small">
+     class="block block-titre pt-small">
 
     <div class="container <?=$align?>" dss="1">
         <?=$vv->wysiwyg()

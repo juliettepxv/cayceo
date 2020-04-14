@@ -2,18 +2,29 @@
 <div class="navbar container">
 
     <div class="a">
-        <button panel-on='click' panel-action="open" panel-target="main-nav" class="ico">
+        <?/*<button panel-on='click' panel-action="open" panel-target="main-nav" class="ico">
             <span class="icon">
                 <?=pov()->svg->use("startup-burger")?>
             </span>
-        </button>
-    </div>
+        </button>*/?>
 
-    <div class="b">
         <a class="logo" href="<?=cq()->homePage()->href()?>">
             <?=site()->projectName?>
         </a>
     </div>
+
+    <div class="b">
+        <?=site()->homePage()->wysiwyg()
+            ->field("vars.navMain")
+            ->listJson(["lists/item-page"])
+            ->contextMenuSize(SIZE_SMALL)
+            ->onlyRecords("page")
+            ->htmlTag("ul")
+            ->addClass("nav-main list-h1")
+        ?>
+    </div>
+
+
 
     <div class="c">
 
@@ -23,7 +34,15 @@
                 <?=the()->project->langCode?>
             </a>
         <?else:?>
-        ...
+            <?=site()->homePage()->wysiwyg()
+                ->field("vars.navMain-button")
+                ->listJson(["lists/item-page"])
+                ->contextMenuSize(SIZE_SMALL)
+                ->onlyRecords("page")
+                ->htmlTag("ul")
+                ->addClass("nav-main list-button")
+            ?>
+
         <?endif?>
 
     </div>
