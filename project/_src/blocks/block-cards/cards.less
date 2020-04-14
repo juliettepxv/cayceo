@@ -2,34 +2,54 @@
 @import "cardsType/title-text-link.less";
 @import "cardsType/title-text-link-img.less";
 
-.block-cards{
+.block-cards {
 
   position: relative;
 
   .pb-small;
   //background-color: #1ab7ea;
-  .container{
+  .container {
     //outline: 1px dashed #ffe968;
   }
 
-  .cards{ //.row
+  .cards { //.row
 
-    --gutter:10px;
+    --gutter: 10px;
     --radius: 0px;
 
     margin-left: calc(-1 * var(--gutter));
     margin-right: calc(-1 * var(--gutter));
 
-    .card-item-col{ //.col-md-6
+    .card-item-col { //.col-md-6
       padding: var(--gutter);
 
-      .card-item{
-        text-align: center;
+      .card-item {
         .shadow-big;
         border-radius: var(--radius);
         height: 100%;
-        background-color: @color-white;
-        .pb-big;
+        background: linear-gradient(90deg, rgba(62, 173, 165, 1) 0%, rgba(62, 173, 165, 1) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+        background-size: 2000px;
+        background-position-x: -1000px;
+        transition: background-position-x 0.5s ease-in-out;
+
+        @media (hover: hover) {
+          &:hover {
+            background-position-x: 0px;
+            color: @color-white;
+            cursor: pointer;
+
+            .button {
+              transition: all 0.4s ease-in-out;
+              background-color: @color-white;
+              color: @color-primary;
+            }
+
+            .text-link, .text{
+              transition: color 0.4s ease-in-out;
+              color: @color-white;
+            }
+          }
+        }
       }
 
     }

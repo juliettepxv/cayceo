@@ -18,12 +18,15 @@ $imgTag=$img
 ?>
 <div class="title-text-link-img">
 
-    <?=$vv->wysiwyg()
-        ->field("titre_lang")
-        ->string()->setPlaceholder("Titre")
-        ->htmlTag("h2")
-    ?>
-    <hr>
+    <div class="wrap-button">
+        <?=$vv->wysiwyg()
+            ->field("titre_lang")
+            ->string()->setPlaceholder("Titre")
+            ->htmlTag("h2")
+            ->addClass("button")
+        ?>
+    </div>
+
     <?=$vv->wysiwyg()
         ->field("texte_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
@@ -31,12 +34,10 @@ $imgTag=$img
         ->htmlTag("div")
         ->addClass("text")
     ?>
-    <hr>
-    <div>
-        <a href="#" class="button">todo bouton à configurer</a>
+    <div class="text-link">
+        <a href="#" >En savoir plus</a>
     </div>
-    <hr>
-    <div>
+    <div class="img">
         <?= $imgTag?>
     </div>
 </div>

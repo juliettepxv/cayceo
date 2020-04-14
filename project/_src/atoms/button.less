@@ -2,60 +2,27 @@
 .button{
   outline: none;
   -webkit-tap-highlight-color: transparent;
-  appearance: none;
-  overflow: hidden;
   display: inline-flex;
   justify-content: center;
-  align-items: center;
-  vertical-align: middle;
+  appearance: none;
+  overflow: hidden;
   user-select: none;
   height: var(--height);
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: var(--padding-x);
-  padding-right: var(--padding-x);
-
-  //shape par défaut
-  .make-shp-rect();
+  padding: var(--spacing-small);
+  min-width: 250px;
+  border-radius:  calc(var(--spacing-small)*2);
+  background-color:@color-primary;
+  color: white;
 
   &:not(:disabled){
     cursor: pointer;
   }
-  transition: all 0.1s;
+
   //typography
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  font-size: var(--font-size);
   line-height: 1;
-  //font-weight: bold;
   white-space: nowrap;
-  font-family: var(--font-normal);
 
-
-  //size----------------------------
-  &.sz-small{
-    --height:30px;
-    --padding-x:10px;
-    --font-size:12px;
-  }
-  &.sz-normal, &{
-    --height:40px;
-    --padding-x:25px;
-    --font-size:14px;
-    --ico-size:1.5em;
-  }
-  &.sz-big{
-    --height:55px;
-    --padding-x:35px;
-    --font-size:20px;
-  }
-  &.sz-huge{
-    --height:70px;
-    --padding-x:40px;
-    --font-size:30px;
-  }
 
   &.square{
     width: var( --height);
@@ -88,9 +55,6 @@
       //filter:brightness(0.9) contrast(1.2) hue-rotate(10deg);
     }
   }
-
-
-  .make-colors-positive();
 
 }
 

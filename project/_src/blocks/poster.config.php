@@ -15,16 +15,10 @@
     ->render();
 ?>
 
-<label>Disposition</label>
-<?= $vv->wysiwyg()->field("invert")
-    ->bool()
+<label>Projet</label>
+<?=$vv->wysiwyg()->field("page")
+    ->recordPicker("page",false)
     ->onSavedRefreshListItem($vv)
-    ->checkbox("Image à droite")
-?>
-
-<label>Monogramme</label>
-<?= $vv->wysiwyg()->field("monogramme")
-    ->bool()
-    ->onSavedRefreshListItem($vv)
-    ->checkbox("Monogramme")
+    ->buttonRecord()
+    ->render()
 ?>

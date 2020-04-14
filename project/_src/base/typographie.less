@@ -1,5 +1,5 @@
 @import "./fonts/montserrat.less";
-@import url('https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 //@import "./fonts/open-sans.less";
 //@import "./fonts/libre-baskerville.less";
 
@@ -10,11 +10,11 @@
 }
 body{
   --font-normal:'Montserrat', sans-serif;
-  --font-titre:'Inria Sans', sans-serif;
+  --font-titre:'Quicksand', sans-serif;
   --fs-h1:32px;
   --fs-h2:24px;
   --fs-text:16px;
-  --fs-link:12px;
+  --fs-link:14px;
 
   @media(min-width: @screen-sm){
     --fs-h1:38px;
@@ -37,7 +37,7 @@ body{
 body{
 
   font-family: var(--font-normal);
-  font-weight: 400;
+ // font-weight: 400;
   font-size: 16px;
   line-height: 1.75;
 
@@ -56,9 +56,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 }
 h1,.h1{
   font-size: var(--fs-h1);
-  line-height: 1.1;
+  line-height:1.1;
   font-weight: bold;
   color: @color-grey-dark;
+  text-transform: uppercase;
 }
 h2,.h2{
   font-size: var(--fs-h2);
@@ -208,11 +209,12 @@ label{
 // menu
 
 .text-link{
-  font-family: var(--font-normal);
-  //text-transform: uppercase;
+  font-family: var(--font-titre);
+  text-transform: uppercase;
   font-size: var(--fs-link);
-  font-weight: 400;
   letter-spacing: 0.1em;
+  color: @color-grey-dark;
+
   //outline: 1px solid red;
   >svg{
     width: calc(var(--fs-link) * 1.2);
