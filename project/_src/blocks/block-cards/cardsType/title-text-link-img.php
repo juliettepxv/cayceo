@@ -12,8 +12,13 @@ if($img){
 $imgTag=$img
     ->bgColor("EEEEEE")
     ->displayIfEmpty(true)
-    ->sizeMax(400,400)
-    ->jpg()->htmlTag();
+    ->sizeMax(1200,750)
+    ->png()
+    ->htmlTag()->addClass("img-responsive");
+
+/** @var \Classiq\Models\Project $projet */
+$projet=$vv->getDataAsRecord("page");
+
 
 ?>
 <div class="title-text-link-img">
@@ -34,10 +39,16 @@ $imgTag=$img
         ->htmlTag("div")
         ->addClass("text")
     ?>
+
+    <?if($projet):?>
     <div class="text-link">
-        <a href="#" >En savoir plus</a>
+        <a href="<?=$projet->href()?>">En savoir plus</a>
     </div>
+    <?endif?>
+
+    <?if($imgTag):?>
     <div class="img">
         <?= $imgTag?>
     </div>
+    <?endif;?>
 </div>

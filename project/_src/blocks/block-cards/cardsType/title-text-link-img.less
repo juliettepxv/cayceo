@@ -2,7 +2,11 @@
 .block-cards .title-text-link-img {
 
   padding: var(--spacing-medium) var(--spacing-medium) 0  var(--spacing-medium);
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
 
   .wrap-button{
    text-align: center;
@@ -11,10 +15,7 @@
   h2, .img{
     text-align: center;
   }
-  .text{
-    .my-small;
-  }
-  .text-link{
-    .mb-small;
+  .img{
+    display: flex;
   }
 }

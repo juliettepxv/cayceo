@@ -18,19 +18,15 @@ body{
 
   @media(min-width: @screen-sm){
     --fs-h1:38px;
-    --fs-h2:24px;
   }
   @media(min-width: @screen-lg){
     --fs-h1:48px;
-    --fs-h2:24px;
   }
   @media(min-width: @screen-lg){
     --fs-h1:56px;
-    --fs-h2:28px;
   }
   @media(min-width: @screen-xxl){
     --fs-h1:64px;
-    --fs-h2:30px;
   }
 
 }
@@ -38,15 +34,8 @@ body{
 
   font-family: var(--font-normal);
  // font-weight: 400;
-  font-size: 16px;
   line-height: 1.75;
-
-  @media(min-width: @screen-sm){
-    font-size: 16px;
-  }
-  @media(min-width: @screen-xl){
-    font-size: 18px;
-  }
+  font-size: var(--fs-text);
 }
 
 
@@ -98,6 +87,7 @@ h6,.h6{
   }
 
   h2{
+    text-align: center;
     &:before{
       content: "";
       display: block;
@@ -111,39 +101,8 @@ h6,.h6{
     }
   }
 
-
   blockquote{
-
-    text-align: center;
-    display: flex;
-    .h2 !important;
-
-    span{
-      //
-      .h2 !important;
-      display: flex;
-
-    }
-    &:before, &:after{
-      content: "";
-      display: flex;
-      width: 30px;
-      height: 30px;
-      background-position: right;
-      background-image: url("./quote.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      flex-shrink: 0;
-      fill: var(--color-grey);
-    }
-    &:before{
-      .mr-small;
-    }
-    &:after{
-      align-self:flex-end;
-      transform: scaleX(-1);
-      .ml-small;
-    }
+    .quote;
   }
 
   .monogramme{
@@ -199,6 +158,43 @@ h6,.h6{
 
 }
 
+.quote{
+
+  text-align: center;
+  display: flex;
+  .h4 !important;
+  font-style: italic;
+  color: @color-primary;
+
+  span{
+    //
+    .h4 !important;
+    display: flex;
+
+  }
+  &:before, &:after{
+    content: "";
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-position: right;
+    background-image: url("./quote.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    fill: @color-primary;
+    color: @color-primary;
+  }
+  &:before{
+    .mr-small;
+  }
+  &:after{
+    align-self:flex-end;
+    transform: scaleX(-1);
+    .ml-small;
+  }
+
+}
 
 
 label{

@@ -5,7 +5,7 @@
  *
  */
 ?>
-<div <?= $vv->wysiwyg()->attr() ?> scroll-active="" class="block block-texte py-medium">
+
     <div class="container <?= $vv->getData("align", "left") ?>" dss="1">
         <?= $vv->wysiwyg()
             ->field("texte_lang")
@@ -16,4 +16,4 @@
             ->addClass("text rich-text")
         ?>
     </div>
-</div>
+

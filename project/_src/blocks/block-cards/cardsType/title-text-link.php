@@ -1,14 +1,19 @@
 <?php
 use Classiq\Models\JsonModels\ListItem;
 /** @var ListItem $vv ici */
+
 ?>
 <div class="title-text-link">
 
-    <?=$vv->wysiwyg()
-        ->field("titre_lang")
-        ->string()->setPlaceholder("Titre")
-        ->htmlTag("h2")
-    ?>
+    <div class="wrap-button">
+        <?=$vv->wysiwyg()
+            ->field("titre_lang")
+            ->string()->setPlaceholder("Titre")
+            ->htmlTag("h2")
+            ->addClass("button")
+        ?>
+    </div>
+
     <?=$vv->wysiwyg()
         ->field("texte_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
@@ -16,7 +21,7 @@ use Classiq\Models\JsonModels\ListItem;
         ->htmlTag("div")
         ->addClass("text")
     ?>
-    <div>
-        <a href="#" class="button">todo bouton à configurer</a>
+    <div class="text-link">
+        <a href="#" >En savoir plus</a>
     </div>
 </div>
