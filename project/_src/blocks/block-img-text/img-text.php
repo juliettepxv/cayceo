@@ -7,8 +7,10 @@
  */
 /** @var \Classiq\Models\Filerecord $img */
 $img = $vv->targetUid(true);
+$img2 = $vv->targetUid(true);
 $invert=$vv->getData("invert")?"invert":"";
 $imgTextTypes=$vv->getData("imgTextTypes","image-text");
+
 ?>
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> scroll-active="" class="block block-img-text <?=$invert?>">
     <div class="container">

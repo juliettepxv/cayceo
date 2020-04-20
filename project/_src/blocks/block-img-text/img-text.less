@@ -1,17 +1,21 @@
 @import "./imgTextType/quote.less";
+@import "./imgTextType/team.less";
+@import "./imgTextType/cloud-text.less";
 
 .block.block-img-text {
 
-  padding:  var(--spacing-medium) 0;
+  padding: var(--spacing-medium) 0;
 
 
-  .citator-wrap{
+  .citator-wrap {
     display: flex;
     max-width: 450px;
-    .citator{
+
+    .citator {
       .ml-small;
     }
-    img{
+
+    img {
       display: flex;
       width: 110px;
       height: 110px;
@@ -22,7 +26,7 @@
   .rich-text {
     .mt-medium;
     max-width: 500px;
-    @media(min-width: @screen-lg){
+    @media (min-width: @screen-lg) {
       margin-top: 0;
     }
 
@@ -32,11 +36,14 @@
 
   }
 
-  &.invert {
-    .row {
-      >div {
-        &:first-child {
-          order: 2;
+  @media (min-width: @screen-md) {
+
+    &.invert {
+      .row {
+        > div {
+          &:first-child {
+            order: 2;
+          }
         }
       }
     }

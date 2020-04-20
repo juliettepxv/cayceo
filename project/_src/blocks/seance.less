@@ -3,13 +3,19 @@
   .mb-big;
 
   .wrap-seance {
-    .shadow-big;
+
+    .row{
+      .shadow-big;
+    }
 
     display: flex;
     justify-content: center;
 
     .nuage {
-      height: 500px;
+      max-height: 500px;
+      @media (min-width: @screen-xl) {
+        height: 500px;
+      }
       position: relative;
       top: -30px;
     }
@@ -20,7 +26,8 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    padding:var(--spacing-medium) ;
+
+    padding:0 var(--spacing-medium) var(--spacing-medium) var(--spacing-medium) ;
 
     @media (min-width: @screen-lg) {
       padding: var(--spacing-small) var(--spacing-medium) var(--spacing-medium) 0 ;
@@ -28,7 +35,12 @@
 
 
     .title-seance {
-      text-align: right;
+      position: relative;
+      top: -15px;
+      @media (min-width: @screen-lg) {
+        top:0px;
+        text-align: right;
+      }
       color: @color-grey-light;
     }
 

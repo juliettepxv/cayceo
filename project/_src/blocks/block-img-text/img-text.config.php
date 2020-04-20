@@ -17,6 +17,7 @@
         "nuage texte"=>"cloud-text",
         "citation texte"=>"quote-text",
         "citation"=>"quote",
+        "equipe"=>"team",
     ]);
 ?>
 
@@ -30,6 +31,18 @@
     ->button()
     ->render();
 ?>
+
+<label>Choisir une seconde image</label>
+<?= $vv->wysiwyg()->field("imageOver")
+    ->file()
+    ->setMimeAcceptImagesOnly()
+    ->onSavedRefreshListItem($vv)
+    ->button()
+    ->render();
+?>
+
+
+
 
 <label>Disposition</label>
 <?= $vv->wysiwyg()->field("invert")

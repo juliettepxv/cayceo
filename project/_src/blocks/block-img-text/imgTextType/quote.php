@@ -26,7 +26,7 @@ $img = $vv->targetUid(true);
             <div class="col-lg-6" dss="1.1">
                 <? if ($img && $img->isImage()): ?>
 
-                    <div class="citator-wrap">
+                    <div class="citator-wrap mt-small">
                         <?= $img->image()
                             ->width(800)
                             ->jpg()

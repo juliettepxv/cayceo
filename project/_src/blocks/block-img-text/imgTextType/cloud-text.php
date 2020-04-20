@@ -12,27 +12,45 @@ if ($img) {
 } else {
     $image = pov()->img("")->sizeMax(1200, 800)->jpg()->href();
 }
+
+
+/** @var \Classiq\Models\Filerecord $poster */
+$img2 =$vv->getDataAsRecord("imageOver");
+
 ?>
 
 
-<div class="img-text">
+<div class="img-text wrap-cloud">
     <div class="row">
         <div class="col-lg-6" dss="1.1">
-            <? if ($img && $img->isImage()): ?>
+            <div class="wrap-img">
+                <? if ($img && $img->isImage()): ?>
 
-                <div class="nuage" lottie-loader
-                     lottie-url="<?= the()->fileSystem->filesystemToHttp("project/_src/lottie/nuage.json") ?>"
-                     lottie-img="<?= $image ?>"
-                     lottie-loop="true" lottie-autoplay="true"
-                ></div>
+                    <div class="nuage" lottie-loader
+                         lottie-url="<?= the()->fileSystem->filesystemToHttp("project/_src/lottie/nuage.json") ?>"
+                         lottie-img="<?= $image ?>"
+                         lottie-loop="true" lottie-autoplay="true"
+                    ></div>
 
-            <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
-                <div id="cq-style">
-                    <div text-center class="cq-box cq-th-danger">
-                        Il faut choisir une image
+                <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
+                    <div id="cq-style">
+                        <div text-center class="cq-box cq-th-danger">
+                            Il faut choisir une image
+                        </div>
                     </div>
-                </div>
-            <? endif ?>
+                <? endif ?>
+
+                <?if($img2):?>
+                    <?= $img2->image()
+                        ->width(800)
+                        ->png()
+                        ->htmlTag()
+                        ->addClass("img-responsive img2")
+                    ?>
+                <?endif?>
+            </div>
+
+
         </div>
 
         <div class="col-lg-6" dss="1.1">
