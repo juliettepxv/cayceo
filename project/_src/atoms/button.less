@@ -8,11 +8,14 @@
   overflow: hidden;
   user-select: none;
   height: var(--height);
-  padding: var(--spacing-small);
-  min-width: 250px;
-  border-radius:  calc(var(--spacing-small)*2);
+  padding: var(--spacing-small) var(--spacing-medium);
+
+  border-radius:  60px;
   background-color:@color-primary;
   color: white;
+
+  --ico-size:64px;
+
 
   &:not(:disabled){
     cursor: pointer;

@@ -2,17 +2,18 @@
 /** @var \Classiq\Models\Project $vv */
 use Classiq\Models\Project;
 ?>
+
 <div class="container text-center">
     <div class="row">
-        <div class="col-md-2 text-left ">
-            <div class="text-link mb-small">
+        <div class="col-xl-2 text-left ">
+            <?/* <div class="text-link mb-small">
                 <?=$vv->newsDate("d F Y")?>
-            </div>
-            <div class="social-shares">
+            </div>*/?>
+            <div class="social-shares mb-small">
                 <?=$view->render("components/social-shares")?>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-xl-8">
             <?=$vv->wysiwyg()
                 ->field("titre_lang")
                 ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
@@ -30,7 +31,7 @@ use Classiq\Models\Project;
                 ->addClass("mt-small text-link")
             ?>
         </div>
-        <div class="col-md-2">
+        <div class="col-xl-2">
 
         </div>
 

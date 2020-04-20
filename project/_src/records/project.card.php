@@ -22,7 +22,7 @@ if($vv->isNews()){
 //texte par défaut
 $defaultText=$vv->name; //name
 if($vv->titre_lang){
-    $defaultText=$vv->titre_lang; //
+    $defaultText=strip_tags($vv->titre_lang); //
 }
 
 $css=$img?"has-img":"";
@@ -42,9 +42,9 @@ $attrs["ss"]=round(rand(10,50)/100,1);
                  src="<?=$logo->httpPath()?>"
                  width="<?=$logo->image_width?>" height="<?=$logo->image_height?>">
         <?endif?>
-        <div class="thumb">
+        <div class="thumb" style="padding-bottom: <?=$img->image_height/$img->image_width*100?>%">
             <img alt=""
-                 src="<?=$img->httpPath()?>"
+                 src="<?=$img->image()->sizeMax(600,600)->jpg()->href()?>"
                  width="<?=$img->image_width?>" height="<?=$img->image_height?>">
             <?if($video):?>
                 <video src="<?=$video->httpPath()?>" class="thumb video"
@@ -53,14 +53,13 @@ $attrs["ss"]=round(rand(10,50)/100,1);
                        ></video>
             <?endif;?>
         </div>
-
     <?endif;?>
 
 
     <div class="texts">
         <?=$vv->wysiwyg()
             ->field("textpreview_lang")
-            ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_MULTI_LINE)
+            ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_SINGLE_LINE)
             ->setDefaultValue($defaultText)
             ->htmlTag("h2")
         ?>

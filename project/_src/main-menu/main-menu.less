@@ -1,23 +1,28 @@
-.main-menu{
-  a{
-    color: currentColor;
+.main-menu {
+  a {
+    color: var(--color-white);
     text-decoration: none;
   }
-  .row{
+
+  .row {
     .py-big;
   }
-  .nav-main{
-    //color: var(--color-primary);
-  }
-  .social{
-    @media(min-width: @screen-lg) {
-      .mt-big;
+
+  .nav-main.list-button {
+    li {
+      .button.sz-small;
+      background-color: white;
+      a { color: @color-primary;}
     }
   }
-  .pages{
+
+
+  .social {
+
   }
 
-
+  .pages {
+  }
 
 
 }

@@ -6,28 +6,18 @@
     cursor: pointer;
     user-select: none;
   }
-
-
-  @media(hover: hover){
-
-    &.has-img{
-      .texts {
-        transition: background-color 0.5s;
-      }
-      .thumb {
-        transition: filter 0.5s;
-      }
-    }
-
+  @media(hover:hover){
 
     &:hover{
-      &.has-img{
-        .texts{
-          background-color: var(--color-grey-light);
-        }
-        .thumb{
-          filter: saturate(1);
-        }
+      background-color: var(--color-1);
+      &, .button, &.has-img .texts .tags a{
+        color:white;
+      }
+
+      &.has-img .texts{
+        //transition: background-color 0.5s;
+        background-color: var(--color-1);
+        color:white;
       }
     }
   }
@@ -41,7 +31,7 @@
       position: absolute;
       top:15px;
       left: 15px;
-      max-width: 300px;
+      max-width: 280px;
       max-height: 300px;
       //object-fit: contain;
       //object-position: top left;
@@ -51,30 +41,28 @@
     .thumb{
       width: 100%;
       position: relative;
-      filter: saturate(0.5);
-      >img{
-       // filter: brightness(0.9);
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-      >video{
-        top: 0;
-        left: 0;
+
+      >img,>video{
         position: absolute;
         width: 100%;
         height: 100%;
+        top: 0;
+        left: 0;
         object-fit: cover;
-        //object-fit: contain;
+        display: block;
+      }
+      >img{
+        background-color: #EEE;
+      }
+      >video{
       }
     }
     .texts{
       //min-height: 300px;
       text-align: left;
       align-items: flex-start;
-      background-color: var(--color-white-sand);
+      background-color: var(--color-bleu-lighter);
       justify-content: space-between;
-
       .tags {
 
         a{
@@ -94,16 +82,17 @@
 
     }
   }
-
+  h2{
+    >*{
+      //outline: 1px dotted green;
+    }
+  }
 
   h2, h2 b{
-    //font-weight: bold !important;
-    //line-height: 1.1 !important;
-    //font-size: var(--fs-h3) !important;
-    .h2 !important;
-    font-size: var(--fs-h3) !important;
-    font-weight: normal !important;
-    //.mb-small;
+    font-weight: bold !important;
+    line-height: 1.1 !important;
+    font-size: var(--fs-h2) !important;
+   // .mb-small;
   }
   .button{
     transition: none !important;
@@ -112,7 +101,6 @@
       margin-left: var(--spacing-small) !important;
     }
   }
-
   .texts{
     cursor: pointer;
     display: flex;

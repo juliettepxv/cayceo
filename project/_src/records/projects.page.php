@@ -1,22 +1,22 @@
 <?php
-/** @var Hashtag $vv */
-use Classiq\Models\Hashtag;
+/** @var \Classiq\Models\Page $vv */
+use Classiq\Models\Page;
+use Classiq\Models\Project;
+
 $view->inside("layout/layout",$vv);
 ?>
-<div class="pt-big hashtag-page" color-theme="sunrise">
+<div class="pt-big hashtag-page" color-theme="orange">
 
     <div class="container text-center">
         <?//titre---------------------------------------?>
-        <?=$vv->wysiwyg()
-            ->field("name_lang")
-            ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_SINGLE_LINE)
-            ->setDefaultValue($vv->name)
-            ->setPlaceholder("Nom du tag traduit ($vv->name)")
-            //->setDefaultValue($vv->name)
-            ->htmlTag("h1")
+        <?=$vv->wysiwyg()->field("vars.titre_lang")
+        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+        ->htmlTag("h1")
         ?>
+        
+
         <div class="my-big" bricks>
-            <?foreach($vv->unbox()->with("ORDER BY order_project")->sharedProjectList as $project):?>
+            <?foreach(Project::projects() as $project):?>
             <div>
                 <?=$view->render("records/project.card",$project)?>
             </div>

@@ -31,6 +31,7 @@ class Site extends AbstractSingleton
         "blocks/block-img-text/img-text",
         "blocks/poster",
         "blocks/seance",
+        "blocks/regie",
         "blocks/block-photos/photos",
         "blocks/block-logos/block-logos",
         "blocks/iframe",
