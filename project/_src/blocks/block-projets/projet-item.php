@@ -6,7 +6,7 @@ use Classiq\Models\JsonModels\ListItem;
 $projet=$vv->targetUid(true);
 
 ?>
-<?if($projet || cq()->wysiwyg()):?>
+<?if($projet):?>
     <div <?=$vv->wysiwyg()->attr()?>  >
         <?=$view->render("records/project.card",$projet)?>
     </div>
