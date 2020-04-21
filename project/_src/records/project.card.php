@@ -38,7 +38,7 @@ $attrs["ss"] = round(rand(10, 50) / 100, 1);
 <div class="project-card" scroll-active="" <?= $attrs ?> <?= $view->attrRefresh($vv->uid()) ?>>
 
 
-    <div class="thumb" style="padding-bottom: <?= $img->image_height / $img->image_width * 100 ?>%">
+    <div class="thumb">
         <? if ($img): ?>
             <img alt=""
                  src="<?= $img->image()->sizeMax(600, 400)->jpg()->href() ?>"
