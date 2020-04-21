@@ -62,7 +62,7 @@ class Site extends AbstractSingleton
     /**
      * @var string couleur hexa du navigateur sur mobile
      */
-    public $themeColor="#ED7203";
+    public $themeColor="#3EADA5";
     public $themeColorNegative="#FFFFFF";
 
     /**

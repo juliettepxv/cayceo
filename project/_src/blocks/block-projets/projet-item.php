@@ -7,7 +7,7 @@ $projet=$vv->targetUid(true);
 
 ?>
 <?if($projet):?>
-    <div <?=$vv->wysiwyg()->attr()?>  >
+    <div <?=$vv->wysiwyg()->attr()?> class="item-card">
         <?=$view->render("records/project.card",$projet)?>
     </div>
 <?endif?>

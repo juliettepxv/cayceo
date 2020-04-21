@@ -21,7 +21,8 @@ $liste=\Classiq\Models\Project::getList($lisName);
             ->blockPickerEmptyMessage("Insérez des projets")
             ->contextMenuSize(SIZE_SMALL)
             ->htmlTag("div")
-            ->setAttribute("bricks",true)
+        ->addClass("items")
+        //->setAttribute("bricks",true)
         ?>
     </div>
 </div>

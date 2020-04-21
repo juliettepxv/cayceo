@@ -28,7 +28,7 @@ $projet=$vv->getDataAsRecord("page");
             ->field("titre_lang")
             ->string()->setPlaceholder("Titre")
             ->htmlTag("h2")
-            ->addClass("button")
+            ->addClass("button sz-big")
         ?>
     </div>
 

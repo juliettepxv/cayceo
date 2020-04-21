@@ -10,7 +10,7 @@ use Classiq\Models\JsonModels\ListItem;
             ->field("titre_lang")
             ->string()->setPlaceholder("Titre")
             ->htmlTag("h2")
-            ->addClass("button")
+            ->addClass("button sz-big")
         ?>
     </div>
 

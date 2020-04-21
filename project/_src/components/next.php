@@ -8,11 +8,7 @@ use Classiq\Models\Project;
      ajax-on-scroll-delay="1500">
     <div class="next-one">
         <a href="<?=$vv->next()->href()?>">
-            <?if($vv->isNews()):?>
-                <?=trad("news suivante")?>
-            <?else:?>
-                <?=trad("projet suivant")?>
-            <?endif;?>
+            <?=trad("Article suivant")?>
         </a>
     </div>
 </div>

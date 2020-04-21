@@ -2,20 +2,7 @@
 /** @var \Classiq\Models\Project $vv */
 ?>
 <div class="cq-box">
-    <fieldset>
-        <label>Type</label>
-        <?= $vv->wysiwyg()->field("kind")->string()
-            ->select([
-                "projet",
-                "news"
-            ]) ?>
-    </fieldset>
-    <fieldset>
-        <label>Couleur</label>
-        <?= $vv->wysiwyg()->field("colortheme")->string()
-            ->setDefaultValue(site()->COLOR_THEME_ORANGE)
-            ->select(site()->COLOR_ALL()) ?>
-    </fieldset>
+
     <fieldset>
         <label>hashtags</label>
         <?= $vv->wysiwyg()
@@ -44,18 +31,6 @@
             ?>
         <? endforeach; ?>
     </fieldset>
-
-
-    <fieldset>
-        <label><?= cq()->tradWysiwyg("Logo client") ?></label>
-        <?= $vv->wysiwyg()->field("logoclient")
-            ->file()
-            ->setMimeAcceptImagesOnly()
-            //->onSavedRefresh("$(this).closest('[data-pov-v-path]')")
-            ->button()->render()
-        ?>
-    </fieldset>
-
 
     <fieldset>
         <label><?= cq()->tradWysiwyg("Date") ?></label>
