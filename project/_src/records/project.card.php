@@ -63,7 +63,7 @@ $attrs["ss"] = round(rand(10, 50) / 100, 1);
         ?>
         <?=$vv->newsDate("d F Y")?>
         <a class="button sz-normal mt-small" href="<?= $vv->href() ?>">
-            Découvrir
+            <?=trad("Découvrir")?>
         </a>
         <? /*=$view->render("components/tags")*/ ?>
     </div>

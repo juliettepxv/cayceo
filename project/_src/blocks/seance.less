@@ -1,10 +1,11 @@
 
 .block.block-seance {
-  .mb-big;
+  .mb-medium;
+
 
   .wrap-seance {
 
-    .row{
+    .row {
       .shadow-big;
     }
 
@@ -12,12 +13,31 @@
     justify-content: center;
 
     .nuage {
-      max-height: 500px;
+      position: relative;
+      height: 300px;
+      top:-20px;
+
+      @media (min-width: @screen-md) {
+
+        height: 360px;
+      }
+
+      @media (min-width: @screen-lg) {
+        top:0px;
+        left: -50px;
+        height: 360px;
+      }
+
+
       @media (min-width: @screen-xl) {
+        left: -80px;
+        height: 400px;
+      }
+      @media (min-width: @screen-xxl) {
+        left: -160px;
         height: 500px;
       }
-      position: relative;
-      top: -30px;
+
     }
 
   }
@@ -27,7 +47,7 @@
     justify-content: space-around;
     flex-direction: column;
 
-    padding:0 var(--spacing-medium) var(--spacing-medium) var(--spacing-medium) ;
+    padding: 0 var(--spacing-medium) var(--spacing-medium) var(--spacing-medium);
 
     @media (min-width: @screen-lg) {
       padding: var(--spacing-small) var(--spacing-medium) var(--spacing-medium) 0 ;
@@ -38,7 +58,7 @@
       position: relative;
       top: -15px;
       @media (min-width: @screen-lg) {
-        top:0px;
+        top: 0px;
         text-align: right;
       }
       color: @color-grey-light;
@@ -60,25 +80,43 @@
 
   @media (min-width: @screen-lg) {
     &.invert {
-      .row {
-        > div {
-          &:first-child {
-            order: 2;
-          }
+      .wrap-seance {
+        .row {
+          > div {
+            &:first-child {
+              order: 2;
+            }
 
-          &.wrap-text {
+            .nuage {
+              left: auto;
 
-            padding: var(--spacing-small) 0 var(--spacing-medium) var(--spacing-medium);
-            text-align: right;
+              @media (min-width: @screen-lg) {
+                right: -50px;
+              }
 
-            .title-seance {
-              text-align: left;
+              @media (min-width: @screen-xl) {
+                right: -80px;
+              }
+              @media (min-width: @screen-xxl) {
+                right: -160px;
+              }
+            }
+
+            &.wrap-text {
+
+              padding: var(--spacing-small) 0 var(--spacing-medium) var(--spacing-medium);
+              text-align: right;
+
+              .title-seance {
+                text-align: left;
+              }
             }
           }
         }
+
       }
     }
   }
-
-
 }
+
+

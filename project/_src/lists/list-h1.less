@@ -3,6 +3,21 @@
     display: flex;
     .text-link;
     padding: 10px;
+
+    :after {
+      height: 10px;
+      bottom: -28px;
+      background-color: var(--color-primary);
+    }
+
+    &.active {
+      :after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+    }
+
     @media (min-width: @screen-xl) {
       padding: 15px;
     }

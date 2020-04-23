@@ -20,7 +20,7 @@ $img2 =$vv->getDataAsRecord("imageOver");
 ?>
 
 
-<div class="img-text wrap-cloud">
+<div class="img-text cloud-text">
     <div class="row">
         <div class="col-lg-6" dss="1.1">
             <div class="wrap-img">

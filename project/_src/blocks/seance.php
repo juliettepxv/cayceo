@@ -63,13 +63,14 @@ $imgTextTypes=$vv->getData("imgTextTypes","image-text");
                                 ->htmlTag("div")
                             ?>
                         </div>
+
+                        <a class="button sz-normal mt-small">
+                            <?=trad("Aperçu")?>
+                        </a>
+
                     </div>
 
-                    <div class="">
-                        <h2 class="button sz-small">
-                            aperçu
-                        </h2>
-                    </div>
+
 
                 </div>
             </div>

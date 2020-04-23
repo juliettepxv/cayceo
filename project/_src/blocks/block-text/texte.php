@@ -6,7 +6,7 @@
  */
 $textTypes=$vv->getData("textTypes","text");
 ?>
-<div <?= $vv->wysiwyg()->attr() ?> scroll-active="" class="block block-texte py-medium">
+<div <?= $vv->wysiwyg()->attr() ?> scroll-active="" class="block block-texte pb-medium">
 
         <?=$view->render("blocks/block-text/textType/$textTypes")?>
 </div>

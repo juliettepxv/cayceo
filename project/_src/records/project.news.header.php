@@ -6,7 +6,7 @@ use Classiq\Models\Project;
 $img = $vv->thumbnail(true);
 ?>
 
-<div class="container text-center">
+<div class="container text-center project-header">
     <div class="row">
         <div class="col-12">
             <div class="images my-medium">

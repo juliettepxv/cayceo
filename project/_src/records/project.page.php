@@ -15,7 +15,7 @@ $view->inside("layout/layout", $vv);
         <?= $vv->wysiwyg()->field("blocks")
             ->listJson(site()->blocksList)
             ->htmlTag()
-            ->addClass("blocks");
+            ->addClass("blocks mt-medium");
         ?>
 
 

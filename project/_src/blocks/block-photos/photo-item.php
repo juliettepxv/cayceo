@@ -24,11 +24,13 @@ if ($img && $img->isImage()) {
     $w=$img->image_width;
     $h=$img->image_height;
 }
+
+$size=$vv->getData("size","");
 ?>
 <div <?= $vv->wysiwyg()->attr() ?>
         scroll-active=""
        <?/*data-zoom-img="<?= $imgSrc ?>"*/?>
-        class="photo-item">
+        class="photo-item <?=$size?>">
 
     <img ss="<?=round(rand(10,50)/100,1)?>"
          src="<?= $imgSrc ?>" width="<?=$w?>px" height="<?=$h?>px">

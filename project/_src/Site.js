@@ -30,6 +30,7 @@ export default class Site{
         window.panels=new PanelManager();
 
         me._initListeners();
+        me.refreshNavActive();
         //---------------------go------------------------------------------
         me.onDomChange();
         //window.bricksManager=new BricksManager();
@@ -124,11 +125,16 @@ export default class Site{
             //scroll top
             $(window).scrollTop(0);
 
+            me.refreshNavActive();
             //google analytics
             if(typeof gtag !== 'undefined' && LayoutVars.googleAnalyticsId){
                 //hit google analytics
                 gtag('config', LayoutVars.googleAnalyticsId, {'page_path': location.pathname});
             }
+
+
+
+
             //transition
             setTimeout(function(){
                 //timeout pour éviter les perfs
@@ -143,6 +149,11 @@ export default class Site{
 
 
 
+    }
+
+    refreshNavActive(){
+        $("[data-href-uid]").removeClass("active");
+        $("[data-href-uid='"+PovHistory.currentPageInfo.uid+"']").addClass("active");
     }
 
     /**

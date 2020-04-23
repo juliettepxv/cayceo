@@ -25,21 +25,22 @@ class Site extends AbstractSingleton
      * @var string[] liste des blocks possibles
      */
     public $blocksList=[
-        "blocks/block-text/texte",
+
         "blocks/titre",
-        "blocks/img",
-        "blocks/block-img-text/img-text",
-        "blocks/poster",
-        "blocks/seance",
-        "blocks/regie",
+        "blocks/block-text/texte",
         "blocks/block-photos/photos",
-        "blocks/block-logos/block-logos",
+        "blocks/block-img-text/img-text",
         "blocks/iframe",
+        "blocks/dwd",
+        "blocks/block-logos/block-logos",
+        "blocks/block-icons/icons",
+        "blocks/seance",
+        //"blocks/img",
+        "blocks/poster",
+        "blocks/regie",
         //"blocks/video",
         "blocks/block-cards/cards",
-        "blocks/dwd",
         "blocks/block-projets/projets",
-        "blocks/block-icons/icons",
         "blocks/form/contact",
 
     ];
