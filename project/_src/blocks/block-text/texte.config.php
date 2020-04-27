@@ -22,3 +22,4 @@
         "une colonne" => "text",
         "deux colonnes" => "text-text"]);
 ?>
+

@@ -1,0 +1,164 @@
+.block-contact{
+  color: var(--color-white);
+}
+
+form.form-text{
+  display: flex;
+  justify-content:center;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+
+
+  //taile de typos revues pour que ça rentre partout
+  --fs-h1:16px;
+  @media(min-width: @screen-sm){
+    --fs-h1:32px;
+  }
+  @media(min-width: @screen-lg){
+    --fs-h1:40px;
+  }
+  @media(min-width: @screen-xxl){
+    --fs-h1:64px;
+  }
+
+  .typo(){
+    text-transform: uppercase;
+    text-align: center;
+    .h1;
+    line-height: 1.7;
+    font-weight: 100 !important;
+  }
+  .typo();
+
+  //saut de ligne invisible
+  hr{
+    width: 100%;
+    visibility: hidden;
+    //height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  //élément qui permet de regrouper des champs sans sauts de ligne
+  .oneline{
+    display: flex;
+    justify-content:center;
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
+
+  //saisie en gras...
+  select,input,textarea{
+    .typo();
+    font-weight: bold !important;
+    //outline: 1px solid red !important;
+  }
+
+  button,select,input,textarea{
+    vertical-align: baseline;
+    color: var(--color-white);
+    font: inherit;
+    background:  var(--color-primary);
+    background-color: var(--color-primary);
+    border: none;
+    outline: none;
+    &::placeholder{
+      color: inherit;
+      opacity: 0.2;
+    }
+  }
+  input,select{
+    min-width: 50px;
+    line-height: 1;
+  }
+  //hack chrome color autofill
+  @-webkit-keyframes autofill {
+    0%,100% {
+      color: var(--color-white);
+      background: transparent;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+
+
+  select{
+    appearance: none;
+    cursor: pointer;
+    /*
+    background-position: right;
+    background-image: url("./caret-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+     */
+  }
+  option{
+    font-size: 30px;
+  }
+  .error{
+    background-color: var(--color-magenta);
+    color: var(--color-white);
+  }
+  textarea{
+    display: block;
+    width: 100%;
+    resize: none;
+  }
+  button{
+    text-transform: uppercase;
+    font-weight: bolder;
+    display: block;
+    margin: 0.5em auto;
+    cursor: pointer;
+    border:3px solid;
+    color: var(--color-magenta) !important;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    line-height: 1;
+    &:hover{
+      background-color: var(--color-magenta) !important;
+      color: var(--color-white) !important;
+    }
+  }
+
+
+
+
+
+
+  .error-message,.success-message{
+    margin-top: var(--spacing-medium);
+    .text-link;
+    font-weight: bolder;
+  }
+
+
+  [type="submit"],.error-message,.success-message{
+    display: none;
+  }
+  &[state='valid']{
+    [type="submit"]{
+      display: block;
+    }
+  }
+  &[state='sending']{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  &[state='error']{
+    .error-message{
+      display: block;
+      color: var(--color-magenta);
+    }
+  }
+  &[state='sent']{
+    .success-message{
+      display: block;
+      color: var(--color-primary);
+
+    }
+  }
+}

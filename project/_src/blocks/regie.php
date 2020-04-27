@@ -25,19 +25,63 @@ $imgTextTypes = $vv->getData("imgTextTypes", "image-text");
     <div class="container">
 
         <div class="row">
-            <div class="col-4 wrap-text" dss="1.1">
-                <div class="rich-text">
-                    <?= $vv->wysiwyg()
-                        ->field("texte_lang")
-                        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-                        ->setPlaceholder("Saisissez votre texte")
-                        ->setMediumButtons(["h3"])
-                        ->htmlTag("div")
-                    ?>
+            <div class="col-md-12 col-lg-4 wrap-text" dss="1.1">
+                <div class="info info1">
+                    <div class="rich-text">
+                        <?= $vv->wysiwyg()
+                            ->field("texte_lang")
+                            ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                            ->setPlaceholder("Saisissez votre texte")
+                            ->setMediumButtons(["h3"])
+                            ->htmlTag("div")
+                        ?>
+                    </div>
+                    <div class="button-line">
+                    </div>
+                </div>
+
+                <div class="info info2">
+                    <div class="rich-text">
+                        <?= $vv->wysiwyg()
+                            ->field("texte2_lang")
+                            ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                            ->setPlaceholder("Saisissez votre texte")
+                            ->setMediumButtons(["h3"])
+                            ->htmlTag("div")
+                        ?>
+                    </div>
+                    <div class="button-line">
+                    </div>
+                </div>
+                <div class="info info3">
+                    <div class="rich-text">
+                        <?= $vv->wysiwyg()
+                            ->field("texte3_lang")
+                            ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                            ->setPlaceholder("Saisissez votre texte")
+                            ->setMediumButtons(["h3"])
+                            ->htmlTag("div")
+                        ?>
+                    </div>
+                    <div class="button-line">
+                    </div>
+                </div>
+                <div class="info info4">
+                    <div class="rich-text">
+                        <?= $vv->wysiwyg()
+                            ->field("texte4_lang")
+                            ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                            ->setPlaceholder("Saisissez votre texte")
+                            ->setMediumButtons(["h3"])
+                            ->htmlTag("div")
+                        ?>
+                    </div>
+                    <div class="button-line">
+                    </div>
                 </div>
             </div>
 
-            <div class="col-8" dss="1.1">
+            <div class="col-md-12 col-lg-8" dss="1.1">
                 <div class="wrap-img">
                     <? if ($img && $img->isImage()): ?>
 

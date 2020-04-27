@@ -55,10 +55,17 @@ $imgTextTypes=$vv->getData("imgTextTypes","image-text");
                             ->htmlTag("h2")
                             ->addClass("title")
                         ?>
+                        <?=$vv->wysiwyg()
+                            ->field("time_lang")
+                            ->string()->setPlaceholder("Durée")
+                            ->htmlTag("h4")
+                            ->addClass("time")
+                        ?>
                         <div class="rich-text">
                             <?= $vv->wysiwyg()
                                 ->field("texte_lang")
-                                ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_MULTI_LINE)
+                                ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                                ->setMediumButtons(["bold"])
                                 ->setPlaceholder("Saisissez votre texte")
                                 ->htmlTag("div")
                             ?>

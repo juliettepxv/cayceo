@@ -15,7 +15,6 @@ $align=$vv->getData("align","left");
             ->field("texte_lang")
             ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
             ->setPlaceholder("Saisissez votre titre")
-            ->setMediumButtons(["bold","removeFormat"])
             ->htmlTag("h2")
             ->addClass("tt-sous-titre $style")
         ?>

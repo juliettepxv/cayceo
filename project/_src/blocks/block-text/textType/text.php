@@ -11,7 +11,7 @@
             ->field("texte_lang")
             ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
             ->setPlaceholder("Saisissez votre texte")
-            ->setMediumButtons(["h2", "h3", "bold", "quote", "anchor", "removeFormat"])
+            ->setMediumButtons(["h2", "h3","h5", "bold", "quote", "anchor", "removeFormat"])
             ->htmlTag("div")
             ->addClass("text rich-text")
         ?>

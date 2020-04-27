@@ -1,6 +1,6 @@
 @import "./fonts/montserrat.less";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
-//@import "./fonts/open-sans.less";
+//@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;700&display=swap');
 //@import "./fonts/libre-baskerville.less";
 
 #root{
@@ -24,7 +24,7 @@ body{
     --fs-h1:40px;
   }
   @media(min-width: @screen-xl){
-    --fs-h1:48px;
+    --fs-h1:42px;
   }
   @media(min-width: @screen-xxl){
     --fs-text:16px;
@@ -55,7 +55,7 @@ h1,.h1{
 }
 h2,.h2{
   font-size: var(--fs-h2);
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: bold;
   color: @color-grey-dark;
 }
@@ -115,6 +115,11 @@ h6,.h6{
       height: 70px;
       color: var(--color-primary);
     }
+  }
+
+  h5{
+    text-align: center;
+    .h2;
   }
 
   //listes

@@ -30,15 +30,19 @@ $attrs = new \Pov\Html\Trace\Attributes();
 if (!cq()->wysiwyg()) {
     $attrs["href"] = $vv->href();
 }
+
+
 if ($video) {
     $attrs["video-thumbnail"] = true;
 }
 $attrs["ss"] = round(rand(10, 50) / 100, 1);
+
+
+
 ?>
 <div class="project-card" scroll-active="" <?= $attrs ?> <?= $view->attrRefresh($vv->uid()) ?>>
-
-
     <div class="thumb">
+
         <? if ($img): ?>
             <img alt=""
                  src="<?= $img->image()->sizeMax(600, 400)->jpg()->href() ?>"

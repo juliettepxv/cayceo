@@ -9,19 +9,21 @@ $message=$vv->testAndGetRequest(
     "message",trad(
     "form errorMessage invalid message"
     ));
+$firstname=$vv->testAndGetRequest("firstname",trad(
+    "form errorMessage invalid firstname"
+));
 $lastname=$vv->testAndGetRequest("lastname",trad(
     "form errorMessage invalid lastname"
 ));
-$phone=$vv->testAndGetRequest("phone",trad(
-    "form errorMessage invalid phone"
+$object=$vv->testAndGetRequest("object",trad(
+    "form errorMessage invalid fields"
 ));
-$date=$vv->testAndGetRequest("date",trad(
-    "form errorMessage invalid date"
-));
-$email=$vv->testAndGetRequest("email",trad(
+$email1=$vv->testAndGetRequest("email1",trad(
     "form errorMessage invalid email"
 ));
-
+$email2=$vv->testAndGetRequest("email2",trad(
+    "form errorMessage invalid email"
+));
 $email="";
 if($vv->success){
     //$humanMessage=preg_replace('!\s+!', ' ', $humanMessage)." .-";
@@ -35,10 +37,10 @@ if($vv->success){
     try {
         $m="";
         $m.="<b>Nom:</b> $lastname<br>";
+        $m.="<b>Prénom:</b> $firstname<br>";
         $m.="<b>Email:</b> $email<br>";
-        $m.="<b>Téléphone:</b> $phone<br>";
+        $m.="<b>Sujet:</b> $object<br>";
         $m.="<b>Message:</b> $message<br>";
-        $m.="<b>A rappeler le:</b> $date<br>";
         $m.="<br><br>";
         $m.=$humanMessage;
         $success=cq()->sendMail(

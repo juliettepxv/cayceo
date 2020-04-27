@@ -18,6 +18,7 @@ $view->inside("layout/layout", $vv);
             ->addClass("blocks mt-medium");
         ?>
 
+            <?/*todo a faire if c'est un lien vers un site externe */?>
 
         <? /*
     //debug news

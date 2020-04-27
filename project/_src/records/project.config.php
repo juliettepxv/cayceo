@@ -33,6 +33,14 @@
     </fieldset>
 
     <fieldset>
+        <label>Lien de l'article</label>
+        <?= $vv->wysiwyg()->field("url")
+            ->string()
+            ->input("url")
+        ?>
+    </fieldset>
+
+    <fieldset>
         <label><?= cq()->tradWysiwyg("Date") ?></label>
         <?= $vv->wysiwyg()->field("newsdate")
             ->string()

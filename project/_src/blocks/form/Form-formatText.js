@@ -11,7 +11,9 @@ export default class Form{
         $main.on("change input","textarea,select,input",function(){
             me.checkFields();
         });
-
+        $main.find(".resizeinput").each(function(){
+            me.listenResizeInput($(this));
+        });
         $main.find("select[message-placeholder]").on("change",function(){
             me.refreshMessagePlaceholder();
         });
@@ -68,12 +70,13 @@ export default class Form{
             });
             me.$main.attr("state","sending");
             let datas={
+                object:me.$main.find(`[name='object']`).val(),
                 humanMessage:message.join(""),
-                lastname:me.$main.find(`[name='lastname']`).val(),
-                email:me.$main.find(`[name='email']`).val(),
-                phone:me.$main.find(`[name='phone']`).val(),
-                date:me.$main.find(`[name='date']`).val(),
                 message:me.$main.find(`[name='message']`).val(),
+                firstname:me.$main.find(`[name='firstname']`).val(),
+                lastname:me.$main.find(`[name='lastname']`).val(),
+                email1:me.$main.find(`[name='email1']`).val(),
+                email2:me.$main.find(`[name='email2']`).val(),
 
             };
 
@@ -97,6 +100,49 @@ export default class Form{
 
 
 
+
+    listenResizeInput($input){
+        let me=this;
+        if($input.is("textarea")){
+            autosize($input);
+            return;
+        }
+        $input.on("change input",function(){
+            me.resizeInput($(this));
+        });
+        window.addEventListener('resize',
+            function(){
+            me.resizeInput($input);
+        });
+        me.resizeInput($input);
+    }
+    resizeInput($input){
+        let text="";
+        let arrowWidth=4;
+        let fontSize=parseFloat($input.css("font-size"));
+        //arrowWidth=fontSize /2;
+        if($input.is("select")){
+            //arrowWidth=fontSize;
+            text = $input.find("option:selected").text();
+        }else{
+            text=$input.val();
+            if(!text){
+                text=$input.attr("placeholder")
+            }
+        }
+        let $test = $("<span>").html(text).css({
+            "font-size": $input.css("font-size"), // ensures same size text
+            "font-weight": $input.css("font-weight"), // ensures same size text
+            "visibility": "hidden"               // prevents FOUC
+        });
+        $test.appendTo($input.parent());
+        let width = $test.width();
+        $test.remove();
+        $input.width(width+arrowWidth);
+        Pov.events.dispatchDom($body,Pov.events.DOM_CHANGE);
+    }
+
+
     static fromDom(){
         $("[data-form]").not(".form-init").each(function(){
             $(this).addClass("form-init");
@@ -105,8 +151,6 @@ export default class Form{
     }
 
 }
-
-
 
 
 

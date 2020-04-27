@@ -7,8 +7,8 @@
 ?>
 
 <label>Image de preview</label>
-<?=$vv->wysiwyg()->field("imagepreview")
-    ->recordPicker("filerecord",false)
+<?= $vv->wysiwyg()->field("imagepreview")
+    ->recordPicker("filerecord", false)
     ->onlyFiles()
     ->setMimeAcceptImagesOnly()
     ->onSavedRefreshRecord($vv)
@@ -17,17 +17,14 @@
 ?>
 
 <label>Video de preview</label>
-<?=$vv->wysiwyg()->field("videopreview")
-    ->recordPicker("filerecord",false)
+<?= $vv->wysiwyg()->field("videopreview")
+    ->recordPicker("filerecord", false)
     ->onlyFiles()
     ->setMimeAcceptVideoOnly()
     ->onSavedRefreshRecord($vv)
     ->buttonRecord()
     ->render()
 ?>
-
-
-
 
 
 

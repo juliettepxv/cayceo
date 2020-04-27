@@ -14,15 +14,9 @@
 
   //couleurs
 
-  --width-img: 70px;
+  --width-img: 50px;
   min-width: 320px;
 
-  @media (min-width: @screen-xl) {
-    width: 400px;
-  }
-  @media (min-width: @screen-xxl) {
-    width: 380px;
-  }
 
   background: linear-gradient(90deg, rgba(62,173,165,1) 0%, rgba(62,173,165,1)50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
   background-size: 1000px;
@@ -34,8 +28,8 @@
   .img {
 
     background-color: var(--color-white);
-    padding: 15px;
-    margin: 10px;
+    padding: 12px;
+    margin: 5px;
     height: var(--width-img);
     width: var(--width-img);
     border-radius: 100%;
@@ -69,11 +63,12 @@
 
   .text {
 
-    min-width: 250px;
+    min-width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 0 10px;
 
     padding-right: calc(var(--width-img) / 2);
     @media (min-width: @screen-xl) {

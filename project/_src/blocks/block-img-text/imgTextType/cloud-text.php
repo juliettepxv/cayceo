@@ -53,7 +53,7 @@ $img2 =$vv->getDataAsRecord("imageOver");
 
         </div>
 
-        <div class="col-lg-6" dss="1.1">
+        <div class="col-lg-6 wrap-text" dss="1.1">
             <div class="rich-text">
                 <?= $vv->wysiwyg()
                     ->field("texte_lang")

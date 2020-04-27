@@ -17,10 +17,12 @@ $imgTag = $img
     ->displayIfEmpty(true)
     ->sizeMax(400, 400)
     ->jpg()->htmlTag();
-
+/** @var \Classiq\Models\Project $projet */
+$projet = $vv->getDataAsRecord("page");
 
 ?>
-<div class="ico-text">
+<div class="ico-text" <? if ($projet && !cq()->wysiwyg()): ?>href="<?= $projet->href() ?>"
+    <? endif ?>>
 
     <div class="img">
         <?= $imgTag ?>
