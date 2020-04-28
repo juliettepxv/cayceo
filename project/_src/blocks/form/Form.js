@@ -36,14 +36,22 @@ export default class Form{
     checkFields(){
         let valid="valid";
         this.$fields().removeClass("error");
-        this.$fields().each(function(){
+        this.$fields().filter("[mandatory]").each(function(){
             let $f=$(this);
             if($f.val().length<2){
                 //$f.addClass("error");
                 valid="";
-
+                $f.addClass("error")
             }
         });
+
+        let $phone=this.$fields().filter("[name='phone']");
+        let $phoneMoment=this.$fields().filter("[name='phonemoment']");
+        if($phoneMoment.val() && $phone.val().length<5){
+            valid="";
+            $phone.addClass("error");
+        }
+
         this.$main.attr("state",valid);
         return valid!=="";
     }
