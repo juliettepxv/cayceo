@@ -115,9 +115,25 @@
             margin-top: 20px;
 
             @media (min-width: @screen-lg) {
+              margin-top: 0px;
+              background-color: transparent;
               .py-small;
              visibility: visible;
               text-align: right;
+            }
+          }
+
+          @media(max-width: @screen-md-max){
+            .rich-text{
+              transition: all 0.5s;
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            &.active{
+              .rich-text{
+                opacity: 1;
+                transform: translateY(0px);
+              }
             }
           }
 

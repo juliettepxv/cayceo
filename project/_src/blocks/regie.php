@@ -24,7 +24,7 @@ $imgTextTypes = $vv->getData("imgTextTypes", "image-text");
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> scroll-active="" class="block block-regie">
     <div class="container">
 
-        <div class="row">
+        <div class="row regie">
             <div class="col-md-12 col-lg-4 wrap-text" dss="1.1">
                 <div class="info info1">
                     <div class="rich-text">

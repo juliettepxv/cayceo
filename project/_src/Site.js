@@ -47,6 +47,8 @@ export default class Site{
 
         //profil
         require("../../options/profile/listen-forms");
+        //regie
+        require("./blocks/regie")
 
         require("./components/data-zoom-img");
         require("./components/data-is-lang");
