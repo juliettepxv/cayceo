@@ -22,6 +22,8 @@ class Hashtag extends Page
         parent::update();
     }
 
+    public static $icon="cq-tag";
+
 
 
 }

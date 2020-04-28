@@ -37,8 +37,6 @@ if ($video) {
 }
 $attrs["ss"] = round(rand(10, 50) / 100, 1);
 
-
-
 ?>
 <div class="project-card" scroll-active="" <?= $attrs ?> <?= $view->attrRefresh($vv->uid()) ?>>
     <div class="thumb">
@@ -66,6 +64,8 @@ $attrs["ss"] = round(rand(10, 50) / 100, 1);
             ->htmlTag("h2")
         ?>
         <?=$vv->newsDate("d F Y")?>
+        <?//=$vv->getValue("urlexterne")?>
+
         <a class="button sz-normal mt-small" href="<?= $vv->href() ?>">
             <?=trad("Découvrir")?>
         </a>

@@ -34,7 +34,7 @@
 
     <fieldset>
         <label>Lien de l'article</label>
-        <?= $vv->wysiwyg()->field("url")
+        <?= $vv->wysiwyg()->field("urlexterne")
             ->string()
             ->input("url")
         ?>

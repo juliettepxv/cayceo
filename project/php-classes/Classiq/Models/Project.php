@@ -34,6 +34,17 @@ class Project extends Page
     }
 
     /**
+     * @param bool $plural Si true retournera le nom du modèle au pluriel
+     * @return string nom du type de record lisible par les humains
+     */
+    static function humanType($plural=false){
+        return $plural?"Articles":"Article";
+    }
+
+    static $icon="cq-file-edit";
+
+
+    /**
      * le logoclient
      * @param string $defaultImage Url d'une image par default
      * @param bool $asRecord renverra le fileRecord si défini sur true, sinon un ImgUrl pour travailler l'image

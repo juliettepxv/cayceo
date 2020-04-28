@@ -19,7 +19,7 @@ use Classiq\Models\Page;
             <div class="title" title="<?=$vv->name?>"><?=$vv->name?></div>
             <div class="type"
                  style="color: #<?=utils()->color->randHex(0.5,0.5,$vv->kind)?>">
-                <?=$vv->kind?>
+                <?//=$vv->kind?>
             </div>
             <a target="_blank" href="<?=$vv->href()?>" class="type"><?=$vv->modelType()?>@<?=$vv->id?></a>
         </div>
