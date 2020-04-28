@@ -31,6 +31,8 @@ if (!cq()->wysiwyg()) {
     $attrs["href"] = $vv->href();
 }
 
+$urlExterne = $vv->getValue("urlexterne");
+
 
 if ($video) {
     $attrs["video-thumbnail"] = true;
@@ -63,12 +65,22 @@ $attrs["ss"] = round(rand(10, 50) / 100, 1);
             ->setDefaultValue($defaultText)
             ->htmlTag("h2")
         ?>
-        <?=$vv->newsDate("d F Y")?>
-        <?//=$vv->getValue("urlexterne")?>
+        <div class="h4">
+            <?=$vv->newsDate("d F Y")?>
+        </div>
 
-        <a class="button sz-normal mt-small" href="<?= $vv->href() ?>">
-            <?=trad("Découvrir")?>
-        </a>
+        <div class="wrap-links">
+            <a class="button sz-normal" href="<?= $vv->href() ?>">
+                <?=trad("Découvrir")?>
+            </a>
+            <? if ($urlExterne): ?>
+                <a href="<?=$urlExterne?>" target="_blank" class="text-link">
+                    <?=trad("Voir le lien")?>
+                    <?=pov()->svg->use("startup-arrow-right")?>
+                </a>
+            <? endif; ?>
+        </div>
+
         <? /*=$view->render("components/tags")*/ ?>
     </div>
 

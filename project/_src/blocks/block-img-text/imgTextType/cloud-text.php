@@ -14,7 +14,7 @@ if ($img) {
 }
 
 
-/** @var \Classiq\Models\Filerecord $poster */
+/** @var \Classiq\Models\Filerecord $img2 */
 $img2 =$vv->getDataAsRecord("imageOver");
 
 ?>

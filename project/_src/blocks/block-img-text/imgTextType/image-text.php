@@ -18,7 +18,7 @@ $img = $vv->targetUid(true);
                 <div class="img-wrap" data-zoom-img="<?= $img->image()->sizeMax(1200, 800)->jpg()->href() ?>">
                     <?= $img->image()
                         ->width(800)
-                        ->jpg()
+                        ->png()
                         ->htmlTag()
                         ->addClass("img-responsive")
                         ->setAttribute("dom-copy", 'img')

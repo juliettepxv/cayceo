@@ -15,10 +15,11 @@
     <hr>
     <span class="my-small"><?=trad("Souhaitez vous être rappelé ?")?></span>
     <hr>
-    <input m class="" type="text"  placeholder="Par exemple : Lundi 12 Avril à 14h00" name="phonemoment">
-    <hr>
     <input m class="" type="tel"  placeholder="Téléphone" name="phone">
     <hr>
+    <input m class="" type="text"  placeholder="Par exemple : Lundi 12 Avril à 14h00" name="phonemoment">
+    <hr>
+
     <button class="mt-medium button sz-big" type="submit">Envoyer</button>
 
     <hr>

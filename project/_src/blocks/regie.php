@@ -21,12 +21,12 @@ $img2 =$vv->getDataAsRecord("imageOver");
 $imgTextTypes = $vv->getData("imgTextTypes", "image-text");
 
 ?>
-<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> scroll-active="" class="block block-regie">
+<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-regie">
     <div class="container">
 
         <div class="row regie">
-            <div class="col-md-12 col-lg-4 wrap-text" dss="1.1">
-                <div class="info info1">
+            <div class="col-md-12 col-lg-4 wrap-text"   dss="1.1">
+                <div class="info info1" scroll-active="">
                     <div class="rich-text">
                         <?= $vv->wysiwyg()
                             ->field("texte_lang")
@@ -40,7 +40,7 @@ $imgTextTypes = $vv->getData("imgTextTypes", "image-text");
                     </div>
                 </div>
 
-                <div class="info info2">
+                <div class="info info2" scroll-active="">
                     <div class="rich-text">
                         <?= $vv->wysiwyg()
                             ->field("texte2_lang")
@@ -53,7 +53,7 @@ $imgTextTypes = $vv->getData("imgTextTypes", "image-text");
                     <div class="button-line">
                     </div>
                 </div>
-                <div class="info info3">
+                <div class="info info3" scroll-active="">
                     <div class="rich-text">
                         <?= $vv->wysiwyg()
                             ->field("texte3_lang")
@@ -66,7 +66,7 @@ $imgTextTypes = $vv->getData("imgTextTypes", "image-text");
                     <div class="button-line">
                     </div>
                 </div>
-                <div class="info info4">
+                <div class="info info4" scroll-active="">
                     <div class="rich-text">
                         <?= $vv->wysiwyg()
                             ->field("texte4_lang")

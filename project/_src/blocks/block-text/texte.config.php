@@ -23,3 +23,10 @@
         "deux colonnes" => "text-text"]);
 ?>
 
+<label>Couleur de fond</label>
+<?=$vv->wysiwyg()->field("bgColor")
+    ->string()
+    ->onSavedRefreshListItem($vv)
+    ->input("text")
+?>
+

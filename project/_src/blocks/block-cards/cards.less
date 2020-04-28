@@ -7,6 +7,19 @@
   position: relative;
 
   .pb-small;
+
+  &[scroll-active='1'] {
+    .card-item-col{
+    .btn-hover-fx-from-right;
+    animation-delay: 0.5s;
+
+    &:last-child {
+      .btn-hover-fx-from-left;
+      animation-delay: 0.5s;
+    }
+    }
+  }
+
   //background-color: #1ab7ea;
   .container {
     //outline: 1px dashed #ffe968;
@@ -23,6 +36,9 @@
     display: flex;
     justify-content: center;
 
+
+
+
     .card-item-col { //.col-md-6
       padding: var(--gutter);
 
@@ -36,9 +52,16 @@
         transition: background-position-x 0.5s;
 
 
+
+
         .button, .text{
           .mb-small;
         }
+
+        .texts, .texts h2, .text-link, p{
+          transition: color 0.4s;
+        }
+
         @media (hover: hover) {
           &:hover {
             background-position-x: 0px;
@@ -52,7 +75,6 @@
             }
 
             .text-link, .text{
-              transition: color 0.4s;
               color: @color-white;
             }
           }

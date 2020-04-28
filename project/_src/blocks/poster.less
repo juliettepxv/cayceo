@@ -2,18 +2,61 @@
 
   .poster {
     .mt-medium;
+
     .container {
       display: flex;
       flex-direction: column;
-        @media (min-width: @screen-md) {
-          flex-direction: row;
-          .text-wrap, .img-wrap{
-            width: 50%;
-          }
-          .img-wrap{
-            order: 1;
-          }
+      @media (min-width: @screen-md) {
+        flex-direction: row;
+        .text-wrap, .img-wrap {
+          width: 50%;
         }
+
+        .img-wrap {
+          order: 1;
+        }
+      }
+
+
+      .img-wrap {
+        position: relative;
+
+        .cloudy {
+          position: absolute;
+          left: -30px;
+          width: 40vw;
+
+          @media(min-width: @screen-sm){
+
+            max-width: 260px;
+          }
+
+          @media(min-width: @screen-md){
+            width: 170px;
+          }
+
+          @media(min-width: @screen-xl){
+            width: 260px;
+
+          }
+
+          animation-name: loopUpDown;
+          animation-timing-function: ease-in-out;
+          animation-duration: 4s;
+          animation-direction: alternate-reverse;
+          animation-iteration-count: infinite;
+
+          @keyframes loopUpDown{
+            from{
+              bottom: 10px;
+            }
+            to{
+              bottom: 40px;
+            }
+          }
+
+        }
+      }
 
       .text-wrap {
         display: flex;
@@ -48,3 +91,6 @@
     }
   }
 }
+
+
+

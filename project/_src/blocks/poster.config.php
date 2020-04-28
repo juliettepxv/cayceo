@@ -15,6 +15,16 @@
     ->render();
 ?>
 
+<label>Cloudy</label>
+<?= $vv->wysiwyg()->field("cloudy")
+    ->file()
+    ->setMimeAcceptImagesOnly()
+    ->onSavedRefreshListItem($vv)
+    ->button()
+    ->render();
+?>
+
+
 <label>Projet</label>
 <?=$vv->wysiwyg()->field("page")
     ->recordPicker("page",false)

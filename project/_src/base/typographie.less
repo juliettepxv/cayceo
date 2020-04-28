@@ -78,6 +78,13 @@ h6,.h6{
 }
 
 
+[style^="background-color"] .rich-text{
+
+  a,b,h1,h2,h3,h4,h5,h6,.blockquote, p{
+    color: @color-white !important;
+  }
+}
+
 .rich-text{
 
   b{
@@ -219,6 +226,12 @@ label{
   font-size: var(--fs-link);
   letter-spacing: 0.1em;
   color: @color-grey-dark;
+
+  @media (hover: hover) {
+    a:hover {
+      color: @color-primary;
+    }
+  }
 
   //outline: 1px solid red;
   >svg{

@@ -4,9 +4,14 @@
  * @var Classiq\Models\JsonModels\ListItem $vv
  *
  */
-$textTypes=$vv->getData("textTypes","text");
+$textTypes = $vv->getData("textTypes", "text");
+$bgColor = $vv->getData("bgColor", "");
+$style = "";
+if ($bgColor) {
+    $style = "style='background-color:#" . $bgColor . ";'";
+}
 ?>
-<div <?= $vv->wysiwyg()->attr() ?> scroll-active="" class="block block-texte pb-medium">
+<div <?= $vv->wysiwyg()->attr() ?> scroll-active="" class="block block-texte pb-medium" <?=$style?>>
 
-        <?=$view->render("blocks/block-text/textType/$textTypes")?>
+    <?= $view->render("blocks/block-text/textType/$textTypes") ?>
 </div>

@@ -4,7 +4,7 @@ $cardsType=$vv->getData("cardsType",site()->cardsTypeDefault);
 
 ?>
 
-<div <?= $vv->wysiwyg()->attr() ?> class="block block-cards <?=$cardsType?>">
+<div <?= $vv->wysiwyg()->attr() ?> scroll-active="" class="block block-cards <?=$cardsType?>">
     <div class="container">
         <?=$vv->wysiwyg()
             ->field("items")

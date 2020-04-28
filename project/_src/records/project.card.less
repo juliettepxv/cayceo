@@ -20,12 +20,17 @@
       user-select: none;
     }
 
+    .texts, .texts h2, .text-link{
+      transition: color 0.4s;
+    }
+
+
     @media (hover: hover) {
 
       &:hover {
         background-position-x: 0px;
 
-        .texts, .texts h2{
+        .texts, .texts h2, .text-link{
           color: white;
         }
 
@@ -75,6 +80,20 @@
       @media(min-width: @screen-xxl){
         height: 300px;
       }
+
+      .wrap-links{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .mt-small;
+        svg{
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+
 
       .button {
 

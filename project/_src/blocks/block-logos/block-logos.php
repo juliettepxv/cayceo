@@ -2,7 +2,7 @@
 /** @var Classiq\Models\JsonModels\ListItem $vv */
 
 ?>
-<div <?=$vv->wysiwyg()->attr()?> scroll-active="" class="block block-logos py-medium" dss="1.1">
+<div <?=$vv->wysiwyg()->attr()?> scroll-active="" class="block block-logos pb-medium" dss="1.1">
     <div class="container">
             <?=$vv->wysiwyg()->field("logos")
                 ->listJson("blocks/block-logos/logos/logo-link-item")

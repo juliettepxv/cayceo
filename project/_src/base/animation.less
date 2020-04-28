@@ -25,9 +25,52 @@
 }
 
 
-@keyframes bounce-left {
-  50% {
+@keyframes from-left {
+  0% {
+    opacity: 0;
     transform: translateX(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+@keyframes from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes from-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@keyframes from-down {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -58,3 +101,36 @@
   animation-timing-function: ease-in-out;
 }
 
+.btn-hover-fx-from-right{
+  animation-name: from-right;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.btn-hover-fx-from-left{
+  animation-name: from-left;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.btn-hover-fx-from-up{
+  animation-name: from-up;
+  animation-delay: 0.25s;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.btn-hover-fx-from-down{
+  animation-name: from-down;
+  animation-delay: 0.25s;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}

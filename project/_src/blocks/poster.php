@@ -12,6 +12,11 @@ if($img){
 }else{
     $image=pov()->img("")->sizeMax(1200,800)->jpg()->href();
 }
+/** @var \Classiq\Models\Project $projet */
+$projet = $vv->getDataAsRecord("page");
+
+/** @var \Classiq\Models\Project $cloudy */
+$cloudy =$vv->getDataAsRecord("cloudy");
 
 ?>
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> scroll-active="" class="block block-poster">
@@ -19,6 +24,7 @@ if($img){
     <div class="poster">
 
         <div class="container">
+
             <div class="img-wrap">
                 <div <?= $vv->wysiwyg()->attr() ?> scroll-active="">
 
@@ -29,6 +35,16 @@ if($img){
                     ></div>
 
                 </div>
+
+                <?if($cloudy):?>
+                    <?= $cloudy->image()
+                        ->width(800)
+                        ->png()
+                        ->htmlTag()
+                        ->addClass("img-responsive cloudy")
+                    ?>
+                <?endif?>
+
             </div>
 
             <div class="text-wrap">
@@ -41,6 +57,11 @@ if($img){
                         ->htmlTag("div")
                     ?>
                 </div>
+                <?if($projet):?>
+                <div class="text-link mt-small">
+                    <a href="<?= $projet->href() ?>">En savoir plus</a>
+                </div>
+                <?endif?>
             </div>
 
 
