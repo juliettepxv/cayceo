@@ -4,30 +4,26 @@ use Pov\System\ApiResponse;
 
 //reset messages
 $vv->messages=[];
-$humanMessage=$vv->testAndGetRequest("humanMessage");
 $message=$vv->testAndGetRequest(
     "message",trad(
-    "form errorMessage invalid message"
+    "Merci de renseigner votre message"
     ));
 $lastname=$vv->testAndGetRequest("lastname",trad(
-    "form errorMessage invalid lastname"
+    "Merci de nous indiquer votre nom"
 ));
 $phone=$vv->testAndGetRequest("phone",trad(
-    "form errorMessage invalid phone"
+    "Merci de nous indiquer votre numéro de téléphone"
 ));
-$date=$vv->testAndGetRequest("date",trad(
-    "form errorMessage invalid date"
-));
+$phoneMoment=$vv->testAndGetRequest("phonemoment",trad(
+    "Quand souhaitez vous être appélé?"
+),false);
 $email=$vv->testAndGetRequest("email",trad(
-    "form errorMessage invalid email"
+    "Merci de renseigner votre email"
 ));
-
-$email="";
 if($vv->success){
     //$humanMessage=preg_replace('!\s+!', ' ', $humanMessage)." .-";
-    $email=$email1."@".$email2;
     if( !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $vv->addError(trad("form errorMessage invalid email"));
+        $vv->addError(trad("Ce mail ne semble pas correct"));
     }
 }
 if($vv->success){
@@ -38,14 +34,16 @@ if($vv->success){
         $m.="<b>Email:</b> $email<br>";
         $m.="<b>Téléphone:</b> $phone<br>";
         $m.="<b>Message:</b> $message<br>";
-        $m.="<b>A rappeler le:</b> $date<br>";
-        $m.="<br><br>";
-        $m.=$humanMessage;
-        $success=cq()->sendMail(
-            site()->formsMailTo,
-            "FORMULAIRE CONTACT ".strtoupper(site()->projectName)." [$object] [$email]",
-            $m
-        );
+        $m.="<b>A rappeler le:</b> $phoneMoment<br>";
+
+        foreach (utils()->array->fromString(site()->formsMailTo) as $to){
+            $success=cq()->sendMail(
+                $to,
+                "FORMULAIRE CONTACT ".strtoupper(site()->projectName)." [contact] [$email]",
+                $m
+            );
+        }
+
     }catch (\Pov\PovException $exception){
         $vv->addError($exception->getMessage());
     }
@@ -57,7 +55,7 @@ if($vv->success){
 
 
 if($vv->success){
-    $vv->addMessage(trad("form successMessage"));
+    $vv->addMessage(trad("Merci, nous vous répondrons dans les plus brefs délais."));
 }else{
     array_unique($vv->errors);
 }

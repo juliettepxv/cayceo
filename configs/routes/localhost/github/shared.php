@@ -7,6 +7,14 @@ the()->project->languagesUrls=[
 the()->configProjectUrl->forceHttps=false;
 // Traductions ui.
 
+
+site()->projectName="Cayceo (localhost)";
+site()->formsMailTo=[
+    "d.marsalone@gmail.com",
+    "david@pixelvinaigrette.com",
+    "juliette.salomon@gmail.com"
+];
+
 // trads armada only
 //TODO
 the()->project->config_translations_csv_url="https://docs.google.com/spreadsheets/d/1GNz4jvUfwosLeE8Gx8tQi2HhSrCdCanVaP9u0EfmI-o/export?gid=0&format=csv";

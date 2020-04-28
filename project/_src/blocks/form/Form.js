@@ -59,33 +59,17 @@ export default class Form{
         let me=this;
         if(this.checkFields()){
 
-            //reconstitue le message texte
-            let message=[];
-            me.$main.find("[m]").each(function(){
-                let $f=$(this);
-                if($f.is("input,textarea")){
-                    message.push($f.val());
-                }else if($f.is("select")){
-                    message.push($f.find(":selected").text());
-                }else if($f.is("hr")){
-                    message.push("<br>");
-                }else{
-                    message.push($f.text());
-                }
-
-            });
             me.$main.attr("state","sending");
             let datas={
-                humanMessage:message.join(""),
                 lastname:me.$main.find(`[name='lastname']`).val(),
                 email:me.$main.find(`[name='email']`).val(),
-                phone:me.$main.find(`[name='phone']`).val(),
-                date:me.$main.find(`[name='date']`).val(),
                 message:me.$main.find(`[name='message']`).val(),
+                phone:me.$main.find(`[name='phone']`).val(),
+                phonemoment:me.$main.find(`[name='phonemoment']`).val(),
 
             };
 
-            PovApi.actionCB("form-contact",datas,function(res){
+            PovApi.actionCB("api.form-contact",datas,function(res){
                 console.log(res);
                 if(res.success){
                     me.$main.attr("state","sent");

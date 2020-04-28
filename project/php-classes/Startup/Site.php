@@ -57,9 +57,9 @@ class Site extends AbstractSingleton
      */
     public $projectName="Mon super projet";
     /**
-     * @var string Email qui reçoit les formulaires
+     * @var string[] Emails qui reçoivent les formulaires
      */
-    public $formsMailTo="d.marsalone@gmail.com";
+    public $formsMailTo=["d.marsalone@gmail.com"];
     /**
      * @var string couleur hexa du navigateur sur mobile
      */

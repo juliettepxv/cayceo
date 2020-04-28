@@ -6,7 +6,7 @@
 
     <input mandatory class="" type="text" placeholder="Nom*" name="lastname">
     <hr>
-    <input mandatory m class="" type="email"  placeholder="email*" name="email1">
+    <input mandatory m class="" type="email"  placeholder="email*" name="email">
 
     <hr>
     <span class="my-small"><?=trad("Demande de devis/démo/information*")?></span>

@@ -28,12 +28,12 @@ pov()->events->listen(C_povApi::EVENT_ACTION,
         }else{
             $entry=$split[0];
             $action=$split[1];
-            $actionFile="$entry/api/$action";
-            if(View::isValid($actionFile)){
+            $actionFile="project/$entry/$action.php";
+            if(file_exists($actionFile)){
                 $api=$vv;
-                include(View::getRealPath($actionFile));
+                include($actionFile);
             }else{
-                $vv->addError("action invalide ($actionName -> $actionFile.php)");
+                $vv->addError("action invalide ($actionName -> $actionFile)");
             }
         }
 
