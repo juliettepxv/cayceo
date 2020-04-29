@@ -19,9 +19,9 @@ $img = $vv->targetUid(true);
                         <div class="wrap-img">
                             <?= $img->image()
                                 ->width(800)
+                                ->height(800)
                                 ->jpg()
                                 ->htmlTag()
-                                ->addClass("img-responsive")
                                 ->setAttribute("dom-copy", 'img')
                             ?>
                         </div>

@@ -14,7 +14,7 @@ if ($img) {
 $imgTag = $img
     ->bgColor("EEEEEE")
     ->displayIfEmpty(true)
-    ->sizeMax(1200, 750)
+    ->sizeMax(800, 800)
     ->png()
     ->htmlTag()->addClass("img-responsive");
 
@@ -49,9 +49,8 @@ $projet = $vv->getDataAsRecord("page");
         </div>
     <? endif ?>
 
+
     <? if ($imgTag): ?>
-        <div class="img">
             <?= $imgTag ?>
-        </div>
     <? endif; ?>
 </div>
