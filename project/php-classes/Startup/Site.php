@@ -34,6 +34,7 @@ class Site extends AbstractSingleton
         "blocks/dwd",
         "blocks/block-logos/block-logos",
         "blocks/block-icons/icons",
+        "blocks/block-percentages/percentages",
         "blocks/seance",
         //"blocks/img",
         "blocks/poster",

@@ -71,9 +71,10 @@ $imgTextTypes=$vv->getData("imgTextTypes","image-text");
                             ?>
                         </div>
 
+                        <?/*
                         <a class="button sz-normal mt-small">
                             <?=trad("Aperçu")?>
-                        </a>
+                        </a>*/?>
 
                     </div>
 

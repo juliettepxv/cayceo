@@ -1,4 +1,4 @@
-window.lottie=require("lottie-web");
+window.lottie = require("lottie-web");
 /**
  * Permet de charger une animation lottie
  * lottie-loader=''
@@ -8,30 +8,31 @@ window.lottie=require("lottie-web");
  *
  */
 export default class LottieLoader {
-    constructor($main){
-        this.$main=$main;
-        let me=this;
-        let url=$main.attr("lottie-url");
-        this.autoplay=$main.attr("lottie-autoplay") === "true";
-        if(utils.device.isEdge){
-            this.autoplay=false;
+    constructor($main) {
+        this.$main = $main;
+        let me = this;
+        let url = $main.attr("lottie-url");
+        this.autoplay = $main.attr("lottie-autoplay") === "true";
+        if (utils.device.isEdge) {
+            this.autoplay = false;
         }
-        this.loop=$main.attr("lottie-loop") === "true";
-        this.preserveAspectRatio=$main.attr("lottie-preserve-aspect-ratio");
-        this.img=$main.attr("lottie-img");
+        this.loop = $main.attr("lottie-loop") === "true";
+        this.preserveAspectRatio = $main.attr("lottie-preserve-aspect-ratio");
+        this.img = $main.attr("lottie-img");
+        this.toStop = $main.attr("lottie-stop-end");
 
         //charge le json dynamiquement
-        $.getJSON(url, function(json) {
+        $.getJSON(url, function (json) {
             console.log(json)
-           me.animationData=json;
-            if(me.img){
-                me.animationData.assets[0]["p"]=me.img;
-                me.animationData.assets[0]["u"]=document.location.host;
-                me.animationData.assets[0]["u"]="";
+            me.animationData = json;
+            if (me.img) {
+                me.animationData.assets[0]["p"] = me.img;
+                me.animationData.assets[0]["u"] = document.location.host;
+                me.animationData.assets[0]["u"] = "";
                 console.log(me.animationData.assets[0]["u"])
-                console.log("lottie img",me.img)
+                console.log("lottie img", me.img)
             }
-           me.buildLottie();
+            me.buildLottie();
         });
 
         //clean attributes
@@ -42,30 +43,52 @@ export default class LottieLoader {
 
     }
 
-    buildLottie(){
-        let opt={
-            assetsPath:"",
+    buildLottie() {
+        let opt = {
+            assetsPath: "",
             container: this.$main.get(0), // the dom element that will contain the animation
             renderer: 'svg',
             loop: this.loop,
             autoplay: this.autoplay,
             //path: url // the path to the animation json
-            animationData:this.animationData
+            animationData: this.animationData,
+
         };
-        if(this.preserveAspectRatio){
-            opt.rendererSettings={
-                preserveAspectRatio:this.preserveAspectRatio
+
+        if (this.preserveAspectRatio) {
+            opt.rendererSettings = {
+                preserveAspectRatio: this.preserveAspectRatio,
             }
         }
-        let anim=lottie.loadAnimation(opt);
 
-        this.$main.data("lottie",anim);
+
+        let anim = lottie.loadAnimation(opt);
+
+        this.$main.data("lottie", anim);
+
+
+        if (this.toStop) {
+            anim.playSegments([0,this.toStop],true);
+        }
+
+        $body.on("click", '.circle-percentage', function (e) {
+            if (this == anim.wrapper) {
+                let $toStop = $(this).attr("lottie-stop-end");
+                let animTarget = anim;
+                animTarget.playSegments([0,$toStop],true);
+
+            }
+        })
     }
 
-    static initFromDom(){
+    static initFromDom() {
         $body.find("[lottie-loader='']").each(function () {
-            $(this).attr("lottie-loader","init");
+            $(this).attr("lottie-loader", "init");
             new LottieLoader($(this));
         });
+
+
     }
 }
+
+

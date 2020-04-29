@@ -1,0 +1,46 @@
+.percentage-circle-item {
+  .percentage-item {
+
+    position: relative;
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    //couleurs
+    color: var(--color-1);
+
+    --width-text:150px;
+    .mxy-small;
+    @media (min-width: @screen-lg) {
+      .mxy-medium;
+    }
+    @media (min-width: @screen-xxl) {
+      --width-text: 180px;
+    }
+
+    .circle-percentage{
+      position: relative;
+      width: var(--width-text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .text-percentage{
+        position: absolute;
+
+        color: var(--color-primary);
+      }
+    }
+
+
+    .text {
+      text-align: center;
+     // height: var(--width-img);
+      width: calc(var(--width-text) + 30px);
+      .py-small;
+    }
+
+
+  }
+}

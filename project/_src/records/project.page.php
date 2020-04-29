@@ -4,6 +4,10 @@
 use Classiq\Models\Project;
 
 $view->inside("layout/layout", $vv);
+
+$urlExterne = $vv->getValue("urlexterne");
+
+
 ?>
     <div scroll-active="" is-url="<?= $vv->href() ?>"
          title="<?= utils()->string->forAttributes($vv->urlpage->getValue("meta_title_lang")) ?>"
@@ -17,8 +21,17 @@ $view->inside("layout/layout", $vv);
             ->htmlTag()
             ->addClass("blocks mt-medium");
         ?>
+        <div class="wrap-button">
+            <? if ($urlExterne): ?>
+                <a href="<?=$urlExterne?>" target="_blank" class="button sz-big">
 
-            <?/*todo a faire if c'est un lien vers un site externe */?>
+                    <?=pov()->svg->use("startup-arrow-right")?>
+                    <?=trad("Voir l'article sur le site")?>
+                </a>
+            <? endif; ?>
+        </div>
+
+
 
         <? /*
     //debug news
