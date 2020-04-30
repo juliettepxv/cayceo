@@ -31,7 +31,7 @@ if(the()->human->isAdmin){
 View::$possiblesPath[]="options";
 //include_once    "options/shop/boot.shop.php";
 //seo
-//\Classiq\Seo\C_sitemap_xml::$modelTypesToIndex=["page","modeleetc"];
+\Classiq\Seo\C_sitemap_xml::$modelTypesToIndex=["page","project"];
 
 /**
  * Pour avoir des textes d'interface
