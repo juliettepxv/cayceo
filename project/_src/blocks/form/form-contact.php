@@ -11,9 +11,9 @@
     <hr>
     <span class="my-small"><?=trad("Demande de devis/démo/information*")?></span>
     <hr>
-    <textarea  mandatory rows="10" class="resizeinput" name="message" placeholder="Décrivez nous votre besoin, nous nous chargerons d'y répondre au plus vite."></textarea>
+    <textarea  mandatory rows="10" class="resizeinput" name="message" placeholder="Décrivez-nous votre besoin, nous nous chargerons d'y répondre au plus vite."></textarea>
     <hr>
-    <span class="my-small"><?=trad("Souhaitez vous être rappelé ?")?></span>
+    <span class="my-small"><?=trad("Souhaitez-vous être rappelé ?")?></span>
     <hr>
     <input m class="" type="tel"  placeholder="Téléphone" name="phone">
     <hr>
