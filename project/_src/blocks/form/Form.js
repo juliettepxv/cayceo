@@ -72,6 +72,7 @@ export default class Form{
             PovApi.actionCB("api.form-contact",datas,function(res){
                 console.log(res);
                 if(res.success){
+                    me.$main[0].reset();
                     me.$main.attr("state","sent");
                     me.$main.find(".success-message").html(res.messages.join("<br>"))
                 }else{
