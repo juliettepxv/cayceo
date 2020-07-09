@@ -73,6 +73,7 @@ export default class Form{
                 console.log(res);
                 if(res.success){
                     me.$main[0].reset();
+                    me.$main.find(".form-content").css("display","none");
                     me.$main.attr("state","sent");
                     me.$main.find(".success-message").html(res.messages.join("<br>"))
                 }else{
