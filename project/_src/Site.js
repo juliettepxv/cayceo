@@ -1,6 +1,7 @@
 //core
 import Utils from "./utils/Utils";
 window.utils=new Utils();
+import 'lazysizes';
 require("./gsap.boot");
 import LottieLoader from "./lottie/LottieLoader";
 window.lottie=require("lottie-web");

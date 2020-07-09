@@ -16,6 +16,7 @@
     "data-social-share-click": "0.0.5",
     "event-emitter-es6": "^1.1.5",
     "gsap": "file:gsap-bonus.tgz",
+    "lazysizes": "^5.2.0",
     "lottie-web": "^5.5.9",
     "pixi-filters": "^3.0.3",
     "pixi.js": "^5.2.0"

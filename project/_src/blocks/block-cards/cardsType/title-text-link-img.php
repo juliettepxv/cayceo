@@ -16,7 +16,7 @@ $imgTag = $img
     ->displayIfEmpty(true)
     ->sizeMax(800, 800)
     ->png()
-    ->htmlTag()->addClass("img-responsive");
+    ->htmlTag("img-responsive","Cayceo",true);
 
 /** @var \Classiq\Models\Project $projet */
 $projet = $vv->getDataAsRecord("page");

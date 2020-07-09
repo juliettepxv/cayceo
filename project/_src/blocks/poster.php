@@ -40,8 +40,7 @@ $cloudy =$vv->getDataAsRecord("cloudy");
                     <?= $cloudy->image()
                         ->width(800)
                         ->png()
-                        ->htmlTag()
-                        ->addClass("img-responsive cloudy")
+                        ->htmlTag("img-responsive cloudy","cloudy",true)
                     ?>
                 <?endif?>
 

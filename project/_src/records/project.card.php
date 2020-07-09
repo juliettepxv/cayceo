@@ -45,7 +45,8 @@ $attrs["ss"] = round(rand(10, 50) / 100, 1);
 
         <? if ($img): ?>
             <img alt=""
-                 src="<?= $img->image()->sizeMax(600, 400)->jpg()->href() ?>"
+                 class="lazyload"
+                 data-src="<?= $img->image()->sizeMax(600, 400)->jpg()->href() ?>"
                  width="<?= $img->image_width ?>" height="<?= $img->image_height ?>">
             <? if ($video): ?>
                 <video src="<?= $video->httpPath() ?>" class="thumb video"
