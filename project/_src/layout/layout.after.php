@@ -13,5 +13,7 @@
         gtag('config', '<?=site()->googleAnalyticsId?>');
     </script>
 <?endif?>
+<?php //hubspot?>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7170654.js"></script>
 
 <div class="webpack-time"></div>
